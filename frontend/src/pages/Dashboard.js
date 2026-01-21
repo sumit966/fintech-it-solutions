@@ -1,40 +1,70 @@
 import React, { useEffect, useState } from "react";
+import {
+  fetchEmployees,
+  fetchProjects,
+  fetchPayroll,
+} from "../services/api";
 
 const Dashboard = () => {
-  const [employees, setEmployees] = useState([]);
+  const [stats, setStats] = useState({
+    employees: 0,
+    projects: 0,
+    payroll: 0,
+  });
+
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost:5001/api/employees")
-      .then((res) => res.json())
-      .then((data) => setEmployees(data))
-      .catch((err) => console.error(err));
+    const loadData = async () => {
+      try {
+        const [employees, projects, payroll] = await Promise.all([
+          fetchEmployees(),
+          fetchProjects(),
+          fetchPayroll(),
+        ]);
+
+        setStats({
+          employees: employees.length,
+          projects: projects.length,
+          payroll: payroll.length,
+        });
+      } catch (err) {
+        console.error(err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadData();
   }, []);
 
-  return (
-    <div className="p-6 text-white">
-      <h1 className="text-3xl font-bold mb-6">Employee Dashboard</h1>
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        Loading dashboard...
+      </div>
+    );
+  }
 
-      <div className="overflow-x-auto">
-        <table className="w-full border border-gray-700">
-          <thead className="bg-gray-800">
-            <tr>
-              <th className="p-2 border">Name</th>
-              <th className="p-2 border">Email</th>
-              <th className="p-2 border">Position</th>
-              <th className="p-2 border">Salary</th>
-            </tr>
-          </thead>
-          <tbody>
-            {employees.map((emp) => (
-              <tr key={emp.id} className="text-center">
-                <td className="p-2 border">{emp.name}</td>
-                <td className="p-2 border">{emp.email}</td>
-                <td className="p-2 border">{emp.position}</td>
-                <td className="p-2 border">₹{emp.salary}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+  return (
+    <div className="p-8 bg-gray-100 min-h-screen">
+      <h1 className="text-3xl font-bold mb-6">Admin Dashboard</h1>
+
+      <div className="grid grid-cols-3 gap-6">
+        <div className="bg-white p-6 rounded shadow">
+          <h2 className="text-xl font-semibold">Employees</h2>
+          <p className="text-3xl mt-2">{stats.employees}</p>
+        </div>
+
+        <div className="bg-white p-6 rounded shadow">
+          <h2 className="text-xl font-semibold">Projects</h2>
+          <p className="text-3xl mt-2">{stats.projects}</p>
+        </div>
+
+        <div className="bg-white p-6 rounded shadow">
+          <h2 className="text-xl font-semibold">Payroll Records</h2>
+          <p className="text-3xl mt-2">{stats.payroll}</p>
+        </div>
       </div>
     </div>
   );
