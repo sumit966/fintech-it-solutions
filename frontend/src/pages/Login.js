@@ -1,29 +1,22 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { loginUser } from "../services/api";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const navigate = useNavigate();
 
   const handleLogin = async (e) => {
     e.preventDefault();
+    setError("");
+    setLoading(true);
 
     try {
-      const res = await fetch("http://localhost:5001/api/auth/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, password }),
-      });
-
-      const data = await res.json();
-
-      if (!res.ok) {
-        setError(data.message || "Login failed");
-        return;
-      }
+      const data = await loginUser(email, password);
 
       localStorage.setItem("token", data.token);
       localStorage.setItem("role", data.role);
@@ -31,7 +24,9 @@ const Login = () => {
 
       navigate("/dashboard");
     } catch (err) {
-      setError("Server not reachable");
+      setError(err.message || "Server not reachable");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -41,7 +36,9 @@ const Login = () => {
         <h2 className="text-2xl font-bold mb-6 text-center">Login</h2>
 
         {error && (
-          <p className="bg-red-500 p-2 mb-4 text-sm text-center">{error}</p>
+          <p className="bg-red-500 p-2 mb-4 text-sm text-center">
+            {error}
+          </p>
         )}
 
         <input
@@ -62,8 +59,13 @@ const Login = () => {
           required
         />
 
-        <button className="w-full bg-blue-600 p-2 hover:bg-blue-700">
-          Login
+        <button
+          disabled={loading}
+          className={`w-full p-2 ${
+            loading ? "bg-gray-500" : "bg-blue-600 hover:bg-blue-700"
+          }`}
+        >
+          {loading ? "Logging in..." : "Login"}
         </button>
       </form>
     </div>
