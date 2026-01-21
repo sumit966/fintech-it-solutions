@@ -29,7 +29,7 @@ const Dashboard = () => {
           payroll: payroll.length,
         });
       } catch (err) {
-        console.error(err);
+        console.error("Dashboard error:", err);
       } finally {
         setLoading(false);
       }
@@ -40,7 +40,7 @@ const Dashboard = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
+      <div className="min-h-screen flex items-center justify-center text-xl">
         Loading dashboard...
       </div>
     );
