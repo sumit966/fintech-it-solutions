@@ -1,12 +1,12 @@
-import React from 'react';
+import React from "react";
 
-function About() {
+const About = () => {
   return (
-    <div>
-      <h1>About Us</h1>
-      <p>We are building innovative fintech solutions for everyone.</p>
+    <div style={{ padding: 40 }}>
+      <h1>About Page Works</h1>
+      <p>If you see this, routing is OK.</p>
     </div>
   );
-}
+};
 
 export default About;

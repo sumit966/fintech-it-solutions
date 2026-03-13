@@ -1,73 +1,26 @@
-import React, { useEffect, useState } from "react";
-import {
-  fetchEmployees,
-  fetchProjects,
-  fetchPayroll,
-} from "../services/api";
+import { Link } from "react-router-dom";
 
-const Dashboard = () => {
-  const [stats, setStats] = useState({
-    employees: 0,
-    projects: 0,
-    payroll: 0,
-  });
-
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const loadData = async () => {
-      try {
-        const [employees, projects, payroll] = await Promise.all([
-          fetchEmployees(),
-          fetchProjects(),
-          fetchPayroll(),
-        ]);
-
-        setStats({
-          employees: employees.length,
-          projects: projects.length,
-          payroll: payroll.length,
-        });
-      } catch (err) {
-        console.error("Dashboard error:", err);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    loadData();
-  }, []);
-
-  if (loading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center text-xl">
-        Loading dashboard...
-      </div>
-    );
-  }
-
+export default function Dashboard() {
   return (
-    <div className="p-8 bg-gray-100 min-h-screen">
-      <h1 className="text-3xl font-bold mb-6">Admin Dashboard</h1>
+    <main className="pt-20 px-6 max-w-6xl mx-auto">
+      <h1 className="text-3xl font-bold mb-10">Admin Dashboard</h1>
 
-      <div className="grid grid-cols-3 gap-6">
-        <div className="bg-white p-6 rounded shadow">
-          <h2 className="text-xl font-semibold">Employees</h2>
-          <p className="text-3xl mt-2">{stats.employees}</p>
-        </div>
+      <div className="grid md:grid-cols-3 gap-8">
+        <Link to="/dashboard/projects" className="p-6 border rounded">
+          <h3 className="font-semibold">Projects</h3>
+          <p>View assigned projects</p>
+        </Link>
 
-        <div className="bg-white p-6 rounded shadow">
-          <h2 className="text-xl font-semibold">Projects</h2>
-          <p className="text-3xl mt-2">{stats.projects}</p>
-        </div>
+        <Link to="/dashboard/tasks" className="p-6 border rounded">
+          <h3 className="font-semibold">Tasks</h3>
+          <p>Track daily tasks</p>
+        </Link>
 
-        <div className="bg-white p-6 rounded shadow">
-          <h2 className="text-xl font-semibold">Payroll Records</h2>
-          <p className="text-3xl mt-2">{stats.payroll}</p>
-        </div>
+        <Link to="/dashboard/profile" className="p-6 border rounded">
+          <h3 className="font-semibold">Profile</h3>
+          <p>Account settings</p>
+        </Link>
       </div>
-    </div>
+    </main>
   );
-};
-
-export default Dashboard;
+}
