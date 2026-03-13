@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "http://localhost:5001/api",
+  baseURL: "https://fintech-it-solutions.onrender.com/api",
 });
 
 API.interceptors.request.use((req) => {

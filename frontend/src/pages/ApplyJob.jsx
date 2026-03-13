@@ -24,7 +24,7 @@ resume:null
 
 useEffect(()=>{
 
-fetch(`http://localhost:5001/api/careers/jobs/${id}`)
+fetch(`https://fintech-it-solutions.onrender.com/api/careers/jobs/${id}`)
 .then(res=>res.json())
 .then(data=>setJob(data))
 .catch(()=>{});

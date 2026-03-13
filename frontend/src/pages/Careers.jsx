@@ -9,7 +9,7 @@ const [search,setSearch] = useState("");
 
 useEffect(()=>{
 
-fetch("http://localhost:5001/api/careers/jobs")
+fetch("https://fintech-it-solutions.onrender.com/api/careers/jobs")
 .then(res=>res.json())
 .then(data=>setJobs(data))
 .catch(()=>setJobs([]));
