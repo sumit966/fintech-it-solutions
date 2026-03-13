@@ -1,21 +1,20 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { Search } from "lucide-react";
+import { Search, Menu, X } from "lucide-react";
 
 export default function Navbar(){
 
 const [search,setSearch] = useState("")
 const [showSearch,setShowSearch] = useState(false)
+const [mobileOpen,setMobileOpen] = useState(false)
 
 const navigate = useNavigate()
 
 const handleSearch=(e)=>{
-
 if(e.key === "Enter"){
 navigate(`/search?q=${search}`)
 setShowSearch(false)
 }
-
 }
 
 return(
@@ -24,24 +23,24 @@ return(
 
 <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
 
+{/* LOGO */}
+
 <Link to="/" className="flex items-center gap-2">
 
 <img src="/logo.png" className="h-8"/>
 
-<span className="font-semibold text-sm tracking-wide">
+<span className="font-semibold text-sm">
 FINTECH IT SOLUTIONS
 </span>
 
 </Link>
 
 
-{/* NAV MENU */}
+{/* DESKTOP MENU */}
 
 <nav className="hidden md:flex gap-8 text-sm items-center">
 
-<Link to="/" className="hover:text-blue-600 font-medium">
-Home
-</Link>
+<Link to="/" className="hover:text-blue-600">Home</Link>
 
 <div className="relative group">
 
@@ -51,84 +50,54 @@ What We Do
 
 <div className="absolute hidden group-hover:grid grid-cols-2 gap-6 bg-white shadow-xl p-6 w-[420px]">
 
-<Link to="/services" className="hover:underline">
-Cloud Engineering
-</Link>
-
-<Link to="/services" className="hover:underline">
-AI & Machine Learning
-</Link>
-
-<Link to="/services" className="hover:underline">
-Cybersecurity
-</Link>
-
-<Link to="/services" className="hover:underline">
-DevOps
-</Link>
-
-<Link to="/services" className="hover:underline">
-Data Engineering
-</Link>
-
-<Link to="/services" className="hover:underline">
-Enterprise Platforms
-</Link>
+<Link to="/services">Cloud Engineering</Link>
+<Link to="/services">AI & Machine Learning</Link>
+<Link to="/services">Cybersecurity</Link>
+<Link to="/services">DevOps</Link>
+<Link to="/services">Data Engineering</Link>
+<Link to="/services">Enterprise Platforms</Link>
 
 </div>
 
 </div>
 
-<Link to="/industries" className="hover:text-blue-600">
-Industries
-</Link>
-
-<Link to="/projects" className="hover:text-blue-600">
-Projects
-</Link>
-
-<Link to="/careers" className="hover:text-blue-600">
-Careers
-</Link>
-
-<Link to="/newsroom" className="hover:text-blue-600">
-Newsroom
-</Link>
-
-<Link to="/ceo" className="hover:text-blue-600 font-medium">
-CEO
-</Link>
-
-<Link to="/leadership" className="hover:text-blue-600">
-Leadership
-</Link>
-
-<Link to="/about" className="hover:text-blue-600">
-About
-</Link>
-
-<Link to="/contact" className="hover:text-blue-600">
-Contact
-</Link>
+<Link to="/industries">Industries</Link>
+<Link to="/projects">Projects</Link>
+<Link to="/careers">Careers</Link>
+<Link to="/newsroom">Newsroom</Link>
+<Link to="/ceo">CEO</Link>
+<Link to="/about">About</Link>
+<Link to="/contact">Contact</Link>
 
 </nav>
 
 
-{/* SEARCH */}
+{/* RIGHT SIDE */}
 
 <div className="flex items-center gap-4">
 
 <Search
-className="w-5 cursor-pointer hover:scale-110 transition"
+className="w-5 cursor-pointer"
 onClick={()=>setShowSearch(!showSearch)}
 />
 
-</div>
+{/* MOBILE MENU BUTTON */}
+
+<button
+className="md:hidden"
+onClick={()=>setMobileOpen(!mobileOpen)}
+>
+
+{mobileOpen ? <X size={22}/> : <Menu size={22}/>}
+
+</button>
 
 </div>
 
+</div>
 
-{/* SEARCH BOX */}
+
+{/* SEARCH BAR */}
 
 {showSearch && (
 
@@ -141,6 +110,31 @@ onChange={(e)=>setSearch(e.target.value)}
 onKeyDown={handleSearch}
 className="w-full p-3 outline-none bg-white border rounded"
 />
+
+</div>
+
+)}
+
+
+{/* MOBILE MENU */}
+
+{mobileOpen && (
+
+<div className="md:hidden border-t bg-white">
+
+<nav className="flex flex-col p-6 gap-4">
+
+<Link onClick={()=>setMobileOpen(false)} to="/">Home</Link>
+<Link onClick={()=>setMobileOpen(false)} to="/services">Services</Link>
+<Link onClick={()=>setMobileOpen(false)} to="/industries">Industries</Link>
+<Link onClick={()=>setMobileOpen(false)} to="/projects">Projects</Link>
+<Link onClick={()=>setMobileOpen(false)} to="/careers">Careers</Link>
+<Link onClick={()=>setMobileOpen(false)} to="/newsroom">Newsroom</Link>
+<Link onClick={()=>setMobileOpen(false)} to="/ceo">CEO</Link>
+<Link onClick={()=>setMobileOpen(false)} to="/about">About</Link>
+<Link onClick={()=>setMobileOpen(false)} to="/contact">Contact</Link>
+
+</nav>
 
 </div>
 
