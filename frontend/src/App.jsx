@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import Chatbot from "./components/Chatbot";   // ✅ ADDED CHATBOT
+import Chatbot from "./components/Chatbot";
 
 import Home from "./pages/Home";
 import About from "./pages/About";

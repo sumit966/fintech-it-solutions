@@ -40,13 +40,13 @@ return (
 
 {/* HERO */}
 
-<section className="max-w-7xl mx-auto px-6 py-20">
+<section className="max-w-7xl mx-auto px-6 py-20 gradient-section rounded-xl animate-fadeIn">
 
 <h1 className="text-5xl font-semibold mb-8">
 Enterprise Technology Services
 </h1>
 
-<p className="text-lg text-gray-600 max-w-3xl leading-relaxed">
+<p className="text-lg text-gray-100 max-w-3xl leading-relaxed">
 FINTECH IT SOLUTIONS helps enterprises modernize digital
 infrastructure, adopt cloud-native architectures, and deliver
 scalable platforms that power innovation and growth.
@@ -64,7 +64,7 @@ scalable platforms that power innovation and growth.
 <img
 src={industriesImg}
 alt="Industry expertise"
-className="w-full h-[420px] object-cover rounded-lg"
+className="w-full h-[420px] object-cover rounded-lg hover:scale-105 transition duration-300"
 />
 
 <div>
@@ -121,7 +121,7 @@ and performance.
 <img
 src={servicesImg}
 alt="Technology services"
-className="w-full h-[420px] object-cover rounded-lg"
+className="w-full h-[420px] object-cover rounded-lg hover:scale-105 transition duration-300"
 />
 
 </div>
@@ -145,10 +145,11 @@ Technology Capabilities
 
 <div
 key={i}
-className="border p-8 rounded-lg hover:shadow-xl hover:-translate-y-1 transition duration-300"
+className="service-card border p-8 rounded-lg hover:shadow-xl hover:-translate-y-2 transition duration-300 cursor-pointer card-hover animate-fadeIn"
+onClick={() => window.location.href="/contact"}
 >
 
-<h3 className="text-xl font-semibold mb-4">
+<h3 className="text-xl font-semibold mb-4 text-blue-600">
 {service.title}
 </h3>
 
@@ -176,7 +177,7 @@ className="border p-8 rounded-lg hover:shadow-xl hover:-translate-y-1 transition
 <img
 src={platformsImg}
 alt="Products and platforms"
-className="w-full h-[420px] object-cover rounded-lg"
+className="w-full h-[420px] object-cover rounded-lg hover:scale-105 transition duration-300"
 />
 
 <div>
@@ -216,7 +217,7 @@ digital platforms and future-ready technology ecosystems.
 
 <a
 href="/contact"
-className="inline-block mt-10 bg-white text-black px-8 py-3 font-medium rounded hover:bg-gray-200 transition"
+className="inline-block mt-10 bg-white text-black px-8 py-3 font-medium rounded hover:bg-gray-200 transition btn-animated"
 >
 Contact Our Experts
 </a>

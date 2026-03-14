@@ -55,7 +55,7 @@ export default function Contact() {
 
 {/* HERO */}
 
-<section className="bg-black text-white py-24">
+<section className="gradient-section py-24">
 
 <Container>
 
@@ -63,10 +63,19 @@ export default function Contact() {
 Contact Us
 </h1>
 
-<p className="mt-6 max-w-2xl text-gray-300">
+<p className="mt-6 max-w-2xl text-gray-200">
 Get in touch with FINTECH IT SOLUTIONS to discuss partnerships,
 enterprise technology solutions, or career opportunities.
 </p>
+
+{/* ADDED CALL BUTTON */}
+
+<a
+href="tel:+919876543210"
+className="inline-block mt-8 bg-white text-black px-6 py-3 rounded hover:scale-105 transition"
+>
+Call Our Team
+</a>
 
 </Container>
 
@@ -135,7 +144,7 @@ placeholder="Full Name"
 value={form.name}
 onChange={handleChange}
 required
-className="w-full border p-4"
+className="w-full border p-4 rounded"
 />
 
 <input
@@ -145,7 +154,7 @@ placeholder="Email Address"
 value={form.email}
 onChange={handleChange}
 required
-className="w-full border p-4"
+className="w-full border p-4 rounded"
 />
 
 <input
@@ -154,7 +163,7 @@ name="company"
 placeholder="Company (Optional)"
 value={form.company}
 onChange={handleChange}
-className="w-full border p-4"
+className="w-full border p-4 rounded"
 />
 
 <textarea
@@ -164,12 +173,12 @@ value={form.message}
 onChange={handleChange}
 required
 rows="5"
-className="w-full border p-4"
+className="w-full border p-4 rounded"
 />
 
 <button
 type="submit"
-className="bg-black text-white px-8 py-3"
+className="bg-black text-white px-8 py-3 hover:bg-gray-800 transition"
 disabled={loading}
 >
 
@@ -204,6 +213,7 @@ width="100%"
 height="100%"
 loading="lazy"
 allowFullScreen
+className="rounded-lg"
 src="https://maps.google.com/maps?q=pune%20india&t=&z=13&ie=UTF8&iwloc=&output=embed"
 />
 

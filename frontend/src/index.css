@@ -4,6 +4,10 @@
 
 /* GLOBAL STYLE */
 
+html{
+scroll-behavior:smooth;
+}
+
 body{
 background:#f9fafb;
 color:#111827;
@@ -71,4 +75,76 @@ background:#1d4ed8;
 .gradient-section{
 background:linear-gradient(135deg,#2563eb,#9333ea);
 color:white;
+}
+
+
+/* PAGE ANIMATION */
+
+@keyframes fadeIn{
+0%{opacity:0;transform:translateY(20px)}
+100%{opacity:1;transform:translateY(0)}
+}
+
+.animate-fadeIn{
+animation:fadeIn 0.8s ease forwards;
+}
+
+
+/* NEW SERVICE CARD EFFECT */
+
+.service-card{
+transition:all .35s ease;
+border-radius:12px;
+}
+
+.service-card:hover{
+transform:translateY(-8px);
+box-shadow:0 15px 40px rgba(0,0,0,0.15);
+background:white;
+}
+
+
+/* FLOATING CALL BUTTON */
+
+.call-btn{
+position:fixed;
+bottom:30px;
+right:30px;
+background:#2563eb;
+color:white;
+padding:14px 18px;
+border-radius:50px;
+font-weight:600;
+box-shadow:0 10px 25px rgba(0,0,0,0.25);
+z-index:999;
+transition:.3s;
+}
+
+.call-btn:hover{
+transform:scale(1.05);
+background:#1d4ed8;
+}
+
+
+/* NAVBAR GLASS EFFECT */
+
+.nav-glass{
+backdrop-filter: blur(8px);
+background:rgba(255,255,255,0.85);
+}
+
+
+/* MOBILE FIX */
+
+@media(max-width:768px){
+
+h1{
+font-size:32px;
+}
+
+section{
+padding-left:20px;
+padding-right:20px;
+}
+
 }
