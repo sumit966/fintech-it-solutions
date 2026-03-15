@@ -14,10 +14,22 @@ export default function Home() {
       {/* HERO */}
       <section className="relative h-[90vh] overflow-hidden">
 
+        {/* VIDEO BACKGROUND (NEW ADDED) */}
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src="/hero-tech.mp4" type="video/mp4" />
+        </video>
+
+        {/* FALLBACK IMAGE (YOUR ORIGINAL CODE KEPT) */}
         <img
           src={heroImage}
           alt="Enterprise Technology"
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover opacity-20"
         />
 
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/30"></div>
@@ -26,7 +38,7 @@ export default function Home() {
 
         <Container className="relative z-10 flex items-center h-full">
 
-          <div className="max-w-3xl text-white">
+          <div className="max-w-3xl text-white animate-fadeIn">
 
             <h1 className="text-5xl md:text-6xl font-semibold leading-tight">
               Engineering Intelligent Enterprise Transformation
@@ -200,10 +212,8 @@ export default function Home() {
       {/* WHY CHOOSE US */}
       <WhyChooseUs />
 
-
       {/* GLOBAL PRESENCE MAP */}
       <GlobalPresence />
-
 
       {/* INDIA OFFICE MAP */}
       <OfficeMap />
