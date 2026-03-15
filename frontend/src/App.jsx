@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Chatbot from "./components/Chatbot";
+import FloatingContact from "./components/FloatingContact"; // ✅ ADDED
 
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -18,6 +19,7 @@ import ProjectDetail from "./pages/ProjectDetail";
 import Newsroom from "./pages/Newsroom";
 import SearchResults from "./pages/SearchResults";
 import CEO from "./pages/CEO";
+import ServiceDetail from "./pages/ServiceDetail";
 
 import Login from "./pages/Login";
 import AdminDashboard from "./pages/AdminDashboard";
@@ -50,6 +52,7 @@ export default function App() {
         <Route path="/newsroom" element={<Newsroom />} />
         <Route path="/search" element={<SearchResults />} />
         <Route path="/ceo" element={<CEO />} />
+        <Route path="/services/:slug" element={<ServiceDetail />} />
 
         {/* ADMIN */}
         <Route path="/login" element={<Login />} />
@@ -65,6 +68,9 @@ export default function App() {
 
       {/* AI CHATBOT */}
       <Chatbot />
+
+      {/* FLOATING CONTACT BUTTON (NEW ADDED) */}
+      <FloatingContact />
 
     </BrowserRouter>
   );

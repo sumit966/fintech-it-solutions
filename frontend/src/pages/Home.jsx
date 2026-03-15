@@ -6,6 +6,7 @@ import FadeInSection from "../components/FadeInSection";
 import OfficeMap from "../components/OfficeMap";
 import WhyChooseUs from "../components/WhyChooseUs";
 import GlobalPresence from "../components/GlobalPresence";
+import CaseStudies from "../components/CaseStudies";
 
 export default function Home() {
   return (
@@ -14,27 +15,53 @@ export default function Home() {
       {/* HERO */}
       <section className="relative h-[90vh] overflow-hidden">
 
-        {/* VIDEO BACKGROUND (NEW ADDED) */}
+        {/* VIDEO BACKGROUND */}
         <video
           autoPlay
           muted
           loop
           playsInline
+          preload="auto"
           className="absolute inset-0 w-full h-full object-cover"
         >
           <source src="/hero-tech.mp4" type="video/mp4" />
         </video>
 
-        {/* FALLBACK IMAGE (YOUR ORIGINAL CODE KEPT) */}
+        {/* MOBILE FALLBACK IMAGE */}
+        <div className="absolute inset-0 md:hidden">
+          <img
+            src={heroImage}
+            alt="Enterprise Technology"
+            className="w-full h-full object-cover"
+          />
+        </div>
+
+        {/* YOUR ORIGINAL IMAGE */}
         <img
           src={heroImage}
           alt="Enterprise Technology"
-          className="absolute inset-0 w-full h-full object-cover opacity-20"
+          className="absolute inset-0 w-full h-full object-cover opacity-20 hidden md:block"
         />
 
+        {/* DARK OVERLAY */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/30"></div>
 
+        {/* HERO GLOW */}
         <div className="absolute inset-0 hero-glow"></div>
+
+        {/* HERO GRADIENT LIGHT (ADDED FROM CSS) */}
+        <div className="hero-gradient-light"></div>
+
+        {/* FLOATING TECH PARTICLES */}
+        <div className="absolute inset-0 pointer-events-none opacity-30">
+
+          <div className="absolute w-2 h-2 bg-white rounded-full particle top-[20%] left-[30%]"></div>
+
+          <div className="absolute w-2 h-2 bg-white rounded-full particle top-[60%] left-[50%]"></div>
+
+          <div className="absolute w-2 h-2 bg-white rounded-full particle top-[40%] left-[70%]"></div>
+
+        </div>
 
         <Container className="relative z-10 flex items-center h-full">
 
@@ -55,14 +82,14 @@ export default function Home() {
 
               <Link
                 to="/services"
-                className="bg-white text-black px-8 py-3 hover:bg-gray-200 transition hover:scale-105"
+                className="bg-white text-black px-8 py-3 hover:bg-gray-200 transition hover:scale-110 shadow-lg btn-animated"
               >
                 Explore Services
               </Link>
 
               <Link
                 to="/contact"
-                className="border border-white px-8 py-3 hover:bg-white hover:text-black transition hover:scale-105"
+                className="border border-white px-8 py-3 hover:bg-white hover:text-black transition hover:scale-110 btn-animated"
               >
                 Contact Us
               </Link>
@@ -72,6 +99,11 @@ export default function Home() {
           </div>
 
         </Container>
+
+        {/* SCROLL INDICATOR */}
+        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
+          ↓
+        </div>
 
       </section>
 
@@ -209,13 +241,19 @@ export default function Home() {
       </FadeInSection>
 
 
+      {/* CASE STUDIES */}
+      <FadeInSection>
+        <CaseStudies />
+      </FadeInSection>
+
+
       {/* WHY CHOOSE US */}
       <WhyChooseUs />
 
-      {/* GLOBAL PRESENCE MAP */}
+      {/* GLOBAL PRESENCE */}
       <GlobalPresence />
 
-      {/* INDIA OFFICE MAP */}
+      {/* INDIA MAP */}
       <OfficeMap />
 
 
@@ -238,7 +276,7 @@ export default function Home() {
 
             <Link
               to="/contact"
-              className="mt-10 inline-block bg-white text-black px-8 py-3 hover:bg-gray-200 transition"
+              className="mt-10 inline-block bg-white text-black px-8 py-3 hover:bg-gray-200 transition hover:scale-105 btn-animated"
             >
               Get in Touch
             </Link>

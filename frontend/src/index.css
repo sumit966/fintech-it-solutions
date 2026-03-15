@@ -95,6 +95,8 @@ animation:fadeIn 0.8s ease forwards;
 .service-card{
 transition:all .35s ease;
 border-radius:12px;
+position:relative;
+overflow:hidden;
 }
 
 .service-card:hover{
@@ -147,4 +149,144 @@ padding-left:20px;
 padding-right:20px;
 }
 
+}
+
+
+/* ============================= */
+/* NEW MODERN UI EFFECTS (ADDED) */
+/* ============================= */
+
+
+/* NAVBAR LINK HOVER */
+
+nav a{
+transition:.25s;
+}
+
+nav a:hover{
+transform:translateY(-2px);
+}
+
+
+/* BUTTON ANIMATION */
+
+.btn-animated{
+transition:all .3s ease;
+}
+
+.btn-animated:hover{
+transform:translateY(-2px) scale(1.05);
+box-shadow:0 12px 25px rgba(0,0,0,0.2);
+}
+
+
+/* IMAGE HOVER ZOOM */
+
+img{
+transition:transform .4s ease;
+}
+
+img:hover{
+transform:scale(1.03);
+}
+
+
+/* SERVICE CARD GLOW EFFECT */
+
+.service-card::before{
+content:"";
+position:absolute;
+inset:0;
+background:linear-gradient(
+120deg,
+transparent,
+rgba(37,99,235,0.15),
+transparent
+);
+opacity:0;
+transition:.4s;
+border-radius:12px;
+}
+
+.service-card:hover::before{
+opacity:1;
+}
+
+
+/* FLOATING TECH PARTICLES */
+
+@keyframes floatParticle{
+0%{transform:translateY(0)}
+50%{transform:translateY(-12px)}
+100%{transform:translateY(0)}
+}
+
+.particle{
+animation:floatParticle 6s ease-in-out infinite;
+}
+
+
+/* HERO GRADIENT LIGHT */
+
+.hero-gradient-light{
+position:absolute;
+inset:0;
+background:radial-gradient(
+circle at center,
+rgba(59,130,246,0.25),
+transparent 60%
+);
+pointer-events:none;
+}
+
+
+/* ============================= */
+/* MEGA MENU (NEW ADDED) */
+/* ============================= */
+
+.mega-menu{
+position:absolute;
+top:100%;
+left:50%;
+transform:translateX(-50%);
+width:620px;
+background:white;
+border-radius:12px;
+box-shadow:0 20px 40px rgba(0,0,0,0.15);
+padding:25px;
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:18px;
+opacity:0;
+visibility:hidden;
+transition:.3s;
+z-index:100;
+}
+
+.group:hover .mega-menu{
+opacity:1;
+visibility:visible;
+transform:translateX(-50%) translateY(5px);
+}
+
+.mega-item{
+padding:12px;
+border-radius:8px;
+transition:.25s;
+}
+
+.mega-item:hover{
+background:#f3f4f6;
+transform:translateX(3px);
+}
+
+.mega-title{
+font-weight:600;
+color:#111827;
+}
+
+.mega-desc{
+font-size:13px;
+color:#6b7280;
+margin-top:4px;
 }

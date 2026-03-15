@@ -8,27 +8,33 @@ export default function Services() {
 const services = [
 {
 title:"Cloud Engineering",
-desc:"Design and deploy scalable cloud infrastructure using AWS, Azure, and Google Cloud platforms."
+desc:"Design and deploy scalable cloud infrastructure using AWS, Azure, and Google Cloud platforms.",
+icon:"☁️"
 },
 {
 title:"AI & Machine Learning",
-desc:"Develop intelligent applications, predictive analytics systems, and automation using AI technologies."
+desc:"Develop intelligent applications, predictive analytics systems, and automation using AI technologies.",
+icon:"🤖"
 },
 {
 title:"DevOps & Automation",
-desc:"Accelerate software delivery through CI/CD pipelines, infrastructure automation, and container platforms."
+desc:"Accelerate software delivery through CI/CD pipelines, infrastructure automation, and container platforms.",
+icon:"⚙️"
 },
 {
 title:"Cybersecurity",
-desc:"Protect enterprise infrastructure with modern security frameworks and threat monitoring solutions."
+desc:"Protect enterprise infrastructure with modern security frameworks and threat monitoring solutions.",
+icon:"🔐"
 },
 {
 title:"Application Development",
-desc:"Build secure and scalable web and mobile applications using modern frameworks and architectures."
+desc:"Build secure and scalable web and mobile applications using modern frameworks and architectures.",
+icon:"💻"
 },
 {
 title:"Data Engineering",
-desc:"Design enterprise data pipelines, analytics platforms, and business intelligence solutions."
+desc:"Design enterprise data pipelines, analytics platforms, and business intelligence solutions.",
+icon:"📊"
 }
 ];
 
@@ -36,11 +42,20 @@ return (
 
 <PageTransition>
 
-<main className="pt-28 bg-white">
+<main className="pt-28 bg-white relative">
+
+{/* BACKGROUND TECH PARTICLES (ADDED) */}
+
+<div className="absolute inset-0 pointer-events-none opacity-10">
+<div className="absolute w-3 h-3 bg-blue-400 rounded-full animate-ping top-[20%] left-[10%]"></div>
+<div className="absolute w-3 h-3 bg-purple-400 rounded-full animate-ping top-[60%] left-[70%]"></div>
+<div className="absolute w-3 h-3 bg-indigo-400 rounded-full animate-ping top-[40%] left-[40%]"></div>
+</div>
+
 
 {/* HERO */}
 
-<section className="max-w-7xl mx-auto px-6 py-20 gradient-section rounded-xl animate-fadeIn">
+<section className="max-w-7xl mx-auto px-6 py-20 gradient-section rounded-xl animate-fadeIn relative">
 
 <h1 className="text-5xl font-semibold mb-8">
 Enterprise Technology Services
@@ -145,9 +160,15 @@ Technology Capabilities
 
 <div
 key={i}
-className="service-card border p-8 rounded-lg hover:shadow-xl hover:-translate-y-2 transition duration-300 cursor-pointer card-hover animate-fadeIn"
+className="service-card border p-8 rounded-lg hover:shadow-2xl hover:-translate-y-2 transition duration-300 cursor-pointer card-hover animate-fadeIn bg-white relative group"
 onClick={() => window.location.href="/contact"}
 >
+
+{/* ICON (ADDED) */}
+
+<div className="text-4xl mb-4 group-hover:scale-110 transition">
+{service.icon}
+</div>
 
 <h3 className="text-xl font-semibold mb-4 text-blue-600">
 {service.title}
@@ -156,6 +177,10 @@ onClick={() => window.location.href="/contact"}
 <p className="text-gray-600">
 {service.desc}
 </p>
+
+{/* HOVER GLOW EFFECT (ADDED) */}
+
+<div className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 transition pointer-events-none bg-gradient-to-br from-blue-50 to-purple-50"></div>
 
 </div>
 
@@ -217,7 +242,7 @@ digital platforms and future-ready technology ecosystems.
 
 <a
 href="/contact"
-className="inline-block mt-10 bg-white text-black px-8 py-3 font-medium rounded hover:bg-gray-200 transition btn-animated"
+className="inline-block mt-10 bg-white text-black px-8 py-3 font-medium rounded hover:bg-gray-200 transition btn-animated hover:scale-105"
 >
 Contact Our Experts
 </a>
