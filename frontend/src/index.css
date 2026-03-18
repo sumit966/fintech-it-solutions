@@ -1,292 +1,497 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Great+Vibes&family=Sacramento&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* GLOBAL STYLE */
-
-html{
-scroll-behavior:smooth;
-}
-
 body{
-background:#f9fafb;
-color:#111827;
-font-family:Inter, sans-serif;
-}
-
-
-/* HERO GLOW EFFECT */
-
-.hero-glow{
-background: radial-gradient(circle at center,
-rgba(59,130,246,0.25),
-transparent 70%);
-animation: heroGlow 6s ease-in-out infinite alternate;
-}
-
-@keyframes heroGlow{
-0%{opacity:.4}
-100%{opacity:.9}
-}
-
-
-/* CLIENT LOGO SCROLL */
-
-@keyframes scroll{
-0%{transform:translateX(0)}
-100%{transform:translateX(-50%)}
-}
-
-.animate-scroll{
-display:flex;
-animation:scroll 25s linear infinite;
-}
-
-
-/* CARD HOVER EFFECT */
-
-.card-hover{
-transition:all .3s ease;
-}
-
-.card-hover:hover{
-transform:translateY(-6px);
-box-shadow:0 10px 30px rgba(0,0,0,0.12);
-}
-
-
-/* BUTTON STYLE */
-
-.btn-primary{
-background:#2563eb;
+background:#0b0f14;
 color:white;
-padding:10px 20px;
-border-radius:6px;
-transition:.3s;
+font-family:Inter,system-ui,sans-serif;
 }
 
-.btn-primary:hover{
-background:#1d4ed8;
-}
+/* HEADER */
 
-
-/* GRADIENT SECTION */
-
-.gradient-section{
-background:linear-gradient(135deg,#2563eb,#9333ea);
-color:white;
-}
-
-
-/* PAGE ANIMATION */
-
-@keyframes fadeIn{
-0%{opacity:0;transform:translateY(20px)}
-100%{opacity:1;transform:translateY(0)}
-}
-
-.animate-fadeIn{
-animation:fadeIn 0.8s ease forwards;
-}
-
-
-/* NEW SERVICE CARD EFFECT */
-
-.service-card{
-transition:all .35s ease;
-border-radius:12px;
-position:relative;
-overflow:hidden;
-}
-
-.service-card:hover{
-transform:translateY(-8px);
-box-shadow:0 15px 40px rgba(0,0,0,0.15);
-background:white;
-}
-
-
-/* FLOATING CALL BUTTON */
-
-.call-btn{
+.main-header{
 position:fixed;
-bottom:30px;
-right:30px;
-background:#2563eb;
-color:white;
-padding:14px 18px;
+top:0;
+width:100%;
+background:#0b0f14;
+border-bottom:1px solid rgba(255,255,255,0.1);
+z-index:1000;
+}
+
+.nav-container{
+max-width:1400px;
+margin:auto;
+display:flex;
+align-items:center;
+justify-content:space-between;
+height:80px;
+padding:0 60px;
+}
+
+/* CURSIVE/SCRIPT STYLE LOGO */
+
+.logo {
+text-decoration:none;
+display:flex;
+align-items:center;
+transition:all 0.3s ease;
+}
+
+.logo:hover {
+transform:scale(1.02);
+}
+
+.cursive-logo {
+display:flex;
+align-items:baseline;
+gap:8px;
+background:linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(59,130,246,0.05) 100%);
+padding:8px 20px;
 border-radius:50px;
-font-weight:600;
-box-shadow:0 10px 25px rgba(0,0,0,0.25);
-z-index:999;
-transition:.3s;
+border:1px solid rgba(255,255,255,0.1);
+-webkit-backdrop-filter:blur(5px);
+backdrop-filter:blur(5px);
 }
 
-.call-btn:hover{
-transform:scale(1.05);
-background:#1d4ed8;
-}
-
-
-/* NAVBAR GLASS EFFECT */
-
-.nav-glass{
-backdrop-filter: blur(8px);
-background:rgba(255,255,255,0.85);
-}
-
-
-/* MOBILE FIX */
-
-@media(max-width:768px){
-
-h1{
+.cursive-fintech {
+font-family: 'Great Vibes', cursive;
 font-size:32px;
+font-weight:400;
+background:linear-gradient(135deg, #ffffff, #60a5fa);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+background-clip:text;
+letter-spacing:1px;
+text-shadow:2px 2px 4px rgba(0,0,0,0.2);
 }
 
-section{
-padding-left:20px;
-padding-right:20px;
+.cursive-it {
+font-family: 'Dancing Script', cursive;
+font-size:28px;
+font-weight:700;
+background:linear-gradient(135deg, #3b82f6, #a855f7);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+background-clip:text;
+margin:0 5px;
+transform:rotate(-2deg);
+display:inline-block;
 }
 
+.cursive-solutions {
+font-family: 'Sacramento', cursive;
+font-size:26px;
+font-weight:400;
+color:#94a3b8;
+letter-spacing:1px;
 }
 
-
-/* ============================= */
-/* NEW MODERN UI EFFECTS (ADDED) */
-/* ============================= */
-
-
-/* NAVBAR LINK HOVER */
-
-nav a{
-transition:.25s;
-}
-
-nav a:hover{
-transform:translateY(-2px);
-}
-
-
-/* BUTTON ANIMATION */
-
-.btn-animated{
-transition:all .3s ease;
-}
-
-.btn-animated:hover{
-transform:translateY(-2px) scale(1.05);
-box-shadow:0 12px 25px rgba(0,0,0,0.2);
-}
-
-
-/* IMAGE HOVER ZOOM */
-
-img{
-transition:transform .4s ease;
-}
-
-img:hover{
-transform:scale(1.03);
-}
-
-
-/* SERVICE CARD GLOW EFFECT */
-
-.service-card::before{
-content:"";
+/* Elegant underline effect for cursive logo */
+.cursive-logo::after {
+content:'';
 position:absolute;
-inset:0;
-background:linear-gradient(
-120deg,
-transparent,
-rgba(37,99,235,0.15),
-transparent
-);
-opacity:0;
-transition:.4s;
-border-radius:12px;
+bottom:5px;
+left:50%;
+transform:translateX(-50%);
+width:0;
+height:1px;
+background:linear-gradient(90deg, transparent, #60a5fa, transparent);
+transition:width 0.3s ease;
 }
 
-.service-card:hover::before{
-opacity:1;
+.logo:hover .cursive-logo::after {
+width:80%;
 }
 
+/* NAV - IMPROVED ALIGNMENT */
 
-/* FLOATING TECH PARTICLES */
-
-@keyframes floatParticle{
-0%{transform:translateY(0)}
-50%{transform:translateY(-12px)}
-100%{transform:translateY(0)}
+.nav-menu{
+display:flex;
+gap:40px;
+align-items:center;
+font-size:15px;
+font-weight:500;
 }
 
-.particle{
-animation:floatParticle 6s ease-in-out infinite;
+.menu-item{
+position:relative;
 }
 
-
-/* HERO GRADIENT LIGHT */
-
-.hero-gradient-light{
-position:absolute;
-inset:0;
-background:radial-gradient(
-circle at center,
-rgba(59,130,246,0.25),
-transparent 60%
-);
-pointer-events:none;
+.menu-link{
+cursor:pointer;
+color:#e2e8f0;
+padding:8px 0;
+transition:color 0.2s ease;
+font-weight:500;
+display:flex;
+align-items:center;
+gap:4px;
 }
 
+.menu-link:hover{
+color:white;
+}
 
-/* ============================= */
-/* MEGA MENU (NEW ADDED) */
-/* ============================= */
+.dropdown-arrow{
+font-size:12px;
+color:#94a3b8;
+transition:transform 0.2s ease;
+}
+
+.menu-item:hover .dropdown-arrow{
+transform:rotate(180deg);
+color:#60a5fa;
+}
+
+/* Active menu styles */
+.menu-link.active {
+color: #60a5fa;
+font-weight: 600;
+}
+
+.menu-link.active .dropdown-arrow {
+color: #60a5fa;
+transform: rotate(180deg);
+}
+
+/* MEGA MENU - IMPROVED DESIGN */
 
 .mega-menu{
 position:absolute;
-top:100%;
+top:70px;
 left:50%;
 transform:translateX(-50%);
-width:620px;
-background:white;
-border-radius:12px;
-box-shadow:0 20px 40px rgba(0,0,0,0.15);
-padding:25px;
+width:1000px;
+background:#0f172a;
+border:1px solid rgba(255,255,255,0.1);
+border-radius:16px;
+padding:40px;
 display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:18px;
+grid-template-columns:1fr 1fr;
+gap:50px;
+box-shadow:0 30px 60px rgba(0,0,0,0.5);
+-webkit-backdrop-filter:blur(10px);
+backdrop-filter:blur(10px);
+animation: fadeIn 0.3s ease;
+z-index:1000;
+}
+
+/* Ensure first menu item mega menu aligns properly */
+.menu-item:first-child .mega-menu {
+left: 0;
+transform: none;
+}
+
+@keyframes fadeIn {
+from {
 opacity:0;
-visibility:hidden;
-transition:.3s;
-z-index:100;
+transform:translateY(-10px);
 }
-
-.group:hover .mega-menu{
+to {
 opacity:1;
-visibility:visible;
-transform:translateX(-50%) translateY(5px);
+transform:translateY(0);
+}
 }
 
-.mega-item{
-padding:12px;
-border-radius:8px;
-transition:.25s;
-}
-
-.mega-item:hover{
-background:#f3f4f6;
-transform:translateX(3px);
-}
-
-.mega-title{
+.mega-left h2{
+font-size:32px;
+margin-bottom:15px;
 font-weight:600;
-color:#111827;
+background:linear-gradient(135deg, #ffffff, #60a5fa);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+background-clip:text;
+line-height:1.2;
 }
 
-.mega-desc{
-font-size:13px;
-color:#6b7280;
-margin-top:4px;
+.mega-left p{
+color:#94a3b8;
+line-height:1.6;
+font-size:16px;
+}
+
+.mega-link{
+display:inline-block;
+margin-top:25px;
+color:#60a5fa;
+font-weight:500;
+padding:8px 0;
+border-bottom:2px solid transparent;
+transition:all 0.2s ease;
+}
+
+.mega-link:hover{
+border-bottom-color:#60a5fa;
+transform:translateX(5px);
+}
+
+.mega-right{
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+.mega-right a{
+border-bottom:1px solid rgba(255,255,255,0.1);
+padding:12px 0;
+color:#e2e8f0;
+font-weight:500;
+transition:all 0.2s ease;
+}
+
+.mega-right a:hover{
+color:white;
+padding-left:10px;
+border-bottom-color:#60a5fa;
+}
+
+/* DARK SECTION FIX */
+
+.bg-white{
+background:#0f1720 !important;
+color:white !important;
+}
+
+.bg-gray-100{
+background:#0f1720 !important;
+}
+
+/* CLICKABLE IMAGE CARDS */
+
+.cards-section{
+padding:120px 0;
+text-align:center;
+}
+
+.cards-section h2{
+font-size:36px;
+margin-bottom:60px;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+max-width:1200px;
+margin:auto;
+}
+
+.card{
+background:#1c1f24;
+transition:.3s;
+border-radius:8px;
+overflow:hidden;
+}
+
+.card img{
+width:100%;
+height:260px;
+object-fit:cover;
+}
+
+.card-content{
+padding:25px;
+text-align:left;
+}
+
+.card-content h3{
+font-size:24px;
+margin-bottom:10px;
+}
+
+.card-content p{
+color:#9ca3af;
+}
+
+.card-content span{
+display:inline-block;
+margin-top:15px;
+color:#60a5fa;
+}
+
+.card:hover{
+transform:translateY(-6px);
+}
+
+/* CONTACT FORM FIX */
+
+input,
+textarea{
+color:white;
+background:#0b0f14;
+border:1px solid rgba(255,255,255,0.2);
+border-radius:8px;
+padding:12px;
+width:100%;
+transition:border-color 0.2s ease;
+}
+
+input:focus,
+textarea:focus{
+outline:none;
+border-color:#2469bc;
+}
+
+/* FIXED TEXT COLORS FOR SECTIONS */
+
+/* Service Cards */
+.service-card {
+  background: #1a1f26;
+  border-radius: 12px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+  border:1px solid rgba(255,255,255,0.1);
+}
+
+.service-card:hover {
+  transform:translateY(-5px);
+  border-color:#2469bc;
+  box-shadow:0 20px 30px -10px rgba(36,105,188,0.2);
+}
+
+.service-card h3 {
+  color: #ffffff !important;
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.service-card p {
+  color: #d1d5db !important;
+  line-height: 1.6;
+}
+
+.service-card span {
+  color: #60a5fa !important;
+}
+
+/* Industry Cards */
+.bg-gray-50 .service-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+}
+
+.bg-gray-50 .service-card h3 {
+  color: #111827 !important;
+}
+
+.bg-gray-50 .service-card p {
+  color: #6b7280 !important;
+}
+
+/* Technology Stack */
+.tech-card {
+  background: #1a1f26;
+  padding: 1.5rem 1rem;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  border: 1px solid rgba(255,255,255,0.1);
+  transition:all 0.3s ease;
+}
+
+.tech-card:hover {
+  border-color:#2469bc;
+  transform:scale(1.05);
+}
+
+.tech-card img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  transition:transform 0.3s ease;
+}
+
+.tech-card:hover img {
+  transform:scale(1.1);
+}
+
+.tech-card span {
+  color: #ffffff;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+/* Cards Section Fix */
+.cards-section {
+  background: #0b0f14;
+}
+
+.cards-section h2 {
+  color: #ffffff !important;
+}
+
+.card-content h3 {
+  color: #ffffff !important;
+}
+
+.card-content p {
+  color: #9ca3af !important;
+}
+
+.card-content span {
+  color: #60a5fa !important;
+}
+
+/* Map Section Fix */
+.bg-gray-50 h2 {
+  color: #111827 !important;
+}
+
+/* Stats Section Fix - if needed */
+.stats-section {
+  background: #0b0f14;
+  color: #ffffff;
+  padding:60px 0;
+}
+
+/* Global Presence Fix */
+.global-presence {
+  background: #0b0f14;
+  color: #ffffff;
+  padding:60px 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+.nav-container {
+padding:0 20px;
+height:70px;
+}
+
+.nav-menu {
+gap:20px;
+font-size:14px;
+}
+
+.mega-menu {
+width:90vw;
+left:50% !important;
+transform:translateX(-50%) !important;
+padding:20px;
+gap:20px;
+}
+
+.cursive-fintech {
+font-size:26px;
+}
+.cursive-it {
+font-size:22px;
+}
+.cursive-solutions {
+font-size:20px;
+}
+.cursive-logo {
+padding:5px 15px;
+gap:5px;
+}
+}
+
+/* Smooth transitions */
+.mega-menu a, .mega-menu button {
+transition: all 0.2s ease;
 }

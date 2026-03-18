@@ -1,259 +1,316 @@
-import industriesImg from "../assets/home/industries.jpg";
-import servicesImg from "../assets/home/services.jpg";
-import platformsImg from "../assets/home/platforms.jpg";
+import { Link } from "react-router-dom";
+import { 
+  ArrowRight, 
+  CheckCircle, 
+  Code,
+  Globe,
+  Smartphone,
+  ShoppingCart,
+  GitBranch,
+  Users,
+  Rocket,
+  Zap,
+  Settings,
+  Database,
+  Shield,
+  BarChart,
+  Layers,
+  Target,
+  HeartHandshake,
+  Lightbulb,
+  Sparkles
+} from "lucide-react";
 import PageTransition from "../components/PageTransition";
 
 export default function Services() {
-
-const services = [
-{
-title:"Cloud Engineering",
-desc:"Design and deploy scalable cloud infrastructure using AWS, Azure, and Google Cloud platforms.",
-icon:"☁️"
-},
-{
-title:"AI & Machine Learning",
-desc:"Develop intelligent applications, predictive analytics systems, and automation using AI technologies.",
-icon:"🤖"
-},
-{
-title:"DevOps & Automation",
-desc:"Accelerate software delivery through CI/CD pipelines, infrastructure automation, and container platforms.",
-icon:"⚙️"
-},
-{
-title:"Cybersecurity",
-desc:"Protect enterprise infrastructure with modern security frameworks and threat monitoring solutions.",
-icon:"🔐"
-},
-{
-title:"Application Development",
-desc:"Build secure and scalable web and mobile applications using modern frameworks and architectures.",
-icon:"💻"
-},
-{
-title:"Data Engineering",
-desc:"Design enterprise data pipelines, analytics platforms, and business intelligence solutions.",
-icon:"📊"
-}
-];
-
-return (
-
-<PageTransition>
-
-<main className="pt-28 bg-white relative">
-
-{/* BACKGROUND TECH PARTICLES (ADDED) */}
-
-<div className="absolute inset-0 pointer-events-none opacity-10">
-<div className="absolute w-3 h-3 bg-blue-400 rounded-full animate-ping top-[20%] left-[10%]"></div>
-<div className="absolute w-3 h-3 bg-purple-400 rounded-full animate-ping top-[60%] left-[70%]"></div>
-<div className="absolute w-3 h-3 bg-indigo-400 rounded-full animate-ping top-[40%] left-[40%]"></div>
-</div>
-
-
-{/* HERO */}
-
-<section className="max-w-7xl mx-auto px-6 py-20 gradient-section rounded-xl animate-fadeIn relative">
-
-<h1 className="text-5xl font-semibold mb-8">
-Enterprise Technology Services
-</h1>
-
-<p className="text-lg text-gray-100 max-w-3xl leading-relaxed">
-FINTECH IT SOLUTIONS helps enterprises modernize digital
-infrastructure, adopt cloud-native architectures, and deliver
-scalable platforms that power innovation and growth.
-</p>
-
-</section>
-
-
-{/* INDUSTRIES */}
-
-<section className="py-24 bg-gray-100">
-
-<div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
-
-<img
-src={industriesImg}
-alt="Industry expertise"
-className="w-full h-[420px] object-cover rounded-lg hover:scale-105 transition duration-300"
-/>
-
-<div>
-
-<h2 className="text-4xl font-semibold mb-6">
-Industry Expertise
-</h2>
-
-<p className="text-gray-600 leading-relaxed mb-6">
-Our teams collaborate with global enterprises across banking,
-fintech, healthcare, retail, and manufacturing sectors to
-modernize digital ecosystems and unlock new business value.
-</p>
-
-<p className="text-gray-600 leading-relaxed">
-By combining deep domain expertise with cutting-edge
-technologies, we deliver industry-aligned digital
-transformation strategies.
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-
-{/* CORE SERVICES */}
-
-<section className="py-24">
-
-<div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
-
-<div>
-
-<h2 className="text-4xl font-semibold mb-6">
-Core Services
-</h2>
-
-<p className="text-gray-600 leading-relaxed mb-6">
-Our service portfolio spans application modernization,
-enterprise cloud migration, cybersecurity engineering,
-DevOps automation, AI and data analytics.
-</p>
-
-<p className="text-gray-600 leading-relaxed">
-We design scalable digital systems that support mission-critical
-enterprise workloads while ensuring security, resilience,
-and performance.
-</p>
-
-</div>
-
-<img
-src={servicesImg}
-alt="Technology services"
-className="w-full h-[420px] object-cover rounded-lg hover:scale-105 transition duration-300"
-/>
-
-</div>
-
-</section>
-
-
-{/* SERVICES GRID */}
-
-<section className="pb-24">
-
-<div className="max-w-7xl mx-auto px-6">
-
-<h2 className="text-4xl font-semibold mb-16 text-center">
-Technology Capabilities
-</h2>
-
-<div className="grid md:grid-cols-3 gap-10">
-
-{services.map((service,i)=>(
-
-<div
-key={i}
-className="service-card border p-8 rounded-lg hover:shadow-2xl hover:-translate-y-2 transition duration-300 cursor-pointer card-hover animate-fadeIn bg-white relative group"
-onClick={() => window.location.href="/contact"}
->
-
-{/* ICON (ADDED) */}
-
-<div className="text-4xl mb-4 group-hover:scale-110 transition">
-{service.icon}
-</div>
-
-<h3 className="text-xl font-semibold mb-4 text-blue-600">
-{service.title}
-</h3>
-
-<p className="text-gray-600">
-{service.desc}
-</p>
-
-{/* HOVER GLOW EFFECT (ADDED) */}
-
-<div className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 transition pointer-events-none bg-gradient-to-br from-blue-50 to-purple-50"></div>
-
-</div>
-
-))}
-
-</div>
-
-</div>
-
-</section>
-
-
-{/* PRODUCTS */}
-
-<section className="py-24 bg-gray-100">
-
-<div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
-
-<img
-src={platformsImg}
-alt="Products and platforms"
-className="w-full h-[420px] object-cover rounded-lg hover:scale-105 transition duration-300"
-/>
-
-<div>
-
-<h2 className="text-4xl font-semibold mb-6">
-Products & Platforms
-</h2>
-
-<p className="text-gray-600 leading-relaxed">
-Our engineering teams build enterprise platforms,
-automation systems, SaaS products and internal tools
-that enable organizations to accelerate innovation and
-improve operational efficiency.
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-
-{/* CTA */}
-
-<section className="bg-black text-white py-24">
-
-<div className="max-w-6xl mx-auto px-6 text-center">
-
-<h2 className="text-4xl font-semibold mb-6">
-Transform Your Enterprise Technology Landscape
-</h2>
-
-<p className="text-gray-300 max-w-2xl mx-auto">
-Partner with FINTECH IT SOLUTIONS to design scalable
-digital platforms and future-ready technology ecosystems.
-</p>
-
-<a
-href="/contact"
-className="inline-block mt-10 bg-white text-black px-8 py-3 font-medium rounded hover:bg-gray-200 transition btn-animated hover:scale-105"
->
-Contact Our Experts
-</a>
-
-</div>
-
-</section>
-
-</main>
-
-</PageTransition>
-
-);
+  const services = [
+    {
+      title: "Custom Software Development",
+      shortDesc: "Tailored business applications built for your unique needs",
+      icon: Code,
+      slug: "custom-software",
+      color: "from-blue-500 to-cyan-500",
+      features: [
+        "Business automation tools",
+        "Internal dashboards",
+        "Admin panels",
+        "Workflow management"
+      ]
+    },
+    {
+      title: "Website & Web Applications",
+      shortDesc: "Modern, responsive websites and powerful web applications",
+      icon: Globe,
+      slug: "web-development",
+      color: "from-purple-500 to-pink-500",
+      features: [
+        "Startup landing pages",
+        "SaaS platforms",
+        "Member portals",
+        "Content management"
+      ]
+    },
+    {
+      title: "MVP Development",
+      shortDesc: "Rapid prototyping to validate your idea with real users",
+      icon: Rocket,
+      slug: "mvp-development",
+      color: "from-orange-500 to-red-500",
+      features: [
+        "Rapid prototyping",
+        "Core feature focus",
+        "Investor demo ready",
+        "Iterative development"
+      ]
+    },
+    {
+      title: "Mobile App Development",
+      shortDesc: "Native and cross-platform apps for iOS and Android",
+      icon: Smartphone,
+      slug: "mobile",
+      color: "from-green-500 to-emerald-500",
+      features: [
+        "iOS & Android apps",
+        "Cross-platform solutions",
+        "Mobile-first design",
+        "Push notifications"
+      ]
+    },
+    {
+      title: "API Development & Integration",
+      shortDesc: "Connect your tools and services with custom APIs",
+      icon: GitBranch,
+      slug: "api",
+      color: "from-yellow-500 to-amber-500",
+      features: [
+        "Payment gateways",
+        "Third-party services",
+        "Custom APIs",
+        "Data synchronization"
+      ]
+    },
+    {
+      title: "CRM Development",
+      shortDesc: "Custom systems to manage leads and customer relationships",
+      icon: Users,
+      slug: "crm",
+      color: "from-indigo-500 to-blue-500",
+      features: [
+        "Lead management",
+        "Customer tracking",
+        "Sales pipelines",
+        "Task automation"
+      ]
+    }
+  ];
+
+  const whyChooseUs = [
+    {
+      icon: Lightbulb,
+      title: "Fresh Perspective",
+      desc: "No legacy thinking, just modern solutions built for today's challenges."
+    },
+    {
+      icon: Zap,
+      title: "Fast Delivery",
+      desc: "MVP in weeks, not months. Launch and iterate quickly."
+    },
+    {
+      icon: HeartHandshake,
+      title: "True Partnership",
+      desc: "We're invested in your success, not just the project."
+    },
+    {
+      icon: Sparkles,
+      title: "Modern Tech Stack",
+      desc: "We use the latest tools and frameworks for future-ready solutions."
+    }
+  ];
+
+  const process = [
+    {
+      step: "Discovery",
+      desc: "We learn about your idea, goals, and requirements",
+      icon: Target
+    },
+    {
+      step: "Design",
+      desc: "We create beautiful, user-friendly designs",
+      icon: Layers
+    },
+    {
+      step: "Build",
+      desc: "We develop your solution using modern technologies",
+      icon: Code
+    },
+    {
+      step: "Launch",
+      desc: "We deploy and ensure everything works perfectly",
+      icon: Rocket
+    },
+    {
+      step: "Support",
+      desc: "We're here to help long after launch",
+      icon: HeartHandshake
+    }
+  ];
+
+  return (
+    <PageTransition>
+      <main className="pt-24 bg-white">
+        {/* HERO SECTION */}
+        <section className="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-24">
+          <div className="max-w-7xl mx-auto px-6 text-center">
+            <h1 className="text-5xl md:text-6xl font-bold mb-6">
+              What We Build for
+              <span className="block text-yellow-300">Startups Like Yours</span>
+            </h1>
+            <p className="text-xl max-w-3xl mx-auto text-blue-100 mb-8">
+              Custom software solutions tailored for early-stage companies. 
+              From MVPs to full-scale platforms, we help you launch and grow.
+            </p>
+            <Link
+              to="/contact"
+              className="inline-flex items-center bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:shadow-xl hover:scale-105 transition-all"
+            >
+              Discuss Your Project <ArrowRight className="ml-2 w-5 h-5" />
+            </Link>
+          </div>
+        </section>
+
+        {/* WHY CHOOSE US */}
+        <section className="py-20 bg-gray-50">
+          <div className="max-w-7xl mx-auto px-6">
+            <h2 className="text-4xl font-bold text-center mb-12">Why Startups Choose Us</h2>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {whyChooseUs.map((item, index) => (
+                <div key={index} className="text-center">
+                  <div className="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <item.icon className="w-8 h-8 text-blue-600" />
+                  </div>
+                  <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
+                  <p className="text-gray-600">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* SERVICES GRID */}
+        <section className="py-20">
+          <div className="max-w-7xl mx-auto px-6">
+            <h2 className="text-4xl font-bold text-center mb-4">Our Services</h2>
+            <p className="text-xl text-gray-600 text-center max-w-2xl mx-auto mb-12">
+              Comprehensive software development services for startups
+            </p>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {services.map((service, index) => (
+                <Link
+                  key={index}
+                  to={`/services/${service.slug}`}
+                  className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2 overflow-hidden"
+                >
+                  <div className={`h-2 bg-gradient-to-r ${service.color}`}></div>
+                  <div className="p-8">
+                    <div className={`w-16 h-16 rounded-xl bg-gradient-to-r ${service.color} bg-opacity-10 flex items-center justify-center mb-6 group-hover:scale-110 transition`}>
+                      <service.icon className="w-8 h-8 text-white" />
+                    </div>
+                    <h3 className="text-2xl font-bold mb-3">{service.title}</h3>
+                    <p className="text-gray-600 mb-4">{service.shortDesc}</p>
+                    
+                    {/* Features */}
+                    <ul className="space-y-2 mb-6">
+                      {service.features.map((feature, i) => (
+                        <li key={i} className="flex items-start gap-2 text-sm">
+                          <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
+                          <span className="text-gray-600">{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+
+                    <span className="text-blue-600 font-semibold inline-flex items-center group-hover:gap-2 transition-all">
+                      Learn More <ArrowRight className="w-4 h-4 ml-1" />
+                    </span>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* OUR PROCESS */}
+        <section className="py-20 bg-gray-50">
+          <div className="max-w-7xl mx-auto px-6">
+            <h2 className="text-4xl font-bold text-center mb-4">How We Work</h2>
+            <p className="text-xl text-gray-600 text-center max-w-2xl mx-auto mb-12">
+              A transparent, collaborative process from idea to launch
+            </p>
+
+            <div className="grid md:grid-cols-5 gap-8 relative">
+              {process.map((step, index) => (
+                <div key={index} className="text-center relative">
+                  <div className="w-20 h-20 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-4 relative z-10">
+                    <step.icon className="w-10 h-10 text-blue-600" />
+                  </div>
+                  <h3 className="text-xl font-semibold mb-2">{step.step}</h3>
+                  <p className="text-gray-600 text-sm">{step.desc}</p>
+                  {index < process.length - 1 && (
+                    <div className="hidden md:block absolute top-10 left-[60%] w-full h-0.5 bg-gray-300"></div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* WHAT YOU GET */}
+        <section className="py-20">
+          <div className="max-w-7xl mx-auto px-6">
+            <h2 className="text-4xl font-bold text-center mb-4">What You Get</h2>
+            <p className="text-xl text-gray-600 text-center max-w-2xl mx-auto mb-12">
+              Every project comes with these deliverables
+            </p>
+
+            <div className="grid md:grid-cols-4 gap-6">
+              {[
+                "Fully Functional Software",
+                "Complete Source Code",
+                "Technical Documentation",
+                "User Training & Manuals",
+                "Admin Dashboard",
+                "API Documentation",
+                "3 Months Free Support",
+                "Future Growth Roadmap"
+              ].map((item, index) => (
+                <div key={index} className="bg-gray-50 p-6 rounded-xl text-center hover:shadow-md transition">
+                  <CheckCircle className="w-8 h-8 text-green-500 mx-auto mb-3" />
+                  <p className="font-semibold">{item}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* CTA */}
+        <section className="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-20">
+          <div className="max-w-4xl mx-auto px-6 text-center">
+            <h2 className="text-4xl font-bold mb-6">Ready to Build Your Startup?</h2>
+            <p className="text-xl text-blue-100 mb-8">
+              Let's discuss your idea and see how we can help.
+            </p>
+            <Link
+              to="/contact"
+              className="inline-flex items-center bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:shadow-xl hover:scale-105 transition-all"
+            >
+              Start the Conversation <ArrowRight className="ml-2 w-5 h-5" />
+            </Link>
+            <p className="text-sm text-blue-200 mt-6">
+              ✨ First-time founders get 15% off their first project
+            </p>
+          </div>
+        </section>
+      </main>
+    </PageTransition>
+  );
 }

@@ -1,276 +1,210 @@
-import { useState, useEffect, useRef } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { Search, Menu, X } from "lucide-react";
-
-export default function Navbar(){
-
-const [search,setSearch] = useState("")
-const [showSearch,setShowSearch] = useState(false)
-const [mobileOpen,setMobileOpen] = useState(false)
-
-/* ADDED NAVBAR SCROLL EFFECT */
-const [scrolled,setScrolled] = useState(false)
-
-/* ADDED CLICK OUTSIDE CLOSE */
-const mobileRef = useRef()
-
-useEffect(()=>{
-const handleScroll=()=>{
-if(window.scrollY>40){
-setScrolled(true)
-}else{
-setScrolled(false)
-}
-}
-
-window.addEventListener("scroll",handleScroll)
-return ()=>window.removeEventListener("scroll",handleScroll)
-
-},[])
-
-/* CLOSE MOBILE MENU IF CLICK OUTSIDE */
-
-useEffect(()=>{
-
-const handleClickOutside=(event)=>{
-if(mobileRef.current && !mobileRef.current.contains(event.target)){
-setMobileOpen(false)
-}
-}
-
-document.addEventListener("mousedown",handleClickOutside)
-
-return ()=>{
-document.removeEventListener("mousedown",handleClickOutside)
-}
-
-},[])
-
-const navigate = useNavigate()
-
-const handleSearch=(e)=>{
-if(e.key === "Enter"){
-navigate(`/search?q=${search}`)
-setShowSearch(false)
-}
-}
-
-return(
-
-<header className={`fixed top-0 w-full nav-glass z-50 transition-all duration-300 ${
-scrolled ? "shadow-lg backdrop-blur-lg bg-white/80" : "shadow"
-}`}>
-
-<div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
-
-{/* LOGO */}
-
-<Link 
-to="/" 
-className="flex items-center gap-2 hover:scale-105 transition duration-300"
->
-
-<img src="/logo.png" className="h-8"/>
-
-<span className="font-semibold text-sm tracking-wide">
-FINTECH IT SOLUTIONS
-</span>
-
-</Link>
-
-
-{/* DESKTOP MENU */}
-
-<nav className="hidden md:flex gap-8 text-sm items-center">
-
-{/* HOME */}
-
-<Link 
-to="/" 
-className="relative group hover:text-blue-600 transition hover:-translate-y-[2px]"
->
-Home
-<span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
-</Link>
-
-
-{/* WHAT WE DO */}
-
-<div className="relative group">
-
-<button className="hover:text-blue-600 transition relative hover:-translate-y-[2px]">
-What We Do
-<span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
-</button>
-
-
-{/* MODERN MEGA DROPDOWN */}
-
-<div className="absolute left-0 top-full mt-4 opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-all duration-300 grid grid-cols-2 gap-6 bg-white shadow-2xl p-8 w-[520px] rounded-xl border border-gray-100">
-
-<Link to="/services" className="flex flex-col hover:text-blue-600 hover:translate-x-1 transition">
-<span className="font-semibold">☁️ Cloud Engineering</span>
-<span className="text-xs text-gray-500">Scalable AWS, Azure and hybrid cloud platforms</span>
-</Link>
-
-<Link to="/services" className="flex flex-col hover:text-blue-600 hover:translate-x-1 transition">
-<span className="font-semibold">🤖 AI & Machine Learning</span>
-<span className="text-xs text-gray-500">AI platforms and predictive analytics systems</span>
-</Link>
-
-<Link to="/services" className="flex flex-col hover:text-blue-600 hover:translate-x-1 transition">
-<span className="font-semibold">🔐 Cybersecurity</span>
-<span className="text-xs text-gray-500">Enterprise security architecture and threat defense</span>
-</Link>
-
-<Link to="/services" className="flex flex-col hover:text-blue-600 hover:translate-x-1 transition">
-<span className="font-semibold">⚙️ DevOps</span>
-<span className="text-xs text-gray-500">CI/CD pipelines and automation platforms</span>
-</Link>
-
-<Link to="/services" className="flex flex-col hover:text-blue-600 hover:translate-x-1 transition">
-<span className="font-semibold">📊 Data Engineering</span>
-<span className="text-xs text-gray-500">Modern data pipelines and analytics systems</span>
-</Link>
-
-<Link to="/services" className="flex flex-col hover:text-blue-600 hover:translate-x-1 transition">
-<span className="font-semibold">🏢 Enterprise Platforms</span>
-<span className="text-xs text-gray-500">Large-scale enterprise application platforms</span>
-</Link>
-
-</div>
-
-</div>
-
-
-<Link 
-to="/industries" 
-className="relative group hover:text-blue-600 transition hover:-translate-y-[2px]"
->
-Industries
-<span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
-</Link>
-
-<Link 
-to="/projects" 
-className="relative group hover:text-blue-600 transition hover:-translate-y-[2px]"
->
-Projects
-<span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
-</Link>
-
-<Link 
-to="/careers" 
-className="relative group hover:text-blue-600 transition hover:-translate-y-[2px]"
->
-Careers
-<span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
-</Link>
-
-<Link 
-to="/newsroom" 
-className="relative group hover:text-blue-600 transition hover:-translate-y-[2px]"
->
-Newsroom
-<span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
-</Link>
-
-<Link 
-to="/ceo" 
-className="relative group hover:text-blue-600 transition hover:-translate-y-[2px]"
->
-CEO
-<span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
-</Link>
-
-<Link 
-to="/about" 
-className="relative group hover:text-blue-600 transition hover:-translate-y-[2px]"
->
-About
-<span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
-</Link>
-
-<Link 
-to="/contact" 
-className="relative group hover:text-blue-600 transition hover:-translate-y-[2px]"
->
-Contact
-<span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
-</Link>
-
-</nav>
-
-
-{/* RIGHT SIDE */}
-
-<div className="flex items-center gap-4">
-
-<Search
-className="w-5 cursor-pointer hover:scale-110 transition duration-300"
-onClick={()=>setShowSearch(!showSearch)}
-/>
-
-<button
-className="md:hidden hover:scale-110 transition"
-onClick={()=>setMobileOpen(!mobileOpen)}
->
-
-{mobileOpen ? <X size={24}/> : <Menu size={24}/>}
-
-</button>
-
-</div>
-
-</div>
-
-
-{/* SEARCH BAR */}
-
-{showSearch && (
-
-<div className="bg-gray-100 p-4 border-t animate-fadeIn">
-
-<input
-placeholder="Search services, projects..."
-value={search}
-onChange={(e)=>setSearch(e.target.value)}
-onKeyDown={handleSearch}
-className="w-full p-3 outline-none bg-white border rounded"
-/>
-
-</div>
-
-)}
-
-
-{/* MOBILE MENU */}
-
-<div
-ref={mobileRef}
-className={`md:hidden border-t bg-white transition-all duration-300 overflow-hidden ${
-mobileOpen ? "max-h-[500px]" : "max-h-0"
-}`}
->
-
-<nav className="flex flex-col p-6 gap-4 text-lg animate-fadeIn">
-
-<Link onClick={()=>setMobileOpen(false)} to="/">Home</Link>
-<Link onClick={()=>setMobileOpen(false)} to="/services">Services</Link>
-<Link onClick={()=>setMobileOpen(false)} to="/industries">Industries</Link>
-<Link onClick={()=>setMobileOpen(false)} to="/projects">Projects</Link>
-<Link onClick={()=>setMobileOpen(false)} to="/careers">Careers</Link>
-<Link onClick={()=>setMobileOpen(false)} to="/newsroom">Newsroom</Link>
-<Link onClick={()=>setMobileOpen(false)} to="/ceo">CEO</Link>
-<Link onClick={()=>setMobileOpen(false)} to="/about">About</Link>
-<Link onClick={()=>setMobileOpen(false)} to="/contact">Contact</Link>
-
-</nav>
-
-</div>
-
-</header>
-
-)
-
+import { useState, useRef, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
+
+export default function Navbar() {
+  const [openMenu, setOpenMenu] = useState(null);
+  const [hoveredMenu, setHoveredMenu] = useState(null);
+  const location = useLocation();
+
+  const menuRef = useRef();
+  const timeoutRef = useRef();
+
+  /* CLOSE MENU WHEN CLICK OUTSIDE OR NAVIGATE */
+  useEffect(() => {
+    function handleClickOutside(e) {
+      if (menuRef.current && !menuRef.current.contains(e.target)) {
+        setOpenMenu(null);
+        setHoveredMenu(null);
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  /* CLOSE MENU WHEN PAGE CHANGES */
+  useEffect(() => {
+    setOpenMenu(null);
+    setHoveredMenu(null);
+  }, [location]);
+
+  /* Handle hover for keeping menu open */
+  const handleMouseEnter = (menu) => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+    setHoveredMenu(menu);
+    setOpenMenu(menu);
+  };
+
+  const handleMouseLeave = () => {
+    timeoutRef.current = setTimeout(() => {
+      setOpenMenu(null);
+      setHoveredMenu(null);
+    }, 200);
+  };
+
+  /* Handle menu item click - close menu after navigation */
+  const handleMenuItemClick = () => {
+    setOpenMenu(null);
+    setHoveredMenu(null);
+  };
+
+  /* Toggle menu function */
+  const toggleMenu = (menu) => {
+    setOpenMenu(openMenu === menu ? null : menu);
+  };
+
+  return (
+    <header className="main-header">
+      <div className="nav-container" ref={menuRef}>
+        {/* CURSIVE/SCRIPT STYLE LOGO */}
+        <Link to="/" className="logo" onClick={handleMenuItemClick}>
+          <div className="cursive-logo">
+            <span className="cursive-fintech">Fintech</span>
+            <span className="cursive-it">IT</span>
+            <span className="cursive-solutions">Solutions</span>
+          </div>
+        </Link>
+
+        {/* NAV MENU */}
+        <nav className="nav-menu">
+          <Link
+            to="/"
+            className={`menu-link ${location.pathname === "/" ? "active" : ""}`}
+            onClick={handleMenuItemClick}
+          >
+            Home
+          </Link>
+
+          {/* WHAT WE DO */}
+          <div
+            className="menu-item"
+            onMouseEnter={() => handleMouseEnter("services")}
+            onMouseLeave={handleMouseLeave}
+          >
+            <button
+              className={`menu-link ${openMenu === "services" ? "active" : ""}`}
+              onClick={() => toggleMenu("services")}
+            >
+              What we do <span className="dropdown-arrow">▾</span>
+            </button>
+
+            {openMenu === "services" && (
+              <div className="mega-menu">
+                <div className="mega-left">
+                  <h2>Perpetually Adaptive Enterprise</h2>
+                  <p>
+                    We help businesses modernize technology,
+                    build scalable platforms and grow globally.
+                  </p>
+                  <Link
+                    to="/services"
+                    className="mega-link"
+                    onClick={handleMenuItemClick}
+                  >
+                    Explore services →
+                  </Link>
+                </div>
+
+                <div className="mega-right">
+                  <Link to="/industries" onClick={handleMenuItemClick}>
+                    Industries →
+                  </Link>
+                  <Link to="/services" onClick={handleMenuItemClick}>
+                    Services →
+                  </Link>
+                  <Link to="/projects" onClick={handleMenuItemClick}>
+                    Products & Platforms →
+                  </Link>
+                  <Link to="/insights" onClick={handleMenuItemClick}>
+                    Research & Innovation →
+                  </Link>
+                  <Link to="/projects" onClick={handleMenuItemClick}>
+                    Alliances →
+                  </Link>
+                </div>
+              </div>
+            )}
+          </div>
+
+          {/* WHO WE ARE */}
+          <div
+            className="menu-item"
+            onMouseEnter={() => handleMouseEnter("about")}
+            onMouseLeave={handleMouseLeave}
+          >
+            <button
+              className={`menu-link ${openMenu === "about" ? "active" : ""}`}
+              onClick={() => toggleMenu("about")}
+            >
+              Who we are <span className="dropdown-arrow">▾</span>
+            </button>
+
+            {openMenu === "about" && (
+              <div className="mega-menu">
+                <div className="mega-left">
+                  <h2>About Us</h2>
+                  <p>
+                    We create value for customers and communities
+                    through technology innovation.
+                  </p>
+                  <Link
+                    to="/about"
+                    className="mega-link"
+                    onClick={handleMenuItemClick}
+                  >
+                    Discover the difference →
+                  </Link>
+                </div>
+
+                <div className="mega-right">
+                  <Link to="/aspiration" onClick={handleMenuItemClick}>
+                    Our Aspiration →
+                  </Link>
+                  <Link to="/brand" onClick={handleMenuItemClick}>
+                    Brand →
+                  </Link>
+                  <Link to="/leadership" onClick={handleMenuItemClick}>
+                    Leadership →
+                  </Link>
+                  <Link to="/community" onClick={handleMenuItemClick}>
+                    Community →
+                  </Link>
+                  <Link to="/sustainability" onClick={handleMenuItemClick}>
+                    Sustainability →
+                  </Link>
+                </div>
+              </div>
+            )}
+          </div>
+
+          {/* NORMAL LINKS */}
+          <Link
+            to="/careers"
+            className={`menu-link ${location.pathname === "/careers" ? "active" : ""}`}
+            onClick={handleMenuItemClick}
+          >
+            Careers
+          </Link>
+
+          <Link
+            to="/newsroom"
+            className={`menu-link ${location.pathname === "/newsroom" ? "active" : ""}`}
+            onClick={handleMenuItemClick}
+          >
+            Newsroom
+          </Link>
+
+          <Link
+            to="/contact"
+            className={`menu-link ${location.pathname === "/contact" ? "active" : ""}`}
+            onClick={handleMenuItemClick}
+          >
+            Contact
+          </Link>
+        </nav>
+      </div>
+    </header>
+  );
 }

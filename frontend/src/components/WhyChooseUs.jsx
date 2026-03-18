@@ -1,95 +1,86 @@
 import FadeInSection from "./FadeInSection";
-import { ShieldCheck, Cpu, Globe, Users } from "lucide-react";
+import { ShieldCheck, Cpu, Globe, Users, HeartHandshake, Zap } from "lucide-react";
 
 export default function WhyChooseUs() {
   return (
     <FadeInSection>
       <section className="py-28 bg-white">
-
         <div className="max-w-7xl mx-auto px-6">
-
-          <h2 className="text-4xl font-semibold text-center mb-16">
+          <h2 className="text-4xl font-semibold text-center mb-4">
             Why Choose Fintech IT Solutions
           </h2>
+          <p className="text-center text-gray-600 mb-16 max-w-2xl mx-auto">
+            As a solo founder, I bring something big agencies can't: 
+            complete focus on your success.
+          </p>
 
-          <div className="grid md:grid-cols-4 gap-10 text-center">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
 
-            {/* Innovation */}
-
-            <div className="border p-8 hover:shadow-xl transition">
-
-              <Cpu className="mx-auto mb-4 w-10 h-10 text-blue-600"/>
-
+            {/* Innovation - Just Me */}
+            <div className="border p-8 hover:shadow-xl transition rounded-2xl">
+              <Cpu className="mx-auto mb-4 w-12 h-12 text-blue-600"/>
               <h3 className="font-semibold text-lg mb-3">
-                Innovation Driven
+                Modern Tech Stack
               </h3>
-
               <p className="text-gray-600 text-sm">
-                We leverage cutting-edge technologies like AI,
-                cloud computing and automation to build modern
-                enterprise platforms.
+                I use cutting-edge technologies like React, Node.js, and cloud platforms 
+                to build future-ready solutions.
               </p>
-
             </div>
 
-
-            {/* Security */}
-
-            <div className="border p-8 hover:shadow-xl transition">
-
-              <ShieldCheck className="mx-auto mb-4 w-10 h-10 text-green-600"/>
-
+            {/* Security - My Focus */}
+            <div className="border p-8 hover:shadow-xl transition rounded-2xl">
+              <ShieldCheck className="mx-auto mb-4 w-12 h-12 text-green-600"/>
               <h3 className="font-semibold text-lg mb-3">
-                Enterprise Security
+                Security First
               </h3>
-
               <p className="text-gray-600 text-sm">
-                Our cybersecurity frameworks ensure secure
-                digital infrastructure for mission-critical systems.
+                Every line of code follows security best practices. Your data's safety is my priority.
               </p>
-
             </div>
 
-
-            {/* Global */}
-
-            <div className="border p-8 hover:shadow-xl transition">
-
-              <Globe className="mx-auto mb-4 w-10 h-10 text-purple-600"/>
-
+            {/* Global - Vision */}
+            <div className="border p-8 hover:shadow-xl transition rounded-2xl">
+              <Globe className="mx-auto mb-4 w-12 h-12 text-purple-600"/>
               <h3 className="font-semibold text-lg mb-3">
-                Global Delivery
+                Global Vision
               </h3>
-
               <p className="text-gray-600 text-sm">
-                Engineering teams across multiple locations
-                delivering scalable technology solutions.
+                Based in India, serving startups everywhere. Location doesn't matter - great code does.
               </p>
-
             </div>
 
-
-            {/* Talent */}
-
-            <div className="border p-8 hover:shadow-xl transition">
-
-              <Users className="mx-auto mb-4 w-10 h-10 text-orange-600"/>
-
+            {/* Direct Access - This is the key difference */}
+            <div className="border p-8 hover:shadow-xl transition rounded-2xl bg-gradient-to-br from-blue-50 to-purple-50 border-blue-200">
+              <Users className="mx-auto mb-4 w-12 h-12 text-orange-600"/>
               <h3 className="font-semibold text-lg mb-3">
-                Expert Talent
+                Direct Access
               </h3>
-
               <p className="text-gray-600 text-sm">
-                Experienced engineers specializing in
-                AI, cloud architecture and enterprise systems.
+                <span className="font-bold text-orange-600">You talk to me directly</span> - 
+                no account managers, no sales team, no middlemen. Just me and your project.
               </p>
-
             </div>
 
           </div>
 
-        </div>
+          {/* Honest Solo Founder Message */}
+          <div className="mt-16 bg-gradient-to-r from-blue-600 to-purple-600 text-white p-8 rounded-2xl text-center">
+            <HeartHandshake className="w-12 h-12 mx-auto mb-4" />
+            <h3 className="text-2xl font-bold mb-3">It's Just Me — And That's a Good Thing</h3>
+            <p className="text-lg text-blue-100 max-w-2xl mx-auto">
+              No big agency overhead. No team of 50 people billing you. 
+              Just one passionate developer who cares deeply about your success.
+            </p>
+            <div className="mt-6 flex flex-wrap gap-4 justify-center text-sm">
+              <span className="bg-white/20 px-4 py-2 rounded-full">✅ You get my full attention</span>
+              <span className="bg-white/20 px-4 py-2 rounded-full">✅ No hidden costs</span>
+              <span className="bg-white/20 px-4 py-2 rounded-full">✅ Direct communication</span>
+              <span className="bg-white/20 px-4 py-2 rounded-full">✅ Startup-friendly rates</span>
+            </div>
+          </div>
 
+        </div>
       </section>
     </FadeInSection>
   );

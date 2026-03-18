@@ -23,9 +23,10 @@ Leadership Message
 
 <p className="text-gray-300 text-lg leading-relaxed">
 
-At <strong>Fintech IT Solutions</strong>, our mission is to build innovative
-technology platforms that help organizations transform digitally,
-improve financial infrastructure, and embrace modern technology.
+At <strong>Fintech IT Solutions</strong>, our mission is to empower
+organizations with intelligent technology platforms that accelerate
+digital transformation, strengthen financial infrastructure,
+and enable businesses to thrive in the modern digital economy.
 
 </p>
 
@@ -36,11 +37,19 @@ improve financial infrastructure, and embrace modern technology.
 
 <FadeInSection>
 
+<div className="text-center">
+
 <img
 src="/ceo.jpg"
 alt="Sumit Raj CEO"
 className="rounded-xl shadow-2xl w-full"
 />
+
+<p className="mt-4 text-sm text-gray-400">
+Sumit Raj — Founder & CEO, Fintech IT Solutions
+</p>
+
+</div>
 
 </FadeInSection>
 
