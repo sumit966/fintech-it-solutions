@@ -1,9 +1,12 @@
 import { useState, useRef, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { ChevronDown, Menu, X } from "lucide-react";
 
 export default function Navbar() {
   const [openMenu, setOpenMenu] = useState(null);
   const [hoveredMenu, setHoveredMenu] = useState(null);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [mobileSubmenu, setMobileSubmenu] = useState(null);
   const location = useLocation();
 
   const menuRef = useRef();
@@ -26,28 +29,36 @@ export default function Navbar() {
   useEffect(() => {
     setOpenMenu(null);
     setHoveredMenu(null);
+    setMobileMenuOpen(false);
+    setMobileSubmenu(null);
   }, [location]);
 
   /* Handle hover for keeping menu open */
   const handleMouseEnter = (menu) => {
-    if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current);
+    if (window.innerWidth > 768) {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+      setHoveredMenu(menu);
+      setOpenMenu(menu);
     }
-    setHoveredMenu(menu);
-    setOpenMenu(menu);
   };
 
   const handleMouseLeave = () => {
-    timeoutRef.current = setTimeout(() => {
-      setOpenMenu(null);
-      setHoveredMenu(null);
-    }, 200);
+    if (window.innerWidth > 768) {
+      timeoutRef.current = setTimeout(() => {
+        setOpenMenu(null);
+        setHoveredMenu(null);
+      }, 200);
+    }
   };
 
   /* Handle menu item click - close menu after navigation */
   const handleMenuItemClick = () => {
     setOpenMenu(null);
     setHoveredMenu(null);
+    setMobileMenuOpen(false);
+    setMobileSubmenu(null);
   };
 
   /* Toggle menu function */
@@ -55,10 +66,14 @@ export default function Navbar() {
     setOpenMenu(openMenu === menu ? null : menu);
   };
 
+  const toggleMobileSubmenu = (menu) => {
+    setMobileSubmenu(mobileSubmenu === menu ? null : menu);
+  };
+
   return (
     <header className="main-header">
       <div className="nav-container" ref={menuRef}>
-        {/* CURSIVE/SCRIPT STYLE LOGO */}
+        {/* LOGO */}
         <Link to="/" className="logo" onClick={handleMenuItemClick}>
           <div className="cursive-logo">
             <span className="cursive-fintech">Fintech</span>
@@ -67,8 +82,8 @@ export default function Navbar() {
           </div>
         </Link>
 
-        {/* NAV MENU */}
-        <nav className="nav-menu">
+        {/* DESKTOP NAV MENU */}
+        <nav className="nav-menu desktop-menu">
           <Link
             to="/"
             className={`menu-link ${location.pathname === "/" ? "active" : ""}`}
@@ -204,6 +219,87 @@ export default function Navbar() {
             Contact
           </Link>
         </nav>
+
+        {/* MOBILE MENU TOGGLE */}
+        <button
+          className={`mobile-menu-toggle ${mobileMenuOpen ? 'active' : ''}`}
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        {/* MOBILE MENU */}
+        <div className={`mobile-menu ${mobileMenuOpen ? 'open' : ''}`}>
+          <Link
+            to="/"
+            className="mobile-link"
+            onClick={handleMenuItemClick}
+          >
+            Home
+          </Link>
+
+          {/* WHAT WE DO - MOBILE */}
+          <div className="mobile-menu-item">
+            <div
+              className={`mobile-menu-header ${mobileSubmenu === 'services' ? 'open' : ''}`}
+              onClick={() => toggleMobileSubmenu('services')}
+            >
+              <span>What we do</span>
+              <ChevronDown size={20} />
+            </div>
+            <div className={`mobile-submenu ${mobileSubmenu === 'services' ? 'open' : ''}`}>
+              <Link to="/industries" onClick={handleMenuItemClick}>Industries</Link>
+              <Link to="/services" onClick={handleMenuItemClick}>Services</Link>
+              <Link to="/projects" onClick={handleMenuItemClick}>Products & Platforms</Link>
+              <Link to="/insights" onClick={handleMenuItemClick}>Research & Innovation</Link>
+              <Link to="/projects" onClick={handleMenuItemClick}>Alliances</Link>
+            </div>
+          </div>
+
+          {/* WHO WE ARE - MOBILE */}
+          <div className="mobile-menu-item">
+            <div
+              className={`mobile-menu-header ${mobileSubmenu === 'about' ? 'open' : ''}`}
+              onClick={() => toggleMobileSubmenu('about')}
+            >
+              <span>Who we are</span>
+              <ChevronDown size={20} />
+            </div>
+            <div className={`mobile-submenu ${mobileSubmenu === 'about' ? 'open' : ''}`}>
+              <Link to="/aspiration" onClick={handleMenuItemClick}>Our Aspiration</Link>
+              <Link to="/brand" onClick={handleMenuItemClick}>Brand</Link>
+              <Link to="/leadership" onClick={handleMenuItemClick}>Leadership</Link>
+              <Link to="/community" onClick={handleMenuItemClick}>Community</Link>
+              <Link to="/sustainability" onClick={handleMenuItemClick}>Sustainability</Link>
+            </div>
+          </div>
+
+          <Link
+            to="/careers"
+            className="mobile-link"
+            onClick={handleMenuItemClick}
+          >
+            Careers
+          </Link>
+
+          <Link
+            to="/newsroom"
+            className="mobile-link"
+            onClick={handleMenuItemClick}
+          >
+            Newsroom
+          </Link>
+
+          <Link
+            to="/contact"
+            className="mobile-link"
+            onClick={handleMenuItemClick}
+          >
+            Contact
+          </Link>
+        </div>
       </div>
     </header>
   );
