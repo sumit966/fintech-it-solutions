@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+﻿import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { 
   ArrowRight, 
@@ -88,159 +88,40 @@ export default function Home() {
     setCurrent((prev) => (prev - 1 + slides.length) % slides.length);
   };
 
-  // What We Do - Quick Overview
   const quickServices = [
-    {
-      title: "Custom Software Development",
-      icon: Code,
-      color: "from-blue-500 to-cyan-500",
-      slug: "custom-software"
-    },
-    {
-      title: "Website & Web Apps",
-      icon: Globe,
-      color: "from-purple-500 to-pink-500",
-      slug: "web-development"
-    },
-    {
-      title: "Mobile Development",
-      icon: Smartphone,
-      color: "from-green-500 to-emerald-500",
-      slug: "mobile"
-    },
-    {
-      title: "MVP Development",
-      icon: RocketLaunch,
-      color: "from-orange-500 to-red-500",
-      slug: "mvp-development"
-    }
+    { title: "Custom Software Development", icon: Code, color: "from-blue-500 to-cyan-500", slug: "custom-software" },
+    { title: "Website & Web Apps", icon: Globe, color: "from-purple-500 to-pink-500", slug: "web-development" },
+    { title: "Mobile Development", icon: Smartphone, color: "from-green-500 to-emerald-500", slug: "mobile" },
+    { title: "MVP Development", icon: RocketLaunch, color: "from-orange-500 to-red-500", slug: "mvp-development" }
   ];
 
-  // Why Startups Choose Us
   const whyStartups = [
-    {
-      icon: Lightbulb,
-      title: "Fresh Perspective",
-      desc: "No legacy thinking, just modern solutions built for today's challenges.",
-      color: "from-yellow-400 to-orange-500"
-    },
-    {
-      icon: HeartHandshake,
-      title: "Partner, Not Vendor",
-      desc: "We grow together. Your success is our success.",
-      color: "from-red-400 to-pink-500"
-    },
-    {
-      icon: Zap,
-      title: "Fast Delivery",
-      desc: "MVP in weeks, not months. Launch and iterate quickly.",
-      color: "from-blue-400 to-cyan-500"
-    },
-    {
-      icon: Gem,
-      title: "Startup Friendly Rates",
-      desc: "Flexible terms and special pricing for early-stage companies.",
-      color: "from-green-400 to-emerald-500"
-    }
+    { icon: Lightbulb, title: "Fresh Perspective", desc: "No legacy thinking, just modern solutions built for today's challenges.", color: "from-yellow-400 to-orange-500" },
+    { icon: HeartHandshake, title: "Partner, Not Vendor", desc: "We grow together. Your success is our success.", color: "from-red-400 to-pink-500" },
+    { icon: Zap, title: "Fast Delivery", desc: "MVP in weeks, not months. Launch and iterate quickly.", color: "from-blue-400 to-cyan-500" },
+    { icon: Gem, title: "Startup Friendly Rates", desc: "Flexible terms and special pricing for early-stage companies.", color: "from-green-400 to-emerald-500" }
   ];
 
-  // Our Expertise
   const expertise = [
-    {
-      icon: Code,
-      title: "Full-Stack Development",
-      skills: ["React", "Node.js", "Python", "TypeScript"]
-    },
-    {
-      icon: Cloud,
-      title: "Cloud & DevOps",
-      skills: ["AWS", "Docker", "Kubernetes", "CI/CD"]
-    },
-    {
-      icon: GitBranch,
-      title: "API Development",
-      skills: ["REST", "GraphQL", "Microservices"]
-    },
-    {
-      icon: Smartphone,
-      title: "Mobile Development",
-      skills: ["React Native", "Flutter", "iOS", "Android"]
-    }
+    { icon: Code, title: "Full-Stack Development", skills: ["React", "Node.js", "Python", "TypeScript"] },
+    { icon: Cloud, title: "Cloud & DevOps", skills: ["AWS", "Docker", "Kubernetes", "CI/CD"] },
+    { icon: GitBranch, title: "API Development", skills: ["REST", "GraphQL", "Microservices"] },
+    { icon: Smartphone, title: "Mobile Development", skills: ["React Native", "Flutter", "iOS", "Android"] }
   ];
 
-  // Startup Packages
   const startupPackages = [
-    {
-      title: "MVP Launch",
-      price: "₹2L - ₹5L",
-      timeline: "8-12 weeks",
-      features: [
-        "Core features only",
-        "Basic UI/UX design",
-        "Essential integrations",
-        "3 months support"
-      ],
-      icon: Rocket,
-      color: "from-blue-500 to-cyan-500",
-      popular: false
-    },
-    {
-      title: "Growth Package",
-      price: "₹5L - ₹10L",
-      timeline: "12-16 weeks",
-      features: [
-        "Full feature set",
-        "Custom design",
-        "Advanced integrations",
-        "6 months priority support",
-        "Team training"
-      ],
-      icon: TrendingUp,
-      color: "from-purple-500 to-pink-500",
-      popular: true
-    },
-    {
-      title: "Scale Ready",
-      price: "₹10L+",
-      timeline: "16-20 weeks",
-      features: [
-        "Scalable architecture",
-        "Performance optimization",
-        "Security audit",
-        "12 months dedicated support",
-        "Future roadmap"
-      ],
-      icon: Award,
-      color: "from-orange-500 to-red-500",
-      popular: false
-    }
+    { title: "MVP Launch", price: "₹2L - ₹5L", timeline: "8-12 weeks", features: ["Core features only", "Basic UI/UX design", "Essential integrations", "3 months support"], icon: Rocket, color: "from-blue-500 to-cyan-500", popular: false },
+    { title: "Growth Package", price: "₹5L - ₹10L", timeline: "12-16 weeks", features: ["Full feature set", "Custom design", "Advanced integrations", "6 months priority support", "Team training"], icon: TrendingUp, color: "from-purple-500 to-pink-500", popular: true },
+    { title: "Scale Ready", price: "₹10L+", timeline: "16-20 weeks", features: ["Scalable architecture", "Performance optimization", "Security audit", "12 months dedicated support", "Future roadmap"], icon: Award, color: "from-orange-500 to-red-500", popular: false }
   ];
 
-  // Research & Innovation
   const innovations = [
-    {
-      icon: Brain,
-      title: "AI Integration Templates",
-      desc: "Ready-to-use AI components for ChatGPT, image recognition, and more"
-    },
-    {
-      icon: Fingerprint,
-      title: "Startup Auth Systems",
-      desc: "Pre-built authentication with social login, magic links, and 2FA"
-    },
-    {
-      icon: Box,
-      title: "MVP Boilerplates",
-      desc: "Reusable code templates to launch your MVP 3x faster"
-    },
-    {
-      icon: Zap,
-      title: "Quick Deploy Solutions",
-      desc: "One-click deployment setups for AWS, Vercel, and Netlify"
-    }
+    { icon: Brain, title: "AI Integration Templates", desc: "Ready-to-use AI components for ChatGPT, image recognition, and more" },
+    { icon: Fingerprint, title: "Startup Auth Systems", desc: "Pre-built authentication with social login, magic links, and 2FA" },
+    { icon: Box, title: "MVP Boilerplates", desc: "Reusable code templates to launch your MVP 3x faster" },
+    { icon: Zap, title: "Quick Deploy Solutions", desc: "One-click deployment setups for AWS, Vercel, and Netlify" }
   ];
 
-  // Partnerships & Alliances
   const alliances = [
     { name: "AWS", logo: "amazonwebservices", tier: "Startup Program", url: "#" },
     { name: "Vercel", logo: "vercel", tier: "For Startups", url: "#" },
@@ -250,7 +131,6 @@ export default function Home() {
     { name: "Figma", logo: "figma", tier: "Design Partner", url: "#" }
   ];
 
-  // How We Work
   const howWeWork = [
     { step: "Discovery", desc: "We learn about your idea and goals", icon: Lightbulb },
     { step: "MVP Planning", desc: "Define core features for launch", icon: Target },
@@ -258,30 +138,14 @@ export default function Home() {
     { step: "Launch & Support", desc: "Go live and grow together", icon: Rocket }
   ];
 
-  // Testimonials
   const testimonials = [
-    {
-      name: "Rahul Sharma",
-      role: "Founder, TechStart",
-      content: "They built our MVP in just 3 months. Perfect for our seed round demo. The team truly understands startup constraints.",
-      rating: 5
-    },
-    {
-      name: "Priya Patel",
-      role: "CEO, EcomMart",
-      content: "Finally found a tech team that understands startups. They're responsive, skilled, and care about our success.",
-      rating: 5
-    },
-    {
-      name: "Amit Kumar",
-      role: "Co-founder, LogiTrack",
-      content: "They're not just developers - they're true partners who helped us shape our product from day one.",
-      rating: 5
-    }
+    { name: "Rahul Sharma", role: "Founder, TechStart", content: "They built our MVP in just 3 months. Perfect for our seed round demo. The team truly understands startup constraints.", rating: 5 },
+    { name: "Priya Patel", role: "CEO, EcomMart", content: "Finally found a tech team that understands startups. They're responsive, skilled, and care about our success.", rating: 5 },
+    { name: "Amit Kumar", role: "Co-founder, LogiTrack", content: "They're not just developers - they're true partners who helped us shape our product from day one.", rating: 5 }
   ];
 
   return (
-    <main className="pt-20 bg-white">
+    <main className="pt-20 bg-[#0B0F19]">
       {/* HERO SECTION */}
       <section className="relative h-[90vh] overflow-hidden">
         {slides.map((slide, index) => (
@@ -358,11 +222,11 @@ export default function Home() {
       </section>
 
       {/* WHAT WE DO - QUICK OVERVIEW */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-[#0B0F19]">
         <Container>
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold mb-4">What We Build</h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <h2 className="text-4xl font-bold mb-4 text-white">What We Build</h2>
+            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
               Custom software solutions tailored for early-stage startups
             </p>
           </div>
@@ -372,13 +236,13 @@ export default function Home() {
               <Link
                 key={index}
                 to={`/services/${service.slug}`}
-                className="group bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2 text-center"
+                className="group bg-[rgba(255,255,255,0.05)] backdrop-blur-sm border border-[#1F2937] p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2 hover:border-blue-500/50 text-center"
               >
                 <div className={`w-16 h-16 rounded-xl bg-gradient-to-r ${service.color} mx-auto mb-4 flex items-center justify-center`}>
                   <service.icon className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-lg font-semibold mb-2">{service.title}</h3>
-                <p className="text-sm text-gray-500 group-hover:text-gray-700 transition">
+                <h3 className="text-lg font-semibold mb-2 text-white">{service.title}</h3>
+                <p className="text-sm text-gray-400 group-hover:text-gray-300 transition">
                   Learn more <ArrowRight className="w-4 h-4 inline ml-1" />
                 </p>
               </Link>
@@ -388,7 +252,7 @@ export default function Home() {
           <div className="text-center mt-12">
             <Link
               to="/services"
-              className="inline-flex items-center text-blue-600 font-semibold hover:gap-2 transition-all"
+              className="inline-flex items-center text-blue-400 font-semibold hover:gap-2 transition-all"
             >
               View All Services <ArrowRight className="ml-2 w-4 h-4" />
             </Link>
@@ -397,23 +261,23 @@ export default function Home() {
       </section>
 
       {/* WHY STARTUPS CHOOSE US */}
-      <section className="py-20">
+      <section className="py-20 bg-[#0B0F19]">
         <Container>
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold mb-4">Why Startups Choose Us</h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <h2 className="text-4xl font-bold mb-4 text-white">Why Startups Choose Us</h2>
+            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
               We're in the same boat - building something from scratch
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {whyStartups.map((item, index) => (
-              <div key={index} className="text-center">
+              <div key={index} className="text-center group">
                 <div className={`w-20 h-20 rounded-2xl bg-gradient-to-r ${item.color} mx-auto mb-4 flex items-center justify-center`}>
                   <item.icon className="w-10 h-10 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold mb-3">{item.title}</h3>
-                <p className="text-gray-600">{item.desc}</p>
+                <h3 className="text-xl font-semibold mb-3 text-white">{item.title}</h3>
+                <p className="text-gray-400">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -421,25 +285,25 @@ export default function Home() {
       </section>
 
       {/* OUR EXPERTISE */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-[#0B0F19]">
         <Container>
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold mb-4">Our Expertise</h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <h2 className="text-4xl font-bold mb-4 text-white">Our Expertise</h2>
+            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
               Skills and technologies we bring to your startup
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {expertise.map((item, index) => (
-              <div key={index} className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all">
-                <div className="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
-                  <item.icon className="w-8 h-8 text-blue-600" />
+              <div key={index} className="bg-[rgba(255,255,255,0.05)] backdrop-blur-sm border border-[#1F2937] p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-2 hover:border-blue-500/50">
+                <div className="w-16 h-16 bg-[rgba(59,130,246,0.2)] rounded-xl flex items-center justify-center mb-6">
+                  <item.icon className="w-8 h-8 text-blue-400" />
                 </div>
-                <h3 className="text-xl font-semibold mb-4">{item.title}</h3>
+                <h3 className="text-xl font-semibold mb-4 text-white">{item.title}</h3>
                 <div className="flex flex-wrap gap-2">
                   {item.skills.map((skill, i) => (
-                    <span key={i} className="bg-gray-100 text-gray-600 px-3 py-1 rounded-full text-sm">
+                    <span key={i} className="bg-[rgba(255,255,255,0.05)] text-gray-300 px-3 py-1 rounded-full text-sm border border-[#1F2937]">
                       {skill}
                     </span>
                   ))}
@@ -451,11 +315,11 @@ export default function Home() {
       </section>
 
       {/* STARTUP PACKAGES */}
-      <section className="py-20">
+      <section className="py-20 bg-[#0B0F19]">
         <Container>
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold mb-4">Startup-Friendly Packages</h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <h2 className="text-4xl font-bold mb-4 text-white">Startup-Friendly Packages</h2>
+            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
               Flexible options designed for early-stage companies
             </p>
           </div>
@@ -464,28 +328,28 @@ export default function Home() {
             {startupPackages.map((pkg, index) => (
               <div
                 key={index}
-                className={`relative bg-white rounded-2xl p-8 ${
+                className={`relative bg-[rgba(255,255,255,0.05)] backdrop-blur-sm border ${
                   pkg.popular 
-                    ? 'border-2 border-blue-600 shadow-xl scale-105' 
-                    : 'border border-gray-200 shadow-lg'
-                }`}
+                    ? 'border-blue-500 shadow-xl scale-105' 
+                    : 'border-[#1F2937] shadow-lg'
+                } rounded-2xl p-8 transition-all hover:-translate-y-2 hover:shadow-2xl`}
               >
                 {pkg.popular && (
-                  <div className="absolute top-0 right-8 bg-blue-600 text-white px-4 py-1 text-sm rounded-b-lg">
+                  <div className="absolute top-0 right-8 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-1 text-sm rounded-b-lg">
                     Most Popular
                   </div>
                 )}
                 <div className={`w-16 h-16 rounded-xl bg-gradient-to-r ${pkg.color} flex items-center justify-center mb-6`}>
                   <pkg.icon className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold mb-2">{pkg.title}</h3>
-                <p className="text-3xl font-bold text-blue-600 mb-2">{pkg.price}</p>
-                <p className="text-sm text-gray-500 mb-6">Timeline: {pkg.timeline}</p>
+                <h3 className="text-2xl font-bold mb-2 text-white">{pkg.title}</h3>
+                <p className="text-3xl font-bold text-blue-400 mb-2">{pkg.price}</p>
+                <p className="text-sm text-gray-400 mb-6">Timeline: {pkg.timeline}</p>
                 <ul className="space-y-3 mb-8">
                   {pkg.features.map((feature, i) => (
                     <li key={i} className="flex items-start gap-2">
-                      <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
-                      <span className="text-gray-600">{feature}</span>
+                      <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0" />
+                      <span className="text-gray-300">{feature}</span>
                     </li>
                   ))}
                 </ul>
@@ -494,7 +358,7 @@ export default function Home() {
                   className={`block text-center py-3 rounded-lg font-semibold transition ${
                     pkg.popular
                       ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:shadow-xl'
-                      : 'border border-blue-600 text-blue-600 hover:bg-blue-50'
+                      : 'border border-blue-500 text-blue-400 hover:bg-blue-500/10'
                   }`}
                 >
                   Get Started
@@ -506,23 +370,23 @@ export default function Home() {
       </section>
 
       {/* RESEARCH & INNOVATION */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-[#0B0F19]">
         <Container>
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold mb-4">Research & Innovation</h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <h2 className="text-4xl font-bold mb-4 text-white">Research & Innovation</h2>
+            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
               What we're exploring to help startups launch faster
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {innovations.map((item, index) => (
-              <div key={index} className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-2">
-                <div className="w-16 h-16 bg-purple-100 rounded-xl flex items-center justify-center mb-6">
-                  <item.icon className="w-8 h-8 text-purple-600" />
+              <div key={index} className="bg-[rgba(255,255,255,0.05)] backdrop-blur-sm border border-[#1F2937] p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-2 hover:border-purple-500/50">
+                <div className="w-16 h-16 bg-[rgba(168,85,247,0.2)] rounded-xl flex items-center justify-center mb-6">
+                  <item.icon className="w-8 h-8 text-purple-400" />
                 </div>
-                <h3 className="text-xl font-semibold mb-3">{item.title}</h3>
-                <p className="text-gray-600">{item.desc}</p>
+                <h3 className="text-xl font-semibold mb-3 text-white">{item.title}</h3>
+                <p className="text-gray-400">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -530,7 +394,7 @@ export default function Home() {
           <div className="mt-12 text-center">
             <Link
               to="/insights"
-              className="inline-flex items-center text-purple-600 font-semibold hover:gap-2 transition-all"
+              className="inline-flex items-center text-purple-400 font-semibold hover:gap-2 transition-all"
             >
               Read Our Research Blog <ArrowRight className="ml-2 w-4 h-4" />
             </Link>
@@ -539,11 +403,11 @@ export default function Home() {
       </section>
 
       {/* PARTNERSHIPS & ALLIANCES */}
-      <section className="py-20">
+      <section className="py-20 bg-[#0B0F19]">
         <Container>
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold mb-4">Partnerships & Alliances</h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <h2 className="text-4xl font-bold mb-4 text-white">Partnerships & Alliances</h2>
+            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
               Tools and platforms we work with to deliver better solutions
             </p>
           </div>
@@ -557,32 +421,32 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className="text-center group"
               >
-                <div className="bg-gray-50 w-24 h-24 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition">
+                <div className="bg-[rgba(255,255,255,0.05)] w-24 h-24 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition border border-[#1F2937]">
                   <img
                     src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${partner.logo}/${partner.logo}-original.svg`}
                     alt={partner.name}
-                    className="w-12 h-12 object-contain"
+                    className="w-12 h-12 object-contain filter brightness-0 invert"
                     onError={(e) => {
                       e.target.onerror = null;
                       e.target.src = `https://via.placeholder.com/48?text=${partner.name.charAt(0)}`;
                     }}
                   />
                 </div>
-                <h3 className="font-semibold text-sm">{partner.name}</h3>
+                <h3 className="font-semibold text-sm text-white">{partner.name}</h3>
                 <p className="text-xs text-gray-500">{partner.tier}</p>
               </a>
             ))}
           </div>
 
-          <div className="mt-12 text-center bg-gradient-to-r from-blue-50 to-purple-50 p-8 rounded-2xl">
-            <Handshake className="w-12 h-12 text-blue-600 mx-auto mb-4" />
-            <h3 className="text-2xl font-bold mb-2">Want to Partner With Us?</h3>
-            <p className="text-gray-600 mb-4">
+          <div className="mt-12 text-center bg-gradient-to-r from-blue-600/20 to-purple-600/20 backdrop-blur-sm border border-[#1F2937] p-8 rounded-2xl">
+            <Handshake className="w-12 h-12 text-blue-400 mx-auto mb-4" />
+            <h3 className="text-2xl font-bold mb-2 text-white">Want to Partner With Us?</h3>
+            <p className="text-gray-400 mb-4">
               We're always looking for new tools and platforms to help our startup clients
             </p>
             <Link
               to="/contact"
-              className="inline-flex items-center text-blue-600 font-semibold hover:gap-2 transition-all"
+              className="inline-flex items-center text-blue-400 font-semibold hover:gap-2 transition-all"
             >
               Let's Talk Partnership <ArrowRight className="ml-2 w-4 h-4" />
             </Link>
@@ -591,11 +455,11 @@ export default function Home() {
       </section>
 
       {/* HOW WE WORK WITH STARTUPS */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-[#0B0F19]">
         <Container>
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold mb-4">How We Work with Startups</h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <h2 className="text-4xl font-bold mb-4 text-white">How We Work with Startups</h2>
+            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
               From idea to launch in 4 simple steps
             </p>
           </div>
@@ -603,13 +467,13 @@ export default function Home() {
           <div className="grid md:grid-cols-4 gap-8 relative">
             {howWeWork.map((item, index) => (
               <div key={index} className="text-center relative">
-                <div className="w-20 h-20 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-4 relative z-10">
-                  <item.icon className="w-10 h-10 text-blue-600" />
+                <div className="w-20 h-20 bg-[rgba(59,130,246,0.2)] rounded-2xl flex items-center justify-center mx-auto mb-4 relative z-10">
+                  <item.icon className="w-10 h-10 text-blue-400" />
                 </div>
-                <h3 className="text-xl font-semibold mb-2">{item.step}</h3>
-                <p className="text-gray-600">{item.desc}</p>
+                <h3 className="text-xl font-semibold mb-2 text-white">{item.step}</h3>
+                <p className="text-gray-400">{item.desc}</p>
                 {index < 3 && (
-                  <div className="hidden md:block absolute top-10 left-[60%] w-full h-0.5 bg-gray-300"></div>
+                  <div className="hidden md:block absolute top-10 left-[60%] w-full h-0.5 bg-[#1F2937]"></div>
                 )}
               </div>
             ))}
@@ -618,9 +482,9 @@ export default function Home() {
       </section>
 
       {/* TECH STACK */}
-      <section className="py-20 bg-gray-900 text-white">
+      <section className="py-20 bg-[#0B0F19]">
         <Container>
-          <h2 className="text-4xl font-bold text-center mb-4">Our Tech Stack</h2>
+          <h2 className="text-4xl font-bold text-center mb-4 text-white">Our Tech Stack</h2>
           <p className="text-xl text-gray-400 text-center max-w-2xl mx-auto mb-12">
             Modern technologies we use to build your startup's software
           </p>
@@ -637,24 +501,24 @@ export default function Home() {
       </section>
 
       {/* TESTIMONIALS */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-[#0B0F19]">
         <Container>
-          <h2 className="text-4xl font-bold text-center mb-4">What Founders Say</h2>
-          <p className="text-xl text-gray-600 text-center max-w-2xl mx-auto mb-12">
+          <h2 className="text-4xl font-bold text-center mb-4 text-white">What Founders Say</h2>
+          <p className="text-xl text-gray-400 text-center max-w-2xl mx-auto mb-12">
             Real feedback from startup founders we've worked with
           </p>
 
           <div className="grid md:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
-              <div key={index} className="bg-white p-8 rounded-2xl shadow-lg">
+              <div key={index} className="bg-[rgba(255,255,255,0.05)] backdrop-blur-sm border border-[#1F2937] p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-2">
                 <div className="flex gap-1 mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
                     <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
                   ))}
                 </div>
-                <p className="text-gray-600 mb-6 italic">"{testimonial.content}"</p>
+                <p className="text-gray-300 mb-6 italic">"{testimonial.content}"</p>
                 <div>
-                  <p className="font-semibold">{testimonial.name}</p>
+                  <p className="font-semibold text-white">{testimonial.name}</p>
                   <p className="text-sm text-gray-500">{testimonial.role}</p>
                 </div>
               </div>
@@ -664,11 +528,11 @@ export default function Home() {
       </section>
 
       {/* WHAT YOU GET */}
-      <section className="py-20">
+      <section className="py-20 bg-[#0B0F19]">
         <Container>
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-4xl font-bold mb-6">What You Get When You Work With Us</h2>
+              <h2 className="text-4xl font-bold mb-6 text-white">What You Get When You Work With Us</h2>
               <div className="space-y-4">
                 {[
                   "Fully functional software tailored to your startup",
@@ -681,8 +545,8 @@ export default function Home() {
                   "Direct access to developers"
                 ].map((item, index) => (
                   <div key={index} className="flex items-start gap-3">
-                    <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0" />
-                    <span className="text-gray-700">{item}</span>
+                    <CheckCircle className="w-6 h-6 text-green-400 flex-shrink-0" />
+                    <span className="text-gray-300">{item}</span>
                   </div>
                 ))}
               </div>
@@ -699,9 +563,9 @@ export default function Home() {
                 alt="Our team"
                 className="rounded-2xl shadow-2xl"
               />
-              <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-2xl shadow-xl">
-                <p className="text-4xl font-bold text-blue-600">100%</p>
-                <p className="text-gray-600">Startup Friendly</p>
+              <div className="absolute -bottom-6 -left-6 bg-[rgba(255,255,255,0.05)] backdrop-blur-sm border border-[#1F2937] p-6 rounded-2xl shadow-xl">
+                <p className="text-4xl font-bold text-blue-400">100%</p>
+                <p className="text-gray-300">Startup Friendly</p>
               </div>
             </div>
           </div>
@@ -777,7 +641,7 @@ function Tech({ name, icon }) {
           e.target.src = `https://via.placeholder.com/48/ffffff/000000?text=${name.charAt(0).toUpperCase()}`;
         }}
       />
-      <span className="text-sm text-gray-300 capitalize">{name}</span>
+      <span className="text-sm text-gray-400 capitalize group-hover:text-white transition">{name}</span>
     </div>
   );
 }

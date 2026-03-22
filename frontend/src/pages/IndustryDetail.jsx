@@ -1112,9 +1112,9 @@ export default function IndustryDetail() {
 
   if (!industry) {
     return (
-      <div className="pt-32 text-center min-h-screen bg-gray-50">
+      <div className="pt-32 text-center min-h-screen bg-[#0B0F19] text-white">
         <h1 className="text-3xl mb-4">Industry not found</h1>
-        <Link to="/industries" className="text-blue-600 hover:underline">
+        <Link to="/industries" className="text-blue-400 hover:underline">
           ← Back to Industries
         </Link>
       </div>
@@ -1132,7 +1132,7 @@ export default function IndustryDetail() {
   ];
 
   return (
-    <main className="pt-24 bg-white min-h-screen">
+    <main className="pt-24 bg-[#0B0F19] min-h-screen text-white">
       {/* HERO SECTION */}
       <section className="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-20">
         <div className="max-w-7xl mx-auto px-6">
@@ -1157,7 +1157,7 @@ export default function IndustryDetail() {
       </section>
 
       {/* TAB NAVIGATION */}
-      <section className="border-b sticky top-20 bg-white z-40">
+      <section className="border-b border-[#1F2937] sticky top-20 bg-[#0B0F19] z-40">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex space-x-8 overflow-x-auto">
             {tabs.map(tab => (
@@ -1166,8 +1166,8 @@ export default function IndustryDetail() {
                 onClick={() => setActiveTab(tab.id)}
                 className={`py-4 px-2 font-medium transition border-b-2 whitespace-nowrap ${
                   activeTab === tab.id
-                    ? 'border-blue-600 text-blue-600'
-                    : 'border-transparent text-gray-500 hover:text-gray-700'
+                    ? 'border-blue-500 text-blue-400'
+                    : 'border-transparent text-gray-400 hover:text-gray-300'
                 }`}
               >
                 {tab.label}
@@ -1183,9 +1183,9 @@ export default function IndustryDetail() {
           {/* Detailed Overview */}
           <section className="py-16">
             <div className="max-w-4xl mx-auto px-6">
-              <h2 className="text-3xl font-bold mb-8">Overview</h2>
-              <div className="bg-gray-50 p-8 rounded-2xl">
-                <p className="text-gray-700 text-lg leading-relaxed whitespace-pre-line">
+              <h2 className="text-3xl font-bold mb-8 text-white">Overview</h2>
+              <div className="bg-[rgba(255,255,255,0.05)] backdrop-blur-sm border border-[#1F2937] p-8 rounded-2xl">
+                <p className="text-gray-300 text-lg leading-relaxed whitespace-pre-line">
                   {industry.detailedOverview}
                 </p>
               </div>
@@ -1193,17 +1193,17 @@ export default function IndustryDetail() {
           </section>
 
           {/* Benefits Preview */}
-          <section className="py-16 bg-gray-50">
+          <section className="py-16 bg-[#0B0F19]">
             <div className="max-w-7xl mx-auto px-6">
-              <h2 className="text-3xl font-bold text-center mb-12">Why Choose Us</h2>
+              <h2 className="text-3xl font-bold text-center mb-12 text-white">Why Choose Us</h2>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {industry.benefits.slice(0, 3).map((benefit, index) => (
-                  <div key={index} className="bg-white p-8 rounded-2xl shadow-lg">
-                    <div className="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
-                      <benefit.icon className="w-7 h-7 text-blue-600" />
+                  <div key={index} className="bg-[rgba(255,255,255,0.05)] backdrop-blur-sm border border-[#1F2937] p-8 rounded-2xl shadow-lg">
+                    <div className="w-14 h-14 bg-blue-600/20 rounded-xl flex items-center justify-center mb-6">
+                      <benefit.icon className="w-7 h-7 text-blue-400" />
                     </div>
-                    <h3 className="text-xl font-semibold mb-3">{benefit.title}</h3>
-                    <p className="text-gray-600">{benefit.desc}</p>
+                    <h3 className="text-xl font-semibold mb-3 text-white">{benefit.title}</h3>
+                    <p className="text-gray-400">{benefit.desc}</p>
                   </div>
                 ))}
               </div>
@@ -1213,17 +1213,17 @@ export default function IndustryDetail() {
           {/* Quick Process */}
           <section className="py-16">
             <div className="max-w-7xl mx-auto px-6">
-              <h2 className="text-3xl font-bold text-center mb-12">Quick Process Overview</h2>
+              <h2 className="text-3xl font-bold text-center mb-12 text-white">Quick Process Overview</h2>
               <div className="grid md:grid-cols-5 gap-4">
                 {industry.process.slice(0, 5).map((step, index) => (
                   <div key={index} className="text-center relative">
                     <div className="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">
                       {index + 1}
                     </div>
-                    <h3 className="font-semibold mb-2">{step.phase}</h3>
-                    <p className="text-sm text-gray-500">{step.duration}</p>
+                    <h3 className="font-semibold mb-2 text-white">{step.phase}</h3>
+                    <p className="text-sm text-gray-400">{step.duration}</p>
                     {index < 4 && (
-                      <div className="hidden md:block absolute top-6 left-[60%] w-full h-0.5 bg-gray-200"></div>
+                      <div className="hidden md:block absolute top-6 left-[60%] w-full h-0.5 bg-[#1F2937]"></div>
                     )}
                   </div>
                 ))}
@@ -1237,19 +1237,19 @@ export default function IndustryDetail() {
       {activeTab === "services" && (
         <section className="py-16">
           <div className="max-w-7xl mx-auto px-6">
-            <h2 className="text-3xl font-bold text-center mb-4">Our Services</h2>
-            <p className="text-gray-600 text-center max-w-2xl mx-auto mb-12">
+            <h2 className="text-3xl font-bold text-center mb-4 text-white">Our Services</h2>
+            <p className="text-gray-400 text-center max-w-2xl mx-auto mb-12">
               Comprehensive solutions tailored to your industry needs
             </p>
             
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {industry.services.map((service, index) => (
-                <div key={index} className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all">
-                  <div className="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
-                    <service.icon className="w-7 h-7 text-blue-600" />
+                <div key={index} className="bg-[rgba(255,255,255,0.05)] backdrop-blur-sm border border-[#1F2937] p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all">
+                  <div className="w-14 h-14 bg-blue-600/20 rounded-xl flex items-center justify-center mb-6">
+                    <service.icon className="w-7 h-7 text-blue-400" />
                   </div>
-                  <h3 className="text-xl font-semibold mb-3">{service.title}</h3>
-                  <p className="text-gray-600">{service.desc}</p>
+                  <h3 className="text-xl font-semibold mb-3 text-white">{service.title}</h3>
+                  <p className="text-gray-400">{service.desc}</p>
                 </div>
               ))}
             </div>
@@ -1261,22 +1261,22 @@ export default function IndustryDetail() {
       {activeTab === "process" && (
         <section className="py-16">
           <div className="max-w-7xl mx-auto px-6">
-            <h2 className="text-3xl font-bold text-center mb-4">Our Development Process</h2>
-            <p className="text-gray-600 text-center max-w-2xl mx-auto mb-12">
+            <h2 className="text-3xl font-bold text-center mb-4 text-white">Our Development Process</h2>
+            <p className="text-gray-400 text-center max-w-2xl mx-auto mb-12">
               A transparent, collaborative approach from idea to launch
             </p>
 
             <div className="space-y-8">
               {industry.process.map((step, index) => (
-                <div key={index} className="bg-gray-50 p-8 rounded-2xl">
+                <div key={index} className="bg-[rgba(255,255,255,0.05)] backdrop-blur-sm border border-[#1F2937] p-8 rounded-2xl">
                   <div className="flex flex-wrap gap-6 items-start">
                     <div className="w-16 h-16 bg-blue-600 text-white rounded-2xl flex items-center justify-center text-2xl font-bold">
                       {index + 1}
                     </div>
                     <div className="flex-1">
                       <div className="flex flex-wrap items-center gap-4 mb-4">
-                        <h3 className="text-2xl font-semibold">{step.phase}</h3>
-                        <span className="bg-blue-100 text-blue-600 px-4 py-1 rounded-full text-sm font-medium">
+                        <h3 className="text-2xl font-semibold text-white">{step.phase}</h3>
+                        <span className="bg-blue-600/20 text-blue-400 px-4 py-1 rounded-full text-sm font-medium">
                           {step.duration}
                         </span>
                       </div>
@@ -1284,7 +1284,7 @@ export default function IndustryDetail() {
                         {step.tasks.map((task, i) => (
                           <li key={i} className="flex items-start gap-2">
                             <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                            <span className="text-gray-700">{task}</span>
+                            <span className="text-gray-300">{task}</span>
                           </li>
                         ))}
                       </ul>
@@ -1315,31 +1315,31 @@ export default function IndustryDetail() {
       {activeTab === "benefits" && (
         <section className="py-16">
           <div className="max-w-7xl mx-auto px-6">
-            <h2 className="text-3xl font-bold text-center mb-4">Business Benefits</h2>
-            <p className="text-gray-600 text-center max-w-2xl mx-auto mb-12">
+            <h2 className="text-3xl font-bold text-center mb-4 text-white">Business Benefits</h2>
+            <p className="text-gray-400 text-center max-w-2xl mx-auto mb-12">
               What you gain by partnering with us
             </p>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {industry.benefits.map((benefit, index) => (
-                <div key={index} className="bg-gray-50 p-8 rounded-2xl hover:shadow-lg transition-all">
-                  <div className="w-14 h-14 bg-green-100 rounded-xl flex items-center justify-center mb-6">
-                    <benefit.icon className="w-7 h-7 text-green-600" />
+                <div key={index} className="bg-[rgba(255,255,255,0.05)] backdrop-blur-sm border border-[#1F2937] p-8 rounded-2xl hover:shadow-lg transition-all">
+                  <div className="w-14 h-14 bg-green-600/20 rounded-xl flex items-center justify-center mb-6">
+                    <benefit.icon className="w-7 h-7 text-green-400" />
                   </div>
-                  <h3 className="text-xl font-semibold mb-3">{benefit.title}</h3>
-                  <p className="text-gray-600">{benefit.desc}</p>
+                  <h3 className="text-xl font-semibold mb-3 text-white">{benefit.title}</h3>
+                  <p className="text-gray-400">{benefit.desc}</p>
                 </div>
               ))}
             </div>
 
             {/* Deliverables */}
             <div className="mt-16">
-              <h3 className="text-2xl font-bold text-center mb-8">What You'll Receive</h3>
+              <h3 className="text-2xl font-bold text-center mb-8 text-white">What You'll Receive</h3>
               <div className="grid md:grid-cols-4 gap-4">
                 {industry.deliverables.map((item, index) => (
-                  <div key={index} className="bg-white border border-gray-200 p-4 rounded-lg text-center">
+                  <div key={index} className="bg-[rgba(255,255,255,0.05)] backdrop-blur-sm border border-[#1F2937] p-4 rounded-lg text-center">
                     <CheckCircle className="w-5 h-5 text-green-500 mx-auto mb-2" />
-                    <span className="text-sm font-medium">{item}</span>
+                    <span className="text-sm font-medium text-gray-300">{item}</span>
                   </div>
                 ))}
               </div>
@@ -1352,8 +1352,8 @@ export default function IndustryDetail() {
       {activeTab === "pricing" && (
         <section className="py-16">
           <div className="max-w-7xl mx-auto px-6">
-            <h2 className="text-3xl font-bold text-center mb-4">Investment Options</h2>
-            <p className="text-gray-600 text-center max-w-2xl mx-auto mb-12">
+            <h2 className="text-3xl font-bold text-center mb-4 text-white">Investment Options</h2>
+            <p className="text-gray-400 text-center max-w-2xl mx-auto mb-12">
               Flexible engagement models tailored to your budget and requirements
             </p>
 
@@ -1361,33 +1361,27 @@ export default function IndustryDetail() {
               {Object.entries(industry.pricing).map(([key, plan]) => (
                 <div
                   key={key}
-                  className={`relative bg-white rounded-2xl p-8 ${
-                    plan.popular ? 'border-2 border-blue-600 shadow-xl scale-105' : 'border border-gray-200 shadow-lg'
-                  }`}
+                  className={`relative bg-[rgba(255,255,255,0.05)] backdrop-blur-sm border ${plan.popular ? 'border-blue-500 shadow-xl scale-105' : 'border-[#1F2937] shadow-lg'} rounded-2xl p-8`}
                 >
                   {plan.popular && (
                     <div className="absolute top-0 right-8 bg-blue-600 text-white px-4 py-1 text-sm rounded-b-lg">
                       Most Popular
                     </div>
                   )}
-                  <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
-                  <p className="text-gray-500 text-sm mb-4">{plan.description}</p>
-                  <div className="text-3xl font-bold text-blue-600 mb-6">{plan.price}</div>
+                  <h3 className="text-2xl font-bold mb-2 text-white">{plan.name}</h3>
+                  <p className="text-gray-400 text-sm mb-4">{plan.description}</p>
+                  <div className="text-3xl font-bold text-blue-400 mb-6">{plan.price}</div>
                   <ul className="space-y-3 mb-8">
                     {plan.features.map((feature, i) => (
                       <li key={i} className="flex items-start gap-2">
                         <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
-                        <span className="text-gray-600">{feature}</span>
+                        <span className="text-gray-300">{feature}</span>
                       </li>
                     ))}
                   </ul>
                   <Link
                     to="/contact"
-                    className={`block text-center py-3 rounded-lg font-semibold transition ${
-                      plan.popular
-                        ? 'bg-blue-600 text-white hover:bg-blue-700'
-                        : 'border border-blue-600 text-blue-600 hover:bg-blue-50'
-                    }`}
+                    className={`block text-center py-3 rounded-lg font-semibold transition ${plan.popular ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:shadow-xl' : 'border border-blue-500 text-blue-400 hover:bg-blue-500/10'}`}
                   >
                     Get Started
                   </Link>
@@ -1395,9 +1389,9 @@ export default function IndustryDetail() {
               ))}
             </div>
 
-            <div className="mt-12 text-center text-gray-500 bg-gray-50 p-6 rounded-xl">
+            <div className="mt-12 text-center text-gray-400 bg-[rgba(255,255,255,0.05)] p-6 rounded-xl">
               <p className="text-lg">Need a custom solution? We'll create a package tailored to your specific requirements.</p>
-              <Link to="/contact" className="inline-block mt-4 text-blue-600 hover:text-blue-700 font-medium">
+              <Link to="/contact" className="inline-block mt-4 text-blue-400 hover:text-blue-300 font-medium">
                 Schedule a Free Consultation →
               </Link>
             </div>
@@ -1409,12 +1403,12 @@ export default function IndustryDetail() {
       {activeTab === "faq" && industry.faq && (
         <section className="py-16">
           <div className="max-w-4xl mx-auto px-6">
-            <h2 className="text-3xl font-bold text-center mb-12">Frequently Asked Questions</h2>
+            <h2 className="text-3xl font-bold text-center mb-12 text-white">Frequently Asked Questions</h2>
             <div className="space-y-6">
               {industry.faq.map((item, index) => (
-                <div key={index} className="bg-gray-50 p-6 rounded-xl">
-                  <h3 className="text-xl font-semibold mb-3">{item.question}</h3>
-                  <p className="text-gray-600">{item.answer}</p>
+                <div key={index} className="bg-[rgba(255,255,255,0.05)] backdrop-blur-sm border border-[#1F2937] p-6 rounded-xl">
+                  <h3 className="text-xl font-semibold mb-3 text-white">{item.question}</h3>
+                  <p className="text-gray-400">{item.answer}</p>
                 </div>
               ))}
             </div>
@@ -1423,15 +1417,15 @@ export default function IndustryDetail() {
       )}
 
       {/* OUR COMMITMENT */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-[#0B0F19]">
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-3xl font-bold mb-6">Our Commitment to You</h2>
-          <p className="text-gray-600 text-lg leading-relaxed">
+          <h2 className="text-3xl font-bold mb-6 text-white">Our Commitment to You</h2>
+          <p className="text-gray-300 text-lg leading-relaxed">
             As a new startup ourselves, we understand the importance of building trust and delivering value. 
             We're not just vendors – we're your technology partners. Your success is our success, and we put 
             everything into making your project a success.
           </p>
-          <p className="text-gray-600 text-lg leading-relaxed mt-4">
+          <p className="text-gray-300 text-lg leading-relaxed mt-4">
             Every line of code we write, every design we create, and every decision we make is focused on 
             helping you achieve your business goals. Let's build something amazing together.
           </p>

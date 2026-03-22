@@ -14,8 +14,8 @@ export default function OfficeMap() {
       address: 'Hinjewadi Phase 3, Pune - 411057',
       icon: '🏢',
       coordinates: { top: '58%', left: '38%' },
-      employees: '1 founder', // Changed from fake number
-      year: '2026' // Added founding year
+      employees: '1 founder',
+      year: '2026'
     },
     {
       id: 'noida',
@@ -26,8 +26,8 @@ export default function OfficeMap() {
       address: 'Sector 62, Noida - 201309',
       icon: '🚀',
       coordinates: { top: '32%', left: '48%' },
-      employees: 'Coming soon', // Changed from fake number
-      year: '2026' // Future goal
+      employees: 'Coming soon',
+      year: '2026'
     },
     {
       id: 'bangalore',
@@ -38,36 +38,36 @@ export default function OfficeMap() {
       address: 'Whitefield, Bangalore - 560066',
       icon: '☁️',
       coordinates: { top: '68%', left: '44%' },
-      employees: 'Coming soon', // Changed from fake number
-      year: '2026' // Future goal
+      employees: 'Coming soon',
+      year: '2026'
     }
   ];
 
   return (
     <FadeInSection>
-      <section className="py-28 bg-gray-50">
+      <section className="py-28 bg-[#0B0F19]">
         <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-4xl font-semibold mb-4 text-gray-900">
+          <h2 className="text-4xl font-semibold mb-4 text-white">
             Our Presence
           </h2>
-          <p className="text-xl text-gray-600 mb-12 max-w-2xl">
+          <p className="text-xl text-gray-400 mb-12 max-w-2xl">
             Starting from Pune, with big dreams to expand across India.
           </p>
 
           {/* Digital Map Container */}
-          <div className="bg-white rounded-2xl shadow-xl p-8">
+          <div className="bg-[rgba(255,255,255,0.05)] backdrop-blur-sm rounded-2xl shadow-xl p-8 border border-[#1F2937]">
             {/* Digital Map SVG */}
             <div className="relative w-full" style={{ paddingBottom: '60%' }}>
               <svg
                 viewBox="0 0 800 500"
                 className="absolute top-0 left-0 w-full h-full"
-                style={{ background: '#f8fafc' }}
+                style={{ background: '#0F172A' }}
               >
                 {/* India Outline - Simplified geographic shape */}
                 <path
                   d="M400,80 L480,120 L520,160 L560,200 L600,250 L580,300 L540,340 L480,370 L420,390 L360,380 L300,350 L240,310 L200,260 L180,210 L190,160 L220,120 L270,90 L330,75 L400,80"
-                  fill="#e6f0ff"
-                  stroke="#2563eb"
+                  fill="rgba(59,130,246,0.1)"
+                  stroke="#3B82F6"
                   strokeWidth="2"
                   strokeOpacity="0.5"
                 />
@@ -90,7 +90,7 @@ export default function OfficeMap() {
                         cx={340}
                         cy={310}
                         r="8"
-                        fill="#ef4444"
+                        fill="#EF4444"
                         stroke="white"
                         strokeWidth="2"
                         className="animate-ping"
@@ -103,10 +103,10 @@ export default function OfficeMap() {
                       cx={office.id === 'pune' ? 340 : office.id === 'noida' ? 420 : 380}
                       cy={office.id === 'pune' ? 310 : office.id === 'noida' ? 170 : 360}
                       r={office.id === 'pune' ? 12 : 8}
-                      fill={office.id === 'pune' ? '#ef4444' : office.id === 'noida' ? '#94a3b8' : '#94a3b8'}
+                      fill={office.id === 'pune' ? '#EF4444' : office.id === 'noida' ? '#94a3b8' : '#94a3b8'}
                       stroke="white"
                       strokeWidth="3"
-                      className="cursor-pointer"
+                      className="cursor-pointer transition-all duration-300 hover:r-14"
                       onMouseEnter={() => setActiveOffice(office.id)}
                       onMouseLeave={() => setActiveOffice(null)}
                     />
@@ -120,34 +120,34 @@ export default function OfficeMap() {
                           width="160"
                           height="70"
                           rx="8"
-                          fill="white"
-                          stroke="#e2e8f0"
+                          fill="#1F2937"
+                          stroke="#3B82F6"
                           strokeWidth="1"
                         />
                         <text
                           x={(office.id === 'pune' ? 340 : office.id === 'noida' ? 420 : 380) - 70}
                           y={(office.id === 'pune' ? 310 : office.id === 'noida' ? 170 : 360) - 55}
-                          fill="#1e293b"
+                          fill="#FFFFFF"
                           fontSize="12"
                           fontWeight="bold"
                         >{office.name}</text>
                         <text
                           x={(office.id === 'pune' ? 340 : office.id === 'noida' ? 420 : 380) - 70}
                           y={(office.id === 'pune' ? 310 : office.id === 'noida' ? 170 : 360) - 40}
-                          fill="#64748b"
+                          fill="#9CA3AF"
                           fontSize="10"
                         >{office.city}</text>
                         <text
                           x={(office.id === 'pune' ? 340 : office.id === 'noida' ? 420 : 380) - 70}
                           y={(office.id === 'pune' ? 310 : office.id === 'noida' ? 170 : 360) - 25}
-                          fill={office.id === 'pune' ? '#10b981' : '#94a3b8'}
+                          fill={office.id === 'pune' ? '#10B981' : '#94a3b8'}
                           fontSize="10"
                           fontWeight="bold"
                         >{office.employees}</text>
                         <text
                           x={(office.id === 'pune' ? 340 : office.id === 'noida' ? 420 : 380) - 70}
                           y={(office.id === 'pune' ? 310 : office.id === 'noida' ? 170 : 360) - 10}
-                          fill="#3b82f6"
+                          fill="#3B82F6"
                           fontSize="9"
                         >Est. {office.year}</text>
                       </g>
@@ -156,21 +156,21 @@ export default function OfficeMap() {
                 ))}
 
                 {/* City labels */}
-                <text x="300" y="330" fill="#475569" fontSize="10" fontWeight="500">Pune</text>
-                <text x="420" y="150" fill="#94a3b8" fontSize="10" fontWeight="500">Noida (Future)</text>
-                <text x="400" y="390" fill="#94a3b8" fontSize="10" fontWeight="500">Bangalore (Future)</text>
+                <text x="300" y="330" fill="#9CA3AF" fontSize="10" fontWeight="500">Pune</text>
+                <text x="420" y="150" fill="#9CA3AF" fontSize="10" fontWeight="500">Noida (Future)</text>
+                <text x="400" y="390" fill="#9CA3AF" fontSize="10" fontWeight="500">Bangalore (Future)</text>
               </svg>
             </div>
 
             {/* Map Legend */}
             <div className="flex justify-center gap-8 mt-8">
               <div className="flex items-center gap-2">
-                <div className="w-3 h-3 bg-red-600 rounded-full"></div>
-                <span className="text-sm text-gray-700">Current Office</span>
+                <div className="w-3 h-3 bg-red-500 rounded-full"></div>
+                <span className="text-sm text-gray-300">Current Office</span>
               </div>
               <div className="flex items-center gap-2">
-                <div className="w-3 h-3 bg-gray-400 rounded-full"></div>
-                <span className="text-sm text-gray-700">Planned Expansion</span>
+                <div className="w-3 h-3 bg-gray-500 rounded-full"></div>
+                <span className="text-sm text-gray-300">Planned Expansion</span>
               </div>
             </div>
           </div>
@@ -180,19 +180,19 @@ export default function OfficeMap() {
             {offices.map((office) => (
               <div
                 key={office.id}
-                className={`bg-white p-6 rounded-xl shadow-md transition-all duration-300 ${
-                  activeOffice === office.id ? 'ring-2 ring-' + office.color + '-500 scale-105' : ''
+                className={`bg-[rgba(255,255,255,0.05)] backdrop-blur-sm border border-[#1F2937] p-6 rounded-xl shadow-md transition-all duration-300 ${
+                  activeOffice === office.id ? 'ring-2 ring-blue-500 scale-105' : ''
                 } ${office.id !== 'pune' ? 'opacity-75' : ''}`}
                 onMouseEnter={() => setActiveOffice(office.id)}
                 onMouseLeave={() => setActiveOffice(null)}
               >
                 <div className="flex items-start gap-4">
-                  <div className={`w-12 h-12 ${office.id === 'pune' ? 'bg-red-100' : 'bg-gray-100'} rounded-lg flex items-center justify-center text-2xl`}>
+                  <div className={`w-12 h-12 ${office.id === 'pune' ? 'bg-red-500/20' : 'bg-gray-500/20'} rounded-lg flex items-center justify-center text-2xl`}>
                     {office.icon}
                   </div>
                   <div className="flex-1">
-                    <h3 className="font-semibold text-gray-900">{office.name}</h3>
-                    <p className="text-sm text-gray-600 mt-1">{office.address}</p>
+                    <h3 className="font-semibold text-white">{office.name}</h3>
+                    <p className="text-sm text-gray-400 mt-1">{office.address}</p>
                     <div className="flex items-center gap-4 mt-3">
                       <span className="text-xs text-gray-500">👥 {office.employees}</span>
                       <span className="text-xs text-gray-500">📍 {office.city}</span>
@@ -200,7 +200,7 @@ export default function OfficeMap() {
                     </div>
                     <p className="text-xs text-gray-500 mt-2">{office.description}</p>
                     {office.id !== 'pune' && (
-                      <span className="inline-block mt-3 text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">
+                      <span className="inline-block mt-3 text-xs bg-gray-800 text-gray-400 px-2 py-1 rounded">
                         🚧 Planned for 2026
                       </span>
                     )}
@@ -211,27 +211,27 @@ export default function OfficeMap() {
           </div>
 
           {/* Honest Stats Summary */}
-          <div className="grid grid-cols-3 gap-8 mt-12 pt-8 border-t border-gray-200">
+          <div className="grid grid-cols-3 gap-8 mt-12 pt-8 border-t border-[#1F2937]">
             <div className="text-center">
-              <div className="text-3xl font-bold text-blue-600">1</div>
-              <div className="text-sm text-gray-600 mt-1">Current Location</div>
-              <div className="text-xs text-gray-400">Pune</div>
+              <div className="text-3xl font-bold text-blue-400">1</div>
+              <div className="text-sm text-gray-400 mt-1">Current Location</div>
+              <div className="text-xs text-gray-600">Pune</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-blue-600">1</div>
-              <div className="text-sm text-gray-600 mt-1">Team Size</div>
-              <div className="text-xs text-gray-400">Solo Founder</div>
+              <div className="text-3xl font-bold text-blue-400">1</div>
+              <div className="text-sm text-gray-400 mt-1">Team Size</div>
+              <div className="text-xs text-gray-600">Solo Founder</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-blue-600">2026</div>
-              <div className="text-sm text-gray-600 mt-1">Founded</div>
-              <div className="text-xs text-gray-400">Brand new!</div>
+              <div className="text-3xl font-bold text-blue-400">2026</div>
+              <div className="text-sm text-gray-400 mt-1">Founded</div>
+              <div className="text-xs text-gray-600">Brand new!</div>
             </div>
           </div>
 
           {/* Honest Note */}
           <div className="mt-8 text-center">
-            <p className="text-sm text-gray-500 bg-white inline-block px-6 py-3 rounded-full shadow-sm">
+            <p className="text-sm text-gray-500 bg-[rgba(255,255,255,0.05)] inline-block px-6 py-3 rounded-full shadow-sm">
               ✨ Starting from Pune, with dreams to expand across India. Watch this space!
             </p>
           </div>

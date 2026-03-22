@@ -1,4 +1,4 @@
-import { useState } from "react";
+﻿import { useState } from "react";
 import { 
   MapPin, 
   Mail, 
@@ -65,7 +65,6 @@ export default function Contact() {
     setLoading(false);
   };
 
-  // Updated contact info with honest details
   const contactInfo = [
     {
       icon: Home,
@@ -117,7 +116,7 @@ export default function Contact() {
   ];
 
   return (
-    <main className="pt-24 bg-white">
+    <main className="pt-24 bg-[#0B0F19]">
       {/* HERO SECTION */}
       <section className="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-24">
         <Container>
@@ -150,18 +149,17 @@ export default function Contact() {
         </Container>
       </section>
 
-      {/* CONTACT INFO CARDS - UPDATED */}
+      {/* CONTACT INFO CARDS */}
       <section className="py-20">
         <Container>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 -mt-32 relative z-10">
             {contactInfo.map((item, index) => (
               <div
                 key={index}
-                className="bg-white rounded-2xl shadow-xl p-8 hover:shadow-2xl transition-all hover:-translate-y-2 relative overflow-hidden"
+                className="bg-[rgba(255,255,255,0.05)] backdrop-blur-sm border border-[#1F2937] rounded-2xl shadow-xl p-8 hover:shadow-2xl transition-all hover:-translate-y-2 relative overflow-hidden"
               >
-                {/* Status Badge */}
                 <div className="absolute top-4 right-4">
-                  <span className="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded-full">
+                  <span className="text-xs bg-[rgba(255,255,255,0.1)] text-gray-300 px-2 py-1 rounded-full">
                     {item.badge}
                   </span>
                 </div>
@@ -169,12 +167,12 @@ export default function Contact() {
                 <div className={`w-16 h-16 rounded-xl bg-gradient-to-r ${item.color} flex items-center justify-center mb-6`}>
                   <item.icon className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold mb-4">{item.title}</h3>
+                <h3 className="text-xl font-semibold mb-4 text-white">{item.title}</h3>
                 {item.details.map((detail, i) => (
-                  <p key={i} className="text-gray-600">
+                  <p key={i} className="text-gray-400">
                     {detail}
                     {i === 0 && item.title === "Current Location" && (
-                      <span className="block text-xs text-green-600 mt-1">✨ Working remotely</span>
+                      <span className="block text-xs text-green-400 mt-1">✨ Working remotely</span>
                     )}
                   </p>
                 ))}
@@ -182,9 +180,8 @@ export default function Contact() {
             ))}
           </div>
 
-          {/* Honest Note */}
           <div className="text-center mt-8">
-            <p className="text-sm text-gray-500 bg-blue-50 inline-block px-6 py-3 rounded-full">
+            <p className="text-sm text-gray-500 bg-[rgba(255,255,255,0.05)] inline-block px-6 py-3 rounded-full">
               🏗️ Currently operating remotely while establishing our physical presence
             </p>
           </div>
@@ -192,60 +189,56 @@ export default function Contact() {
       </section>
 
       {/* CONTACT FORM & INFO */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-[#0B0F19]">
         <Container>
           <div className="grid md:grid-cols-2 gap-16">
             {/* Left Column - Contact Info */}
             <div>
-              <h2 className="text-4xl font-bold mb-6">Get in Touch</h2>
-              <p className="text-lg text-gray-600 mb-8">
+              <h2 className="text-4xl font-bold mb-6 text-white">Get in Touch</h2>
+              <p className="text-lg text-gray-400 mb-8">
                 I'm excited to hear about your project. Whether you're a startup 
                 looking for your first tech partner or an established business 
                 needing custom software, I'm here to help.
               </p>
 
-              {/* Remote Work Badge */}
-              <div className="bg-gradient-to-r from-green-50 to-blue-50 p-4 rounded-2xl mb-6 flex items-center gap-4">
+              <div className="bg-gradient-to-r from-green-600/20 to-blue-600/20 p-4 rounded-2xl mb-6 flex items-center gap-4 border border-[#1F2937]">
                 <div className="relative">
                   <div className="w-3 h-3 bg-green-500 rounded-full animate-ping absolute"></div>
                   <div className="w-3 h-3 bg-green-500 rounded-full relative"></div>
                 </div>
                 <div>
-                  <p className="font-semibold text-gray-900">Available for calls & meetings</p>
-                  <p className="text-sm text-gray-600">Remote-first • Work from home • Flexible hours</p>
+                  <p className="font-semibold text-white">Available for calls & meetings</p>
+                  <p className="text-sm text-gray-400">Remote-first • Work from home • Flexible hours</p>
                 </div>
               </div>
 
-              {/* Special Message for Startups */}
-              <div className="bg-gradient-to-r from-blue-50 to-purple-50 p-6 rounded-2xl mb-8">
-                <h3 className="text-xl font-semibold mb-3 flex items-center">
+              <div className="bg-gradient-to-r from-blue-600/20 to-purple-600/20 p-6 rounded-2xl mb-8 border border-[#1F2937]">
+                <h3 className="text-xl font-semibold mb-3 flex items-center text-white">
                   <span className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center mr-3">
                     <span className="text-white text-sm">✨</span>
                   </span>
                   First-time Client?
                 </h3>
-                <p className="text-gray-700">
+                <p className="text-gray-400">
                   Being a startup myself, I understand your journey. Special rates and flexible terms 
                   available for early-stage founders.
                 </p>
               </div>
 
-              {/* FAQ Preview */}
               <div>
-                <h3 className="text-2xl font-semibold mb-6">Frequently Asked</h3>
+                <h3 className="text-2xl font-semibold mb-6 text-white">Frequently Asked</h3>
                 <div className="space-y-4">
                   {faqs.map((faq, index) => (
-                    <div key={index} className="bg-white p-4 rounded-xl">
-                      <h4 className="font-semibold mb-2">{faq.question}</h4>
-                      <p className="text-gray-600 text-sm">{faq.answer}</p>
+                    <div key={index} className="bg-[rgba(255,255,255,0.05)] backdrop-blur-sm border border-[#1F2937] p-4 rounded-xl">
+                      <h4 className="font-semibold mb-2 text-white">{faq.question}</h4>
+                      <p className="text-gray-400 text-sm">{faq.answer}</p>
                     </div>
                   ))}
                 </div>
               </div>
 
-              {/* Social Links */}
               <div className="mt-8">
-                <h3 className="text-lg font-semibold mb-4">Connect With Me</h3>
+                <h3 className="text-lg font-semibold mb-4 text-white">Connect With Me</h3>
                 <div className="flex gap-4">
                   <a
                     href="https://www.linkedin.com/in/er-sumit-raj-/"
@@ -280,15 +273,15 @@ export default function Contact() {
             </div>
 
             {/* Right Column - Contact Form */}
-            <div className="bg-white rounded-2xl shadow-xl p-8">
-              <h2 className="text-3xl font-bold mb-2">Send a Message</h2>
-              <p className="text-gray-500 mb-8">
+            <div className="bg-[rgba(255,255,255,0.05)] backdrop-blur-sm border border-[#1F2937] rounded-2xl shadow-xl p-8">
+              <h2 className="text-3xl font-bold mb-2 text-white">Send a Message</h2>
+              <p className="text-gray-400 mb-8">
                 I'll get back to you within 24 hours
               </p>
 
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-gray-300 mb-2">
                     Full Name <span className="text-red-500">*</span>
                   </label>
                   <input
@@ -298,12 +291,12 @@ export default function Contact() {
                     value={form.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
+                    className="w-full px-4 py-3 border border-[#1F2937] bg-[rgba(255,255,255,0.05)] rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition text-white placeholder-gray-500"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-gray-300 mb-2">
                     Email Address <span className="text-red-500">*</span>
                   </label>
                   <input
@@ -313,12 +306,12 @@ export default function Contact() {
                     value={form.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
+                    className="w-full px-4 py-3 border border-[#1F2937] bg-[rgba(255,255,255,0.05)] rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition text-white placeholder-gray-500"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-gray-300 mb-2">
                     Company (Optional)
                   </label>
                   <input
@@ -327,12 +320,12 @@ export default function Contact() {
                     placeholder="Your Company Name"
                     value={form.company}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
+                    className="w-full px-4 py-3 border border-[#1F2937] bg-[rgba(255,255,255,0.05)] rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition text-white placeholder-gray-500"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-gray-300 mb-2">
                     Message <span className="text-red-500">*</span>
                   </label>
                   <textarea
@@ -342,19 +335,19 @@ export default function Contact() {
                     onChange={handleChange}
                     required
                     rows="5"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
+                    className="w-full px-4 py-3 border border-[#1F2937] bg-[rgba(255,255,255,0.05)] rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition text-white placeholder-gray-500"
                   />
                 </div>
 
                 {error && (
-                  <div className="bg-red-50 text-red-600 p-4 rounded-lg flex items-center gap-2">
+                  <div className="bg-red-500/20 text-red-400 p-4 rounded-lg flex items-center gap-2 border border-red-500/30">
                     <AlertCircle className="w-5 h-5" />
                     {error}
                   </div>
                 )}
 
                 {success && (
-                  <div className="bg-green-50 text-green-600 p-4 rounded-lg flex items-center gap-2">
+                  <div className="bg-green-500/20 text-green-400 p-4 rounded-lg flex items-center gap-2 border border-green-500/30">
                     <CheckCircle className="w-5 h-5" />
                     Message sent successfully! I'll contact you soon.
                   </div>
@@ -394,11 +387,11 @@ export default function Contact() {
           className="absolute inset-0"
           src="https://maps.google.com/maps?q=pune%20india&t=&z=13&ie=UTF8&iwloc=&output=embed"
         />
-        <div className="absolute bottom-8 left-8 bg-white p-6 rounded-2xl shadow-xl">
-          <MapPin className="w-6 h-6 text-blue-600 mb-2" />
-          <h3 className="font-semibold">Current Base</h3>
-          <p className="text-gray-600 text-sm">Pune, Maharashtra, India</p>
-          <p className="text-xs text-green-600 mt-2 flex items-center gap-1">
+        <div className="absolute bottom-8 left-8 bg-[rgba(255,255,255,0.05)] backdrop-blur-sm border border-[#1F2937] p-6 rounded-2xl shadow-xl">
+          <MapPin className="w-6 h-6 text-blue-400 mb-2" />
+          <h3 className="font-semibold text-white">Current Base</h3>
+          <p className="text-gray-400 text-sm">Pune, Maharashtra, India</p>
+          <p className="text-xs text-green-400 mt-2 flex items-center gap-1">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-ping"></span>
             <span>Working remotely from here</span>
           </p>

@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+﻿import { Link } from "react-router-dom";
 import { 
   ArrowRight, 
   Calendar, 
@@ -204,7 +204,7 @@ const events = [
 
 export default function Newsroom() {
   return (
-    <main className="pt-24 bg-white">
+    <main className="pt-24 bg-[#0B0F19]">
       {/* HERO SECTION */}
       <section className="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-24">
         <Container>
@@ -233,12 +233,12 @@ export default function Newsroom() {
         <Container>
           <div className="flex items-center justify-between mb-12">
             <div>
-              <h2 className="text-4xl font-bold mb-2">Announcements</h2>
-              <p className="text-xl text-gray-600">What's new at Fintech IT Solutions</p>
+              <h2 className="text-4xl font-bold mb-2 text-white">Announcements</h2>
+              <p className="text-xl text-gray-400">What's new at Fintech IT Solutions</p>
             </div>
             <Link
               to="/newsroom/announcements"
-              className="text-blue-600 font-semibold flex items-center hover:gap-2 transition-all"
+              className="text-blue-400 font-semibold flex items-center hover:gap-2 transition-all"
             >
               View All <ChevronRight className="w-4 h-4 ml-1" />
             </Link>
@@ -249,7 +249,7 @@ export default function Newsroom() {
               <Link
                 key={index}
                 to={`/newsroom/${item.slug}`}
-                className="group bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all"
+                className="group bg-[rgba(255,255,255,0.05)] backdrop-blur-sm border border-[#1F2937] rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all hover:-translate-y-2"
               >
                 <div className="h-56 overflow-hidden">
                   <img
@@ -260,7 +260,7 @@ export default function Newsroom() {
                 </div>
                 <div className="p-6">
                   <div className="flex items-center gap-2 mb-3">
-                    <span className="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm font-medium">
+                    <span className="bg-blue-600/20 text-blue-400 px-3 py-1 rounded-full text-sm font-medium">
                       {item.category}
                     </span>
                     <span className="text-gray-400 text-sm flex items-center">
@@ -268,11 +268,11 @@ export default function Newsroom() {
                       {item.date}
                     </span>
                   </div>
-                  <h3 className="text-2xl font-bold mb-3 group-hover:text-blue-600 transition">
+                  <h3 className="text-2xl font-bold mb-3 text-white group-hover:text-blue-400 transition">
                     {item.title}
                   </h3>
-                  <p className="text-gray-600 mb-4">{item.excerpt}</p>
-                  <span className="text-blue-600 font-semibold inline-flex items-center group-hover:gap-2 transition-all">
+                  <p className="text-gray-400 mb-4">{item.excerpt}</p>
+                  <span className="text-blue-400 font-semibold inline-flex items-center group-hover:gap-2 transition-all">
                     Read Full Announcement <ArrowRight className="w-4 h-4 ml-1" />
                   </span>
                 </div>
@@ -283,16 +283,16 @@ export default function Newsroom() {
       </section>
 
       {/* BLOG POSTS */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-[#0B0F19]">
         <Container>
           <div className="flex items-center justify-between mb-12">
             <div>
-              <h2 className="text-4xl font-bold mb-2">From Our Blog</h2>
-              <p className="text-xl text-gray-600">Stories and insights from our team</p>
+              <h2 className="text-4xl font-bold mb-2 text-white">From Our Blog</h2>
+              <p className="text-xl text-gray-400">Stories and insights from our team</p>
             </div>
             <Link
               to="/insights"
-              className="text-blue-600 font-semibold flex items-center hover:gap-2 transition-all"
+              className="text-blue-400 font-semibold flex items-center hover:gap-2 transition-all"
             >
               Visit Blog <ChevronRight className="w-4 h-4 ml-1" />
             </Link>
@@ -303,7 +303,7 @@ export default function Newsroom() {
               <Link
                 key={index}
                 to={`/insights/${post.slug}`}
-                className="group bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all"
+                className="group bg-[rgba(255,255,255,0.05)] backdrop-blur-sm border border-[#1F2937] rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all hover:-translate-y-1"
               >
                 <div className="h-40 overflow-hidden">
                   <img
@@ -313,16 +313,16 @@ export default function Newsroom() {
                   />
                 </div>
                 <div className="p-4">
-                  <span className="text-xs text-blue-600 font-medium bg-blue-50 px-2 py-1 rounded-full mb-2 inline-block">
+                  <span className="text-xs text-blue-400 font-medium bg-blue-600/20 px-2 py-1 rounded-full mb-2 inline-block">
                     {post.category}
                   </span>
-                  <h3 className="font-semibold mb-2 group-hover:text-blue-600 transition line-clamp-2">
+                  <h3 className="font-semibold mb-2 text-white group-hover:text-blue-400 transition line-clamp-2">
                     {post.title}
                   </h3>
-                  <p className="text-sm text-gray-500 mb-2 line-clamp-2">
+                  <p className="text-sm text-gray-400 mb-2 line-clamp-2">
                     {post.excerpt}
                   </p>
-                  <div className="flex items-center text-xs text-gray-400">
+                  <div className="flex items-center text-xs text-gray-500">
                     <Clock className="w-3 h-3 mr-1" />
                     {post.readTime}
                     <span className="mx-2">•</span>
@@ -342,8 +342,8 @@ export default function Newsroom() {
           <div className="grid md:grid-cols-2 gap-12">
             {/* Press Mentions */}
             <div>
-              <h2 className="text-3xl font-bold mb-6 flex items-center">
-                <Newspaper className="w-8 h-8 mr-2 text-blue-600" />
+              <h2 className="text-3xl font-bold mb-6 flex items-center text-white">
+                <Newspaper className="w-8 h-8 mr-2 text-blue-400" />
                 Press Mentions
               </h2>
               <div className="space-y-4">
@@ -351,14 +351,14 @@ export default function Newsroom() {
                   <a
                     key={index}
                     href={mention.link}
-                    className="block bg-gray-50 p-6 rounded-xl hover:shadow-md transition"
+                    className="block bg-[rgba(255,255,255,0.05)] backdrop-blur-sm border border-[#1F2937] p-6 rounded-xl hover:shadow-md transition"
                   >
                     <div className="flex justify-between items-start mb-3">
-                      <span className="font-bold text-blue-600">{mention.outlet}</span>
+                      <span className="font-bold text-blue-400">{mention.outlet}</span>
                       <span className="text-sm text-gray-500">{mention.date}</span>
                     </div>
-                    <p className="text-gray-800 font-medium mb-2">{mention.title}</p>
-                    <p className="text-gray-600 text-sm">{mention.excerpt}</p>
+                    <p className="text-white font-medium mb-2">{mention.title}</p>
+                    <p className="text-gray-400 text-sm">{mention.excerpt}</p>
                   </a>
                 ))}
               </div>
@@ -366,8 +366,8 @@ export default function Newsroom() {
 
             {/* Events */}
             <div>
-              <h2 className="text-3xl font-bold mb-6 flex items-center">
-                <Mic className="w-8 h-8 mr-2 text-purple-600" />
+              <h2 className="text-3xl font-bold mb-6 flex items-center text-white">
+                <Mic className="w-8 h-8 mr-2 text-purple-400" />
                 Upcoming Events
               </h2>
               <div className="space-y-4">
@@ -400,20 +400,20 @@ export default function Newsroom() {
       </section>
 
       {/* NEWSLETTER */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-[#0B0F19]">
         <Container>
           <div className="max-w-3xl mx-auto text-center">
-            <div className="bg-white rounded-3xl shadow-xl p-12">
-              <Mail className="w-12 h-12 text-blue-600 mx-auto mb-4" />
-              <h2 className="text-3xl font-bold mb-4">Stay Updated</h2>
-              <p className="text-gray-600 mb-8 text-lg">
+            <div className="bg-[rgba(255,255,255,0.05)] backdrop-blur-sm border border-[#1F2937] rounded-3xl shadow-xl p-12">
+              <Mail className="w-12 h-12 text-blue-400 mx-auto mb-4" />
+              <h2 className="text-3xl font-bold mb-4 text-white">Stay Updated</h2>
+              <p className="text-gray-400 mb-8 text-lg">
                 Subscribe to our newsletter for monthly updates, news, and insights for startup founders
               </p>
               <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
                 <input
                   type="email"
                   placeholder="Enter your email"
-                  className="flex-1 px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="flex-1 px-4 py-3 rounded-lg border border-[#1F2937] bg-[rgba(255,255,255,0.05)] text-white placeholder-gray-500 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 />
                 <button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-lg font-semibold hover:shadow-xl transition whitespace-nowrap">
                   Subscribe

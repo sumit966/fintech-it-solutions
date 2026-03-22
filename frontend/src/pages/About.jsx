@@ -1,4 +1,4 @@
-import { useState } from "react";
+﻿import { useState } from "react";
 import { 
   Target, 
   Users, 
@@ -117,7 +117,7 @@ We're a small team with big ambitions, and we're looking for partners who share 
   ];
 
   return (
-    <main className="bg-white">
+    <main className="bg-[#0B0F19]">
       {/* HERO SECTION */}
       <section
         className="h-[80vh] flex items-center relative"
@@ -191,9 +191,9 @@ We're a small team with big ambitions, and we're looking for partners who share 
 
               {/* TEXT */}
               <div className={index % 2 === 1 ? 'md:col-start-1' : ''}>
-                <h2 className="text-4xl font-bold mb-6">{item.title}</h2>
+                <h2 className="text-4xl font-bold mb-6 text-white">{item.title}</h2>
 
-                <p className="text-gray-600 text-lg leading-relaxed whitespace-pre-line">
+                <p className="text-gray-300 text-lg leading-relaxed whitespace-pre-line">
                   {open === item.id
                     ? item.text
                     : item.text.slice(0, 250) + "..."}
@@ -201,7 +201,7 @@ We're a small team with big ambitions, and we're looking for partners who share 
 
                 <button
                   onClick={() => setOpen(open === item.id ? null : item.id)}
-                  className="mt-6 inline-flex items-center text-blue-600 font-semibold hover:gap-2 transition-all"
+                  className="mt-6 inline-flex items-center text-blue-400 font-semibold hover:gap-2 transition-all"
                 >
                   {open === item.id ? "Show Less" : "Read More"}
                   <ArrowRight className={`w-4 h-4 ml-2 transition-transform ${
@@ -215,11 +215,11 @@ We're a small team with big ambitions, and we're looking for partners who share 
       </section>
 
       {/* OUR VALUES */}
-      <section className="py-24 bg-gray-50">
+      <section className="py-24 bg-[#0B0F19]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">Our Values</h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <h2 className="text-4xl font-bold mb-4 text-white">Our Values</h2>
+            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
               The principles that guide everything we do
             </p>
           </div>
@@ -228,13 +228,13 @@ We're a small team with big ambitions, and we're looking for partners who share 
             {values.map((value, index) => (
               <div
                 key={index}
-                className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-2"
+                className="bg-[rgba(255,255,255,0.05)] backdrop-blur-sm border border-[#1F2937] p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-2"
               >
                 <div className={`w-16 h-16 rounded-xl bg-gradient-to-r ${value.color} flex items-center justify-center mb-6`}>
                   <value.icon className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold mb-3">{value.title}</h3>
-                <p className="text-gray-600">{value.desc}</p>
+                <h3 className="text-xl font-semibold mb-3 text-white">{value.title}</h3>
+                <p className="text-gray-400">{value.desc}</p>
               </div>
             ))}
           </div>
@@ -246,33 +246,33 @@ We're a small team with big ambitions, and we're looking for partners who share 
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div>
-              <h2 className="text-4xl font-bold mb-6">Why Work With a New Startup?</h2>
+              <h2 className="text-4xl font-bold mb-6 text-white">Why Work With a New Startup?</h2>
               <div className="space-y-4 mb-8">
                 {whyWorkWithUs.map((item, index) => (
                   <div key={index} className="flex items-start gap-3">
                     <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0" />
-                    <span className="text-gray-700">{item}</span>
+                    <span className="text-gray-300">{item}</span>
                   </div>
                 ))}
               </div>
 
-              <div className="bg-blue-50 p-6 rounded-2xl">
-                <h3 className="text-xl font-bold mb-3 flex items-center">
-                  <Sparkles className="w-6 h-6 text-blue-600 mr-2" />
+              <div className="bg-[rgba(59,130,246,0.1)] backdrop-blur-sm border border-[#1F2937] p-6 rounded-2xl">
+                <h3 className="text-xl font-bold mb-3 flex items-center text-white">
+                  <Sparkles className="w-6 h-6 text-blue-400 mr-2" />
                   Our Commitment to Startups
                 </h3>
                 <ul className="space-y-2">
                   <li className="flex items-center gap-2">
                     <CheckCircle className="w-4 h-4 text-green-500" />
-                    <span className="text-gray-700">Special rates for first-time founders</span>
+                    <span className="text-gray-300">Special rates for first-time founders</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckCircle className="w-4 h-4 text-green-500" />
-                    <span className="text-gray-700">Flexible payment terms</span>
+                    <span className="text-gray-300">Flexible payment terms</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckCircle className="w-4 h-4 text-green-500" />
-                    <span className="text-gray-700">Equity options for promising startups</span>
+                    <span className="text-gray-300">Equity options for promising startups</span>
                   </li>
                 </ul>
               </div>

@@ -1,4 +1,4 @@
-import { useState } from "react";
+﻿import { useState } from "react";
 import { Link } from "react-router-dom";
 import { 
   Rocket, 
@@ -139,13 +139,11 @@ export default function Projects() {
     : tools.filter(t => t.category === activeFilter);
 
   return (
-    <main className="pt-28 bg-white">
+    <main className="pt-28 bg-[#0B0F19]">
       {/* HERO SECTION */}
       <section className="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-20">
         <div className="max-w-7xl mx-auto px-6">
-          <h1 className="text-5xl font-bold mb-6">
-            Startup Tools & Templates
-          </h1>
+          <h1 className="text-5xl font-bold mb-6">Startup Tools & Templates</h1>
           <p className="text-xl max-w-3xl text-blue-100">
             Ready-to-use components, boilerplates, and tools to help you launch faster. 
             Built by developers, for startups.
@@ -163,7 +161,7 @@ export default function Projects() {
               className={`px-6 py-2 rounded-full transition-all ${
                 activeFilter === filter
                   ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg"
-                  : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                  : "bg-[rgba(255,255,255,0.05)] text-gray-400 hover:bg-[rgba(255,255,255,0.1)]"
               }`}
             >
               {filter}
@@ -180,7 +178,7 @@ export default function Projects() {
               <Link
                 key={index}
                 to={`/tools/${tool.slug}`}
-                className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2 overflow-hidden"
+                className="group bg-[rgba(255,255,255,0.05)] backdrop-blur-sm border border-[#1F2937] rounded-2xl shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2 overflow-hidden"
               >
                 <div className={`h-2 bg-gradient-to-r ${tool.color}`}></div>
                 <div className="p-8">
@@ -188,15 +186,15 @@ export default function Projects() {
                     <div className={`w-14 h-14 rounded-xl bg-gradient-to-r ${tool.color} flex items-center justify-center`}>
                       <tool.icon className="w-7 h-7 text-white" />
                     </div>
-                    <span className="bg-gray-100 text-gray-600 px-3 py-1 rounded-full text-sm">
+                    <span className="bg-[rgba(255,255,255,0.1)] text-gray-300 px-3 py-1 rounded-full text-sm">
                       {tool.category}
                     </span>
                   </div>
                   
-                  <h3 className="text-2xl font-bold mb-3 group-hover:text-blue-600 transition">
+                  <h3 className="text-2xl font-bold mb-3 text-white group-hover:text-blue-400 transition">
                     {tool.title}
                   </h3>
-                  <p className="text-gray-600 mb-4">{tool.desc}</p>
+                  <p className="text-gray-400 mb-4">{tool.desc}</p>
                   
                   <p className="text-sm text-gray-500 mb-4">
                     {tool.tech}
@@ -205,14 +203,14 @@ export default function Projects() {
                   {/* Features preview */}
                   <div className="mb-6">
                     {tool.features.slice(0, 3).map((feature, i) => (
-                      <div key={i} className="flex items-center gap-2 text-sm text-gray-600 mb-1">
+                      <div key={i} className="flex items-center gap-2 text-sm text-gray-400 mb-1">
                         <CheckCircle className="w-4 h-4 text-green-500" />
                         <span>{feature}</span>
                       </div>
                     ))}
                   </div>
 
-                  <span className="text-blue-600 font-semibold inline-flex items-center group-hover:gap-2 transition-all">
+                  <span className="text-blue-400 font-semibold inline-flex items-center group-hover:gap-2 transition-all">
                     View Details <ArrowRight className="w-4 h-4 ml-1" />
                   </span>
                 </div>
@@ -223,10 +221,10 @@ export default function Projects() {
       </section>
 
       {/* COMING SOON */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-[#0B0F19]">
         <div className="max-w-7xl mx-auto px-6 text-center">
-          <h2 className="text-4xl font-bold mb-4">More Tools Coming Soon</h2>
-          <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+          <h2 className="text-4xl font-bold mb-4 text-white">More Tools Coming Soon</h2>
+          <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
             We're constantly building new tools to help startups launch faster. 
             Want early access?
           </p>

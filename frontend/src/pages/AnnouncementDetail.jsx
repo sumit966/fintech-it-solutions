@@ -58,14 +58,8 @@ const announcementsData = {
 
     Follow along as we help founders build amazing products. The best is yet to come!`,
     related: [
-      {
-        slug: "startup-program-launch",
-        title: "Join Our Startup-Friendly Development Program"
-      },
-      {
-        slug: "aws-partnership",
-        title: "New Partnership with AWS Startup Program"
-      }
+      { slug: "startup-program-launch", title: "Join Our Startup-Friendly Development Program" },
+      { slug: "aws-partnership", title: "New Partnership with AWS Startup Program" }
     ]
   },
   "startup-program-launch": {
@@ -131,14 +125,8 @@ const announcementsData = {
 
     Don't miss this opportunity to build your product with a team that truly understands startups.`,
     related: [
-      {
-        slug: "we-are-live",
-        title: "We're Live! Introducing Fintech IT Solutions"
-      },
-      {
-        slug: "aws-partnership",
-        title: "New Partnership with AWS Startup Program"
-      }
+      { slug: "we-are-live", title: "We're Live! Introducing Fintech IT Solutions" },
+      { slug: "aws-partnership", title: "New Partnership with AWS Startup Program" }
     ]
   },
   "aws-partnership": {
@@ -201,14 +189,8 @@ const announcementsData = {
 
     Contact us to schedule your AWS strategy session!`,
     related: [
-      {
-        slug: "we-are-live",
-        title: "We're Live! Introducing Fintech IT Solutions"
-      },
-      {
-        slug: "startup-program-launch",
-        title: "Join Our Startup-Friendly Development Program"
-      }
+      { slug: "we-are-live", title: "We're Live! Introducing Fintech IT Solutions" },
+      { slug: "startup-program-launch", title: "Join Our Startup-Friendly Development Program" }
     ]
   },
   "we-are-hiring": {
@@ -308,14 +290,8 @@ const announcementsData = {
     ## Be Part of Our Journey
     Join us in building the future of startup development. We can't wait to meet you!`,
     related: [
-      {
-        slug: "we-are-live",
-        title: "We're Live! Introducing Fintech IT Solutions"
-      },
-      {
-        slug: "startup-program-launch",
-        title: "Join Our Startup-Friendly Development Program"
-      }
+      { slug: "we-are-live", title: "We're Live! Introducing Fintech IT Solutions" },
+      { slug: "startup-program-launch", title: "Join Our Startup-Friendly Development Program" }
     ]
   }
 };
@@ -326,9 +302,9 @@ export default function AnnouncementDetail() {
 
   if (!announcement) {
     return (
-      <div className="pt-32 text-center min-h-screen">
+      <div className="pt-32 text-center min-h-screen bg-[#0B0F19] text-white">
         <h1 className="text-3xl mb-4">Announcement not found</h1>
-        <Link to="/newsroom" className="text-blue-600 hover:underline">
+        <Link to="/newsroom" className="text-blue-400 hover:underline">
           ← Back to Newsroom
         </Link>
       </div>
@@ -336,12 +312,12 @@ export default function AnnouncementDetail() {
   }
 
   return (
-    <main className="pt-24 bg-white">
+    <main className="pt-24 bg-[#0B0F19] text-white">
       {/* Back Link */}
       <div className="max-w-4xl mx-auto px-6 py-8">
         <Link
           to="/newsroom"
-          className="inline-flex items-center text-gray-600 hover:text-blue-600 transition"
+          className="inline-flex items-center text-gray-400 hover:text-blue-400 transition"
         >
           <ArrowLeft className="w-4 h-4 mr-2" />
           Back to Newsroom
@@ -352,7 +328,7 @@ export default function AnnouncementDetail() {
       <article className="max-w-4xl mx-auto px-6">
         <div className="mb-8">
           <div className="flex items-center gap-2 text-sm mb-4">
-            <span className="bg-blue-100 text-blue-600 px-3 py-1 rounded-full font-medium">
+            <span className="bg-blue-600/20 text-blue-400 px-3 py-1 rounded-full font-medium">
               {announcement.category}
             </span>
             <span className="text-gray-400 flex items-center">
@@ -374,29 +350,29 @@ export default function AnnouncementDetail() {
         </div>
 
         {/* Article Content */}
-        <div className="prose prose-lg max-w-none mb-16">
+        <div className="prose prose-lg max-w-none prose-invert mb-16">
           {announcement.content.split('\n').map((paragraph, index) => {
             if (paragraph.startsWith('##')) {
               return (
-                <h2 key={index} className="text-2xl font-bold mt-8 mb-4">
+                <h2 key={index} className="text-2xl font-bold mt-8 mb-4 text-white">
                   {paragraph.replace('##', '')}
                 </h2>
               );
             } else if (paragraph.startsWith('**')) {
               return (
-                <p key={index} className="text-gray-800 font-semibold mb-2">
+                <p key={index} className="text-gray-300 font-semibold mb-2">
                   {paragraph}
                 </p>
               );
             } else if (paragraph.startsWith('-')) {
               return (
-                <li key={index} className="ml-4 text-gray-700">
+                <li key={index} className="ml-4 text-gray-300">
                   {paragraph.replace('-', '')}
                 </li>
               );
             } else if (paragraph.trim()) {
               return (
-                <p key={index} className="text-gray-700 mb-4">
+                <p key={index} className="text-gray-300 mb-4">
                   {paragraph}
                 </p>
               );
@@ -406,15 +382,15 @@ export default function AnnouncementDetail() {
         </div>
 
         {/* Share Section */}
-        <div className="border-t border-gray-200 pt-8 mb-16">
+        <div className="border-t border-[#1F2937] pt-8 mb-16">
           <div className="flex items-center justify-between">
             <h3 className="text-lg font-semibold">Share this announcement</h3>
             <div className="flex gap-4">
-              <button className="flex items-center gap-2 text-gray-600 hover:text-blue-600 transition">
+              <button className="flex items-center gap-2 text-gray-400 hover:text-blue-400 transition">
                 <Share2 className="w-5 h-5" />
                 Share
               </button>
-              <button className="flex items-center gap-2 text-gray-600 hover:text-blue-600 transition">
+              <button className="flex items-center gap-2 text-gray-400 hover:text-blue-400 transition">
                 <Bookmark className="w-5 h-5" />
                 Save
               </button>
@@ -424,19 +400,19 @@ export default function AnnouncementDetail() {
 
         {/* Related Announcements */}
         {announcement.related && announcement.related.length > 0 && (
-          <div className="bg-gray-50 rounded-2xl p-8 mb-16">
-            <h3 className="text-2xl font-bold mb-6">More Announcements</h3>
+          <div className="bg-[rgba(255,255,255,0.05)] backdrop-blur-sm border border-[#1F2937] rounded-2xl p-8 mb-16">
+            <h3 className="text-2xl font-bold mb-6 text-white">More Announcements</h3>
             <div className="grid md:grid-cols-2 gap-6">
               {announcement.related.map((item, index) => (
                 <Link
                   key={index}
                   to={`/newsroom/${item.slug}`}
-                  className="bg-white p-4 rounded-xl hover:shadow-md transition group"
+                  className="bg-[rgba(255,255,255,0.05)] p-4 rounded-xl hover:shadow-md transition group"
                 >
-                  <h4 className="font-semibold mb-2 group-hover:text-blue-600">
+                  <h4 className="font-semibold mb-2 text-white group-hover:text-blue-400">
                     {item.title}
                   </h4>
-                  <span className="text-sm text-blue-600 inline-flex items-center">
+                  <span className="text-sm text-blue-400 inline-flex items-center">
                     Read More <ArrowRight className="w-3 h-3 ml-1" />
                   </span>
                 </Link>

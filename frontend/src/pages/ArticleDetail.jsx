@@ -100,14 +100,8 @@ const articlesData = {
     ## Ready to Start Your MVP?
     We specialize in helping founders launch MVPs under budget. Let's discuss your idea.`,
     related: [
-      {
-        slug: "choosing-right-tech-stack",
-        title: "Choosing the Right Tech Stack for Your Startup"
-      },
-      {
-        slug: "when-to-hire-dev-partner",
-        title: "When to Hire a Development Partner"
-      }
+      { slug: "choosing-right-tech-stack", title: "Choosing the Right Tech Stack for Your Startup" },
+      { slug: "when-to-hire-dev-partner", title: "When to Hire a Development Partner" }
     ]
   },
   "choosing-right-tech-stack": {
@@ -253,14 +247,8 @@ const articlesData = {
     ## Need Help Deciding?
     We help startups choose the right tech stack for their specific needs. Let's discuss your project.`,
     related: [
-      {
-        slug: "mvp-under-5l",
-        title: "How We Help Startups Launch MVPs Under ₹5L"
-      },
-      {
-        slug: "when-to-hire-dev-partner",
-        title: "When to Hire a Development Partner"
-      }
+      { slug: "mvp-under-5l", title: "How We Help Startups Launch MVPs Under ₹5L" },
+      { slug: "when-to-hire-dev-partner", title: "When to Hire a Development Partner" }
     ]
   },
   "when-to-hire-dev-partner": {
@@ -373,14 +361,8 @@ const articlesData = {
     ## Ready to Talk?
     We've helped dozens of startups at every stage. Let's discuss where you are and how we can help.`,
     related: [
-      {
-        slug: "mvp-under-5l",
-        title: "How We Help Startups Launch MVPs Under ₹5L"
-      },
-      {
-        slug: "choosing-right-tech-stack",
-        title: "Choosing the Right Tech Stack for Your Startup"
-      }
+      { slug: "mvp-under-5l", title: "How We Help Startups Launch MVPs Under ₹5L" },
+      { slug: "choosing-right-tech-stack", title: "Choosing the Right Tech Stack for Your Startup" }
     ]
   },
   "meet-our-team": {
@@ -462,14 +444,8 @@ const articlesData = {
     ## Join Us
     We're always looking for talented people who share our passion. Check our Careers page for open positions.`,
     related: [
-      {
-        slug: "first-3-months-lessons",
-        title: "Our First 3 Months: Lessons from a New Startup"
-      },
-      {
-        slug: "startup-packages",
-        title: "Introducing Our Startup Packages"
-      }
+      { slug: "first-3-months-lessons", title: "Our First 3 Months: Lessons from a New Startup" },
+      { slug: "startup-packages", title: "Introducing Our Startup Packages" }
     ]
   },
   "first-3-months-lessons": {
@@ -557,14 +533,8 @@ const articlesData = {
 
     Stay tuned!`,
     related: [
-      {
-        slug: "meet-our-team",
-        title: "Meet Our Team: The Faces Behind the Code"
-      },
-      {
-        slug: "startup-packages",
-        title: "Introducing Our Startup Packages"
-      }
+      { slug: "meet-our-team", title: "Meet Our Team: The Faces Behind the Code" },
+      { slug: "startup-packages", title: "Introducing Our Startup Packages" }
     ]
   },
   "startup-packages": {
@@ -671,14 +641,8 @@ const articlesData = {
 
     Ready to build your startup? Let's talk!`,
     related: [
-      {
-        slug: "mvp-under-5l",
-        title: "How We Help Startups Launch MVPs Under ₹5L"
-      },
-      {
-        slug: "meet-our-team",
-        title: "Meet Our Team: The Faces Behind the Code"
-      }
+      { slug: "mvp-under-5l", title: "How We Help Startups Launch MVPs Under ₹5L" },
+      { slug: "meet-our-team", title: "Meet Our Team: The Faces Behind the Code" }
     ]
   }
 };
@@ -689,9 +653,9 @@ export default function ArticleDetail() {
 
   if (!article) {
     return (
-      <div className="pt-32 text-center min-h-screen">
+      <div className="pt-32 text-center min-h-screen bg-[#0B0F19] text-white">
         <h1 className="text-3xl mb-4">Article not found</h1>
-        <Link to="/insights" className="text-blue-600 hover:underline">
+        <Link to="/insights" className="text-blue-400 hover:underline">
           ← Back to Insights
         </Link>
       </div>
@@ -699,12 +663,12 @@ export default function ArticleDetail() {
   }
 
   return (
-    <main className="pt-24 bg-white">
+    <main className="pt-24 bg-[#0B0F19] text-white">
       {/* Back Link */}
       <div className="max-w-4xl mx-auto px-6 py-8">
         <Link
           to="/insights"
-          className="inline-flex items-center text-gray-600 hover:text-blue-600 transition"
+          className="inline-flex items-center text-gray-400 hover:text-blue-400 transition"
         >
           <ArrowLeft className="w-4 h-4 mr-2" />
           Back to Insights
@@ -715,7 +679,7 @@ export default function ArticleDetail() {
       <article className="max-w-4xl mx-auto px-6">
         <div className="mb-8">
           <div className="flex items-center gap-2 text-sm mb-4">
-            <span className="bg-blue-100 text-blue-600 px-3 py-1 rounded-full font-medium">
+            <span className="bg-blue-600/20 text-blue-400 px-3 py-1 rounded-full font-medium">
               {article.category}
             </span>
             <span className="text-gray-400 flex items-center">
@@ -741,29 +705,29 @@ export default function ArticleDetail() {
         </div>
 
         {/* Article Content */}
-        <div className="prose prose-lg max-w-none mb-16">
+        <div className="prose prose-lg max-w-none prose-invert mb-16">
           {article.content.split('\n').map((paragraph, index) => {
             if (paragraph.startsWith('##')) {
               return (
-                <h2 key={index} className="text-2xl font-bold mt-8 mb-4">
+                <h2 key={index} className="text-2xl font-bold mt-8 mb-4 text-white">
                   {paragraph.replace('##', '')}
                 </h2>
               );
             } else if (paragraph.startsWith('**')) {
               return (
-                <p key={index} className="text-gray-800 font-semibold mb-2">
+                <p key={index} className="text-gray-300 font-semibold mb-2">
                   {paragraph}
                 </p>
               );
             } else if (paragraph.startsWith('-')) {
               return (
-                <li key={index} className="ml-4 text-gray-700">
+                <li key={index} className="ml-4 text-gray-300">
                   {paragraph.replace('-', '')}
                 </li>
               );
             } else if (paragraph.trim()) {
               return (
-                <p key={index} className="text-gray-700 mb-4">
+                <p key={index} className="text-gray-300 mb-4">
                   {paragraph}
                 </p>
               );
@@ -773,15 +737,15 @@ export default function ArticleDetail() {
         </div>
 
         {/* Share Section */}
-        <div className="border-t border-gray-200 pt-8 mb-16">
+        <div className="border-t border-[#1F2937] pt-8 mb-16">
           <div className="flex items-center justify-between">
             <h3 className="text-lg font-semibold">Found this helpful?</h3>
             <div className="flex gap-4">
-              <button className="flex items-center gap-2 text-gray-600 hover:text-blue-600 transition">
+              <button className="flex items-center gap-2 text-gray-400 hover:text-blue-400 transition">
                 <Share2 className="w-5 h-5" />
                 Share
               </button>
-              <button className="flex items-center gap-2 text-gray-600 hover:text-blue-600 transition">
+              <button className="flex items-center gap-2 text-gray-400 hover:text-blue-400 transition">
                 <Bookmark className="w-5 h-5" />
                 Save
               </button>
@@ -791,19 +755,19 @@ export default function ArticleDetail() {
 
         {/* Related Articles */}
         {article.related && article.related.length > 0 && (
-          <div className="bg-gray-50 rounded-2xl p-8 mb-16">
-            <h3 className="text-2xl font-bold mb-6">You Might Also Like</h3>
+          <div className="bg-[rgba(255,255,255,0.05)] backdrop-blur-sm border border-[#1F2937] rounded-2xl p-8 mb-16">
+            <h3 className="text-2xl font-bold mb-6 text-white">You Might Also Like</h3>
             <div className="grid md:grid-cols-2 gap-6">
               {article.related.map((item, index) => (
                 <Link
                   key={index}
                   to={`/insights/${item.slug}`}
-                  className="bg-white p-4 rounded-xl hover:shadow-md transition group"
+                  className="bg-[rgba(255,255,255,0.05)] p-4 rounded-xl hover:shadow-md transition group"
                 >
-                  <h4 className="font-semibold mb-2 group-hover:text-blue-600">
+                  <h4 className="font-semibold mb-2 text-white group-hover:text-blue-400">
                     {item.title}
                   </h4>
-                  <span className="text-sm text-blue-600 inline-flex items-center">
+                  <span className="text-sm text-blue-400 inline-flex items-center">
                     Read Article <ArrowRight className="w-3 h-3 ml-1" />
                   </span>
                 </Link>

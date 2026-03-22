@@ -23,17 +23,14 @@ export default function ProjectsPortfolio() {
   ];
 
   return (
-    <main className="pt-24 bg-black text-white min-h-screen">
+    <main className="pt-24 bg-[#0B0F19] text-white min-h-screen">
       <div className="max-w-6xl mx-auto px-6">
-        <h1 className="text-4xl font-bold mb-10">
-          Projects Delivered
-        </h1>
-
+        <h1 className="text-4xl font-bold mb-10">Projects Delivered</h1>
         <div className="grid md:grid-cols-2 gap-6">
           {projects.map((project, i) => (
             <div
               key={i}
-              className="border border-gray-700 p-6 rounded-xl bg-slate-900"
+              className="border border-[#1F2937] bg-[rgba(255,255,255,0.05)] p-6 rounded-xl"
             >
               {project}
             </div>

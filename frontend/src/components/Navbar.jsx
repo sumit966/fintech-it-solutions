@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react";
+﻿import { useState, useRef, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { ChevronDown, Menu, X } from "lucide-react";
 
@@ -12,7 +12,6 @@ export default function Navbar() {
   const menuRef = useRef();
   const timeoutRef = useRef();
 
-  /* CLOSE MENU WHEN CLICK OUTSIDE OR NAVIGATE */
   useEffect(() => {
     function handleClickOutside(e) {
       if (menuRef.current && !menuRef.current.contains(e.target)) {
@@ -20,12 +19,10 @@ export default function Navbar() {
         setHoveredMenu(null);
       }
     }
-
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  /* CLOSE MENU WHEN PAGE CHANGES */
   useEffect(() => {
     setOpenMenu(null);
     setHoveredMenu(null);
@@ -33,12 +30,9 @@ export default function Navbar() {
     setMobileSubmenu(null);
   }, [location]);
 
-  /* Handle hover for keeping menu open */
   const handleMouseEnter = (menu) => {
     if (window.innerWidth > 768) {
-      if (timeoutRef.current) {
-        clearTimeout(timeoutRef.current);
-      }
+      if (timeoutRef.current) clearTimeout(timeoutRef.current);
       setHoveredMenu(menu);
       setOpenMenu(menu);
     }
@@ -53,7 +47,6 @@ export default function Navbar() {
     }
   };
 
-  /* Handle menu item click - close menu after navigation */
   const handleMenuItemClick = () => {
     setOpenMenu(null);
     setHoveredMenu(null);
@@ -61,7 +54,6 @@ export default function Navbar() {
     setMobileSubmenu(null);
   };
 
-  /* Toggle menu function */
   const toggleMenu = (menu) => {
     setOpenMenu(openMenu === menu ? null : menu);
   };
@@ -73,7 +65,6 @@ export default function Navbar() {
   return (
     <header className="main-header">
       <div className="nav-container" ref={menuRef}>
-        {/* LOGO */}
         <Link to="/" className="logo" onClick={handleMenuItemClick}>
           <div className="cursive-logo">
             <span className="cursive-fintech">Fintech</span>
@@ -82,7 +73,6 @@ export default function Navbar() {
           </div>
         </Link>
 
-        {/* DESKTOP NAV MENU */}
         <nav className="nav-menu desktop-menu">
           <Link
             to="/"
@@ -92,7 +82,6 @@ export default function Navbar() {
             Home
           </Link>
 
-          {/* WHAT WE DO */}
           <div
             className="menu-item"
             onMouseEnter={() => handleMouseEnter("services")}
@@ -123,27 +112,16 @@ export default function Navbar() {
                 </div>
 
                 <div className="mega-right">
-                  <Link to="/industries" onClick={handleMenuItemClick}>
-                    Industries →
-                  </Link>
-                  <Link to="/services" onClick={handleMenuItemClick}>
-                    Services →
-                  </Link>
-                  <Link to="/projects" onClick={handleMenuItemClick}>
-                    Products & Platforms →
-                  </Link>
-                  <Link to="/insights" onClick={handleMenuItemClick}>
-                    Research & Innovation →
-                  </Link>
-                  <Link to="/projects" onClick={handleMenuItemClick}>
-                    Alliances →
-                  </Link>
+                  <Link to="/industries" onClick={handleMenuItemClick}>Industries →</Link>
+                  <Link to="/services" onClick={handleMenuItemClick}>Services →</Link>
+                  <Link to="/projects" onClick={handleMenuItemClick}>Products & Platforms →</Link>
+                  <Link to="/insights" onClick={handleMenuItemClick}>Research & Innovation →</Link>
+                  <Link to="/projects" onClick={handleMenuItemClick}>Alliances →</Link>
                 </div>
               </div>
             )}
           </div>
 
-          {/* WHO WE ARE */}
           <div
             className="menu-item"
             onMouseEnter={() => handleMouseEnter("about")}
@@ -174,27 +152,16 @@ export default function Navbar() {
                 </div>
 
                 <div className="mega-right">
-                  <Link to="/aspiration" onClick={handleMenuItemClick}>
-                    Our Aspiration →
-                  </Link>
-                  <Link to="/brand" onClick={handleMenuItemClick}>
-                    Brand →
-                  </Link>
-                  <Link to="/leadership" onClick={handleMenuItemClick}>
-                    Leadership →
-                  </Link>
-                  <Link to="/community" onClick={handleMenuItemClick}>
-                    Community →
-                  </Link>
-                  <Link to="/sustainability" onClick={handleMenuItemClick}>
-                    Sustainability →
-                  </Link>
+                  <Link to="/aspiration" onClick={handleMenuItemClick}>Our Aspiration →</Link>
+                  <Link to="/brand" onClick={handleMenuItemClick}>Brand →</Link>
+                  <Link to="/leadership" onClick={handleMenuItemClick}>Leadership →</Link>
+                  <Link to="/community" onClick={handleMenuItemClick}>Community →</Link>
+                  <Link to="/sustainability" onClick={handleMenuItemClick}>Sustainability →</Link>
                 </div>
               </div>
             )}
           </div>
 
-          {/* NORMAL LINKS */}
           <Link
             to="/careers"
             className={`menu-link ${location.pathname === "/careers" ? "active" : ""}`}
@@ -220,7 +187,6 @@ export default function Navbar() {
           </Link>
         </nav>
 
-        {/* MOBILE MENU TOGGLE */}
         <button
           className={`mobile-menu-toggle ${mobileMenuOpen ? 'active' : ''}`}
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -230,7 +196,6 @@ export default function Navbar() {
           <span></span>
         </button>
 
-        {/* MOBILE MENU */}
         <div className={`mobile-menu ${mobileMenuOpen ? 'open' : ''}`}>
           <Link
             to="/"
@@ -240,7 +205,6 @@ export default function Navbar() {
             Home
           </Link>
 
-          {/* WHAT WE DO - MOBILE */}
           <div className="mobile-menu-item">
             <div
               className={`mobile-menu-header ${mobileSubmenu === 'services' ? 'open' : ''}`}
@@ -258,7 +222,6 @@ export default function Navbar() {
             </div>
           </div>
 
-          {/* WHO WE ARE - MOBILE */}
           <div className="mobile-menu-item">
             <div
               className={`mobile-menu-header ${mobileSubmenu === 'about' ? 'open' : ''}`}

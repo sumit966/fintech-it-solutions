@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+﻿import { Link } from "react-router-dom";
 import { 
   ArrowRight, 
   CheckCircle, 
@@ -157,7 +157,7 @@ export default function Services() {
 
   return (
     <PageTransition>
-      <main className="pt-24 bg-white">
+      <main className="pt-24 bg-[#0B0F19]">
         {/* HERO SECTION */}
         <section className="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-24">
           <div className="max-w-7xl mx-auto px-6 text-center">
@@ -179,17 +179,17 @@ export default function Services() {
         </section>
 
         {/* WHY CHOOSE US */}
-        <section className="py-20 bg-gray-50">
+        <section className="py-20 bg-[#0B0F19]">
           <div className="max-w-7xl mx-auto px-6">
-            <h2 className="text-4xl font-bold text-center mb-12">Why Startups Choose Us</h2>
+            <h2 className="text-4xl font-bold text-center mb-12 text-white">Why Startups Choose Us</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               {whyChooseUs.map((item, index) => (
-                <div key={index} className="text-center">
-                  <div className="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-4">
-                    <item.icon className="w-8 h-8 text-blue-600" />
+                <div key={index} className="text-center group">
+                  <div className="w-16 h-16 bg-[rgba(59,130,246,0.2)] rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <item.icon className="w-8 h-8 text-blue-400" />
                   </div>
-                  <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
-                  <p className="text-gray-600">{item.desc}</p>
+                  <h3 className="text-xl font-semibold mb-2 text-white">{item.title}</h3>
+                  <p className="text-gray-400">{item.desc}</p>
                 </div>
               ))}
             </div>
@@ -199,8 +199,8 @@ export default function Services() {
         {/* SERVICES GRID */}
         <section className="py-20">
           <div className="max-w-7xl mx-auto px-6">
-            <h2 className="text-4xl font-bold text-center mb-4">Our Services</h2>
-            <p className="text-xl text-gray-600 text-center max-w-2xl mx-auto mb-12">
+            <h2 className="text-4xl font-bold text-center mb-4 text-white">Our Services</h2>
+            <p className="text-xl text-gray-400 text-center max-w-2xl mx-auto mb-12">
               Comprehensive software development services for startups
             </p>
 
@@ -209,27 +209,26 @@ export default function Services() {
                 <Link
                   key={index}
                   to={`/services/${service.slug}`}
-                  className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2 overflow-hidden"
+                  className="group bg-[rgba(255,255,255,0.05)] backdrop-blur-sm border border-[#1F2937] rounded-2xl shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2 overflow-hidden"
                 >
                   <div className={`h-2 bg-gradient-to-r ${service.color}`}></div>
                   <div className="p-8">
                     <div className={`w-16 h-16 rounded-xl bg-gradient-to-r ${service.color} bg-opacity-10 flex items-center justify-center mb-6 group-hover:scale-110 transition`}>
                       <service.icon className="w-8 h-8 text-white" />
                     </div>
-                    <h3 className="text-2xl font-bold mb-3">{service.title}</h3>
-                    <p className="text-gray-600 mb-4">{service.shortDesc}</p>
+                    <h3 className="text-2xl font-bold mb-3 text-white">{service.title}</h3>
+                    <p className="text-gray-400 mb-4">{service.shortDesc}</p>
                     
-                    {/* Features */}
                     <ul className="space-y-2 mb-6">
                       {service.features.map((feature, i) => (
                         <li key={i} className="flex items-start gap-2 text-sm">
-                          <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
-                          <span className="text-gray-600">{feature}</span>
+                          <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
+                          <span className="text-gray-300">{feature}</span>
                         </li>
                       ))}
                     </ul>
 
-                    <span className="text-blue-600 font-semibold inline-flex items-center group-hover:gap-2 transition-all">
+                    <span className="text-blue-400 font-semibold inline-flex items-center group-hover:gap-2 transition-all">
                       Learn More <ArrowRight className="w-4 h-4 ml-1" />
                     </span>
                   </div>
@@ -240,23 +239,23 @@ export default function Services() {
         </section>
 
         {/* OUR PROCESS */}
-        <section className="py-20 bg-gray-50">
+        <section className="py-20 bg-[#0B0F19]">
           <div className="max-w-7xl mx-auto px-6">
-            <h2 className="text-4xl font-bold text-center mb-4">How We Work</h2>
-            <p className="text-xl text-gray-600 text-center max-w-2xl mx-auto mb-12">
+            <h2 className="text-4xl font-bold text-center mb-4 text-white">How We Work</h2>
+            <p className="text-xl text-gray-400 text-center max-w-2xl mx-auto mb-12">
               A transparent, collaborative process from idea to launch
             </p>
 
             <div className="grid md:grid-cols-5 gap-8 relative">
               {process.map((step, index) => (
                 <div key={index} className="text-center relative">
-                  <div className="w-20 h-20 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-4 relative z-10">
-                    <step.icon className="w-10 h-10 text-blue-600" />
+                  <div className="w-20 h-20 bg-[rgba(59,130,246,0.2)] rounded-2xl flex items-center justify-center mx-auto mb-4 relative z-10">
+                    <step.icon className="w-10 h-10 text-blue-400" />
                   </div>
-                  <h3 className="text-xl font-semibold mb-2">{step.step}</h3>
-                  <p className="text-gray-600 text-sm">{step.desc}</p>
+                  <h3 className="text-xl font-semibold mb-2 text-white">{step.step}</h3>
+                  <p className="text-gray-400 text-sm">{step.desc}</p>
                   {index < process.length - 1 && (
-                    <div className="hidden md:block absolute top-10 left-[60%] w-full h-0.5 bg-gray-300"></div>
+                    <div className="hidden md:block absolute top-10 left-[60%] w-full h-0.5 bg-[#1F2937]"></div>
                   )}
                 </div>
               ))}
@@ -267,8 +266,8 @@ export default function Services() {
         {/* WHAT YOU GET */}
         <section className="py-20">
           <div className="max-w-7xl mx-auto px-6">
-            <h2 className="text-4xl font-bold text-center mb-4">What You Get</h2>
-            <p className="text-xl text-gray-600 text-center max-w-2xl mx-auto mb-12">
+            <h2 className="text-4xl font-bold text-center mb-4 text-white">What You Get</h2>
+            <p className="text-xl text-gray-400 text-center max-w-2xl mx-auto mb-12">
               Every project comes with these deliverables
             </p>
 
@@ -283,9 +282,9 @@ export default function Services() {
                 "3 Months Free Support",
                 "Future Growth Roadmap"
               ].map((item, index) => (
-                <div key={index} className="bg-gray-50 p-6 rounded-xl text-center hover:shadow-md transition">
-                  <CheckCircle className="w-8 h-8 text-green-500 mx-auto mb-3" />
-                  <p className="font-semibold">{item}</p>
+                <div key={index} className="bg-[rgba(255,255,255,0.05)] backdrop-blur-sm border border-[#1F2937] p-6 rounded-xl text-center hover:shadow-md transition">
+                  <CheckCircle className="w-8 h-8 text-green-400 mx-auto mb-3" />
+                  <p className="font-semibold text-white">{item}</p>
                 </div>
               ))}
             </div>

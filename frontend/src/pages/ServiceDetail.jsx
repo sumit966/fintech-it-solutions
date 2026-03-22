@@ -51,36 +51,12 @@ const servicesData = {
     As a fresh technology partner, we bring modern approaches and best practices to every project. We don't have legacy code or outdated thinking—just clean, efficient code built with the latest technologies.`,
     
     features: [
-      {
-        title: "Business Process Automation",
-        desc: "Automate repetitive tasks and workflows to save time and reduce errors.",
-        icon: Settings
-      },
-      {
-        title: "Inventory Management",
-        desc: "Track stock, manage orders, and optimize inventory levels.",
-        icon: Box
-      },
-      {
-        title: "Employee Portals",
-        desc: "Centralized platforms for HR, leave management, and internal communications.",
-        icon: Users
-      },
-      {
-        title: "Document Management",
-        desc: "Secure storage, version control, and easy retrieval of business documents.",
-        icon: FileText
-      },
-      {
-        title: "Reporting Dashboards",
-        desc: "Real-time insights into your business performance.",
-        icon: BarChart
-      },
-      {
-        title: "Customer Portals",
-        desc: "Self-service portals where customers can manage their accounts.",
-        icon: Globe
-      }
+      { title: "Business Process Automation", desc: "Automate repetitive tasks and workflows to save time and reduce errors.", icon: Settings },
+      { title: "Inventory Management", desc: "Track stock, manage orders, and optimize inventory levels.", icon: Box },
+      { title: "Employee Portals", desc: "Centralized platforms for HR, leave management, and internal communications.", icon: Users },
+      { title: "Document Management", desc: "Secure storage, version control, and easy retrieval of business documents.", icon: FileText },
+      { title: "Reporting Dashboards", desc: "Real-time insights into your business performance.", icon: BarChart },
+      { title: "Customer Portals", desc: "Self-service portals where customers can manage their accounts.", icon: Globe }
     ],
     
     process: [
@@ -171,36 +147,12 @@ const servicesData = {
     ],
     
     benefits: [
-      {
-        title: "Tailored to Your Needs",
-        desc: "Software built exactly how you want it, not how a generic product dictates.",
-        icon: Target
-      },
-      {
-        title: "Scalable Architecture",
-        desc: "Grows with your business from startup to enterprise without rebuilding.",
-        icon: Layers
-      },
-      {
-        title: "Full Ownership",
-        desc: "You own the code and intellectual property completely.",
-        icon: Award
-      },
-      {
-        title: "Integration Ready",
-        desc: "Connects seamlessly with your existing tools and systems.",
-        icon: GitBranch
-      },
-      {
-        title: "Modern Technology",
-        desc: "Built with the latest frameworks and best practices.",
-        icon: Cpu
-      },
-      {
-        title: "Dedicated Support",
-        desc: "We're with you long after launch.",
-        icon: Users
-      }
+      { title: "Tailored to Your Needs", desc: "Software built exactly how you want it, not how a generic product dictates.", icon: Target },
+      { title: "Scalable Architecture", desc: "Grows with your business from startup to enterprise without rebuilding.", icon: Layers },
+      { title: "Full Ownership", desc: "You own the code and intellectual property completely.", icon: Award },
+      { title: "Integration Ready", desc: "Connects seamlessly with your existing tools and systems.", icon: GitBranch },
+      { title: "Modern Technology", desc: "Built with the latest frameworks and best practices.", icon: Cpu },
+      { title: "Dedicated Support", desc: "We're with you long after launch.", icon: Users }
     ],
     
     technologies: [
@@ -280,22 +232,10 @@ const servicesData = {
     },
     
     faq: [
-      {
-        question: "How long does custom software development take?",
-        answer: "Typically 3-4 months for a complete solution, depending on complexity. We break it into phases so you can see progress throughout."
-      },
-      {
-        question: "Do I own the source code?",
-        answer: "Yes! You have complete ownership of all code, designs, and intellectual property we create for you."
-      },
-      {
-        question: "Can it integrate with my existing tools?",
-        answer: "Absolutely. We build APIs and integrations to connect with your current software stack."
-      },
-      {
-        question: "What if I need changes after launch?",
-        answer: "We provide ongoing support and can continue to enhance your software as your business grows."
-      }
+      { question: "How long does custom software development take?", answer: "Typically 3-4 months for a complete solution, depending on complexity. We break it into phases so you can see progress throughout." },
+      { question: "Do I own the source code?", answer: "Yes! You have complete ownership of all code, designs, and intellectual property we create for you." },
+      { question: "Can it integrate with my existing tools?", answer: "Absolutely. We build APIs and integrations to connect with your current software stack." },
+      { question: "What if I need changes after launch?", answer: "We provide ongoing support and can continue to enhance your software as your business grows." }
     ]
   },
 
@@ -310,36 +250,12 @@ const servicesData = {
     As a new startup, we bring fresh design perspectives and modern development practices. No outdated templates—just custom-built websites that reflect your unique brand identity.`,
     
     features: [
-      {
-        title: "Business Websites",
-        desc: "Professional websites that establish your online presence.",
-        icon: Building2
-      },
-      {
-        title: "Corporate Portals",
-        desc: "Internal platforms for employee communication and resources.",
-        icon: Users
-      },
-      {
-        title: "Landing Pages",
-        desc: "High-converting pages for marketing campaigns.",
-        icon: Target
-      },
-      {
-        title: "Blog & News Sites",
-        desc: "Content platforms with easy publishing tools.",
-        icon: BookOpen
-      },
-      {
-        title: "Membership Sites",
-        desc: "Gated content with user subscriptions.",
-        icon: Lock
-      },
-      {
-        title: "Web Applications",
-        desc: "Complex browser-based software solutions.",
-        icon: Code
-      }
+      { title: "Business Websites", desc: "Professional websites that establish your online presence.", icon: Building2 },
+      { title: "Corporate Portals", desc: "Internal platforms for employee communication and resources.", icon: Users },
+      { title: "Landing Pages", desc: "High-converting pages for marketing campaigns.", icon: Target },
+      { title: "Blog & News Sites", desc: "Content platforms with easy publishing tools.", icon: BookOpen },
+      { title: "Membership Sites", desc: "Gated content with user subscriptions.", icon: Lock },
+      { title: "Web Applications", desc: "Complex browser-based software solutions.", icon: Code }
     ],
     
     process: [
@@ -416,36 +332,12 @@ const servicesData = {
     ],
     
     benefits: [
-      {
-        title: "Modern Design",
-        desc: "Beautiful, contemporary designs that reflect your brand identity.",
-        icon: PenTool
-      },
-      {
-        title: "Lightning Fast",
-        desc: "Optimized for speed to keep users engaged and improve SEO.",
-        icon: Zap
-      },
-      {
-        title: "Mobile Responsive",
-        desc: "Perfect experience on all devices - desktop, tablet, and mobile.",
-        icon: Smartphone
-      },
-      {
-        title: "SEO Optimized",
-        desc: "Built with search engines in mind to help customers find you.",
-        icon: BarChart
-      },
-      {
-        title: "Easy to Update",
-        desc: "Content management system so you can make changes yourself.",
-        icon: Settings
-      },
-      {
-        title: "Scalable",
-        desc: "Grows with your business, from brochure site to web app.",
-        icon: Layers
-      }
+      { title: "Modern Design", desc: "Beautiful, contemporary designs that reflect your brand identity.", icon: PenTool },
+      { title: "Lightning Fast", desc: "Optimized for speed to keep users engaged and improve SEO.", icon: Zap },
+      { title: "Mobile Responsive", desc: "Perfect experience on all devices - desktop, tablet, and mobile.", icon: Smartphone },
+      { title: "SEO Optimized", desc: "Built with search engines in mind to help customers find you.", icon: BarChart },
+      { title: "Easy to Update", desc: "Content management system so you can make changes yourself.", icon: Settings },
+      { title: "Scalable", desc: "Grows with your business, from brochure site to web app.", icon: Layers }
     ],
     
     technologies: [
@@ -519,18 +411,9 @@ const servicesData = {
     },
     
     faq: [
-      {
-        question: "How long does it take to build a website?",
-        answer: "A business website typically takes 8-12 weeks. Complex web applications may take 3-4 months."
-      },
-      {
-        question: "Can I update the website myself?",
-        answer: "Yes! We build with content management systems so you can easily update text, images, and content."
-      },
-      {
-        question: "Will my website work on mobile phones?",
-        answer: "Absolutely. Every website we build is fully responsive and looks great on all devices."
-      }
+      { question: "How long does it take to build a website?", answer: "A business website typically takes 8-12 weeks. Complex web applications may take 3-4 months." },
+      { question: "Can I update the website myself?", answer: "Yes! We build with content management systems so you can easily update text, images, and content." },
+      { question: "Will my website work on mobile phones?", answer: "Absolutely. Every website we build is fully responsive and looks great on all devices." }
     ]
   },
 
@@ -545,36 +428,12 @@ const servicesData = {
     As a new startup, we understand the importance of efficient customer management. We build CRMs that help you build relationships, not just store data.`,
     
     features: [
-      {
-        title: "Lead Management",
-        desc: "Capture, track, and nurture leads through your sales pipeline.",
-        icon: Target
-      },
-      {
-        title: "Contact Tracking",
-        desc: "Store all customer interactions in one place.",
-        icon: Users
-      },
-      {
-        title: "Sales Pipeline",
-        desc: "Visualize deals at every stage of your sales process.",
-        icon: GitBranch
-      },
-      {
-        title: "Task Automation",
-        desc: "Automate follow-ups, emails, and reminders.",
-        icon: Settings
-      },
-      {
-        title: "Email Integration",
-        desc: "Connect with Gmail, Outlook, and email marketing tools.",
-        icon: MessageCircle
-      },
-      {
-        title: "Analytics Dashboard",
-        desc: "Real-time reports on team performance and conversion rates.",
-        icon: BarChart
-      }
+      { title: "Lead Management", desc: "Capture, track, and nurture leads through your sales pipeline.", icon: Target },
+      { title: "Contact Tracking", desc: "Store all customer interactions in one place.", icon: Users },
+      { title: "Sales Pipeline", desc: "Visualize deals at every stage of your sales process.", icon: GitBranch },
+      { title: "Task Automation", desc: "Automate follow-ups, emails, and reminders.", icon: Settings },
+      { title: "Email Integration", desc: "Connect with Gmail, Outlook, and email marketing tools.", icon: MessageCircle },
+      { title: "Analytics Dashboard", desc: "Real-time reports on team performance and conversion rates.", icon: BarChart }
     ],
     
     process: [
@@ -651,36 +510,12 @@ const servicesData = {
     ],
     
     benefits: [
-      {
-        title: "Matches Your Workflow",
-        desc: "CRM that adapts to your process, not the other way around.",
-        icon: GitBranch
-      },
-      {
-        title: "Automated Follow-ups",
-        desc: "Never miss a lead with automated emails and task reminders.",
-        icon: Clock
-      },
-      {
-        title: "Sales Analytics",
-        desc: "Real-time reports on team performance and conversion rates.",
-        icon: BarChart
-      },
-      {
-        title: "Team Collaboration",
-        desc: "Share notes, assign tasks, and work together seamlessly.",
-        icon: Users
-      },
-      {
-        title: "Mobile Access",
-        desc: "Access your CRM on the go with mobile apps.",
-        icon: Smartphone
-      },
-      {
-        title: "Data Security",
-        desc: "Your customer data is safe with enterprise-grade security.",
-        icon: Shield
-      }
+      { title: "Matches Your Workflow", desc: "CRM that adapts to your process, not the other way around.", icon: GitBranch },
+      { title: "Automated Follow-ups", desc: "Never miss a lead with automated emails and task reminders.", icon: Clock },
+      { title: "Sales Analytics", desc: "Real-time reports on team performance and conversion rates.", icon: BarChart },
+      { title: "Team Collaboration", desc: "Share notes, assign tasks, and work together seamlessly.", icon: Users },
+      { title: "Mobile Access", desc: "Access your CRM on the go with mobile apps.", icon: Smartphone },
+      { title: "Data Security", desc: "Your customer data is safe with enterprise-grade security.", icon: Shield }
     ],
     
     technologies: [
@@ -755,18 +590,9 @@ const servicesData = {
     },
     
     faq: [
-      {
-        question: "Can you migrate data from my existing CRM?",
-        answer: "Yes! We can import all your contacts, deals, and history from Excel, Google Sheets, or other CRM systems."
-      },
-      {
-        question: "How many users can use the CRM?",
-        answer: "Unlimited users. We build scalable systems that grow with your team."
-      },
-      {
-        question: "Can I access it on my phone?",
-        answer: "Yes, we build responsive web apps that work perfectly on mobile, or native mobile apps if needed."
-      }
+      { question: "Can you migrate data from my existing CRM?", answer: "Yes! We can import all your contacts, deals, and history from Excel, Google Sheets, or other CRM systems." },
+      { question: "How many users can use the CRM?", answer: "Unlimited users. We build scalable systems that grow with your team." },
+      { question: "Can I access it on my phone?", answer: "Yes, we build responsive web apps that work perfectly on mobile, or native mobile apps if needed." }
     ]
   },
 
@@ -781,36 +607,12 @@ const servicesData = {
     As a new startup, we understand the importance of standing out. We build unique e-commerce experiences that reflect your brand and delight your customers.`,
     
     features: [
-      {
-        title: "Online Stores",
-        desc: "Beautiful product catalogs with easy checkout.",
-        icon: ShoppingCart
-      },
-      {
-        title: "Product Catalogs",
-        desc: "Organize products with categories, filters, and search.",
-        icon: Layers
-      },
-      {
-        title: "Shopping Cart",
-        desc: "Smooth cart experience that reduces abandonment.",
-        icon: Box
-      },
-      {
-        title: "Payment Integration",
-        desc: "Connect with Razorpay, Stripe, PayPal, and more.",
-        icon: Zap
-      },
-      {
-        title: "Inventory Management",
-        desc: "Track stock, manage variants, and automate reorders.",
-        icon: Database
-      },
-      {
-        title: "Order Processing",
-        desc: "Streamlined order management and fulfillment.",
-        icon: Settings
-      }
+      { title: "Online Stores", desc: "Beautiful product catalogs with easy checkout.", icon: ShoppingCart },
+      { title: "Product Catalogs", desc: "Organize products with categories, filters, and search.", icon: Layers },
+      { title: "Shopping Cart", desc: "Smooth cart experience that reduces abandonment.", icon: Box },
+      { title: "Payment Integration", desc: "Connect with Razorpay, Stripe, PayPal, and more.", icon: Zap },
+      { title: "Inventory Management", desc: "Track stock, manage variants, and automate reorders.", icon: Database },
+      { title: "Order Processing", desc: "Streamlined order management and fulfillment.", icon: Settings }
     ],
     
     process: [
@@ -885,36 +687,12 @@ const servicesData = {
     ],
     
     benefits: [
-      {
-        title: "Higher Conversion",
-        desc: "Optimized checkout flows that reduce cart abandonment.",
-        icon: Target
-      },
-      {
-        title: "Mobile-First",
-        desc: "Perfect shopping experience on all devices.",
-        icon: Smartphone
-      },
-      {
-        title: "Scalable Infrastructure",
-        desc: "Handles traffic spikes during sales and festivals.",
-        icon: Cloud
-      },
-      {
-        title: "SEO Optimized",
-        desc: "Built to rank high in search results.",
-        icon: BarChart
-      },
-      {
-        title: "Easy Management",
-        desc: "Intuitive admin panel to manage products and orders.",
-        icon: Settings
-      },
-      {
-        title: "Secure Payments",
-        desc: "PCI-compliant payment processing.",
-        icon: Shield
-      }
+      { title: "Higher Conversion", desc: "Optimized checkout flows that reduce cart abandonment.", icon: Target },
+      { title: "Mobile-First", desc: "Perfect shopping experience on all devices.", icon: Smartphone },
+      { title: "Scalable Infrastructure", desc: "Handles traffic spikes during sales and festivals.", icon: Cloud },
+      { title: "SEO Optimized", desc: "Built to rank high in search results.", icon: BarChart },
+      { title: "Easy Management", desc: "Intuitive admin panel to manage products and orders.", icon: Settings },
+      { title: "Secure Payments", desc: "PCI-compliant payment processing.", icon: Shield }
     ],
     
     technologies: [
@@ -988,18 +766,9 @@ const servicesData = {
     },
     
     faq: [
-      {
-        question: "Which payment gateways do you integrate?",
-        answer: "We integrate with Razorpay, Stripe, PayPal, and all major Indian and international payment providers."
-      },
-      {
-        question: "Can I manage products and inventory myself?",
-        answer: "Yes! You get a complete admin dashboard to add products, manage stock, and process orders."
-      },
-      {
-        question: "Is it SEO friendly?",
-        answer: "Absolutely. We build with SEO best practices so your products appear in Google searches."
-      }
+      { question: "Which payment gateways do you integrate?", answer: "We integrate with Razorpay, Stripe, PayPal, and all major Indian and international payment providers." },
+      { question: "Can I manage products and inventory myself?", answer: "Yes! You get a complete admin dashboard to add products, manage stock, and process orders." },
+      { question: "Is it SEO friendly?", answer: "Absolutely. We build with SEO best practices so your products appear in Google searches." }
     ]
   },
 
@@ -1014,36 +783,12 @@ const servicesData = {
     As a new startup, we bring fresh perspectives on mobile design and development. We build apps that users actually want to keep on their phones.`,
     
     features: [
-      {
-        title: "iOS Apps",
-        desc: "Native apps for iPhone and iPad with Swift.",
-        icon: Smartphone
-      },
-      {
-        title: "Android Apps",
-        desc: "Native Android apps with Kotlin/Java.",
-        icon: Smartphone
-      },
-      {
-        title: "Cross-Platform Apps",
-        desc: "One codebase for both iOS and Android with React Native.",
-        icon: Code
-      },
-      {
-        title: "Mobile-Friendly Design",
-        desc: "Beautiful interfaces optimized for touch.",
-        icon: PenTool
-      },
-      {
-        title: "Push Notifications",
-        desc: "Engage users with timely updates and offers.",
-        icon: MessageCircle
-      },
-      {
-        title: "Offline Support",
-        desc: "Work without internet and sync when connected.",
-        icon: Database
-      }
+      { title: "iOS Apps", desc: "Native apps for iPhone and iPad with Swift.", icon: Smartphone },
+      { title: "Android Apps", desc: "Native Android apps with Kotlin/Java.", icon: Smartphone },
+      { title: "Cross-Platform Apps", desc: "One codebase for both iOS and Android with React Native.", icon: Code },
+      { title: "Mobile-Friendly Design", desc: "Beautiful interfaces optimized for touch.", icon: PenTool },
+      { title: "Push Notifications", desc: "Engage users with timely updates and offers.", icon: MessageCircle },
+      { title: "Offline Support", desc: "Work without internet and sync when connected.", icon: Database }
     ],
     
     process: [
@@ -1120,36 +865,12 @@ const servicesData = {
     ],
     
     benefits: [
-      {
-        title: "Native Performance",
-        desc: "Fast, smooth apps that feel natural on each platform.",
-        icon: Zap
-      },
-      {
-        title: "Beautiful UI",
-        desc: "Stunning designs that follow platform guidelines.",
-        icon: PenTool
-      },
-      {
-        title: "Offline Support",
-        desc: "Work without internet and sync when connected.",
-        icon: Cloud
-      },
-      {
-        title: "Push Notifications",
-        desc: "Engage users with timely updates and offers.",
-        icon: MessageCircle
-      },
-      {
-        title: "App Store Ready",
-        desc: "We handle the entire app store submission process.",
-        icon: Award
-      },
-      {
-        title: "Analytics Integration",
-        desc: "Track user behavior and app performance.",
-        icon: BarChart
-      }
+      { title: "Native Performance", desc: "Fast, smooth apps that feel natural on each platform.", icon: Zap },
+      { title: "Beautiful UI", desc: "Stunning designs that follow platform guidelines.", icon: PenTool },
+      { title: "Offline Support", desc: "Work without internet and sync when connected.", icon: Cloud },
+      { title: "Push Notifications", desc: "Engage users with timely updates and offers.", icon: MessageCircle },
+      { title: "App Store Ready", desc: "We handle the entire app store submission process.", icon: Award },
+      { title: "Analytics Integration", desc: "Track user behavior and app performance.", icon: BarChart }
     ],
     
     technologies: [
@@ -1224,18 +945,9 @@ const servicesData = {
     },
     
     faq: [
-      {
-        question: "Should I build for iOS, Android, or both?",
-        answer: "We'll help you decide based on your target audience. Most businesses start with both using cross-platform technology."
-      },
-      {
-        question: "How long does it take to publish on app stores?",
-        answer: "Development takes 3-5 months, plus 1-2 weeks for app store review and approval."
-      },
-      {
-        question: "Can I update the app myself?",
-        answer: "Yes! We build admin panels so you can update content, but code updates require our help."
-      }
+      { question: "Should I build for iOS, Android, or both?", answer: "We'll help you decide based on your target audience. Most businesses start with both using cross-platform technology." },
+      { question: "How long does it take to publish on app stores?", answer: "Development takes 3-5 months, plus 1-2 weeks for app store review and approval." },
+      { question: "Can I update the app myself?", answer: "Yes! We build admin panels so you can update content, but code updates require our help." }
     ]
   },
 
@@ -1250,36 +962,12 @@ const servicesData = {
     As a new startup, we understand the importance of efficiency. We build integrations that eliminate manual data entry and streamline your operations.`,
     
     features: [
-      {
-        title: "RESTful APIs",
-        desc: "Well-designed APIs that are easy to use and maintain.",
-        icon: GitBranch
-      },
-      {
-        title: "Third-Party Integration",
-        desc: "Connect with popular services and platforms.",
-        icon: Globe
-      },
-      {
-        title: "Payment Gateways",
-        desc: "Integrate Razorpay, Stripe, PayPal, and more.",
-        icon: Zap
-      },
-      {
-        title: "CRM Integration",
-        desc: "Connect your CRM with other business tools.",
-        icon: Users
-      },
-      {
-        title: "ERP Integration",
-        desc: "Sync data between ERP and other systems.",
-        icon: Database
-      },
-      {
-        title: "Data Synchronization",
-        desc: "Keep data consistent across all your platforms.",
-        icon: Layers
-      }
+      { title: "RESTful APIs", desc: "Well-designed APIs that are easy to use and maintain.", icon: GitBranch },
+      { title: "Third-Party Integration", desc: "Connect with popular services and platforms.", icon: Globe },
+      { title: "Payment Gateways", desc: "Integrate Razorpay, Stripe, PayPal, and more.", icon: Zap },
+      { title: "CRM Integration", desc: "Connect your CRM with other business tools.", icon: Users },
+      { title: "ERP Integration", desc: "Sync data between ERP and other systems.", icon: Database },
+      { title: "Data Synchronization", desc: "Keep data consistent across all your platforms.", icon: Layers }
     ],
     
     process: [
@@ -1356,36 +1044,12 @@ const servicesData = {
     ],
     
     benefits: [
-      {
-        title: "Seamless Integration",
-        desc: "Connect all your business tools into one workflow.",
-        icon: GitBranch
-      },
-      {
-        title: "Automation",
-        desc: "Eliminate manual data entry between systems.",
-        icon: Settings
-      },
-      {
-        title: "Scalable APIs",
-        desc: "Handle millions of requests as you grow.",
-        icon: Server
-      },
-      {
-        title: "Security First",
-        desc: "Enterprise-grade authentication and encryption.",
-        icon: Lock
-      },
-      {
-        title: "Well Documented",
-        desc: "Clear documentation for your development team.",
-        icon: BookOpen
-      },
-      {
-        title: "Real-time Sync",
-        desc: "Keep data consistent across all platforms.",
-        icon: Zap
-      }
+      { title: "Seamless Integration", desc: "Connect all your business tools into one workflow.", icon: GitBranch },
+      { title: "Automation", desc: "Eliminate manual data entry between systems.", icon: Settings },
+      { title: "Scalable APIs", desc: "Handle millions of requests as you grow.", icon: Server },
+      { title: "Security First", desc: "Enterprise-grade authentication and encryption.", icon: Lock },
+      { title: "Well Documented", desc: "Clear documentation for your development team.", icon: BookOpen },
+      { title: "Real-time Sync", desc: "Keep data consistent across all platforms.", icon: Zap }
     ],
     
     technologies: [
@@ -1459,18 +1123,9 @@ const servicesData = {
     },
     
     faq: [
-      {
-        question: "What's the difference between REST and GraphQL?",
-        answer: "We'll recommend the best approach for your needs. REST is great for simple integrations, GraphQL for complex data requirements."
-      },
-      {
-        question: "How do you ensure API security?",
-        answer: "We implement JWT tokens, API keys, rate limiting, and SSL encryption. All APIs are security tested."
-      },
-      {
-        question: "Can you integrate with [specific service]?",
-        answer: "Most likely yes! We've integrated with payment gateways, CRMs, ERPs, and marketing tools."
-      }
+      { question: "What's the difference between REST and GraphQL?", answer: "We'll recommend the best approach for your needs. REST is great for simple integrations, GraphQL for complex data requirements." },
+      { question: "How do you ensure API security?", answer: "We implement JWT tokens, API keys, rate limiting, and SSL encryption. All APIs are security tested." },
+      { question: "Can you integrate with [specific service]?", answer: "Most likely yes! We've integrated with payment gateways, CRMs, ERPs, and marketing tools." }
     ]
   }
 };
@@ -1486,9 +1141,9 @@ export default function ServiceDetail() {
 
   if (!service) {
     return (
-      <div className="pt-32 text-center min-h-screen">
+      <div className="pt-32 text-center min-h-screen bg-[#0B0F19] text-white">
         <h1 className="text-3xl mb-4">Service not found</h1>
-        <Link to="/services" className="text-blue-600 hover:underline">
+        <Link to="/services" className="text-blue-400 hover:underline">
           View All Services
         </Link>
       </div>
@@ -1496,7 +1151,6 @@ export default function ServiceDetail() {
   }
 
   const IconComponent = service.icon;
-
   const tabs = [
     { id: "overview", label: "Overview" },
     { id: "features", label: "Features" },
@@ -1507,7 +1161,7 @@ export default function ServiceDetail() {
   ];
 
   return (
-    <main className="pt-24 bg-white min-h-screen">
+    <main className="pt-24 bg-[#0B0F19] min-h-screen text-white">
       {/* HERO SECTION */}
       <section className={`bg-gradient-to-r ${service.color} text-white py-20`}>
         <div className="max-w-7xl mx-auto px-6">
@@ -1532,7 +1186,7 @@ export default function ServiceDetail() {
       </section>
 
       {/* TAB NAVIGATION */}
-      <section className="border-b sticky top-20 bg-white z-40">
+      <section className="border-b border-[#1F2937] sticky top-20 bg-[#0B0F19] z-40">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex space-x-8 overflow-x-auto">
             {tabs.map(tab => (
@@ -1541,8 +1195,8 @@ export default function ServiceDetail() {
                 onClick={() => setActiveTab(tab.id)}
                 className={`py-4 px-2 font-medium transition border-b-2 whitespace-nowrap ${
                   activeTab === tab.id
-                    ? `border-${service.color.split(' ')[0].replace('from-', '')} text-gray-900`
-                    : 'border-transparent text-gray-500 hover:text-gray-700'
+                    ? `border-blue-500 text-blue-400`
+                    : 'border-transparent text-gray-400 hover:text-gray-300'
                 }`}
               >
                 {tab.label}
@@ -1558,9 +1212,9 @@ export default function ServiceDetail() {
           {/* Detailed Overview */}
           <section className="py-16">
             <div className="max-w-4xl mx-auto px-6">
-              <h2 className="text-3xl font-bold mb-8">Overview</h2>
-              <div className="bg-gray-50 p-8 rounded-2xl">
-                <p className="text-gray-700 text-lg leading-relaxed whitespace-pre-line">
+              <h2 className="text-3xl font-bold mb-8 text-white">Overview</h2>
+              <div className="bg-[rgba(255,255,255,0.05)] backdrop-blur-sm border border-[#1F2937] p-8 rounded-2xl">
+                <p className="text-gray-300 text-lg leading-relaxed whitespace-pre-line">
                   {service.overview}
                 </p>
               </div>
@@ -1568,17 +1222,17 @@ export default function ServiceDetail() {
           </section>
 
           {/* Key Features Preview */}
-          <section className="py-16 bg-gray-50">
+          <section className="py-16 bg-[#0B0F19]">
             <div className="max-w-7xl mx-auto px-6">
-              <h2 className="text-3xl font-bold text-center mb-12">Key Features</h2>
+              <h2 className="text-3xl font-bold text-center mb-12 text-white">Key Features</h2>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {service.features.slice(0, 3).map((feature, index) => (
-                  <div key={index} className="bg-white p-8 rounded-2xl shadow-lg">
-                    <div className="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
-                      <feature.icon className="w-7 h-7 text-blue-600" />
+                  <div key={index} className="bg-[rgba(255,255,255,0.05)] backdrop-blur-sm border border-[#1F2937] p-8 rounded-2xl shadow-lg">
+                    <div className="w-14 h-14 bg-blue-600/20 rounded-xl flex items-center justify-center mb-6">
+                      <feature.icon className="w-7 h-7 text-blue-400" />
                     </div>
-                    <h3 className="text-xl font-semibold mb-3">{feature.title}</h3>
-                    <p className="text-gray-600">{feature.desc}</p>
+                    <h3 className="text-xl font-semibold mb-3 text-white">{feature.title}</h3>
+                    <p className="text-gray-400">{feature.desc}</p>
                   </div>
                 ))}
               </div>
@@ -1588,22 +1242,22 @@ export default function ServiceDetail() {
           {/* Quick Process */}
           <section className="py-16">
             <div className="max-w-7xl mx-auto px-6">
-              <h2 className="text-3xl font-bold text-center mb-12">Quick Process Overview</h2>
+              <h2 className="text-3xl font-bold text-center mb-12 text-white">Quick Process Overview</h2>
               <div className="grid md:grid-cols-3 gap-4">
                 {service.process.slice(0, 3).map((step, index) => (
                   <div key={index} className="text-center p-6">
                     <div className="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
                       {index + 1}
                     </div>
-                    <h3 className="text-xl font-semibold mb-2">{step.phase}</h3>
-                    <p className="text-sm text-gray-500">{step.duration}</p>
+                    <h3 className="text-xl font-semibold mb-2 text-white">{step.phase}</h3>
+                    <p className="text-sm text-gray-400">{step.duration}</p>
                   </div>
                 ))}
               </div>
               <div className="text-center mt-8">
                 <button
                   onClick={() => setActiveTab("process")}
-                  className="text-blue-600 font-semibold inline-flex items-center hover:gap-2 transition-all"
+                  className="text-blue-400 font-semibold inline-flex items-center hover:gap-2 transition-all"
                 >
                   View Full Process <ArrowRight className="w-4 h-4 ml-1" />
                 </button>
@@ -1617,19 +1271,19 @@ export default function ServiceDetail() {
       {activeTab === "features" && (
         <section className="py-16">
           <div className="max-w-7xl mx-auto px-6">
-            <h2 className="text-3xl font-bold text-center mb-4">Our Features</h2>
-            <p className="text-gray-600 text-center max-w-2xl mx-auto mb-12">
+            <h2 className="text-3xl font-bold text-center mb-4 text-white">Our Features</h2>
+            <p className="text-gray-400 text-center max-w-2xl mx-auto mb-12">
               Comprehensive capabilities tailored to your needs
             </p>
             
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {service.features.map((feature, index) => (
-                <div key={index} className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all">
-                  <div className="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
-                    <feature.icon className="w-7 h-7 text-blue-600" />
+                <div key={index} className="bg-[rgba(255,255,255,0.05)] backdrop-blur-sm border border-[#1F2937] p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all">
+                  <div className="w-14 h-14 bg-blue-600/20 rounded-xl flex items-center justify-center mb-6">
+                    <feature.icon className="w-7 h-7 text-blue-400" />
                   </div>
-                  <h3 className="text-xl font-semibold mb-3">{feature.title}</h3>
-                  <p className="text-gray-600">{feature.desc}</p>
+                  <h3 className="text-xl font-semibold mb-3 text-white">{feature.title}</h3>
+                  <p className="text-gray-400">{feature.desc}</p>
                 </div>
               ))}
             </div>
@@ -1641,22 +1295,22 @@ export default function ServiceDetail() {
       {activeTab === "process" && (
         <section className="py-16">
           <div className="max-w-7xl mx-auto px-6">
-            <h2 className="text-3xl font-bold text-center mb-4">Our Development Process</h2>
-            <p className="text-gray-600 text-center max-w-2xl mx-auto mb-12">
+            <h2 className="text-3xl font-bold text-center mb-4 text-white">Our Development Process</h2>
+            <p className="text-gray-400 text-center max-w-2xl mx-auto mb-12">
               A transparent, collaborative approach from idea to launch
             </p>
 
             <div className="space-y-8">
               {service.process.map((step, index) => (
-                <div key={index} className="bg-gray-50 p-8 rounded-2xl">
+                <div key={index} className="bg-[rgba(255,255,255,0.05)] backdrop-blur-sm border border-[#1F2937] p-8 rounded-2xl">
                   <div className="flex flex-wrap gap-6 items-start">
                     <div className="w-16 h-16 bg-blue-600 text-white rounded-2xl flex items-center justify-center text-2xl font-bold">
                       {index + 1}
                     </div>
                     <div className="flex-1">
                       <div className="flex flex-wrap items-center gap-4 mb-4">
-                        <h3 className="text-2xl font-semibold">{step.phase}</h3>
-                        <span className="bg-blue-100 text-blue-600 px-4 py-1 rounded-full text-sm font-medium">
+                        <h3 className="text-2xl font-semibold text-white">{step.phase}</h3>
+                        <span className="bg-blue-600/20 text-blue-400 px-4 py-1 rounded-full text-sm font-medium">
                           {step.duration}
                         </span>
                       </div>
@@ -1664,7 +1318,7 @@ export default function ServiceDetail() {
                         {step.tasks.map((task, i) => (
                           <li key={i} className="flex items-start gap-2">
                             <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                            <span className="text-gray-700">{task}</span>
+                            <span className="text-gray-300">{task}</span>
                           </li>
                         ))}
                       </ul>
@@ -1704,31 +1358,31 @@ export default function ServiceDetail() {
       {activeTab === "benefits" && (
         <section className="py-16">
           <div className="max-w-7xl mx-auto px-6">
-            <h2 className="text-3xl font-bold text-center mb-4">Why Choose Us</h2>
-            <p className="text-gray-600 text-center max-w-2xl mx-auto mb-12">
+            <h2 className="text-3xl font-bold text-center mb-4 text-white">Why Choose Us</h2>
+            <p className="text-gray-400 text-center max-w-2xl mx-auto mb-12">
               What you gain by partnering with us
             </p>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {service.benefits.map((benefit, index) => (
-                <div key={index} className="bg-gray-50 p-8 rounded-2xl hover:shadow-lg transition-all">
-                  <div className="w-14 h-14 bg-green-100 rounded-xl flex items-center justify-center mb-6">
-                    <benefit.icon className="w-7 h-7 text-green-600" />
+                <div key={index} className="bg-[rgba(255,255,255,0.05)] backdrop-blur-sm border border-[#1F2937] p-8 rounded-2xl hover:shadow-lg transition-all">
+                  <div className="w-14 h-14 bg-green-600/20 rounded-xl flex items-center justify-center mb-6">
+                    <benefit.icon className="w-7 h-7 text-green-400" />
                   </div>
-                  <h3 className="text-xl font-semibold mb-3">{benefit.title}</h3>
-                  <p className="text-gray-600">{benefit.desc}</p>
+                  <h3 className="text-xl font-semibold mb-3 text-white">{benefit.title}</h3>
+                  <p className="text-gray-400">{benefit.desc}</p>
                 </div>
               ))}
             </div>
 
             {/* Deliverables */}
             <div className="mt-16">
-              <h3 className="text-2xl font-bold text-center mb-8">What You'll Receive</h3>
+              <h3 className="text-2xl font-bold text-center mb-8 text-white">What You'll Receive</h3>
               <div className="grid md:grid-cols-4 gap-4">
                 {service.deliverables.map((item, index) => (
-                  <div key={index} className="bg-white border border-gray-200 p-4 rounded-lg text-center">
+                  <div key={index} className="bg-[rgba(255,255,255,0.05)] backdrop-blur-sm border border-[#1F2937] p-4 rounded-lg text-center">
                     <CheckCircle className="w-5 h-5 text-green-500 mx-auto mb-2" />
-                    <span className="text-sm font-medium">{item}</span>
+                    <span className="text-sm font-medium text-gray-300">{item}</span>
                   </div>
                 ))}
               </div>
@@ -1741,8 +1395,8 @@ export default function ServiceDetail() {
       {activeTab === "pricing" && (
         <section className="py-16">
           <div className="max-w-7xl mx-auto px-6">
-            <h2 className="text-3xl font-bold text-center mb-4">Investment Options</h2>
-            <p className="text-gray-600 text-center max-w-2xl mx-auto mb-12">
+            <h2 className="text-3xl font-bold text-center mb-4 text-white">Investment Options</h2>
+            <p className="text-gray-400 text-center max-w-2xl mx-auto mb-12">
               Flexible engagement models tailored to your budget and requirements
             </p>
 
@@ -1750,33 +1404,27 @@ export default function ServiceDetail() {
               {Object.entries(service.pricing).map(([key, plan]) => (
                 <div
                   key={key}
-                  className={`relative bg-white rounded-2xl p-8 ${
-                    plan.popular ? 'border-2 border-blue-600 shadow-xl scale-105' : 'border border-gray-200 shadow-lg'
-                  }`}
+                  className={`relative bg-[rgba(255,255,255,0.05)] backdrop-blur-sm border ${plan.popular ? 'border-blue-500 shadow-xl scale-105' : 'border-[#1F2937] shadow-lg'} rounded-2xl p-8`}
                 >
                   {plan.popular && (
                     <div className="absolute top-0 right-8 bg-blue-600 text-white px-4 py-1 text-sm rounded-b-lg">
                       Most Popular
                     </div>
                   )}
-                  <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
-                  <p className="text-gray-500 text-sm mb-4">{plan.description}</p>
-                  <div className="text-3xl font-bold text-blue-600 mb-6">{plan.price}</div>
+                  <h3 className="text-2xl font-bold mb-2 text-white">{plan.name}</h3>
+                  <p className="text-gray-400 text-sm mb-4">{plan.description}</p>
+                  <div className="text-3xl font-bold text-blue-400 mb-6">{plan.price}</div>
                   <ul className="space-y-3 mb-8">
                     {plan.features.map((feature, i) => (
                       <li key={i} className="flex items-start gap-2">
                         <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
-                        <span className="text-gray-600">{feature}</span>
+                        <span className="text-gray-300">{feature}</span>
                       </li>
                     ))}
                   </ul>
                   <Link
                     to="/contact"
-                    className={`block text-center py-3 rounded-lg font-semibold transition ${
-                      plan.popular
-                        ? 'bg-blue-600 text-white hover:bg-blue-700'
-                        : 'border border-blue-600 text-blue-600 hover:bg-blue-50'
-                    }`}
+                    className={`block text-center py-3 rounded-lg font-semibold transition ${plan.popular ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:shadow-xl' : 'border border-blue-500 text-blue-400 hover:bg-blue-500/10'}`}
                   >
                     Get Started
                   </Link>
@@ -1784,9 +1432,9 @@ export default function ServiceDetail() {
               ))}
             </div>
 
-            <div className="mt-12 text-center text-gray-500 bg-gray-50 p-6 rounded-xl">
+            <div className="mt-12 text-center text-gray-400 bg-[rgba(255,255,255,0.05)] p-6 rounded-xl">
               <p className="text-lg">Need a custom solution? We'll create a package tailored to your specific requirements.</p>
-              <Link to="/contact" className="inline-block mt-4 text-blue-600 hover:text-blue-700 font-medium">
+              <Link to="/contact" className="inline-block mt-4 text-blue-400 hover:text-blue-300 font-medium">
                 Schedule a Free Consultation →
               </Link>
             </div>
@@ -1798,12 +1446,12 @@ export default function ServiceDetail() {
       {activeTab === "faq" && service.faq && (
         <section className="py-16">
           <div className="max-w-4xl mx-auto px-6">
-            <h2 className="text-3xl font-bold text-center mb-12">Frequently Asked Questions</h2>
+            <h2 className="text-3xl font-bold text-center mb-12 text-white">Frequently Asked Questions</h2>
             <div className="space-y-6">
               {service.faq.map((item, index) => (
-                <div key={index} className="bg-gray-50 p-6 rounded-xl">
-                  <h3 className="text-xl font-semibold mb-3">{item.question}</h3>
-                  <p className="text-gray-600">{item.answer}</p>
+                <div key={index} className="bg-[rgba(255,255,255,0.05)] backdrop-blur-sm border border-[#1F2937] p-6 rounded-xl">
+                  <h3 className="text-xl font-semibold mb-3 text-white">{item.question}</h3>
+                  <p className="text-gray-400">{item.answer}</p>
                 </div>
               ))}
             </div>
@@ -1812,15 +1460,15 @@ export default function ServiceDetail() {
       )}
 
       {/* OUR COMMITMENT */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-[#0B0F19]">
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-3xl font-bold mb-6">Our Commitment to You</h2>
-          <p className="text-gray-600 text-lg leading-relaxed">
+          <h2 className="text-3xl font-bold mb-6 text-white">Our Commitment to You</h2>
+          <p className="text-gray-300 text-lg leading-relaxed">
             As a new startup ourselves, we understand the importance of building trust and delivering value. 
             We're not just vendors – we're your technology partners. Your success is our success, and we put 
             everything into making your project a success.
           </p>
-          <p className="text-gray-600 text-lg leading-relaxed mt-4">
+          <p className="text-gray-300 text-lg leading-relaxed mt-4">
             Every line of code we write, every design we create, and every decision we make is focused on 
             helping you achieve your business goals. Let's build something amazing together.
           </p>

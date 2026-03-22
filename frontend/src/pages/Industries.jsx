@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+﻿import { Link } from "react-router-dom";
 import { 
   Building2, 
   ShoppingCart, 
@@ -246,7 +246,7 @@ const values = [
 
 export default function Industries() {
   return (
-    <main className="pt-24 bg-white">
+    <main className="pt-24 bg-[#0B0F19]">
       {/* HERO SECTION */}
       <section className="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-24">
         <div className="max-w-7xl mx-auto px-6 text-center">
@@ -277,23 +277,23 @@ export default function Industries() {
       </section>
 
       {/* WHY CHOOSE US - HONEST STARTUP MESSAGE */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-[#0B0F19]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">Why Partner With a New Startup?</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <h2 className="text-4xl font-bold mb-4 text-white">Why Partner With a New Startup?</h2>
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
               Because we're hungry, dedicated, and put everything into making your project a success
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((value, index) => (
-              <div key={index} className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all">
+              <div key={index} className="bg-[rgba(255,255,255,0.05)] backdrop-blur-sm border border-[#1F2937] p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all">
                 <div className={`w-16 h-16 rounded-xl bg-gradient-to-r ${value.color} flex items-center justify-center mb-6`}>
                   <value.icon className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold mb-3">{value.title}</h3>
-                <p className="text-gray-600">{value.desc}</p>
+                <h3 className="text-xl font-semibold mb-3 text-white">{value.title}</h3>
+                <p className="text-gray-400">{value.desc}</p>
               </div>
             ))}
           </div>
@@ -304,8 +304,8 @@ export default function Industries() {
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">Industries We Serve</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <h2 className="text-4xl font-bold mb-4 text-white">Industries We Serve</h2>
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
               We build software solutions across industries, tailored to your specific needs
             </p>
           </div>
@@ -315,7 +315,7 @@ export default function Industries() {
               <Link
                 key={index}
                 to={`/industries/${industry.slug}`}
-                className="group bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all hover:-translate-y-2"
+                className="group bg-[rgba(255,255,255,0.05)] backdrop-blur-sm border border-[#1F2937] rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all hover:-translate-y-2"
               >
                 <div className="h-56 overflow-hidden relative">
                   <img
@@ -324,29 +324,28 @@ export default function Industries() {
                     className="w-full h-full object-cover group-hover:scale-110 transition duration-700"
                   />
                   <div className={`absolute inset-0 bg-gradient-to-t ${industry.color} opacity-60 mix-blend-multiply`}></div>
-                  <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur p-3 rounded-xl">
+                  <div className="absolute bottom-4 left-4 bg-[rgba(255,255,255,0.9)] backdrop-blur p-3 rounded-xl">
                     <industry.icon className="w-6 h-6 text-gray-900" />
                   </div>
                 </div>
                 <div className="p-8">
-                  <h3 className="text-2xl font-semibold mb-3">{industry.title}</h3>
-                  <p className="text-gray-600 mb-4">{industry.desc}</p>
+                  <h3 className="text-2xl font-semibold mb-3 text-white">{industry.title}</h3>
+                  <p className="text-gray-400 mb-4">{industry.desc}</p>
                   
-                  {/* Features preview */}
                   <div className="mb-4">
                     <div className="flex flex-wrap gap-2">
                       {industry.features.slice(0, 3).map((feature, i) => (
-                        <span key={i} className="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">
+                        <span key={i} className="text-xs bg-[rgba(255,255,255,0.05)] text-gray-300 px-2 py-1 rounded">
                           {feature}
                         </span>
                       ))}
-                      <span className="text-xs bg-blue-100 text-blue-600 px-2 py-1 rounded">
+                      <span className="text-xs bg-blue-600/20 text-blue-400 px-2 py-1 rounded">
                         +{industry.features.length - 3} more
                       </span>
                     </div>
                   </div>
                   
-                  <span className="text-blue-600 font-semibold inline-flex items-center group-hover:gap-2 transition-all">
+                  <span className="text-blue-400 font-semibold inline-flex items-center group-hover:gap-2 transition-all">
                     Learn More <ArrowRight className="w-4 h-4 ml-1" />
                   </span>
                 </div>
@@ -357,11 +356,11 @@ export default function Industries() {
       </section>
 
       {/* OUR SERVICES */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-[#0B0F19]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">Our Services</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <h2 className="text-4xl font-bold mb-4 text-white">Our Services</h2>
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
               Comprehensive software development services tailored to your needs
             </p>
           </div>
@@ -371,25 +370,24 @@ export default function Industries() {
               <Link
                 key={index}
                 to={`/services/${service.slug}`}
-                className="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition-all hover:-translate-y-2"
+                className="bg-[rgba(255,255,255,0.05)] backdrop-blur-sm border border-[#1F2937] p-8 rounded-2xl shadow-md hover:shadow-xl transition-all hover:-translate-y-2"
               >
                 <div className={`w-16 h-16 rounded-xl bg-gradient-to-r ${service.color} flex items-center justify-center mb-6`}>
                   <service.icon className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-2xl font-semibold mb-3">{service.title}</h3>
-                <p className="text-gray-600 mb-4">{service.desc}</p>
+                <h3 className="text-2xl font-semibold mb-3 text-white">{service.title}</h3>
+                <p className="text-gray-400 mb-4">{service.desc}</p>
                 
-                {/* Features list */}
                 <ul className="space-y-2 mb-4">
                   {service.features.slice(0, 3).map((feature, i) => (
-                    <li key={i} className="text-sm text-gray-500 flex items-center">
+                    <li key={i} className="text-sm text-gray-400 flex items-center">
                       <span className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-2"></span>
                       {feature}
                     </li>
                   ))}
                 </ul>
                 
-                <span className="text-blue-600 font-semibold inline-flex items-center">
+                <span className="text-blue-400 font-semibold inline-flex items-center">
                   Learn More <ArrowRight className="w-4 h-4 ml-1" />
                 </span>
               </Link>
@@ -402,8 +400,8 @@ export default function Industries() {
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">How We Build Your Software</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <h2 className="text-4xl font-bold mb-4 text-white">How We Build Your Software</h2>
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
               A transparent, collaborative process from idea to launch
             </p>
           </div>
@@ -455,11 +453,11 @@ export default function Industries() {
       </section>
 
       {/* WHAT WE DELIVER */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-[#0B0F19]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">What You Get</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <h2 className="text-4xl font-bold mb-4 text-white">What You Get</h2>
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
               Complete deliverables that set you up for success
             </p>
           </div>
@@ -475,11 +473,11 @@ export default function Industries() {
               "3 Months Free Support",
               "Future Growth Roadmap"
             ].map((item, index) => (
-              <div key={index} className="bg-white p-6 rounded-xl shadow-md text-center">
-                <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-green-600 text-xl">✓</span>
+              <div key={index} className="bg-[rgba(255,255,255,0.05)] backdrop-blur-sm border border-[#1F2937] p-6 rounded-xl shadow-md text-center">
+                <div className="w-12 h-12 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-green-400 text-xl">✓</span>
                 </div>
-                <p className="font-semibold">{item}</p>
+                <p className="font-semibold text-white">{item}</p>
               </div>
             ))}
           </div>

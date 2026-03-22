@@ -12,7 +12,6 @@ import {
   Zap
 } from "lucide-react";
 
-// This would normally come from a data file
 const toolsData = {
   "mvp-boilerplate": {
     title: "MVP Launch Boilerplate",
@@ -52,9 +51,9 @@ export default function ToolDetail() {
 
   if (!tool) {
     return (
-      <div className="pt-32 text-center min-h-screen">
+      <div className="pt-32 text-center min-h-screen bg-[#0B0F19] text-white">
         <h1 className="text-3xl mb-4">Tool not found</h1>
-        <Link to="/tools" className="text-blue-600 hover:underline">
+        <Link to="/tools" className="text-blue-400 hover:underline">
           Browse all tools
         </Link>
       </div>
@@ -62,7 +61,7 @@ export default function ToolDetail() {
   }
 
   return (
-    <main className="pt-24 bg-white">
+    <main className="pt-24 bg-[#0B0F19] text-white">
       {/* Hero */}
       <section className="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-20">
         <div className="max-w-7xl mx-auto px-6">
@@ -77,29 +76,29 @@ export default function ToolDetail() {
           <div className="grid md:grid-cols-3 gap-12">
             {/* Left Column - Main Info */}
             <div className="md:col-span-2">
-              <h2 className="text-3xl font-bold mb-6">Overview</h2>
-              <p className="text-gray-700 text-lg leading-relaxed mb-8 whitespace-pre-line">
+              <h2 className="text-3xl font-bold mb-6 text-white">Overview</h2>
+              <p className="text-gray-300 text-lg leading-relaxed mb-8 whitespace-pre-line">
                 {tool.longDescription}
               </p>
 
-              <h2 className="text-3xl font-bold mb-6">Features</h2>
+              <h2 className="text-3xl font-bold mb-6 text-white">Features</h2>
               <div className="grid md:grid-cols-2 gap-4 mb-8">
                 {tool.features.map((feature, index) => (
                   <div key={index} className="flex items-start gap-3">
                     <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-1" />
-                    <span className="text-gray-700">{feature}</span>
+                    <span className="text-gray-300">{feature}</span>
                   </div>
                 ))}
               </div>
 
-              <h2 className="text-3xl font-bold mb-6">How to Use</h2>
+              <h2 className="text-3xl font-bold mb-6 text-white">How to Use</h2>
               <div className="space-y-4 mb-8">
                 {tool.howToUse.map((step, index) => (
                   <div key={index} className="flex items-start gap-4">
-                    <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center font-bold text-blue-600">
+                    <div className="w-8 h-8 bg-blue-600/20 rounded-full flex items-center justify-center font-bold text-blue-400">
                       {index + 1}
                     </div>
-                    <p className="text-gray-700">{step}</p>
+                    <p className="text-gray-300">{step}</p>
                   </div>
                 ))}
               </div>
@@ -107,11 +106,11 @@ export default function ToolDetail() {
 
             {/* Right Column - Sidebar */}
             <div>
-              <div className="bg-gray-50 p-6 rounded-2xl sticky top-28">
-                <h3 className="text-xl font-bold mb-4">Tech Stack</h3>
+              <div className="bg-[rgba(255,255,255,0.05)] backdrop-blur-sm border border-[#1F2937] p-6 rounded-2xl sticky top-28">
+                <h3 className="text-xl font-bold mb-4 text-white">Tech Stack</h3>
                 <div className="flex flex-wrap gap-2 mb-6">
                   {tool.tech.map((t, i) => (
-                    <span key={i} className="bg-white px-3 py-1 rounded-full text-sm shadow-sm">
+                    <span key={i} className="bg-[rgba(255,255,255,0.1)] px-3 py-1 rounded-full text-sm text-gray-300">
                       {t}
                     </span>
                   ))}
@@ -120,22 +119,22 @@ export default function ToolDetail() {
                 <div className="space-y-4 mb-6">
                   <div className="flex items-center gap-3">
                     <Calendar className="w-5 h-5 text-gray-400" />
-                    <span className="text-sm text-gray-600">{tool.updates}</span>
+                    <span className="text-sm text-gray-400">{tool.updates}</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <Users className="w-5 h-5 text-gray-400" />
-                    <span className="text-sm text-gray-600">{tool.support}</span>
+                    <span className="text-sm text-gray-400">{tool.support}</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <Zap className="w-5 h-5 text-gray-400" />
-                    <span className="text-sm text-gray-600">{tool.price}</span>
+                    <span className="text-sm text-gray-400">{tool.price}</span>
                   </div>
                 </div>
 
                 <div className="space-y-3">
                   <a
                     href={tool.github}
-                    className="w-full bg-gray-900 text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-800 transition flex items-center justify-center"
+                    className="w-full bg-gray-800 text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-700 transition flex items-center justify-center"
                   >
                     <Github className="w-5 h-5 mr-2" />
                     View on GitHub

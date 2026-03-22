@@ -20,14 +20,14 @@ export default function Login() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-black text-white">
-      <form onSubmit={handleLogin} className="w-96 p-6 border rounded">
+    <div className="min-h-screen flex items-center justify-center bg-[#0B0F19] text-white">
+      <form onSubmit={handleLogin} className="w-96 p-6 border border-[#1F2937] bg-[rgba(255,255,255,0.05)] rounded-lg">
         <h2 className="text-2xl mb-4">Login</h2>
-        <input className="w-full p-2 mb-3" placeholder="Email"
+        <input className="w-full p-2 mb-3 border border-[#1F2937] bg-[rgba(255,255,255,0.05)] rounded text-white placeholder-gray-500" placeholder="Email"
           onChange={(e) => setEmail(e.target.value)} />
-        <input className="w-full p-2 mb-3" type="password" placeholder="Password"
+        <input className="w-full p-2 mb-3 border border-[#1F2937] bg-[rgba(255,255,255,0.05)] rounded text-white placeholder-gray-500" type="password" placeholder="Password"
           onChange={(e) => setPassword(e.target.value)} />
-        <button className="w-full bg-white text-black py-2">Login</button>
+        <button className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-2 rounded font-semibold hover:shadow-xl transition">Login</button>
       </form>
     </div>
   );

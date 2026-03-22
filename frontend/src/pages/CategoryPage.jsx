@@ -78,7 +78,6 @@ const articlesData = {
   }
 };
 
-// Convert to array for filtering
 const allArticles = Object.values(articlesData);
 
 const categoryIcons = {
@@ -95,13 +94,11 @@ const categoryIcons = {
 export default function CategoryPage() {
   const { categoryName } = useParams();
   
-  // Format category name for display
   const formattedCategory = categoryName
     .split('-')
     .map(word => word.charAt(0).toUpperCase() + word.slice(1))
     .join(' ');
 
-  // Filter articles by category
   const categoryArticles = allArticles.filter(
     article => article.category.toLowerCase().replace(/ /g, '-') === categoryName
   );
@@ -109,12 +106,12 @@ export default function CategoryPage() {
   const CategoryIcon = categoryIcons[formattedCategory]?.icon || Code;
 
   return (
-    <main className="pt-24 bg-white min-h-screen">
+    <main className="pt-24 bg-[#0B0F19] min-h-screen text-white">
       {/* Back Link */}
       <div className="max-w-7xl mx-auto px-6 py-8">
         <Link
           to="/insights"
-          className="inline-flex items-center text-gray-600 hover:text-blue-600 transition"
+          className="inline-flex items-center text-gray-400 hover:text-blue-400 transition"
         >
           <ArrowLeft className="w-4 h-4 mr-2" />
           Back to Insights
@@ -140,14 +137,14 @@ export default function CategoryPage() {
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-6">
           {categoryArticles.length === 0 ? (
-            <div className="text-center py-20 bg-gray-50 rounded-2xl">
-              <h2 className="text-2xl font-bold mb-4">No articles yet</h2>
-              <p className="text-gray-600 mb-8">
+            <div className="text-center py-20 bg-[rgba(255,255,255,0.05)] backdrop-blur-sm rounded-2xl">
+              <h2 className="text-2xl font-bold mb-4 text-white">No articles yet</h2>
+              <p className="text-gray-400 mb-8">
                 We're working on articles for this category. Check back soon!
               </p>
               <Link
                 to="/insights"
-                className="inline-flex items-center text-blue-600 font-semibold"
+                className="inline-flex items-center text-blue-400 font-semibold"
               >
                 Browse other categories <ArrowRight className="ml-2 w-4 h-4" />
               </Link>
@@ -158,7 +155,7 @@ export default function CategoryPage() {
                 <Link
                   key={index}
                   to={`/insights/${article.slug}`}
-                  className="group bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all hover:-translate-y-2"
+                  className="group bg-[rgba(255,255,255,0.05)] backdrop-blur-sm border border-[#1F2937] rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all hover:-translate-y-2"
                 >
                   <div className="h-48 overflow-hidden">
                     <img
@@ -168,21 +165,21 @@ export default function CategoryPage() {
                     />
                   </div>
                   <div className="p-6">
-                    <div className="flex items-center gap-2 text-sm text-blue-600 mb-3">
-                      <span className="bg-blue-50 px-3 py-1 rounded-full">{article.category}</span>
-                      <span className="text-gray-400">•</span>
-                      <span className="text-gray-500 flex items-center">
+                    <div className="flex items-center gap-2 text-sm text-blue-400 mb-3">
+                      <span className="bg-blue-600/20 px-3 py-1 rounded-full">{article.category}</span>
+                      <span className="text-gray-500">•</span>
+                      <span className="text-gray-400 flex items-center">
                         <Clock className="w-3 h-3 mr-1" />
                         {article.readTime}
                       </span>
                     </div>
-                    <h3 className="text-xl font-bold mb-3 group-hover:text-blue-600 transition line-clamp-2">
+                    <h3 className="text-xl font-bold mb-3 text-white group-hover:text-blue-400 transition line-clamp-2">
                       {article.title}
                     </h3>
-                    <p className="text-gray-600 mb-4 line-clamp-2">{article.excerpt}</p>
+                    <p className="text-gray-400 mb-4 line-clamp-2">{article.excerpt}</p>
                     <div className="flex items-center justify-between">
                       <p className="text-sm text-gray-500">{article.date}</p>
-                      <span className="text-blue-600 group-hover:translate-x-2 transition inline-block">
+                      <span className="text-blue-400 group-hover:translate-x-2 transition inline-block">
                         <ArrowRight className="w-5 h-5" />
                       </span>
                     </div>

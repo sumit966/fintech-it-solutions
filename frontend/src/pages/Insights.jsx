@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+﻿import { Link } from "react-router-dom";
 import { 
   ArrowRight, 
   BookOpen, 
@@ -162,7 +162,7 @@ const innovations = [
 
 export default function Insights() {
   return (
-    <main className="pt-24 bg-white">
+    <main className="pt-24 bg-[#0B0F19]">
       {/* HERO SECTION */}
       <section className="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-24">
         <Container>
@@ -179,21 +179,21 @@ export default function Insights() {
       </section>
 
       {/* CATEGORIES */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-[#0B0F19]">
         <Container>
-          <h2 className="text-3xl font-bold mb-8">Browse by Category</h2>
+          <h2 className="text-3xl font-bold mb-8 text-white">Browse by Category</h2>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
             {categories.map((category, index) => (
               <Link
                 key={index}
                 to={`/insights/category/${category.name.toLowerCase().replace(/ /g, '-')}`}
-                className="group bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all text-center"
+                className="group bg-[rgba(255,255,255,0.05)] backdrop-blur-sm border border-[#1F2937] p-6 rounded-xl shadow-md hover:shadow-xl transition-all text-center hover:-translate-y-1"
               >
                 <div className={`w-12 h-12 rounded-xl bg-gradient-to-r ${category.color} mx-auto mb-3 flex items-center justify-center`}>
                   <category.icon className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="font-semibold mb-1">{category.name}</h3>
-                <p className="text-sm text-gray-500">{category.count} articles</p>
+                <h3 className="font-semibold mb-1 text-white">{category.name}</h3>
+                <p className="text-sm text-gray-400">{category.count} articles</p>
               </Link>
             ))}
           </div>
@@ -203,15 +203,15 @@ export default function Insights() {
       {/* FEATURED ARTICLES */}
       <section className="py-20">
         <Container>
-          <h2 className="text-4xl font-bold mb-4">Featured Articles</h2>
-          <p className="text-xl text-gray-600 mb-12">Hand-picked resources for startup founders</p>
+          <h2 className="text-4xl font-bold mb-4 text-white">Featured Articles</h2>
+          <p className="text-xl text-gray-400 mb-12">Hand-picked resources for startup founders</p>
 
           <div className="grid md:grid-cols-2 gap-8">
             {featuredArticles.map((article, index) => (
               <Link
                 key={index}
                 to={`/insights/${article.slug}`}
-                className="group bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all"
+                className="group bg-[rgba(255,255,255,0.05)] backdrop-blur-sm border border-[#1F2937] rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all hover:-translate-y-2"
               >
                 <div className="h-48 overflow-hidden">
                   <img
@@ -221,21 +221,21 @@ export default function Insights() {
                   />
                 </div>
                 <div className="p-6">
-                  <div className="flex items-center gap-2 text-sm text-blue-600 mb-3">
-                    <span className="bg-blue-50 px-3 py-1 rounded-full">{article.category}</span>
-                    <span className="text-gray-400">•</span>
-                    <span className="text-gray-500 flex items-center">
+                  <div className="flex items-center gap-2 text-sm text-blue-400 mb-3">
+                    <span className="bg-blue-600/20 px-3 py-1 rounded-full">{article.category}</span>
+                    <span className="text-gray-500">•</span>
+                    <span className="text-gray-400 flex items-center">
                       <Clock className="w-3 h-3 mr-1" />
                       {article.readTime}
                     </span>
                   </div>
-                  <h3 className="text-2xl font-bold mb-3 group-hover:text-blue-600 transition">
+                  <h3 className="text-2xl font-bold mb-3 text-white group-hover:text-blue-400 transition">
                     {article.title}
                   </h3>
-                  <p className="text-gray-600 mb-4">{article.excerpt}</p>
+                  <p className="text-gray-400 mb-4">{article.excerpt}</p>
                   <div className="flex items-center justify-between">
                     <p className="text-sm text-gray-500">{article.date}</p>
-                    <span className="text-blue-600 group-hover:translate-x-2 transition inline-block">
+                    <span className="text-blue-400 group-hover:translate-x-2 transition inline-block">
                       <ArrowRight className="w-5 h-5" />
                     </span>
                   </div>
@@ -247,11 +247,11 @@ export default function Insights() {
       </section>
 
       {/* RESEARCH & INNOVATION */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-[#0B0F19]">
         <Container>
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold mb-4">Research & Innovation</h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <h2 className="text-4xl font-bold mb-4 text-white">Research & Innovation</h2>
+            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
               What we're exploring to help startups launch faster
             </p>
           </div>
@@ -261,14 +261,14 @@ export default function Insights() {
               <Link
                 key={index}
                 to={`/insights/research/${item.slug}`}
-                className="group bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-2"
+                className="group bg-[rgba(255,255,255,0.05)] backdrop-blur-sm border border-[#1F2937] p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-2"
               >
-                <div className="w-16 h-16 bg-purple-100 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition">
-                  <item.icon className="w-8 h-8 text-purple-600" />
+                <div className="w-16 h-16 bg-purple-600/20 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition">
+                  <item.icon className="w-8 h-8 text-purple-400" />
                 </div>
-                <h3 className="text-xl font-semibold mb-3">{item.title}</h3>
-                <p className="text-gray-600 mb-4">{item.desc}</p>
-                <span className="text-purple-600 font-medium inline-flex items-center group-hover:gap-2 transition-all">
+                <h3 className="text-xl font-semibold mb-3 text-white">{item.title}</h3>
+                <p className="text-gray-400 mb-4">{item.desc}</p>
+                <span className="text-purple-400 font-medium inline-flex items-center group-hover:gap-2 transition-all">
                   Learn More <ArrowRight className="w-4 h-4 ml-1" />
                 </span>
               </Link>

@@ -149,9 +149,9 @@ export default function ResearchDetail() {
 
   if (!research) {
     return (
-      <div className="pt-32 text-center min-h-screen">
+      <div className="pt-32 text-center min-h-screen bg-[#0B0F19] text-white">
         <h1 className="text-3xl mb-4">Research topic not found</h1>
-        <Link to="/insights" className="text-blue-600 hover:underline">
+        <Link to="/insights" className="text-blue-400 hover:underline">
           ← Back to Insights
         </Link>
       </div>
@@ -161,12 +161,12 @@ export default function ResearchDetail() {
   const IconComponent = research.icon;
 
   return (
-    <main className="pt-24 bg-white min-h-screen">
+    <main className="pt-24 bg-[#0B0F19] min-h-screen text-white">
       {/* Back Link */}
       <div className="max-w-4xl mx-auto px-6 py-8">
         <Link
           to="/insights"
-          className="inline-flex items-center text-gray-600 hover:text-blue-600 transition"
+          className="inline-flex items-center text-gray-400 hover:text-blue-400 transition"
         >
           <ArrowLeft className="w-4 h-4 mr-2" />
           Back to Insights
@@ -204,29 +204,29 @@ export default function ResearchDetail() {
       {/* Content */}
       <section className="py-12">
         <div className="max-w-4xl mx-auto px-6">
-          <div className="prose prose-lg max-w-none">
+          <div className="prose prose-lg max-w-none prose-invert">
             {research.content.split('\n').map((paragraph, index) => {
               if (paragraph.startsWith('##')) {
                 return (
-                  <h2 key={index} className="text-2xl font-bold mt-8 mb-4">
+                  <h2 key={index} className="text-2xl font-bold mt-8 mb-4 text-white">
                     {paragraph.replace('##', '')}
                   </h2>
                 );
               } else if (paragraph.startsWith('###')) {
                 return (
-                  <h3 key={index} className="text-xl font-semibold mt-6 mb-3">
+                  <h3 key={index} className="text-xl font-semibold mt-6 mb-3 text-white">
                     {paragraph.replace('###', '')}
                   </h3>
                 );
               } else if (paragraph.startsWith('-')) {
                 return (
-                  <li key={index} className="ml-6 text-gray-700">
+                  <li key={index} className="ml-6 text-gray-300">
                     {paragraph.replace('-', '')}
                   </li>
                 );
               } else if (paragraph.trim()) {
                 return (
-                  <p key={index} className="text-gray-700 mb-4">
+                  <p key={index} className="text-gray-300 mb-4">
                     {paragraph}
                   </p>
                 );
@@ -238,17 +238,17 @@ export default function ResearchDetail() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-[#0B0F19]">
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-3xl font-bold mb-4">Want to stay updated?</h2>
-          <p className="text-gray-600 mb-8">
+          <h2 className="text-3xl font-bold mb-4 text-white">Want to stay updated?</h2>
+          <p className="text-gray-400 mb-8">
             Subscribe to our newsletter for the latest research and tools.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
             <input
               type="email"
               placeholder="Your email"
-              className="flex-1 px-4 py-3 rounded-lg border border-gray-300"
+              className="flex-1 px-4 py-3 rounded-lg border border-[#1F2937] bg-[rgba(255,255,255,0.05)] text-white placeholder-gray-500"
             />
             <button className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-6 py-3 rounded-lg font-semibold hover:shadow-xl transition">
               Subscribe

@@ -4,12 +4,12 @@ import { ShieldCheck, Cpu, Globe, Users, HeartHandshake, Zap } from "lucide-reac
 export default function WhyChooseUs() {
   return (
     <FadeInSection>
-      <section className="py-28 bg-white">
+      <section className="py-28 bg-[#0B0F19]">
         <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-4xl font-semibold text-center mb-4">
+          <h2 className="text-4xl font-semibold text-center mb-4 text-white">
             Why Choose Fintech IT Solutions
           </h2>
-          <p className="text-center text-gray-600 mb-16 max-w-2xl mx-auto">
+          <p className="text-center text-gray-400 mb-16 max-w-2xl mx-auto">
             As a solo founder, I bring something big agencies can't: 
             complete focus on your success.
           </p>
@@ -17,47 +17,47 @@ export default function WhyChooseUs() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
 
             {/* Innovation - Just Me */}
-            <div className="border p-8 hover:shadow-xl transition rounded-2xl">
-              <Cpu className="mx-auto mb-4 w-12 h-12 text-blue-600"/>
-              <h3 className="font-semibold text-lg mb-3">
+            <div className="border border-[#1F2937] bg-[rgba(255,255,255,0.05)] backdrop-blur-sm p-8 hover:shadow-xl transition rounded-2xl hover:-translate-y-2 hover:border-blue-500/50">
+              <Cpu className="mx-auto mb-4 w-12 h-12 text-blue-400"/>
+              <h3 className="font-semibold text-lg mb-3 text-white">
                 Modern Tech Stack
               </h3>
-              <p className="text-gray-600 text-sm">
+              <p className="text-gray-400 text-sm">
                 I use cutting-edge technologies like React, Node.js, and cloud platforms 
                 to build future-ready solutions.
               </p>
             </div>
 
             {/* Security - My Focus */}
-            <div className="border p-8 hover:shadow-xl transition rounded-2xl">
-              <ShieldCheck className="mx-auto mb-4 w-12 h-12 text-green-600"/>
-              <h3 className="font-semibold text-lg mb-3">
+            <div className="border border-[#1F2937] bg-[rgba(255,255,255,0.05)] backdrop-blur-sm p-8 hover:shadow-xl transition rounded-2xl hover:-translate-y-2 hover:border-blue-500/50">
+              <ShieldCheck className="mx-auto mb-4 w-12 h-12 text-green-400"/>
+              <h3 className="font-semibold text-lg mb-3 text-white">
                 Security First
               </h3>
-              <p className="text-gray-600 text-sm">
+              <p className="text-gray-400 text-sm">
                 Every line of code follows security best practices. Your data's safety is my priority.
               </p>
             </div>
 
             {/* Global - Vision */}
-            <div className="border p-8 hover:shadow-xl transition rounded-2xl">
-              <Globe className="mx-auto mb-4 w-12 h-12 text-purple-600"/>
-              <h3 className="font-semibold text-lg mb-3">
+            <div className="border border-[#1F2937] bg-[rgba(255,255,255,0.05)] backdrop-blur-sm p-8 hover:shadow-xl transition rounded-2xl hover:-translate-y-2 hover:border-blue-500/50">
+              <Globe className="mx-auto mb-4 w-12 h-12 text-purple-400"/>
+              <h3 className="font-semibold text-lg mb-3 text-white">
                 Global Vision
               </h3>
-              <p className="text-gray-600 text-sm">
+              <p className="text-gray-400 text-sm">
                 Based in India, serving startups everywhere. Location doesn't matter - great code does.
               </p>
             </div>
 
             {/* Direct Access - This is the key difference */}
-            <div className="border p-8 hover:shadow-xl transition rounded-2xl bg-gradient-to-br from-blue-50 to-purple-50 border-blue-200">
-              <Users className="mx-auto mb-4 w-12 h-12 text-orange-600"/>
-              <h3 className="font-semibold text-lg mb-3">
+            <div className="border border-[#1F2937] bg-[rgba(255,255,255,0.05)] backdrop-blur-sm p-8 hover:shadow-xl transition rounded-2xl hover:-translate-y-2 hover:border-blue-500/50 bg-gradient-to-br from-blue-600/10 to-purple-600/10 border-blue-500/30">
+              <Users className="mx-auto mb-4 w-12 h-12 text-orange-400"/>
+              <h3 className="font-semibold text-lg mb-3 text-white">
                 Direct Access
               </h3>
-              <p className="text-gray-600 text-sm">
-                <span className="font-bold text-orange-600">You talk to me directly</span> - 
+              <p className="text-gray-400 text-sm">
+                <span className="font-bold text-orange-400">You talk to me directly</span> - 
                 no account managers, no sales team, no middlemen. Just me and your project.
               </p>
             </div>
