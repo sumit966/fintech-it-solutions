@@ -1,7 +1,7 @@
 {
   "name": "fintech-backend",
   "type": "module",
-  "scripts": {
+  "scripts": {\n    "start": "node server.js",\n    "build": "npm install",
     "dev": "nodemon server.js"
   },
   "dependencies": {
@@ -21,3 +21,4 @@
     "nodemon": "^3.1.0"
   }
 }
+
