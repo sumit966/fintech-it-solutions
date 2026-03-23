@@ -13,12 +13,6 @@ export const jobService = {
     return response.json();
   },
 
-  getJobsByService: async (service) => {
-    const response = await fetch(`${API_URL}/careers/jobs/service/${encodeURIComponent(service)}`);
-    if (!response.ok) throw new Error('Failed to fetch jobs');
-    return response.json();
-  },
-
   applyForJob: async (formData) => {
     const response = await fetch(`${API_URL}/careers/apply`, {
       method: 'POST',
