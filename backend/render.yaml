@@ -10,13 +10,11 @@ services:
       - key: PORT
         value: 10000
       - key: MONGO_URI
-        sync: false
+        value: mongodb+srv://fintechitsolutionsinfo_db_user:Fintech2026DB@fintechitsolutions.rtvbupr.mongodb.net/fintech
       - key: JWT_SECRET
-        sync: false
+        value: Fintech2026Secure
       - key: MAIL_USER
-        sync: false
+        value: fintechitsolutions.info@gmail.com
       - key: MAIL_PASS
-        sync: false
-      - key: OPENAI_API_KEY
-        sync: false
+        value: csft uzkt lohu grcr
     healthCheckPath: /api/health
