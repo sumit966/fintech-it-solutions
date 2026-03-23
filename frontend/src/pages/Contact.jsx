@@ -1,9 +1,9 @@
-﻿import { useState } from 'react';
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Send, CheckCircle, AlertCircle } from 'lucide-react';
 import Container from '../layout/Container';
 
-const API_URL = import.meta.env.VITE_API_URL || 'https://fintech-it-solutions.onrender.com/api';
+const API_URL = 'https://fintech-it-solutions.onrender.com/api';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -60,7 +60,6 @@ export default function Contact() {
 
       <Container>
         <div className="py-20 grid md:grid-cols-2 gap-12">
-          {/* Contact Info */}
           <div>
             <h2 className="text-3xl font-bold text-white mb-6">Get in Touch</h2>
             <p className="text-gray-300 mb-8">We'd love to hear from you. Send us a message and we'll respond within 24 hours.</p>
@@ -98,7 +97,6 @@ export default function Contact() {
             </div>
           </div>
 
-          {/* Contact Form */}
           <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8">
             <h2 className="text-2xl font-bold text-white mb-6">Send a Message</h2>
             
@@ -114,59 +112,21 @@ export default function Contact() {
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
                 <label className="block text-white text-sm font-medium mb-2">Full Name *</label>
-                <input
-                  type="text"
-                  name="name"
-                  required
-                  value={formData.name}
-                  onChange={handleChange}
-                  className="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-lg text-white focus:ring-2 focus:ring-indigo-500"
-                />
+                <input type="text" name="name" required value={formData.name} onChange={handleChange} className="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-lg text-white focus:ring-2 focus:ring-indigo-500" />
               </div>
-              
               <div>
                 <label className="block text-white text-sm font-medium mb-2">Email Address *</label>
-                <input
-                  type="email"
-                  name="email"
-                  required
-                  value={formData.email}
-                  onChange={handleChange}
-                  className="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-lg text-white focus:ring-2 focus:ring-indigo-500"
-                />
+                <input type="email" name="email" required value={formData.email} onChange={handleChange} className="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-lg text-white focus:ring-2 focus:ring-indigo-500" />
               </div>
-              
               <div>
                 <label className="block text-white text-sm font-medium mb-2">Company Name</label>
-                <input
-                  type="text"
-                  name="company"
-                  value={formData.company}
-                  onChange={handleChange}
-                  className="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-lg text-white focus:ring-2 focus:ring-indigo-500"
-                />
+                <input type="text" name="company" value={formData.company} onChange={handleChange} className="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-lg text-white focus:ring-2 focus:ring-indigo-500" />
               </div>
-              
               <div>
                 <label className="block text-white text-sm font-medium mb-2">Message *</label>
-                <textarea
-                  name="message"
-                  rows="5"
-                  required
-                  value={formData.message}
-                  onChange={handleChange}
-                  className="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-lg text-white focus:ring-2 focus:ring-indigo-500"
-                  placeholder="Tell us about your project..."
-                />
+                <textarea name="message" rows="5" required value={formData.message} onChange={handleChange} className="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-lg text-white focus:ring-2 focus:ring-indigo-500" placeholder="Tell us about your project..." />
               </div>
-              
-              <button
-                type="submit"
-                disabled={loading}
-                className="w-full py-3 bg-gradient-to-r from-indigo-500 to-purple-500 text-white rounded-lg font-semibold hover:shadow-xl transition-all disabled:opacity-50"
-              >
-                {loading ? 'Sending...' : 'Send Message'}
-              </button>
+              <button type="submit" disabled={loading} className="w-full py-3 bg-gradient-to-r from-indigo-500 to-purple-500 text-white rounded-lg font-semibold hover:shadow-xl transition-all disabled:opacity-50">{loading ? 'Sending...' : 'Send Message'}</button>
             </form>
           </div>
         </div>
@@ -174,5 +134,3 @@ export default function Contact() {
     </main>
   );
 }
-
-
