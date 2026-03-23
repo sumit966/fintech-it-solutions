@@ -1,4 +1,4 @@
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5002/api';
+﻿const API_URL = import.meta.env.VITE_API_URL || 'https://fintech-it-solutions.onrender.com/api';
 
 export const jobService = {
   getAllJobs: async () => {
@@ -28,3 +28,4 @@ export const jobService = {
     return response.json();
   }
 };
+

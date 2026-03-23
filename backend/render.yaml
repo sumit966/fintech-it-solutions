@@ -10,11 +10,4 @@ services:
       - key: PORT
         value: 10000
       - key: MONGO_URI
-        value: mongodb+srv://fintechitsolutionsinfo_db_user:Fintech2026DB@fintechitsolutions.rtvbupr.mongodb.net/fintech
-      - key: JWT_SECRET
-        value: Fintech2026Secure
-      - key: MAIL_USER
-        value: fintechitsolutions.info@gmail.com
-      - key: MAIL_PASS
-        value: csft uzkt lohu grcr
-    healthCheckPath: /api/health
+        value: ${MONGO_URI}

@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Send, CheckCircle, AlertCircle } from 'lucide-react';
 import Container from '../layout/Container';
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5002/api';
+const API_URL = import.meta.env.VITE_API_URL || 'https://fintech-it-solutions.onrender.com/api';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -174,4 +174,5 @@ export default function Contact() {
     </main>
   );
 }
+
 
