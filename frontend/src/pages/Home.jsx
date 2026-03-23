@@ -61,7 +61,6 @@ import {
 import Container from "../layout/Container";
 import StatsSection from "../components/StatsSection";
 import WhyChooseUs from "../components/WhyChooseUs";
-import GlobalPresence from "../components/GlobalPresence";
 import OfficeMap from "../components/OfficeMap";
 
 export default function Home() {
@@ -579,7 +578,7 @@ export default function Home() {
       <WhyChooseUs />
 
       {/* GLOBAL PRESENCE */}
-      <GlobalPresence />
+      
 
       {/* MAP */}
       <OfficeMap />
@@ -645,3 +644,4 @@ function Tech({ name, icon }) {
     </div>
   );
 }
+

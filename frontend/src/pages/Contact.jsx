@@ -1,425 +1,177 @@
-﻿import { useState } from "react";
-import { 
-  MapPin, 
-  Mail, 
-  Phone, 
-  Clock, 
-  Send, 
-  CheckCircle,
-  AlertCircle,
-  Linkedin,
-  Twitter,
-  Instagram,
-  ArrowRight,
-  Home,
-  Building2
-} from "lucide-react";
-import Container from "../layout/Container";
+﻿import { useState } from 'react';
+import { motion } from 'framer-motion';
+import { Mail, Phone, MapPin, Send, CheckCircle, AlertCircle } from 'lucide-react';
+import Container from '../layout/Container';
+
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5002/api';
 
 export default function Contact() {
-  const [form, setForm] = useState({
-    name: "",
-    email: "",
-    company: "",
-    message: ""
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    company: '',
+    message: ''
   });
-
+  const [status, setStatus] = useState({ type: '', message: '' });
   const [loading, setLoading] = useState(false);
-  const [success, setSuccess] = useState(false);
-  const [error, setError] = useState("");
 
   const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    setError("");
+    setStatus({ type: '', message: '' });
 
     try {
-      const res = await fetch("https://fintech-it-solutions.onrender.com/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(form)
+      const response = await fetch(`${API_URL}/contact`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
       });
 
-      if (res.ok) {
-        setSuccess(true);
-        setForm({
-          name: "",
-          email: "",
-          company: "",
-          message: ""
-        });
-        setTimeout(() => setSuccess(false), 5000);
-      } else {
-        setError("Something went wrong. Please try again.");
-      }
-    } catch (err) {
-      setError("Network error. Please check your connection.");
-    }
+      const data = await response.json();
 
-    setLoading(false);
+      if (response.ok) {
+        setStatus({ type: 'success', message: 'Message sent successfully! We will get back to you soon.' });
+        setFormData({ name: '', email: '', company: '', message: '' });
+      } else {
+        setStatus({ type: 'error', message: data.error || 'Failed to send message. Please try again.' });
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      setStatus({ type: 'error', message: 'Network error. Please check if backend is running.' });
+    } finally {
+      setLoading(false);
+    }
   };
 
-  const contactInfo = [
-    {
-      icon: Home,
-      title: "Current Location",
-      details: ["Pune, Maharashtra (Remote)", "Working from home"],
-      color: "from-blue-500 to-cyan-500",
-      badge: "🟢 Active"
-    },
-    {
-      icon: Building2,
-      title: "Future Offices",
-      details: ["Noida & Bangalore", "Coming soon (in planning)"],
-      color: "from-purple-500 to-pink-500",
-      badge: "🚧 2025"
-    },
-    {
-      icon: Mail,
-      title: "Email Us",
-      details: ["fintechitsolutions.info@gmail.com"],
-      color: "from-green-500 to-emerald-500",
-      badge: "📧 24hr response"
-    },
-    {
-      icon: Phone,
-      title: "Call Us",
-      details: ["+91 6299863493"],
-      color: "from-orange-500 to-red-500",
-      badge: "📞 Mon-Fri, 9AM-6PM"
-    }
-  ];
-
-  const faqs = [
-    {
-      question: "How quickly do you respond to inquiries?",
-      answer: "We typically respond within 24 hours on business days. For urgent matters, give us a call."
-    },
-    {
-      question: "Do you work with startups?",
-      answer: "Absolutely! We're a startup ourselves and love working with early-stage companies. We offer special rates for first-time founders."
-    },
-    {
-      question: "Where are you located?",
-      answer: "We're currently operating remotely from Pune, with plans to open offices in Noida and Bangalore in 2025. But location doesn't matter - we work with clients everywhere!"
-    },
-    {
-      question: "Can we schedule a video call?",
-      answer: "Yes! After initial contact, we can schedule a Zoom/Google Meet call to discuss your project."
-    }
-  ];
-
   return (
-    <main className="pt-24 bg-[#0B0F19]">
-      {/* HERO SECTION */}
-      <section className="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-24">
+    <main className="pt-24 bg-gradient-to-br from-[#020617] via-[#0f172a] to-[#1e293b] min-h-screen">
+      <section className="bg-gradient-to-r from-indigo-600 to-purple-600 py-20">
         <Container>
-          <div className="max-w-3xl">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              Let's Build Something
-              <span className="block text-yellow-300">Amazing Together</span>
-            </h1>
-            <p className="text-xl text-blue-100 mb-8">
-              Have a project in mind? I'd love to hear about it. 
-              Reach out and let's start a conversation.
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <a
-                href="tel:+916299863493"
-                className="inline-flex items-center bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:shadow-xl hover:scale-105 transition-all"
-              >
-                <Phone className="w-5 h-5 mr-2" />
-                Call Me Now
-              </a>
-              <a
-                href="mailto:fintechitsolutions.info@gmail.com"
-                className="inline-flex items-center border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white/10 transition-all"
-              >
-                <Mail className="w-5 h-5 mr-2" />
-                Email Me
-              </a>
-            </div>
-          </div>
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center">
+            <h1 className="text-5xl font-bold text-white mb-4">Contact Us</h1>
+            <p className="text-xl text-indigo-100 max-w-2xl mx-auto">Have a project in mind? Let's discuss how we can help you.</p>
+          </motion.div>
         </Container>
       </section>
 
-      {/* CONTACT INFO CARDS */}
-      <section className="py-20">
-        <Container>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 -mt-32 relative z-10">
-            {contactInfo.map((item, index) => (
-              <div
-                key={index}
-                className="bg-[rgba(255,255,255,0.05)] backdrop-blur-sm border border-[#1F2937] rounded-2xl shadow-xl p-8 hover:shadow-2xl transition-all hover:-translate-y-2 relative overflow-hidden"
-              >
-                <div className="absolute top-4 right-4">
-                  <span className="text-xs bg-[rgba(255,255,255,0.1)] text-gray-300 px-2 py-1 rounded-full">
-                    {item.badge}
-                  </span>
-                </div>
-                
-                <div className={`w-16 h-16 rounded-xl bg-gradient-to-r ${item.color} flex items-center justify-center mb-6`}>
-                  <item.icon className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-xl font-semibold mb-4 text-white">{item.title}</h3>
-                {item.details.map((detail, i) => (
-                  <p key={i} className="text-gray-400">
-                    {detail}
-                    {i === 0 && item.title === "Current Location" && (
-                      <span className="block text-xs text-green-400 mt-1">✨ Working remotely</span>
-                    )}
-                  </p>
-                ))}
-              </div>
-            ))}
-          </div>
-
-          <div className="text-center mt-8">
-            <p className="text-sm text-gray-500 bg-[rgba(255,255,255,0.05)] inline-block px-6 py-3 rounded-full">
-              🏗️ Currently operating remotely while establishing our physical presence
-            </p>
-          </div>
-        </Container>
-      </section>
-
-      {/* CONTACT FORM & INFO */}
-      <section className="py-20 bg-[#0B0F19]">
-        <Container>
-          <div className="grid md:grid-cols-2 gap-16">
-            {/* Left Column - Contact Info */}
-            <div>
-              <h2 className="text-4xl font-bold mb-6 text-white">Get in Touch</h2>
-              <p className="text-lg text-gray-400 mb-8">
-                I'm excited to hear about your project. Whether you're a startup 
-                looking for your first tech partner or an established business 
-                needing custom software, I'm here to help.
-              </p>
-
-              <div className="bg-gradient-to-r from-green-600/20 to-blue-600/20 p-4 rounded-2xl mb-6 flex items-center gap-4 border border-[#1F2937]">
-                <div className="relative">
-                  <div className="w-3 h-3 bg-green-500 rounded-full animate-ping absolute"></div>
-                  <div className="w-3 h-3 bg-green-500 rounded-full relative"></div>
+      <Container>
+        <div className="py-20 grid md:grid-cols-2 gap-12">
+          {/* Contact Info */}
+          <div>
+            <h2 className="text-3xl font-bold text-white mb-6">Get in Touch</h2>
+            <p className="text-gray-300 mb-8">We'd love to hear from you. Send us a message and we'll respond within 24 hours.</p>
+            
+            <div className="space-y-6">
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 bg-indigo-500/20 rounded-full flex items-center justify-center">
+                  <Mail className="w-6 h-6 text-indigo-400" />
                 </div>
                 <div>
-                  <p className="font-semibold text-white">Available for calls & meetings</p>
-                  <p className="text-sm text-gray-400">Remote-first • Work from home • Flexible hours</p>
+                  <p className="text-gray-400 text-sm">Email</p>
+                  <p className="text-white">fintechitsolutions.info@gmail.com</p>
                 </div>
               </div>
-
-              <div className="bg-gradient-to-r from-blue-600/20 to-purple-600/20 p-6 rounded-2xl mb-8 border border-[#1F2937]">
-                <h3 className="text-xl font-semibold mb-3 flex items-center text-white">
-                  <span className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center mr-3">
-                    <span className="text-white text-sm">✨</span>
-                  </span>
-                  First-time Client?
-                </h3>
-                <p className="text-gray-400">
-                  Being a startup myself, I understand your journey. Special rates and flexible terms 
-                  available for early-stage founders.
-                </p>
+              
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 bg-indigo-500/20 rounded-full flex items-center justify-center">
+                  <Phone className="w-6 h-6 text-indigo-400" />
+                </div>
+                <div>
+                  <p className="text-gray-400 text-sm">Phone</p>
+                  <p className="text-white">+91 6299863493</p>
+                </div>
               </div>
+              
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 bg-indigo-500/20 rounded-full flex items-center justify-center">
+                  <MapPin className="w-6 h-6 text-indigo-400" />
+                </div>
+                <div>
+                  <p className="text-gray-400 text-sm">Location</p>
+                  <p className="text-white">Remote (India) - Virtual Office</p>
+                </div>
+              </div>
+            </div>
+          </div>
 
+          {/* Contact Form */}
+          <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8">
+            <h2 className="text-2xl font-bold text-white mb-6">Send a Message</h2>
+            
+            {status.message && (
+              <div className={`mb-4 p-4 rounded-lg ${status.type === 'success' ? 'bg-green-500/20 border border-green-500' : 'bg-red-500/20 border border-red-500'}`}>
+                <div className="flex items-center gap-2">
+                  {status.type === 'success' ? <CheckCircle className="w-5 h-5 text-green-400" /> : <AlertCircle className="w-5 h-5 text-red-400" />}
+                  <p className={status.type === 'success' ? 'text-green-400' : 'text-red-400'}>{status.message}</p>
+                </div>
+              </div>
+            )}
+            
+            <form onSubmit={handleSubmit} className="space-y-4">
               <div>
-                <h3 className="text-2xl font-semibold mb-6 text-white">Frequently Asked</h3>
-                <div className="space-y-4">
-                  {faqs.map((faq, index) => (
-                    <div key={index} className="bg-[rgba(255,255,255,0.05)] backdrop-blur-sm border border-[#1F2937] p-4 rounded-xl">
-                      <h4 className="font-semibold mb-2 text-white">{faq.question}</h4>
-                      <p className="text-gray-400 text-sm">{faq.answer}</p>
-                    </div>
-                  ))}
-                </div>
+                <label className="block text-white text-sm font-medium mb-2">Full Name *</label>
+                <input
+                  type="text"
+                  name="name"
+                  required
+                  value={formData.name}
+                  onChange={handleChange}
+                  className="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-lg text-white focus:ring-2 focus:ring-indigo-500"
+                />
               </div>
-
-              <div className="mt-8">
-                <h3 className="text-lg font-semibold mb-4 text-white">Connect With Me</h3>
-                <div className="flex gap-4">
-                  <a
-                    href="https://www.linkedin.com/in/er-sumit-raj-/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center hover:scale-110 transition"
-                  >
-                    <Linkedin className="w-5 h-5 text-white" />
-                  </a>
-
-                  <a
-                    href="#"
-                    className="w-12 h-12 bg-sky-500 rounded-xl flex items-center justify-center hover:scale-110 transition opacity-50 relative group"
-                  >
-                    <Twitter className="w-5 h-5 text-white" />
-                    <span className="absolute -bottom-8 text-xs text-gray-500 whitespace-nowrap opacity-0 group-hover:opacity-100 transition">
-                      Coming soon
-                    </span>
-                  </a>
-
-                  <a
-                    href="#"
-                    className="w-12 h-12 bg-pink-600 rounded-xl flex items-center justify-center hover:scale-110 transition opacity-50 relative group"
-                  >
-                    <Instagram className="w-5 h-5 text-white" />
-                    <span className="absolute -bottom-8 text-xs text-gray-500 whitespace-nowrap opacity-0 group-hover:opacity-100 transition">
-                      Coming soon
-                    </span>
-                  </a>
-                </div>
+              
+              <div>
+                <label className="block text-white text-sm font-medium mb-2">Email Address *</label>
+                <input
+                  type="email"
+                  name="email"
+                  required
+                  value={formData.email}
+                  onChange={handleChange}
+                  className="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-lg text-white focus:ring-2 focus:ring-indigo-500"
+                />
               </div>
-            </div>
-
-            {/* Right Column - Contact Form */}
-            <div className="bg-[rgba(255,255,255,0.05)] backdrop-blur-sm border border-[#1F2937] rounded-2xl shadow-xl p-8">
-              <h2 className="text-3xl font-bold mb-2 text-white">Send a Message</h2>
-              <p className="text-gray-400 mb-8">
-                I'll get back to you within 24 hours
-              </p>
-
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-2">
-                    Full Name <span className="text-red-500">*</span>
-                  </label>
-                  <input
-                    type="text"
-                    name="name"
-                    placeholder="John Doe"
-                    value={form.name}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 border border-[#1F2937] bg-[rgba(255,255,255,0.05)] rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition text-white placeholder-gray-500"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-2">
-                    Email Address <span className="text-red-500">*</span>
-                  </label>
-                  <input
-                    type="email"
-                    name="email"
-                    placeholder="john@example.com"
-                    value={form.email}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 border border-[#1F2937] bg-[rgba(255,255,255,0.05)] rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition text-white placeholder-gray-500"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-2">
-                    Company (Optional)
-                  </label>
-                  <input
-                    type="text"
-                    name="company"
-                    placeholder="Your Company Name"
-                    value={form.company}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 border border-[#1F2937] bg-[rgba(255,255,255,0.05)] rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition text-white placeholder-gray-500"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-2">
-                    Message <span className="text-red-500">*</span>
-                  </label>
-                  <textarea
-                    name="message"
-                    placeholder="Tell me about your project..."
-                    value={form.message}
-                    onChange={handleChange}
-                    required
-                    rows="5"
-                    className="w-full px-4 py-3 border border-[#1F2937] bg-[rgba(255,255,255,0.05)] rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition text-white placeholder-gray-500"
-                  />
-                </div>
-
-                {error && (
-                  <div className="bg-red-500/20 text-red-400 p-4 rounded-lg flex items-center gap-2 border border-red-500/30">
-                    <AlertCircle className="w-5 h-5" />
-                    {error}
-                  </div>
-                )}
-
-                {success && (
-                  <div className="bg-green-500/20 text-green-400 p-4 rounded-lg flex items-center gap-2 border border-green-500/30">
-                    <CheckCircle className="w-5 h-5" />
-                    Message sent successfully! I'll contact you soon.
-                  </div>
-                )}
-
-                <button
-                  type="submit"
-                  disabled={loading}
-                  className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-4 rounded-lg font-semibold hover:shadow-xl hover:scale-105 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
-                >
-                  {loading ? (
-                    "Sending..."
-                  ) : (
-                    <>
-                      Send Message <Send className="w-5 h-5 ml-2" />
-                    </>
-                  )}
-                </button>
-
-                <p className="text-xs text-gray-500 text-center">
-                  By submitting, you agree to my privacy policy.
-                </p>
-              </form>
-            </div>
+              
+              <div>
+                <label className="block text-white text-sm font-medium mb-2">Company Name</label>
+                <input
+                  type="text"
+                  name="company"
+                  value={formData.company}
+                  onChange={handleChange}
+                  className="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-lg text-white focus:ring-2 focus:ring-indigo-500"
+                />
+              </div>
+              
+              <div>
+                <label className="block text-white text-sm font-medium mb-2">Message *</label>
+                <textarea
+                  name="message"
+                  rows="5"
+                  required
+                  value={formData.message}
+                  onChange={handleChange}
+                  className="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-lg text-white focus:ring-2 focus:ring-indigo-500"
+                  placeholder="Tell us about your project..."
+                />
+              </div>
+              
+              <button
+                type="submit"
+                disabled={loading}
+                className="w-full py-3 bg-gradient-to-r from-indigo-500 to-purple-500 text-white rounded-lg font-semibold hover:shadow-xl transition-all disabled:opacity-50"
+              >
+                {loading ? 'Sending...' : 'Send Message'}
+              </button>
+            </form>
           </div>
-        </Container>
-      </section>
-
-      {/* MAP SECTION */}
-      <section className="h-[450px] relative">
-        <iframe
-          title="Office Location"
-          width="100%"
-          height="100%"
-          loading="lazy"
-          allowFullScreen
-          className="absolute inset-0"
-          src="https://maps.google.com/maps?q=pune%20india&t=&z=13&ie=UTF8&iwloc=&output=embed"
-        />
-        <div className="absolute bottom-8 left-8 bg-[rgba(255,255,255,0.05)] backdrop-blur-sm border border-[#1F2937] p-6 rounded-2xl shadow-xl">
-          <MapPin className="w-6 h-6 text-blue-400 mb-2" />
-          <h3 className="font-semibold text-white">Current Base</h3>
-          <p className="text-gray-400 text-sm">Pune, Maharashtra, India</p>
-          <p className="text-xs text-green-400 mt-2 flex items-center gap-1">
-            <span className="w-2 h-2 bg-green-500 rounded-full animate-ping"></span>
-            <span>Working remotely from here</span>
-          </p>
         </div>
-      </section>
-
-      {/* CTA */}
-      <section className="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-20">
-        <Container>
-          <div className="text-center max-w-3xl mx-auto">
-            <h2 className="text-4xl font-bold mb-6">
-              Ready to Start Your Project?
-            </h2>
-            <p className="text-xl text-blue-100 mb-8">
-              Let's discuss your ideas and see how I can help bring them to life.
-            </p>
-            <a
-              href="tel:+916299863493"
-              className="inline-flex items-center bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:shadow-xl hover:scale-105 transition-all"
-            >
-              Schedule a Call <ArrowRight className="ml-2 w-5 h-5" />
-            </a>
-            <p className="text-sm text-blue-200 mt-6">
-              ✨ First-time founders get 15% off their first project
-            </p>
-          </div>
-        </Container>
-      </section>
+      </Container>
     </main>
   );
 }
+

@@ -1,286 +1,155 @@
-﻿import { useState, useEffect } from "react";
-import { 
-  Search, 
-  MapPin, 
-  Briefcase, 
-  Clock, 
-  Users, 
-  Target,
-  Zap,
-  Heart,
-  GraduationCap,
-  Coffee,
-  Award,
-  ArrowRight,
-  CheckCircle
-} from "lucide-react";
-import { Link } from "react-router-dom";
+﻿import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import { Briefcase, MapPin, Clock, DollarSign, Award, Filter, ChevronDown, ChevronUp } from 'lucide-react';
+import Container from '../layout/Container';
 
 export default function Careers() {
   const [jobs, setJobs] = useState([]);
-  const [search, setSearch] = useState("");
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [activeFilter, setActiveFilter] = useState('all');
+  const [showFilters, setShowFilters] = useState(false);
 
   useEffect(() => {
-    fetch("https://fintech-it-solutions.onrender.com/api/careers/jobs")
-      .then(res => res.json())
-      .then(data => {
-        setJobs(data);
-        setLoading(false);
-      })
-      .catch(() => {
-        setJobs([]);
-        setLoading(false);
-      });
+    fetchJobs();
   }, []);
 
-  const filtered = jobs.filter(job =>
-    job.title?.toLowerCase().includes(search.toLowerCase())
-  );
+  const fetchJobs = async () => {
+    try {
+      setLoading(true);
+      const response = await fetch('http://localhost:5002/api/careers/jobs');
+      if (!response.ok) throw new Error('Failed to fetch jobs');
+      const data = await response.json();
+      console.log('Jobs loaded:', data);
+      setJobs(data);
+    } catch (err) {
+      console.error('Error:', err);
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
+  };
 
-  const benefits = [
-    { icon: Target, title: "Meaningful Work", desc: "Build products that actually make a difference" },
-    { icon: Zap, title: "Modern Stack", desc: "Work with the latest technologies" },
-    { icon: Users, title: "Small Team", desc: "Big impact, no bureaucracy" },
-    { icon: Heart, title: "Great Culture", desc: "Collaborative and supportive environment" },
-    { icon: GraduationCap, title: "Learning", desc: "Continuous growth and skill development" },
-    { icon: Coffee, title: "Flexible", desc: "Remote-friendly, results-oriented" }
+  const serviceCategories = [
+    { id: 'all', name: 'All Jobs' },
+    { id: 'Custom Software Development', name: 'Custom Software' },
+    { id: 'Web Development', name: 'Web Development' },
+    { id: 'Mobile Development', name: 'Mobile Development' },
+    { id: 'AI Development', name: 'AI Development' },
+    { id: 'UI/UX Design', name: 'UI/UX Design' },
+    { id: 'QA & Testing', name: 'QA & Testing' }
   ];
 
-  const values = [
-    "Write clean, maintainable code",
-    "Learn something new every day",
-    "Help teammates succeed",
-    "Take ownership of your work",
-    "Communicate openly and honestly"
-  ];
+  const filteredJobs = activeFilter === 'all' 
+    ? jobs 
+    : jobs.filter(job => job.serviceCategory === activeFilter);
+
+  if (loading) {
+    return (
+      <main className="pt-24 bg-gradient-to-br from-[#020617] via-[#0f172a] to-[#1e293b] min-h-screen">
+        <Container>
+          <div className="flex justify-center items-center h-96">
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-indigo-500"></div>
+            <p className="text-white ml-4">Loading jobs...</p>
+          </div>
+        </Container>
+      </main>
+    );
+  }
+
+  if (error) {
+    return (
+      <main className="pt-24 bg-gradient-to-br from-[#020617] via-[#0f172a] to-[#1e293b] min-h-screen">
+        <Container>
+          <div className="text-center py-20">
+            <div className="text-red-400 text-xl mb-4">Error: {error}</div>
+            <button onClick={fetchJobs} className="px-6 py-2 bg-indigo-600 text-white rounded-lg">Try Again</button>
+          </div>
+        </Container>
+      </main>
+    );
+  }
 
   return (
-    <main className="pt-24 bg-[#0B0F19]">
-      {/* HERO SECTION */}
-      <section className="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-24">
-        <div className="max-w-7xl mx-auto px-8">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6">
-            Join Our Growing
-            <span className="block text-yellow-300">Tech Team</span>
-          </h1>
-          <p className="text-xl max-w-2xl text-blue-100 mb-8">
-            We're a small, passionate team building software that matters. 
-            If you love coding and want to make an impact, we'd love to meet you.
-          </p>
-          <div className="flex flex-wrap gap-4">
-            <a
-              href="#openings"
-              className="inline-flex items-center bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:shadow-xl hover:scale-105 transition-all"
-            >
-              View Openings <ArrowRight className="ml-2 w-5 h-5" />
-            </a>
-            <Link
-              to="/contact"
-              className="inline-flex items-center border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white/10 transition-all"
-            >
-              Contact Us
-            </Link>
+    <main className="pt-24 bg-gradient-to-br from-[#020617] via-[#0f172a] to-[#1e293b] min-h-screen">
+      {/* Hero */}
+      <section className="bg-gradient-to-r from-indigo-600 to-purple-600 py-20">
+        <Container>
+          <div className="text-center">
+            <h1 className="text-5xl font-bold text-white mb-4">Join Our Team</h1>
+            <p className="text-xl text-indigo-100">All positions are fully remote with flexible hours</p>
           </div>
-        </div>
+        </Container>
       </section>
 
-      {/* WHY JOIN US */}
-      <section className="py-24">
-        <div className="max-w-7xl mx-auto px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4 text-white">Why Join Fintech IT Solutions?</h2>
-            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-              We're building something special, and we're looking for people who want to be part of it
-            </p>
+      {/* Stats */}
+      <section className="py-12 bg-[#0f172a]/50">
+        <Container>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div><div className="text-3xl font-bold text-indigo-400">{jobs.length}</div><div className="text-gray-400">Open Positions</div></div>
+            <div><div className="text-3xl font-bold text-indigo-400">100%</div><div className="text-gray-400">Remote Work</div></div>
+            <div><div className="text-3xl font-bold text-indigo-400">7+</div><div className="text-gray-400">Departments</div></div>
+            <div><div className="text-3xl font-bold text-indigo-400">4.9</div><div className="text-gray-400">Rating</div></div>
           </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {benefits.map((benefit, index) => (
-              <div
-                key={index}
-                className="bg-[rgba(255,255,255,0.05)] backdrop-blur-sm border border-[#1F2937] p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-2"
-              >
-                <div className="w-16 h-16 bg-[rgba(59,130,246,0.2)] rounded-xl flex items-center justify-center mb-6">
-                  <benefit.icon className="w-8 h-8 text-blue-400" />
-                </div>
-                <h3 className="text-xl font-semibold mb-3 text-white">{benefit.title}</h3>
-                <p className="text-gray-400">{benefit.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
+        </Container>
       </section>
 
-      {/* OUR VALUES */}
-      <section className="py-24 bg-[#0B0F19]">
-        <div className="max-w-7xl mx-auto px-8">
-          <div className="grid md:grid-cols-2 gap-16 items-center">
-            <div>
-              <h2 className="text-4xl font-bold mb-6 text-white">What We Value</h2>
-              <p className="text-lg text-gray-400 mb-8">
-                We're looking for teammates who share our passion for building great software
-              </p>
-              <div className="space-y-4">
-                {values.map((value, index) => (
-                  <div key={index} className="flex items-start gap-3">
-                    <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0" />
-                    <span className="text-gray-300">{value}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-12 rounded-2xl">
-              <Award className="w-16 h-16 mb-6" />
-              <h3 className="text-3xl font-bold mb-4">Grow With Us</h3>
-              <p className="text-xl text-blue-100 mb-6">
-                As a startup, your growth is our growth. We invest in our team's learning and development.
-              </p>
-              <div className="flex items-center gap-4 text-sm">
-                <span className="bg-white/20 px-4 py-2 rounded-lg">Mentorship</span>
-                <span className="bg-white/20 px-4 py-2 rounded-lg">Learning Budget</span>
-                <span className="bg-white/20 px-4 py-2 rounded-lg">Conferences</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* OPEN POSITIONS */}
-      <section id="openings" className="py-24">
-        <div className="max-w-6xl mx-auto px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4 text-white">Open Positions</h2>
-            <p className="text-xl text-gray-400">
-              {filtered.length} position{filtered.length !== 1 ? 's' : ''} available
-            </p>
-          </div>
-
-          {/* SEARCH BAR */}
-          <div className="flex items-center border border-[#1F2937] rounded-xl p-2 mb-10 bg-[rgba(255,255,255,0.05)] shadow-lg">
-            <Search className="w-5 ml-3 text-gray-400" />
-            <input
-              placeholder="Search jobs by title..."
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-              className="outline-none w-full px-4 py-3 bg-transparent text-white placeholder-gray-500"
-            />
-            <button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-3 rounded-lg hover:shadow-lg transition-all">
-              Search
+      {/* Filters */}
+      <section className="py-8">
+        <Container>
+          <div className="flex justify-between items-center mb-6">
+            <h2 className="text-2xl font-bold text-white">Open Positions ({filteredJobs.length})</h2>
+            <button onClick={() => setShowFilters(!showFilters)} className="flex items-center gap-2 px-4 py-2 bg-white/10 rounded-lg">
+              <Filter className="w-4 h-4" />
+              <span>Filters</span>
+              {showFilters ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
             </button>
           </div>
 
-          {/* JOB LIST */}
-          {loading ? (
-            <div className="text-center py-12">
-              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto"></div>
-              <p className="mt-4 text-gray-400">Loading positions...</p>
+          {showFilters && (
+            <div className="flex flex-wrap gap-3 mb-8">
+              {serviceCategories.map(cat => (
+                <button
+                  key={cat.id}
+                  onClick={() => setActiveFilter(cat.id)}
+                  className={`px-4 py-2 rounded-full transition ${activeFilter === cat.id ? 'bg-indigo-600 text-white' : 'bg-white/10 text-gray-300 hover:bg-white/20'}`}
+                >
+                  {cat.name}
+                </button>
+              ))}
             </div>
-          ) : (
-            <div className="space-y-6">
-              {filtered.length === 0 ? (
-                <div className="text-center py-12 bg-[rgba(255,255,255,0.05)] backdrop-blur-sm rounded-2xl">
-                  <Briefcase className="w-16 h-16 text-gray-400 mx-auto mb-4" />
-                  <p className="text-gray-400 text-lg">No positions match your search</p>
-                  <button
-                    onClick={() => setSearch("")}
-                    className="mt-4 text-blue-400 hover:underline"
-                  >
-                    Clear search
-                  </button>
-                </div>
-              ) : (
-                filtered.map((job) => (
-                  <div
-                    key={job._id}
-                    className="group bg-[rgba(255,255,255,0.05)] backdrop-blur-sm border border-[#1F2937] p-8 rounded-2xl hover:shadow-2xl transition-all hover:-translate-y-1"
-                  >
-                    <div className="flex flex-wrap justify-between items-start gap-6">
-                      <div className="flex-1">
-                        <h3 className="text-2xl font-semibold mb-3 text-white group-hover:text-blue-400 transition">
-                          {job.title}
-                        </h3>
-                        
-                        <div className="flex flex-wrap gap-4 mb-4">
-                          <span className="flex items-center text-sm text-gray-400">
-                            <Briefcase className="w-4 h-4 mr-1" />
-                            {job.department || "Engineering"}
-                          </span>
-                          <span className="flex items-center text-sm text-gray-400">
-                            <MapPin className="w-4 h-4 mr-1" />
-                            {job.location || "Remote / Pune"}
-                          </span>
-                          <span className="flex items-center text-sm text-gray-400">
-                            <Clock className="w-4 h-4 mr-1" />
-                            {job.experience || "2+ years"}
-                          </span>
-                        </div>
+          )}
 
-                        <p className="text-gray-400">
-                          We're looking for passionate developers to join our growing team.
-                        </p>
-                      </div>
-
-                      <Link
-                        to={`/careers/apply/${job._id}`}
-                        className="inline-flex items-center bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-lg font-semibold hover:shadow-xl hover:scale-105 transition-all whitespace-nowrap"
-                      >
-                        Apply Now <ArrowRight className="ml-2 w-4 h-4" />
-                      </Link>
+          {/* Job Listings */}
+          <div className="space-y-4">
+            {filteredJobs.map((job) => (
+              <div key={job._id} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:border-indigo-500/50 transition">
+                <div className="flex flex-wrap justify-between items-start gap-4">
+                  <div className="flex-1">
+                    <div className="flex items-center gap-2 mb-2">
+                      {job.featured && <span className="bg-indigo-600 text-white text-xs px-2 py-1 rounded-full">Featured</span>}
+                      <span className="text-xs text-indigo-400">{job.department}</span>
                     </div>
+                    <h3 className="text-xl font-semibold text-white mb-2">{job.title}</h3>
+                    <div className="flex flex-wrap gap-4 text-sm text-gray-400 mb-4">
+                      <span className="flex items-center gap-1"><MapPin className="w-4 h-4" /> {job.location}</span>
+                      <span className="flex items-center gap-1"><Clock className="w-4 h-4" /> {job.type}</span>
+                      <span className="flex items-center gap-1"><DollarSign className="w-4 h-4" /> {job.salary}</span>
+                      <span className="flex items-center gap-1"><Award className="w-4 h-4" /> {job.experience}</span>
+                    </div>
+                    <p className="text-gray-300 text-sm line-clamp-2">{job.description}</p>
                   </div>
-                ))
-              )}
-            </div>
-          )}
-
-          {/* NO JOBS MESSAGE */}
-          {!loading && jobs.length === 0 && (
-            <div className="text-center py-16 bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-2xl">
-              <h3 className="text-3xl font-bold mb-4 text-white">We're Growing!</h3>
-              <p className="text-gray-400 mb-8 max-w-lg mx-auto">
-                We don't have any open positions right now, but we're always looking for talented people. 
-                Send us your resume and we'll keep you in mind.
-              </p>
-              <Link
-                to="/contact"
-                className="inline-flex items-center bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-lg font-semibold hover:shadow-xl transition-all"
-              >
-                Send Your Resume <ArrowRight className="ml-2 w-5 h-5" />
-              </Link>
-            </div>
-          )}
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-20">
-        <div className="max-w-4xl mx-auto px-8 text-center">
-          <h2 className="text-4xl font-bold mb-6">
-            Ready to Join Our Team?
-          </h2>
-          <p className="text-xl text-blue-100 mb-8">
-            Apply now or reach out to learn more about life at Fintech IT Solutions.
-          </p>
-          <div className="flex flex-wrap gap-4 justify-center">
-            <a
-              href="#openings"
-              className="inline-flex items-center bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:shadow-xl hover:scale-105 transition-all"
-            >
-              View Openings <ArrowRight className="ml-2 w-5 h-5" />
-            </a>
-            <Link
-              to="/contact"
-              className="inline-flex items-center border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white/10 transition-all"
-            >
-              Contact Us
-            </Link>
+                  <Link to={`/careers/${job._id}`} className="px-6 py-2 bg-gradient-to-r from-indigo-500 to-purple-500 text-white rounded-lg font-semibold hover:shadow-xl transition whitespace-nowrap">
+                    View & Apply
+                  </Link>
+                </div>
+              </div>
+            ))}
           </div>
-          <p className="text-sm text-blue-200 mt-6">
-            ✨ First 5 applicants get a special onboarding bonus!
-          </p>
-        </div>
+        </Container>
       </section>
     </main>
   );
 }
+

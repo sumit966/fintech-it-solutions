@@ -22,6 +22,7 @@ import Newsroom from "./pages/Newsroom";
 import Insights from "./pages/Insights";
 import SearchResults from "./pages/SearchResults";
 import CEO from "./pages/CEO";
+import JobDetail from "./pages/JobDetail";
 
 // Detail Pages
 import AnnouncementDetail from "./pages/AnnouncementDetail";
@@ -29,11 +30,11 @@ import ArticleDetail from "./pages/ArticleDetail";
 import EventDetail from "./pages/EventDetail";
 import ToolDetail from "./pages/ToolDetail";
 
-// NEW: Category & Research Pages
+// Category & Research Pages
 import CategoryPage from "./pages/CategoryPage";
 import ResearchDetail from "./pages/ResearchDetail";
 
-// Who We Are Pages (from who-we-are folder)
+// Who We Are Pages
 import OurAspiration from "./pages/who-we-are/OurAspiration";
 import Brand from "./pages/who-we-are/Brand";
 import Leadership from "./pages/who-we-are/Leadership";
@@ -54,54 +55,62 @@ import Login from "./pages/Login";
 import AdminDashboard from "./pages/AdminDashboard";
 import NotFound from "./pages/NotFound";
 
+// Engagement Pages
+import ProjectBasedDevelopment from "./pages/engagement/ProjectBasedDevelopment";
+import ManagedServices from "./pages/engagement/ManagedServices";
+import StaffAugmentation from "./pages/engagement/StaffAugmentation";
+import SoftwareMaintenance from "./pages/engagement/SoftwareMaintenance";
+import RescueProject from "./pages/engagement/RescueProject";
+
 export default function App() {
   return (
     <BrowserRouter>
       <div className="page-bg">
         <ScrollToTop />
         <Navbar />
-        
+
         <Routes>
-          {/* ==================== MAIN PAGES ==================== */}
+          {/* MAIN PAGES */}
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
           <Route path="/industries" element={<Industries />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/careers" element={<Careers />} />
+          <Route path="/careers/:id" element={<JobDetail />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/newsroom" element={<Newsroom />} />
           <Route path="/insights" element={<Insights />} />
           <Route path="/search" element={<SearchResults />} />
           <Route path="/ceo" element={<CEO />} />
 
-          {/* ==================== WHO WE ARE PAGES ==================== */}
+          {/* WHO WE ARE PAGES */}
           <Route path="/aspiration" element={<OurAspiration />} />
           <Route path="/brand" element={<Brand />} />
           <Route path="/leadership" element={<Leadership />} />
           <Route path="/community" element={<Community />} />
           <Route path="/sustainability" element={<Sustainability />} />
 
-          {/* ==================== DETAIL PAGES ==================== */}
+          {/* DETAIL PAGES */}
           <Route path="/industries/:slug" element={<IndustryDetail />} />
           <Route path="/projects/:slug" element={<ProjectDetail />} />
           <Route path="/services/:slug" element={<ServiceDetail />} />
-          
+
           {/* Newsroom & Insights Details */}
           <Route path="/newsroom/:slug" element={<AnnouncementDetail />} />
           <Route path="/insights/:slug" element={<ArticleDetail />} />
           <Route path="/events/:slug" element={<EventDetail />} />
           <Route path="/tools/:slug" element={<ToolDetail />} />
 
-          {/* ==================== CATEGORY & RESEARCH PAGES (NEW) ==================== */}
+          {/* CATEGORY & RESEARCH PAGES */}
           <Route path="/insights/category/:categoryName" element={<CategoryPage />} />
           <Route path="/insights/research/:slug" element={<ResearchDetail />} />
 
-          {/* ==================== CAREER PAGES ==================== */}
+          {/* CAREER PAGES */}
           <Route path="/careers/apply/:id" element={<ApplyJob />} />
           <Route path="/careers/success" element={<ApplicationSuccess />} />
 
-          {/* ==================== SERVICE SPECIFIC PAGES ==================== */}
+          {/* SERVICE SPECIFIC PAGES */}
           <Route path="/services/cloud" element={<CloudEngineering />} />
           <Route path="/services/ai" element={<AIService />} />
           <Route path="/services/cybersecurity" element={<Cybersecurity />} />
@@ -109,12 +118,19 @@ export default function App() {
           <Route path="/services/data" element={<DataEngineering />} />
           <Route path="/services/platforms" element={<EnterprisePlatforms />} />
 
-          {/* ==================== ADMIN PAGES ==================== */}
+          {/* ENGAGEMENT PAGES */}
+          <Route path="/engagement/project-based" element={<ProjectBasedDevelopment />} />
+          <Route path="/engagement/managed-services" element={<ManagedServices />} />
+          <Route path="/engagement/staff-augmentation" element={<StaffAugmentation />} />
+          <Route path="/engagement/maintenance" element={<SoftwareMaintenance />} />
+          <Route path="/engagement/rescue-project" element={<RescueProject />} />
+
+          {/* ADMIN PAGES */}
           <Route path="/login" element={<Login />} />
           <Route path="/admin" element={<AdminDashboard />} />
           <Route path="/admin/dashboard" element={<AdminDashboard />} />
 
-          {/* ==================== 404 PAGE ==================== */}
+          {/* 404 PAGE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
 
