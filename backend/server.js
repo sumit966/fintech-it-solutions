@@ -238,8 +238,58 @@ app.get("/", (req, res) => {
 
 /* ================= START ================= */
 
-app.listen(PORT, () => {
+app.post("/api/careers/apply", upload.single("resume"), async (req, res) => {
+  try {
+    const { name, email, phone, experience, coverLetter, jobId, jobTitle } = req.body;
+    
+    console.log("Job application received:", { name, email, jobId });
+    
+    if (!name || !email || !jobId) {
+      return res.status(400).json({ error: "Missing required fields" });
+    }
+    
+    if (!req.file) {
+      return res.status(400).json({ error: "Resume file required" });
+    }
+    
+    // Send email to HR
+    const transporter = nodemailer.createTransport({
+      service: "gmail",
+      auth: {
+        user: process.env.MAIL_USER,
+        pass: process.env.MAIL_PASS
+      }
+    });
+    
+    await transporter.sendMail({
+      from: process.env.MAIL_USER,
+      to: "fintechitsolutions.info@gmail.com",
+      subject: `Job Application: ${jobTitle || "Position"} from ${name}`,
+      text: `
+Name: ${name}
+Email: ${email}
+Phone: ${phone || "Not provided"}
+Experience: ${experience || "Not provided"}
+Cover Letter: ${coverLetter || "Not provided"}
+Job ID: ${jobId}
+      `,
+      attachments: [
+        {
+          filename: req.file.originalname,
+          path: req.file.path
+        }
+      ]
+    });
+    
+    res.json({ success: true, message: "Application submitted successfully" });
+  } catch (err) {
+    console.error("Application error:", err);
+    res.status(500).json({ error: "Failed to submit application" });
+  }
+});\n\napp.listen(PORT, () => {
   console.log(`🚀 Server running on http://localhost:${PORT}`);
 });
+
+
 
 
