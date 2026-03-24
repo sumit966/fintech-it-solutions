@@ -6,6 +6,7 @@ import { fileURLToPath } from "url";
 import fs from "fs";
 import multer from "multer";
 import mongoose from "mongoose";
+import nodemailer from "nodemailer";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -44,7 +45,12 @@ app.use('/api/projects', projectsRoutes);
 app.use('/api/admin', adminRoutes);
 app.use('/api/chat', chatRoute);
 
-// Contact endpoint
+// Health check
+app.get('/api/health', (req, res) => {
+  res.json({ status: 'OK', time: new Date() });
+});
+
+// Contact endpoint with email
 app.post('/api/contact', async (req, res) => {
   try {
     const { name, email, message } = req.body;
@@ -54,6 +60,24 @@ app.post('/api/contact', async (req, res) => {
     }
 
     console.log('Contact received:', { name, email, message });
+
+    // Send email if credentials exist
+    if (process.env.MAIL_USER && process.env.MAIL_PASS) {
+      const transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+          user: process.env.MAIL_USER,
+          pass: process.env.MAIL_PASS
+        }
+      });
+
+      await transporter.sendMail({
+        from: process.env.MAIL_USER,
+        to: 'fintechitsolutions.info@gmail.com',
+        subject: `New Contact from ${name}`,
+        text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`
+      });
+    }
 
     res.json({ success: true, message: 'Message sent successfully' });
   } catch (err) {
@@ -77,16 +101,36 @@ app.post('/api/careers/apply', upload.single('resume'), async (req, res) => {
 
     console.log('Application received:', { name, email, jobId, jobTitle });
 
+    // Send email if credentials exist
+    if (process.env.MAIL_USER && process.env.MAIL_PASS) {
+      const transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+          user: process.env.MAIL_USER,
+          pass: process.env.MAIL_PASS
+        }
+      });
+
+      await transporter.sendMail({
+        from: process.env.MAIL_USER,
+        to: 'fintechitsolutions.info@gmail.com',
+        subject: `Job Application: ${jobTitle || 'Position'} from ${name}`,
+        text: `
+Name: ${name}
+Email: ${email}
+Phone: ${phone || 'Not provided'}
+Experience: ${experience || 'Not provided'}
+Cover Letter: ${coverLetter || 'Not provided'}
+Job ID: ${jobId}
+        `
+      });
+    }
+
     res.json({ success: true, message: 'Application submitted successfully' });
   } catch (err) {
     console.error('Application error:', err);
     res.status(500).json({ error: 'Server error' });
   }
-});
-
-// Health check
-app.get('/api/health', (req, res) => {
-  res.json({ status: 'OK', time: new Date() });
 });
 
 app.get('/', (req, res) => {
