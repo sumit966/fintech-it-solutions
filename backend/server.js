@@ -1,5 +1,7 @@
 import express from 'express';
 import cors from 'cors';
+import helmet from 'helmet';
+import morgan from 'morgan';
 import dotenv from 'dotenv';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -122,6 +124,8 @@ app.post('/api/careers/apply', upload.single('resume'), async (req, res) => {
   try {
     const { name, email, phone, experience, coverLetter, jobId, jobTitle } = req.body;
     
+    console.log('Application received:', { name, email, jobId });
+    
     if (!name || !email || !jobId) {
       return res.status(400).json({ error: 'Missing required fields' });
     }
@@ -139,6 +143,7 @@ app.post('/api/careers/apply', upload.single('resume'), async (req, res) => {
       } catch(e) {}
     }
     
+    // Send email to HR
     await sendEmail({
       to: 'fintechitsolutions.info@gmail.com',
       subject: `Job Application: ${jobTitleText || 'Position'} from ${name}`,
@@ -159,6 +164,7 @@ Job ID: ${jobId}
       text: `Thank you for applying for ${jobTitleText || 'the position'}. We will review your application and get back to you soon.`
     });
     
+    console.log('Application submitted successfully');
     res.json({ success: true, message: 'Application submitted successfully' });
   } catch (error) {
     console.error('Application error:', error);
