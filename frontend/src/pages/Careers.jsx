@@ -40,8 +40,8 @@ export default function Careers() {
     if (searchTerm) {
       filtered = filtered.filter(job =>
         job.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        job.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        job.department.toLowerCase().includes(searchTerm.toLowerCase())
+        (job.description && job.description.toLowerCase().includes(searchTerm.toLowerCase())) ||
+        (job.department && job.department.toLowerCase().includes(searchTerm.toLowerCase()))
       );
     }
 
@@ -56,13 +56,18 @@ export default function Careers() {
     setFilteredJobs(filtered);
   };
 
+  const formatSalary = (salary) => {
+    if (!salary) return 'Competitive';
+    return salary.replace(/\?/g, '?');
+  };
+
   const departments = ['all', ...new Set(jobs.map(job => job.department))];
   const types = ['all', 'Full-time', 'Part-time', 'Contract', 'Internship'];
 
   if (loading) {
     return (
       <div className="pt-32 text-center text-white">
-        <div className="text-xl">Loading amazing opportunities...</div>
+        <div className="text-xl">Loading opportunities...</div>
       </div>
     );
   }
@@ -70,22 +75,19 @@ export default function Careers() {
   return (
     <div className="pt-24 bg-gradient-to-br from-[#020617] via-[#0f172a] to-[#1e293b] min-h-screen">
       <div className="max-w-7xl mx-auto px-6 py-12">
-        {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-5xl font-bold text-white mb-4">Join Our Team</h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            We're building the future of technology. Come be part of something amazing.
-            All positions are fully remote with flexible hours.
+            All positions are fully remote. We're building the future of technology.
           </p>
         </div>
 
-        {/* Search Bar */}
         <div className="max-w-2xl mx-auto mb-8">
           <div className="relative">
             <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
             <input
               type="text"
-              placeholder="Search jobs by title, department, or keywords..."
+              placeholder="Search jobs..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               className="w-full pl-12 pr-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-indigo-500"
@@ -93,7 +95,6 @@ export default function Careers() {
           </div>
         </div>
 
-        {/* Filter Toggle */}
         <div className="flex justify-center mb-6">
           <button
             onClick={() => setShowFilters(!showFilters)}
@@ -105,7 +106,6 @@ export default function Careers() {
           </button>
         </div>
 
-        {/* Filters */}
         {showFilters && (
           <div className="max-w-4xl mx-auto mb-8 p-6 bg-white/5 rounded-2xl">
             <div className="grid md:grid-cols-2 gap-6">
@@ -137,12 +137,10 @@ export default function Careers() {
           </div>
         )}
 
-        {/* Results Count */}
         <div className="mb-6">
           <p className="text-gray-400">Found {filteredJobs.length} {filteredJobs.length === 1 ? 'opportunity' : 'opportunities'}</p>
         </div>
 
-        {/* Job Cards */}
         <div className="space-y-4">
           {filteredJobs.map(job => (
             <Link to={`/careers/${job._id}`} key={job._id}>
@@ -159,7 +157,7 @@ export default function Careers() {
                     <div className="flex flex-wrap gap-4 text-sm text-gray-400 mb-3">
                       <span className="flex items-center gap-1"><MapPin className="w-4 h-4" /> {job.location}</span>
                       <span className="flex items-center gap-1"><Clock className="w-4 h-4" /> {job.type}</span>
-                      <span className="flex items-center gap-1"><DollarSign className="w-4 h-4" /> {job.salary}</span>
+                      <span className="flex items-center gap-1"><DollarSign className="w-4 h-4" /> {formatSalary(job.salary)}</span>
                       <span className="flex items-center gap-1"><Briefcase className="w-4 h-4" /> {job.experience}</span>
                     </div>
                     <p className="text-gray-300 line-clamp-2">{job.description}</p>
@@ -180,7 +178,7 @@ export default function Careers() {
 
         {filteredJobs.length === 0 && (
           <div className="text-center py-12">
-            <p className="text-gray-400">No jobs found matching your criteria. Try adjusting your filters.</p>
+            <p className="text-gray-400">No jobs found. Try adjusting your filters.</p>
           </div>
         )}
       </div>
