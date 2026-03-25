@@ -5,3 +5,5 @@ dist/
 build/
 *.log
 uploads/
+.vercel
+.env*.local

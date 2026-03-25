@@ -11,7 +11,7 @@ import {
 } from 'lucide-react';
 import Container from '../layout/Container';
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5002/api';
+const API_URL = 'https://fintech-it-solutions.onrender.com/api';
 
 export default function JobDetail() {
   const { id } = useParams();
@@ -25,18 +25,8 @@ export default function JobDetail() {
     fullName: '',
     email: '',
     phone: '',
-    currentCompany: '',
-    currentRole: '',
     experience: '',
-    expectedSalary: '',
-    noticePeriod: '',
-    linkedin: '',
-    portfolio: '',
-    github: '',
-    whyYou: '',
-    skills: '',
-    availability: '',
-    heardFrom: ''
+    whyYou: ''
   });
   const [resumeFile, setResumeFile] = useState(null);
   const [errors, setErrors] = useState({});
@@ -49,12 +39,11 @@ export default function JobDetail() {
     try {
       setLoading(true);
       const response = await fetch(`${API_URL}/careers/jobs/${id}`);
-      if (!response.ok) throw new Error('Failed to fetch job');
       const data = await response.json();
       setJob(data);
+      setLoading(false);
     } catch (error) {
       console.error('Error loading job:', error);
-    } finally {
       setLoading(false);
     }
   };
@@ -100,8 +89,6 @@ export default function JobDetail() {
 
     setSubmitting(true);
     const submitFormData = new FormData();
-    
-    // Append all form fields with the exact names expected by backend
     submitFormData.append('name', formData.fullName);
     submitFormData.append('email', formData.email);
     submitFormData.append('phone', formData.phone);

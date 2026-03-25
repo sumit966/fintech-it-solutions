@@ -1,0 +1,166 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fintech Jobs</title>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            background: linear-gradient(135deg, #020617 0%, #0f172a 50%, #1e293b 100%);
+            color: white;
+            padding: 40px;
+            margin: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            background: linear-gradient(135deg, #6366f1, #a855f7);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .job-card {
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 20px;
+            transition: all 0.3s;
+        }
+        .job-card:hover {
+            border-color: #6366f1;
+            transform: translateY(-2px);
+        }
+        .job-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: white;
+        }
+        .job-meta {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 16px;
+            color: #9ca3af;
+            font-size: 0.875rem;
+        }
+        .job-description {
+            color: #d1d5db;
+            margin-bottom: 16px;
+            line-height: 1.5;
+        }
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+        .skill-tag {
+            background: rgba(99,102,241,0.2);
+            color: #a5b4fc;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+        }
+        .apply-btn {
+            background: linear-gradient(135deg, #6366f1, #a855f7);
+            color: white;
+            border: none;
+            padding: 10px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .apply-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(99,102,241,0.3);
+        }
+        .loading {
+            text-align: center;
+            padding: 60px;
+            font-size: 1.2rem;
+            color: #9ca3af;
+        }
+        .error {
+            text-align: center;
+            padding: 60px;
+            color: #f87171;
+            background: rgba(248,113,113,0.1);
+            border-radius: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 Job Openings</h1>
+        <div id="jobs-container">
+            <div class="loading">Loading jobs from backend...</div>
+        </div>
+    </div>
+
+    <script>
+        async function loadJobs() {
+            const container = document.getElementById('jobs-container');
+            container.innerHTML = '<div class="loading">📡 Connecting to backend...</div>';
+            
+            try {
+                console.log('Fetching jobs from: https://fintech-it-solutions.onrender.com/api/careers/jobs');
+                const response = await fetch('https://fintech-it-solutions.onrender.com/api/careers/jobs');
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                }
+                
+                const jobs = await response.json();
+                console.log('✅ Jobs loaded:', jobs.length);
+                
+                if (jobs.length === 0) {
+                    container.innerHTML = '<div class="error">⚠️ No jobs found in database</div>';
+                    return;
+                }
+                
+                container.innerHTML = jobs.map(job => `
+                    <div class="job-card">
+                        <div class="job-title">${job.title}</div>
+                        <div class="job-meta">
+                            <span>🏢 ${job.department || 'General'}</span>
+                            <span>📍 ${job.location || 'Remote'}</span>
+                            <span>⏰ ${job.type || 'Full-time'}</span>
+                            <span>💰 ${job.salary || 'Competitive'}</span>
+                            <span>📅 ${job.experience || 'Any'}</span>
+                        </div>
+                        <div class="job-description">${job.description?.substring(0, 200) || 'No description available'}...</div>
+                        <div class="skills">
+                            ${(job.skills || []).slice(0, 5).map(skill => `<span class="skill-tag">${skill}</span>`).join('')}
+                        </div>
+                        <button class="apply-btn" onclick="alert('Application form will open. For now, email your resume to fintechitsolutions.info@gmail.com')">
+                            📝 Apply Now
+                        </button>
+                    </div>
+                `).join('');
+                
+            } catch (error) {
+                console.error('❌ Error:', error);
+                container.innerHTML = `
+                    <div class="error">
+                        <strong>⚠️ Failed to load jobs</strong><br>
+                        Error: ${error.message}<br><br>
+                        <small>Make sure your backend is running at:<br>
+                        https://fintech-it-solutions.onrender.com/api/health</small>
+                    </div>
+                `;
+            }
+        }
+        
+        loadJobs();
+    </script>
+</body>
+</html>
