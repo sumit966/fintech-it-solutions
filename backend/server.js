@@ -12,7 +12,7 @@ const __dirname = path.dirname(__filename);
 dotenv.config({ path: path.join(__dirname, ".env") });
 
 const app = express();
-const PORT = process.env.PORT || 5001;
+const PORT = process.env.PORT || 5002;
 
 app.use(cors());
 app.use(express.json());
@@ -24,7 +24,7 @@ if (!fs.existsSync(uploadDir)) {
 }
 const upload = multer({ dest: uploadDir });
 
-// Email transporter
+// Email transporter using your .env credentials
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
@@ -33,7 +33,7 @@ const transporter = nodemailer.createTransport({
   }
 });
 
-// All 12 Jobs Data
+// All 12 Jobs
 const jobs = [
   { _id: "1", title: "Senior Full Stack Developer", department: "Custom Software Development", location: "Remote (India)", type: "Full-time", salary: "?8-15 LPA", experience: "3-6 years", description: "Build enterprise-grade custom software solutions.", requirements: ["React", "Node.js", "MongoDB", "TypeScript"], skills: ["React", "Node.js", "MongoDB"], benefits: ["Remote work", "Health insurance"] },
   { _id: "2", title: "Backend Developer - ERP Systems", department: "Custom Software Development", location: "Remote (India)", type: "Full-time", salary: "?6-12 LPA", experience: "2-5 years", description: "Build powerful ERP and business automation systems.", requirements: ["Node.js", "PostgreSQL", "MongoDB"], skills: ["Node.js", "PostgreSQL", "MongoDB"], benefits: ["Remote work", "Flexible hours"] },
@@ -67,6 +67,8 @@ app.get("/api/careers/jobs/:id", (req, res) => {
 app.post("/api/contact", async (req, res) => {
   try {
     const { name, email, message } = req.body;
+    console.log("Contact received:", { name, email, message });
+    
     if (!name || !email || !message) {
       return res.status(400).json({ error: "All fields required" });
     }
@@ -78,10 +80,11 @@ app.post("/api/contact", async (req, res) => {
       text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`
     });
     
+    console.log("Email sent successfully");
     res.json({ success: true, message: "Message sent successfully" });
   } catch (error) {
     console.error("Contact error:", error);
-    res.status(500).json({ error: "Failed to send message" });
+    res.status(500).json({ error: "Failed to send message: " + error.message });
   }
 });
 
@@ -89,6 +92,7 @@ app.post("/api/contact", async (req, res) => {
 app.post("/api/careers/apply", upload.single("resume"), async (req, res) => {
   try {
     const { name, email, phone, experience, coverLetter, jobId, jobTitle } = req.body;
+    console.log("Application received:", { name, email, jobId });
     
     if (!name || !email || !jobId) {
       return res.status(400).json({ error: "Missing required fields" });
@@ -108,13 +112,14 @@ app.post("/api/careers/apply", upload.single("resume"), async (req, res) => {
       attachments: [{ filename: req.file.originalname, path: req.file.path }]
     });
     
+    console.log("Application email sent");
     res.json({ success: true, message: "Application submitted successfully" });
   } catch (error) {
     console.error("Application error:", error);
-    res.status(500).json({ error: "Failed to submit application" });
+    res.status(500).json({ error: "Failed to submit application: " + error.message });
   }
 });
 
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+  console.log(`?? Server running on http://localhost:${PORT}`);
 });
