@@ -1,34 +1,57 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import API from "../services/api";
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
+const API_URL = 'https://fintech-it-solutions.onrender.com/api';
 
 export default function Login() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
-  const handleLogin = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
+    setError('');
+
     try {
-      const res = await API.post("/auth/login", { email, password });
-      localStorage.setItem("token", res.data.token);
-      localStorage.setItem("role", res.data.role);
-      navigate(res.data.role === "admin" ? "/admin" : "/");
-    } catch {
-      alert("Invalid credentials");
+      const response = await fetch(`${API_URL}/auth/login`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password })
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        localStorage.setItem('token', data.token);
+        navigate('/admin');
+      } else {
+        setError(data.error || 'Login failed');
+      }
+    } catch (err) {
+      setError('Network error. Please try again.');
+    } finally {
+      setLoading(false);
     }
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-[#0B0F19] text-white">
-      <form onSubmit={handleLogin} className="w-96 p-6 border border-[#1F2937] bg-[rgba(255,255,255,0.05)] rounded-lg">
-        <h2 className="text-2xl mb-4">Login</h2>
-        <input className="w-full p-2 mb-3 border border-[#1F2937] bg-[rgba(255,255,255,0.05)] rounded text-white placeholder-gray-500" placeholder="Email"
-          onChange={(e) => setEmail(e.target.value)} />
-        <input className="w-full p-2 mb-3 border border-[#1F2937] bg-[rgba(255,255,255,0.05)] rounded text-white placeholder-gray-500" type="password" placeholder="Password"
-          onChange={(e) => setPassword(e.target.value)} />
-        <button className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-2 rounded font-semibold hover:shadow-xl transition">Login</button>
-      </form>
+    <div className="pt-24 bg-gradient-to-br from-[#020617] via-[#0f172a] to-[#1e293b] min-h-screen">
+      <div className="max-w-md mx-auto px-6 py-12">
+        <div className="bg-white/10 rounded-2xl p-8">
+          <h1 className="text-3xl font-bold text-white text-center mb-8">Admin Login</h1>
+          {error && <div className="bg-red-500/20 border border-red-500 p-3 rounded-lg text-red-400 mb-4">{error}</div>}
+          <form onSubmit={handleSubmit}>
+            <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} className="w-full p-3 mb-4 bg-white/20 rounded-lg text-white" required />
+            <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} className="w-full p-3 mb-6 bg-white/20 rounded-lg text-white" required />
+            <button type="submit" disabled={loading} className="w-full py-3 bg-indigo-600 text-white rounded-lg font-semibold hover:bg-indigo-700 disabled:opacity-50">
+              {loading ? 'Logging in...' : 'Login'}
+            </button>
+          </form>
+        </div>
+      </div>
     </div>
   );
 }
