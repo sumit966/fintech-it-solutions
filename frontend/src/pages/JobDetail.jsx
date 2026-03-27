@@ -1,12 +1,11 @@
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { motion } from 'framer-motion';
 import { 
   MapPin, Clock, DollarSign, Award, CheckCircle, ArrowLeft, X, 
   Briefcase, Users, Zap, Heart, Gift, TrendingUp, BookOpen, 
   Coffee, Star, Shield, Target, Layers, Code, Smartphone, 
   Cpu, Palette, Globe, Mail, Phone, Calendar, Rocket, Sparkles,
-  ChevronRight, ChevronLeft, GraduationCap, Home, HeartHandshake
+  ChevronRight, GraduationCap, Home, HeartHandshake, HelpCircle
 } from 'lucide-react';
 import Container from '../layout/Container';
 
@@ -33,6 +32,7 @@ export default function JobDetail() {
   const fetchJob = async () => {
     try {
       const response = await fetch(`${API_URL}/careers/jobs/${id}`);
+      if (!response.ok) throw new Error('Job not found');
       const data = await response.json();
       setJob(data);
       setLoading(false);
@@ -152,14 +152,14 @@ export default function JobDetail() {
               <div className="lg:col-span-2 space-y-8">
                 {/* About the Role */}
                 <div>
-                  <h2 className="text-2xl font-bold text-white mb-4">About the Role</h2>
+                  <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-2"><Star className="w-5 h-5 text-yellow-400" /> About the Role</h2>
                   <p className="text-gray-300 leading-relaxed">{job.longDescription || job.description}</p>
                 </div>
 
                 {/* Responsibilities */}
-                {job.responsibilities && (
+                {job.responsibilities && job.responsibilities.length > 0 && (
                   <div>
-                    <h2 className="text-2xl font-bold text-white mb-4">What You'll Do</h2>
+                    <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-2"><CheckCircle className="w-5 h-5 text-green-400" /> What You'll Do</h2>
                     <ul className="space-y-3">
                       {job.responsibilities.map((item, i) => (
                         <li key={i} className="flex items-start gap-3">
@@ -172,9 +172,9 @@ export default function JobDetail() {
                 )}
 
                 {/* Requirements */}
-                {job.requirements && (
+                {job.requirements && job.requirements.length > 0 && (
                   <div>
-                    <h2 className="text-2xl font-bold text-white mb-4">What We're Looking For</h2>
+                    <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-2"><Target className="w-5 h-5 text-indigo-400" /> What We're Looking For</h2>
                     <ul className="space-y-3">
                       {job.requirements.map((item, i) => (
                         <li key={i} className="flex items-start gap-3">
@@ -187,9 +187,9 @@ export default function JobDetail() {
                 )}
 
                 {/* What We Offer */}
-                {job.whatWeOffer && (
+                {job.whatWeOffer && job.whatWeOffer.length > 0 && (
                   <div>
-                    <h2 className="text-2xl font-bold text-white mb-4">What We Offer</h2>
+                    <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-2"><Gift className="w-5 h-5 text-purple-400" /> What We Offer</h2>
                     <ul className="space-y-3">
                       {job.whatWeOffer.map((item, i) => (
                         <li key={i} className="flex items-start gap-3">
@@ -198,6 +198,48 @@ export default function JobDetail() {
                         </li>
                       ))}
                     </ul>
+                  </div>
+                )}
+
+                {/* Skills */}
+                {job.skills && job.skills.length > 0 && (
+                  <div>
+                    <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-2"><Code className="w-5 h-5 text-blue-400" /> Required Skills</h2>
+                    <div className="flex flex-wrap gap-2">
+                      {job.skills.map((skill, i) => (
+                        <span key={i} className="px-3 py-1 bg-indigo-500/20 text-indigo-300 rounded-full text-sm">{skill}</span>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* Hiring Process */}
+                {job.hiringProcess && (
+                  <div>
+                    <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-2"><Rocket className="w-5 h-5 text-orange-400" /> Hiring Process</h2>
+                    <div className="space-y-3">
+                      {Object.values(job.hiringProcess).map((step, i) => (
+                        <div key={i} className="flex items-start gap-3">
+                          <div className="w-6 h-6 bg-indigo-500 rounded-full flex items-center justify-center text-white text-xs font-bold flex-shrink-0 mt-0.5">{i + 1}</div>
+                          <span className="text-gray-300">{step}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* FAQ */}
+                {job.faq && job.faq.length > 0 && (
+                  <div>
+                    <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-2"><HelpCircle className="w-5 h-5 text-yellow-400" /> Frequently Asked Questions</h2>
+                    <div className="space-y-4">
+                      {job.faq.map((item, i) => (
+                        <div key={i} className="bg-white/5 rounded-lg p-4">
+                          <p className="text-white font-semibold mb-2">? {item.q}</p>
+                          <p className="text-gray-400">?? {item.a}</p>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 )}
               </div>
@@ -211,9 +253,9 @@ export default function JobDetail() {
                     <div><p className="text-gray-400 text-sm">Location</p><p className="text-white font-medium">{job.location}</p></div>
                     <div><p className="text-gray-400 text-sm">Job Type</p><p className="text-white font-medium">{job.type}</p></div>
                     <div><p className="text-gray-400 text-sm">Experience</p><p className="text-white font-medium">{job.experience}</p></div>
-                    <div><p className="text-gray-400 text-sm">Posted</p><p className="text-white font-medium">{new Date().toLocaleDateString()}</p></div>
+                    <div><p className="text-gray-400 text-sm">Salary Range</p><p className="text-white font-medium">{formatSalary(job.salary)}</p></div>
                   </div>
-                  <button onClick={() => setShowApplyModal(true)} className="w-full mt-6 py-3 bg-indigo-600 text-white rounded-lg font-semibold hover:bg-indigo-700 transition">
+                  <button onClick={() => setShowApplyModal(true)} className="w-full mt-6 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-lg font-semibold hover:shadow-lg transition">
                     Apply Now
                   </button>
                 </div>
@@ -236,7 +278,7 @@ export default function JobDetail() {
               <div className="p-8 text-center">
                 <CheckCircle className="w-16 h-16 text-green-400 mx-auto mb-4" />
                 <h3 className="text-2xl font-bold text-white mb-2">Application Submitted!</h3>
-                <p className="text-gray-300">Thank you for applying. We'll review your application and get back to you soon.</p>
+                <p className="text-gray-300">Thank you for applying. We'll review your application and get back to you within 3-5 business days.</p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="p-6 space-y-4">
