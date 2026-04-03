@@ -1,9 +1,9 @@
-import { useState, useRef } from 'react';
+﻿import { useState, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { 
   Mail, Phone, MapPin, Send, CheckCircle, AlertCircle, 
   Clock, Globe, MessageCircle, Award, Users, Sparkles,
-  Linkedin, Twitter, Github, Instagram, ArrowRight,
+  Twitter, Github, Instagram, ArrowRight,
   Building2, Coffee, Headphones, Star, Shield, Zap,
   Calendar, Download, FileText, BookOpen, Heart
 } from 'lucide-react';
@@ -149,39 +149,7 @@ export default function Contact() {
               </div>
               <h3 className="text-xl font-semibold text-white mb-2">Email Us</h3>
               <p className="text-gray-400 mb-3">For general inquiries and support</p>
-              <a href="mailto:fintechitsolutions.info@gmail.com" className="text-indigo-400 hover:text-indigo-300 transition flex items-center gap-2">
-                fintechitsolutions.info@gmail.com
-                <ArrowRight className="w-4 h-4" />
-              </a>
-            </motion.div>
-
-            <motion.div variants={fadeInUp} className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur border border-white/10 rounded-2xl p-6 hover:border-indigo-500/50 transition-all">
-              <div className="w-14 h-14 bg-purple-500/20 rounded-xl flex items-center justify-center mb-4">
-                <Phone className="w-7 h-7 text-purple-400" />
-              </div>
-              <h3 className="text-xl font-semibold text-white mb-2">Call Us</h3>
-              <p className="text-gray-400 mb-3">Mon-Fri, 9AM - 6PM IST</p>
-              <a href="tel:+916299863493" className="text-purple-400 hover:text-purple-300 transition flex items-center gap-2">
-                +91 6299863493
-                <ArrowRight className="w-4 h-4" />
-              </a>
-            </motion.div>
-
-            <motion.div variants={fadeInUp} className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur border border-white/10 rounded-2xl p-6 hover:border-indigo-500/50 transition-all">
-              <div className="w-14 h-14 bg-pink-500/20 rounded-xl flex items-center justify-center mb-4">
-                <MapPin className="w-7 h-7 text-pink-400" />
-              </div>
-              <h3 className="text-xl font-semibold text-white mb-2">Our Location</h3>
-              <p className="text-gray-400">Remote-First Company</p>
-              <p className="text-gray-500 text-sm mt-2">Serving clients worldwide from India</p>
-            </motion.div>
-
-            <motion.div variants={fadeInUp} className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur border border-white/10 rounded-2xl p-6">
-              <h3 className="text-lg font-semibold text-white mb-4">Follow Us</h3>
-              <div className="flex gap-3">
-                <a href="#" className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-indigo-500/30 transition-all">
-                  <Linkedin className="w-5 h-5 text-gray-300" />
-                </a>
+              
                 <a href="#" className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-indigo-500/30 transition-all">
                   <Twitter className="w-5 h-5 text-gray-300" />
                 </a>
@@ -386,3 +354,5 @@ export default function Contact() {
     </div>
   );
 }
+
+

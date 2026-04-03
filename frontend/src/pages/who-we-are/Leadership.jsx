@@ -1,15 +1,14 @@
-import { Link } from "react-router-dom";
-import { Linkedin, Mail, Award, BookOpen, ArrowRight, Users, Target, Heart, Lightbulb, Coffee, Code, Rocket } from "lucide-react";
+﻿import { Link } from "react-router-dom";
 
 export default function Leadership() {
   const founder = {
     name: "Sumit Raj",
     role: "Founder & Solo Developer",
-    bio: "I started Fintech IT Solutions because I believed startups deserve better. No corporate nonsense, no hidden costs—just honest, quality code from someone who's been in your shoes.",
+    bio: "I started Fintech IT Solutions because I believed startups deserve better. No corporate nonsense, no hidden costsâ€”just honest, quality code from someone who's been in your shoes.",
     story: "After years of building products for other startups, I decided to go solo. I wanted to create the kind of development experience I always wished existed: transparent, founder-first, and focused on what actually matters.",
     expertise: ["Full-Stack Development", "Product Strategy", "Startup Mentoring"],
     image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400",
-    linkedin: "https://linkedin.com/in/er-sumit-raj-/",
+    : "https://.com/in/er-sumit-raj-/",
     email: "sumit@fintechitsolutions.com",
     color: "from-blue-600 to-cyan-600"
   };
@@ -47,14 +46,14 @@ export default function Leadership() {
       <section className="py-20 bg-[#0B0F19]">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <div className="bg-[rgba(255,255,255,0.05)] backdrop-blur-sm border border-[#1F2937] p-12 rounded-3xl shadow-xl">
-            <h2 className="text-3xl font-bold mb-6 text-white">Hi, I'm Sumit 👋</h2>
+            <h2 className="text-3xl font-bold mb-6 text-white">Hi, I'm Sumit ðŸ‘‹</h2>
             <p className="text-xl text-gray-300 mb-8 leading-relaxed">
               I'm the entire company. Developer, designer, strategist, and coffee maker. 
               And you know what? That means you get 100% of my attention.
             </p>
             <div className="flex justify-center gap-4">
-              <a href={founder.linkedin} target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center hover:scale-110 transition">
-                <Linkedin className="w-6 h-6 text-white" />
+              <a href={founder.} target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center hover:scale-110 transition">
+                
               </a>
               <a href={`mailto:${founder.email}`} className="w-12 h-12 bg-gray-800 rounded-xl flex items-center justify-center hover:bg-gray-700 transition">
                 <Mail className="w-6 h-6 text-gray-300" />
@@ -73,7 +72,7 @@ export default function Leadership() {
                 {whySolo.map((item, index) => (
                   <div key={index} className="flex items-start gap-3">
                     <div className="w-6 h-6 bg-green-500/20 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                      <span className="text-green-400 text-sm font-bold">✓</span>
+                      <span className="text-green-400 text-sm font-bold">âœ“</span>
                     </div>
                     <p className="text-gray-300">{item}</p>
                   </div>

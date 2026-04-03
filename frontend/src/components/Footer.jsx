@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+﻿import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
@@ -18,7 +18,7 @@ export default function Footer() {
             for early-stage companies. Currently operating remotely from India.
           </p>
           <p className="text-xs text-gray-500 mt-4">
-            🚀 Building the future, one project at a time.
+            ðŸš€ Building the future, one project at a time.
           </p>
           <div className="mt-4 inline-flex items-center gap-2 bg-[rgba(255,255,255,0.05)] px-3 py-1 rounded-full border border-[#1F2937]">
             <span className="relative flex h-2 w-2">
@@ -77,20 +77,20 @@ export default function Footer() {
           <h4 className="text-white font-semibold mb-4">Contact</h4>
 
           <div className="mb-4 bg-gradient-to-r from-yellow-600/20 to-orange-600/20 p-3 rounded-lg border border-yellow-600/30">
-            <p className="text-xs font-semibold text-yellow-500 mb-1">🏗️ BUILDING PHASE</p>
+            <p className="text-xs font-semibold text-yellow-500 mb-1">ðŸ—ï¸ BUILDING PHASE</p>
             <p className="text-xs text-gray-400">Operating remotely while establishing offices</p>
           </div>
 
           <div className="mb-3">
             <p className="text-sm text-gray-400 flex items-start gap-2">
-              <span className="text-blue-400 mt-0.5">📍</span>
+              <span className="text-blue-400 mt-0.5">ðŸ“</span>
               <span>
                 <span className="text-white font-medium">Pune (HQ - Remote)</span>
                 <span className="block text-xs text-gray-500">Virtual office, working from home</span>
               </span>
             </p>
             <p className="text-sm text-gray-400 flex items-start gap-2 mt-2">
-              <span className="text-blue-400 mt-0.5">🚧</span>
+              <span className="text-blue-400 mt-0.5">ðŸš§</span>
               <span>
                 <span className="text-white font-medium">Noida & Bangalore</span>
                 <span className="block text-xs text-gray-500">Coming soon (in planning phase)</span>
@@ -99,33 +99,8 @@ export default function Footer() {
           </div>
 
           <p className="text-sm mt-3 flex items-center gap-2">
-            <span className="text-blue-400">📧</span>
-            <a href="mailto:fintechitsolutions.info@gmail.com" className="hover:text-blue-400 transition">
-              fintechitsolutions.info@gmail.com
-            </a>
-          </p>
-
-          <p className="text-sm mt-2 flex items-center gap-2">
-            <span className="text-blue-400">📞</span>
-            <a href="tel:+916299863493" className="hover:text-blue-400 transition">
-              +91 6299863493
-            </a>
-          </p>
-
-          <p className="text-xs text-gray-500 mt-3 flex items-center gap-2">
-            <span className="text-blue-400">⏰</span>
-            Mon-Fri, 9AM-6PM IST (Remote)
-          </p>
-
-          <div className="flex gap-4 mt-6 text-sm">
-            <a
-              href="https://www.linkedin.com/in/er-sumit-raj-/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-blue-400 transition hover:scale-110 flex items-center gap-1"
-            >
-              <span>🔗</span> LinkedIn
-            </a>
+            <span className="text-blue-400">ðŸ“§</span>
+            
 
             <a
               href="#"
@@ -133,7 +108,7 @@ export default function Footer() {
               rel="noopener noreferrer"
               className="hover:text-blue-400 transition hover:scale-110 flex items-center gap-1 opacity-50"
             >
-              <span>🐦</span> Twitter
+              <span>ðŸ¦</span> Twitter
               <span className="text-xs text-gray-600">(soon)</span>
             </a>
 
@@ -143,7 +118,7 @@ export default function Footer() {
               rel="noopener noreferrer"
               className="hover:text-blue-400 transition hover:scale-110 flex items-center gap-1 opacity-50"
             >
-              <span>💻</span> GitHub
+              <span>ðŸ’»</span> GitHub
               <span className="text-xs text-gray-600">(soon)</span>
             </a>
           </div>
@@ -152,9 +127,9 @@ export default function Footer() {
 
       <div className="border-t border-[#1F2937] text-center py-6 text-sm relative z-10">
         <p className="text-gray-500">
-          © {new Date().getFullYear()} Fintech IT Solutions. 
+          Â© {new Date().getFullYear()} Fintech IT Solutions. 
           <span className="block sm:inline sm:ml-2 text-xs">
-            Built with ❤️ from home • Proudly bootstrapped • Remote-first
+            Built with â¤ï¸ from home â€¢ Proudly bootstrapped â€¢ Remote-first
           </span>
         </p>
       </div>

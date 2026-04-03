@@ -1,5 +1,4 @@
-import { Link } from "react-router-dom";
-import { Users, Heart, Calendar, MessageCircle, ArrowRight, MapPin, Mail, Twitter, Linkedin, Github, Sparkles, Instagram, Clock } from "lucide-react";
+﻿import { Link } from "react-router-dom";
 
 export default function Community() {
   const communityStats = {
@@ -23,7 +22,7 @@ export default function Community() {
   ];
 
   const socialLinks = [
-    { platform: "LinkedIn", icon: Linkedin, url: "https://www.linkedin.com/company/112394092/admin/dashboard/", handle: "Fintech IT Solutions", active: true },
+    { platform: "", icon: url: "https://www..com/company/112394092/admin/dashboard/", handle: "Fintech IT Solutions", active: true },
     { platform: "Twitter", icon: Twitter, url: "#", handle: "Coming soon", active: false, comingSoon: true },
     { platform: "Instagram", icon: Instagram, url: "#", handle: "Coming soon", active: false, comingSoon: true },
     { platform: "GitHub", icon: Github, url: "#", handle: "Coming soon", active: false, comingSoon: true }
@@ -66,11 +65,11 @@ export default function Community() {
                 <p className="text-sm text-gray-400">Events Planned</p>
               </div>
               <div className="bg-[rgba(255,255,255,0.05)] p-4 rounded-xl">
-                <div className="text-2xl font-bold text-orange-400">✨</div>
+                <div className="text-2xl font-bold text-orange-400">âœ¨</div>
                 <p className="text-sm text-gray-400">{communityStats.newsletter}</p>
               </div>
               <div className="bg-[rgba(255,255,255,0.05)] p-4 rounded-xl">
-                <div className="text-2xl font-bold text-orange-400">🆕</div>
+                <div className="text-2xl font-bold text-orange-400">ðŸ†•</div>
                 <p className="text-sm text-gray-400">{communityStats.discord}</p>
               </div>
             </div>
@@ -118,7 +117,7 @@ export default function Community() {
               <ul className="space-y-4">
                 {communityGoals.map((goal, index) => (
                   <li key={index} className="flex items-start gap-3">
-                    <span className="text-orange-400 text-xl">•</span>
+                    <span className="text-orange-400 text-xl">â€¢</span>
                     <p className="text-gray-300">{goal}</p>
                   </li>
                 ))}

@@ -1,4 +1,4 @@
-import FadeInSection from "../components/FadeInSection";
+﻿import FadeInSection from "../components/FadeInSection";
 
 export default function CEO() {
   return (
@@ -26,7 +26,7 @@ export default function CEO() {
                 className="rounded-xl shadow-2xl w-full"
               />
               <p className="mt-4 text-sm text-gray-400">
-                Sumit Raj — Founder & CEO, Fintech IT Solutions
+                Sumit Raj â€” Founder & CEO, Fintech IT Solutions
               </p>
             </div>
           </FadeInSection>
@@ -40,7 +40,7 @@ export default function CEO() {
             <h2 className="text-4xl font-semibold mb-8 text-white">About the CEO</h2>
             <p className="text-gray-400 text-lg leading-relaxed mb-6">
               <strong>Sumit Raj</strong> is the Founder and CEO of
-              <strong> Fintech IT Solutions</strong>, where he leads the company’s
+              <strong> Fintech IT Solutions</strong>, where he leads the companyâ€™s
               vision of building innovative and reliable technology solutions
               for the financial sector.
             </p>
@@ -51,8 +51,8 @@ export default function CEO() {
               fintech landscape.
             </p>
             <p className="text-gray-400 text-lg leading-relaxed mb-6">
-              He completed his <strong>Master’s degree from Visvesvaraya National
-              Institute of Technology (VNIT), Nagpur</strong>, one of India’s
+              He completed his <strong>Masterâ€™s degree from Visvesvaraya National
+              Institute of Technology (VNIT), Nagpur</strong>, one of Indiaâ€™s
               premier engineering institutions, and earned his
               <strong> B.Tech from Dr. D. Y. Patil Institute of Technology, Pune</strong>.
             </p>
@@ -85,22 +85,17 @@ export default function CEO() {
         </div>
       </section>
 
-      {/* LINKEDIN */}
+      {/* */}
       <section className="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-24 text-center">
         <h2 className="text-4xl font-semibold mb-6">Connect with the CEO</h2>
         <p className="text-gray-200 mb-8">
-          Follow Sumit Raj on LinkedIn for insights on technology,
+          Follow Sumit Raj on for insights on technology,
           innovation, and entrepreneurship.
         </p>
-        <a
-          href="https://www.linkedin.com/in/er-sumit-raj-/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="bg-white text-blue-600 px-8 py-3 inline-block rounded-lg font-semibold hover:bg-gray-100 transition"
-        >
-          View LinkedIn Profile
-        </a>
+        
       </section>
     </main>
   );
 }
+
+

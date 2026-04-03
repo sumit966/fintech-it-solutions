@@ -1,4 +1,4 @@
-import { useParams, useNavigate } from "react-router-dom";
+﻿import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 export default function ApplyJob() {
@@ -13,7 +13,7 @@ export default function ApplyJob() {
     name: "",
     email: "",
     phone: "",
-    linkedin: "",
+    : "",
     company: "",
     experience: "",
     education: "",
@@ -42,7 +42,7 @@ export default function ApplyJob() {
       data.append("name", form.name);
       data.append("email", form.email);
       data.append("phone", form.phone);
-      data.append("linkedin", form.linkedin);
+      data.append("", form.);
       data.append("company", form.company);
       data.append("experience", form.experience);
       data.append("education", form.education);
@@ -74,7 +74,7 @@ export default function ApplyJob() {
           Apply for: {job?.title || "Loading..."}
         </h1>
         <p className="text-gray-400 mb-8">
-          Location: {job?.location || "Global"} • Department: {job?.department || "Technology"}
+          Location: {job?.location || "Global"} â€¢ Department: {job?.department || "Technology"}
         </p>
 
         {error && (
@@ -104,9 +104,9 @@ export default function ApplyJob() {
             onChange={(e) => setForm({ ...form, phone: e.target.value })}
           />
           <input
-            placeholder="LinkedIn Profile"
+            placeholder="Profile"
             className="border border-[#1F2937] bg-[rgba(255,255,255,0.05)] p-3 w-full rounded-lg text-white placeholder-gray-500"
-            onChange={(e) => setForm({ ...form, linkedin: e.target.value })}
+            onChange={(e) => setForm({ ...form, : e.target.value })}
           />
           <input
             placeholder="Current Company"
