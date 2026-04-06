@@ -25,8 +25,9 @@ import CEO from "./pages/CEO";
 import JobDetail from "./pages/JobDetail";
 
 // HR Portal Pages
-import HRDashboard from "./pages/HRDashboard";\nimport VMManager from "./pages/VMManager";
+import HRDashboard from "./pages/HRDashboard";
 import HRLogin from "./pages/HRLogin";
+import VMManager from "./pages/VMManager";
 
 // Detail Pages
 import AnnouncementDetail from "./pages/AnnouncementDetail";
@@ -89,8 +90,9 @@ export default function App() {
           <Route path="/ceo" element={<CEO />} />
 
           {/* HR PORTAL PAGES */}
-          <Route path="/hr-dashboard" element={<HRDashboard />} />\n          <Route path="/vm-manager" element={<VMManager />} />
+          <Route path="/hr-dashboard" element={<HRDashboard />} />
           <Route path="/hr-login" element={<HRLogin />} />
+          <Route path="/vm-manager" element={<VMManager />} />
 
           {/* WHO WE ARE PAGES */}
           <Route path="/aspiration" element={<OurAspiration />} />
@@ -149,5 +151,3 @@ export default function App() {
     </BrowserRouter>
   );
 }
-
-

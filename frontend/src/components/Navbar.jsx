@@ -1,4 +1,4 @@
-﻿import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { ChevronDown, Menu, X } from "lucide-react";
 
@@ -91,7 +91,7 @@ export default function Navbar() {
               className={`menu-link ${openMenu === "services" ? "active" : ""}`}
               onClick={() => toggleMenu("services")}
             >
-              What we do <span className="dropdown-arrow">▾</span>
+              What we do <span className="dropdown-arrow">?</span>
             </button>
 
             {openMenu === "services" && (
@@ -107,16 +107,16 @@ export default function Navbar() {
                     className="mega-link"
                     onClick={handleMenuItemClick}
                   >
-                    Explore services →
+                    Explore services ?
                   </Link>
                 </div>
 
                 <div className="mega-right">
-                  <Link to="/industries" onClick={handleMenuItemClick}>Industries →</Link>
-                  <Link to="/services" onClick={handleMenuItemClick}>Services →</Link>
-                  <Link to="/projects" onClick={handleMenuItemClick}>Products & Platforms →</Link>
-                  <Link to="/insights" onClick={handleMenuItemClick}>Research & Innovation →</Link>
-                  <Link to="/projects" onClick={handleMenuItemClick}>Alliances →</Link>
+                  <Link to="/industries" onClick={handleMenuItemClick}>Industries ?</Link>
+                  <Link to="/services" onClick={handleMenuItemClick}>Services ?</Link>
+                  <Link to="/projects" onClick={handleMenuItemClick}>Products & Platforms ?</Link>
+                  <Link to="/insights" onClick={handleMenuItemClick}>Research & Innovation ?</Link>
+                  <Link to="/projects" onClick={handleMenuItemClick}>Alliances ?</Link>
                 </div>
               </div>
             )}
@@ -131,7 +131,7 @@ export default function Navbar() {
               className={`menu-link ${openMenu === "about" ? "active" : ""}`}
               onClick={() => toggleMenu("about")}
             >
-              Who we are <span className="dropdown-arrow">▾</span>
+              Who we are <span className="dropdown-arrow">?</span>
             </button>
 
             {openMenu === "about" && (
@@ -147,16 +147,16 @@ export default function Navbar() {
                     className="mega-link"
                     onClick={handleMenuItemClick}
                   >
-                    Discover the difference →
+                    Discover the difference ?
                   </Link>
                 </div>
 
                 <div className="mega-right">
-                  <Link to="/aspiration" onClick={handleMenuItemClick}>Our Aspiration →</Link>
-                  <Link to="/brand" onClick={handleMenuItemClick}>Brand →</Link>
-                  <Link to="/leadership" onClick={handleMenuItemClick}>Leadership →</Link>
-                  <Link to="/community" onClick={handleMenuItemClick}>Community →</Link>
-                  <Link to="/sustainability" onClick={handleMenuItemClick}>Sustainability →</Link>
+                  <Link to="/aspiration" onClick={handleMenuItemClick}>Our Aspiration ?</Link>
+                  <Link to="/brand" onClick={handleMenuItemClick}>Brand ?</Link>
+                  <Link to="/leadership" onClick={handleMenuItemClick}>Leadership ?</Link>
+                  <Link to="/community" onClick={handleMenuItemClick}>Community ?</Link>
+                  <Link to="/sustainability" onClick={handleMenuItemClick}>Sustainability ?</Link>
                 </div>
               </div>
             )}
@@ -267,4 +267,5 @@ export default function Navbar() {
     </header>
   );
 }
+
 
