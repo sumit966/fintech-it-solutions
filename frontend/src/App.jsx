@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+﻿import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -23,6 +23,10 @@ import Insights from "./pages/Insights";
 import SearchResults from "./pages/SearchResults";
 import CEO from "./pages/CEO";
 import JobDetail from "./pages/JobDetail";
+
+// HR Portal Pages
+import HRDashboard from "./pages/HRDashboard";
+import HRLogin from "./pages/HRLogin";
 
 // Detail Pages
 import AnnouncementDetail from "./pages/AnnouncementDetail";
@@ -53,7 +57,7 @@ import EnterprisePlatforms from "./pages/services/EnterprisePlatforms";
 // Auth Pages
 import Login from "./pages/Login";
 import AdminDashboard from "./pages/AdminDashboard";
-import HRDashboard from "./pages/HRDashboard";\nimport HRLogin from "./pages/HRLogin";\nimport NotFound from "./pages/NotFound";
+import NotFound from "./pages/NotFound";
 
 // Engagement Pages
 import ProjectBasedDevelopment from "./pages/engagement/ProjectBasedDevelopment";
@@ -83,6 +87,10 @@ export default function App() {
           <Route path="/insights" element={<Insights />} />
           <Route path="/search" element={<SearchResults />} />
           <Route path="/ceo" element={<CEO />} />
+
+          {/* HR PORTAL PAGES */}
+          <Route path="/hr-dashboard" element={<HRDashboard />} />
+          <Route path="/hr-login" element={<HRLogin />} />
 
           {/* WHO WE ARE PAGES */}
           <Route path="/aspiration" element={<OurAspiration />} />
@@ -131,7 +139,7 @@ export default function App() {
           <Route path="/admin/dashboard" element={<AdminDashboard />} />
 
           {/* 404 PAGE */}
-          <Route path="/hr-dashboard" element={<HRDashboard />} />\n          <Route path="/hr-login" element={<HRLogin />} />\n          <Route path="*" element={<NotFound />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
 
         <Footer />
@@ -141,4 +149,3 @@ export default function App() {
     </BrowserRouter>
   );
 }
-
