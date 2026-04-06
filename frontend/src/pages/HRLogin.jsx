@@ -1,8 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const API_URL = 'https://fintech-it-solutions.onrender.com/api';
-
 export default function HRLogin() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -15,27 +13,15 @@ export default function HRLogin() {
     setLoading(true);
     setError('');
 
-    try {
-      const response = await fetch(`${API_URL}/auth/hr-login`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, password })
-      });
-
-      const data = await response.json();
-
-      if (response.ok) {
-        localStorage.setItem('hrToken', data.token);
-        localStorage.setItem('hrUser', JSON.stringify(data.user));
-        navigate('/hr-dashboard');
-      } else {
-        setError(data.error || 'Invalid credentials');
-      }
-    } catch (err) {
-      setError('Network error. Please try again.');
-    } finally {
-      setLoading(false);
+    // Demo login - for testing
+    if (email === 'admin@fintechitsolutions.com' && password === 'admin123') {
+      localStorage.setItem('hrToken', 'demo-token');
+      localStorage.setItem('hrUser', JSON.stringify({ name: 'Admin', role: 'founder' }));
+      navigate('/hr-dashboard');
+    } else {
+      setError('Invalid credentials. Use admin@fintechitsolutions.com / admin123');
     }
+    setLoading(false);
   };
 
   return (
@@ -43,8 +29,11 @@ export default function HRLogin() {
       <div className="max-w-md w-full mx-4">
         <div className="bg-white/10 backdrop-blur border border-white/20 rounded-2xl p-8">
           <div className="text-center mb-8">
-            <h1 className="text-3xl font-bold text-white">HR Portal</h1>
-            <p className="text-gray-400 mt-2">Secure Access Only</p>
+            <div className="w-16 h-16 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+              <span className="text-2xl">??</span>
+            </div>
+            <h1 className="text-2xl font-bold text-white">HR Portal</h1>
+            <p className="text-gray-400 text-sm mt-2">Secure Employee Management System</p>
           </div>
 
           {error && (
@@ -88,7 +77,7 @@ export default function HRLogin() {
           </form>
 
           <div className="mt-6 text-center text-xs text-gray-500">
-            <p>Authorized Personnel Only</p>
+            <p>Demo Credentials: admin@fintechitsolutions.com / admin123</p>
           </div>
         </div>
       </div>
