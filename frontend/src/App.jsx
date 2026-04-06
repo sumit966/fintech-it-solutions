@@ -1,4 +1,4 @@
-﻿import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -25,7 +25,7 @@ import CEO from "./pages/CEO";
 import JobDetail from "./pages/JobDetail";
 
 // HR Portal Pages
-import HRDashboard from "./pages/HRDashboard";
+import HRDashboard from "./pages/HRDashboard";\nimport VMManager from "./pages/VMManager";
 import HRLogin from "./pages/HRLogin";
 
 // Detail Pages
@@ -89,7 +89,7 @@ export default function App() {
           <Route path="/ceo" element={<CEO />} />
 
           {/* HR PORTAL PAGES */}
-          <Route path="/hr-dashboard" element={<HRDashboard />} />
+          <Route path="/hr-dashboard" element={<HRDashboard />} />\n          <Route path="/vm-manager" element={<VMManager />} />
           <Route path="/hr-login" element={<HRLogin />} />
 
           {/* WHO WE ARE PAGES */}
@@ -149,4 +149,5 @@ export default function App() {
     </BrowserRouter>
   );
 }
+
 
