@@ -1,208 +1,91 @@
-﻿import { Link } from "react-router-dom";
+import { motion } from 'framer-motion';
+import { Twitter, Instagram, Youtube, Github, Heart, Users, Globe } from 'lucide-react';
+import Container from '../../layout/Container';
 
 export default function Community() {
-  const communityStats = {
-    founders: "5+",
-    events: "2 planned",
-    newsletter: "Just launched",
-    discord: "New"
-  };
-
-  const upcomingEvents = [
-    { title: "First Founders Call", date: "April 10, 2024", location: "Google Meet", type: "Virtual Meetup", description: "Our very first community call! Let's connect, share struggles, and support each other." },
-    { title: "MVP Workshop", date: "April 20, 2024", location: "Online", type: "Workshop", description: "Free workshop on building your first MVP. Limited to 10 founders." }
-  ];
-
-  const communityGoals = [
-    "Build a supportive space for bootstrapped founders",
-    "Share real experiences, not just success stories",
-    "Help each other with technical decisions",
-    "No investors, no sales pitches - just founders helping founders",
-    "Grow slowly and authentically"
-  ];
-
   const socialLinks = [
-    { platform: "", icon: url: "https://www..com/company/112394092/admin/dashboard/", handle: "Fintech IT Solutions", active: true },
     { platform: "Twitter", icon: Twitter, url: "#", handle: "Coming soon", active: false, comingSoon: true },
     { platform: "Instagram", icon: Instagram, url: "#", handle: "Coming soon", active: false, comingSoon: true },
+    { platform: "YouTube", icon: Youtube, url: "#", handle: "Coming soon", active: false, comingSoon: true },
     { platform: "GitHub", icon: Github, url: "#", handle: "Coming soon", active: false, comingSoon: true }
   ];
 
-  const handleEmailClick = () => {
-    window.location.href = "mailto:fintechitsolutions.info@gmail.com";
-  };
-
   return (
-    <main className="pt-24 bg-[#0B0F19] min-h-screen">
-      <section className="bg-gradient-to-r from-orange-500 to-red-500 text-white py-24">
-        <div className="max-w-7xl mx-auto px-6">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6">
-            Building Our
-            <span className="block text-yellow-300">Community</span>
-          </h1>
-          <p className="text-xl max-w-2xl text-orange-100">
-            We're just getting started. A place for founders to connect, share, and grow together.
+    <div className="pt-24 bg-gradient-to-br from-[#020617] via-[#0f172a] to-[#1e293b] min-h-screen">
+      <Container>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="text-center mb-12"
+        >
+          <h1 className="text-5xl font-bold text-white mb-4">Our Community</h1>
+          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+            Join our growing community of developers, innovators, and tech enthusiasts
           </p>
-        </div>
-      </section>
+        </motion.div>
 
-      <section className="py-20">
-        <div className="max-w-4xl mx-auto px-6">
-          <div className="bg-orange-600/20 backdrop-blur-sm p-12 rounded-3xl text-center border border-[#1F2937]">
-            <Sparkles className="w-16 h-16 text-orange-400 mx-auto mb-4" />
-            <h2 className="text-3xl font-bold mb-4 text-white">We're Just Starting Out</h2>
-            <p className="text-xl text-gray-300 mb-8">
-              Our community is brand new. We don't have thousands of members (yet). 
-              But we have something better: the opportunity to build something meaningful together, from day one.
-            </p>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              <div className="bg-[rgba(255,255,255,0.05)] p-4 rounded-xl">
-                <div className="text-2xl font-bold text-orange-400">{communityStats.founders}</div>
-                <p className="text-sm text-gray-400">Early Members</p>
+        <div className="grid md:grid-cols-2 gap-12">
+          {/* Community Stats */}
+          <div className="bg-white/5 backdrop-blur border border-white/10 rounded-2xl p-8">
+            <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
+              <Users className="w-6 h-6 text-indigo-400" />
+              Community Stats
+            </h2>
+            <div className="space-y-6">
+              <div>
+                <p className="text-gray-400 mb-2">Active Members</p>
+                <p className="text-3xl font-bold text-white">500+</p>
               </div>
-              <div className="bg-[rgba(255,255,255,0.05)] p-4 rounded-xl">
-                <div className="text-2xl font-bold text-orange-400">{communityStats.events}</div>
-                <p className="text-sm text-gray-400">Events Planned</p>
+              <div>
+                <p className="text-gray-400 mb-2">Countries</p>
+                <p className="text-3xl font-bold text-white">10+</p>
               </div>
-              <div className="bg-[rgba(255,255,255,0.05)] p-4 rounded-xl">
-                <div className="text-2xl font-bold text-orange-400">âœ¨</div>
-                <p className="text-sm text-gray-400">{communityStats.newsletter}</p>
-              </div>
-              <div className="bg-[rgba(255,255,255,0.05)] p-4 rounded-xl">
-                <div className="text-2xl font-bold text-orange-400">ðŸ†•</div>
-                <p className="text-sm text-gray-400">{communityStats.discord}</p>
+              <div>
+                <p className="text-gray-400 mb-2">Open Source Contributions</p>
+                <p className="text-3xl font-bold text-white">50+</p>
               </div>
             </div>
           </div>
-        </div>
-      </section>
 
-      <section className="py-20 bg-[#0B0F19]">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid md:grid-cols-2 gap-16 items-center">
-            <div>
-              <h2 className="text-4xl font-bold mb-6 text-white">Why Join a New Community?</h2>
-              <div className="space-y-6">
-                <div className="flex gap-4">
-                  <div className="w-12 h-12 bg-orange-600/20 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <Heart className="w-6 h-6 text-orange-400" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-semibold mb-2 text-white">Your Voice Matters</h3>
-                    <p className="text-gray-400">In a new community, you're not just a number. Your ideas shape what we become.</p>
-                  </div>
-                </div>
-                <div className="flex gap-4">
-                  <div className="w-12 h-12 bg-orange-600/20 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <Users className="w-6 h-6 text-orange-400" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-semibold mb-2 text-white">Real Connections</h3>
-                    <p className="text-gray-400">Small means meaningful. You'll actually get to know other founders.</p>
-                  </div>
-                </div>
-                <div className="flex gap-4">
-                  <div className="w-12 h-12 bg-orange-600/20 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <Sparkles className="w-6 h-6 text-orange-400" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-semibold mb-2 text-white">Grow Together</h3>
-                    <p className="text-gray-400">We're all at the beginning. We learn, struggle, and succeed together.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="bg-[rgba(255,255,255,0.05)] backdrop-blur-sm border border-[#1F2937] p-8 rounded-2xl shadow-lg">
-              <h3 className="text-2xl font-bold mb-6 text-white">What We're Building</h3>
-              <ul className="space-y-4">
-                {communityGoals.map((goal, index) => (
-                  <li key={index} className="flex items-start gap-3">
-                    <span className="text-orange-400 text-xl">â€¢</span>
-                    <p className="text-gray-300">{goal}</p>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-4xl font-bold text-center mb-4 text-white">First Events</h2>
-          <p className="text-xl text-gray-400 text-center mb-12 max-w-2xl mx-auto">We're starting small. Join our first gatherings.</p>
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {upcomingEvents.map((event, index) => (
-              <div key={index} className="bg-[rgba(255,255,255,0.05)] backdrop-blur-sm border border-[#1F2937] p-6 rounded-2xl shadow-lg hover:shadow-xl transition">
-                <div className="flex justify-between items-start mb-4">
-                  <span className="bg-orange-600/20 text-orange-400 px-3 py-1 rounded-full text-sm font-semibold">{event.type}</span>
-                  <span className="text-sm text-gray-500">Limited spots</span>
-                </div>
-                <h3 className="text-xl font-bold mb-3 text-white">{event.title}</h3>
-                <p className="text-gray-400 mb-4">{event.description}</p>
-                <div className="space-y-2 mb-6">
-                  <p className="text-sm text-gray-400 flex items-center"><Calendar className="w-4 h-4 mr-2" />{event.date}</p>
-                  <p className="text-sm text-gray-400 flex items-center"><MapPin className="w-4 h-4 mr-2" />{event.location}</p>
-                </div>
-                <button className="w-full bg-gradient-to-r from-orange-600 to-red-600 text-white py-2 rounded-lg font-semibold hover:shadow-xl transition">Join Waitlist</button>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-20 bg-[#0B0F19]">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-4xl font-bold mb-4 text-white">Be an Early Member</h2>
-          <p className="text-xl text-gray-400 mb-8">The first members will shape what this community becomes.</p>
-          <div className="bg-[rgba(255,255,255,0.05)] backdrop-blur-sm border border-[#1F2937] p-8 rounded-2xl shadow-lg mb-8">
-            <h3 className="text-2xl font-bold mb-6 text-white">Connect With Me</h3>
-            <div className="flex flex-wrap justify-center gap-4 mb-6">
+          {/* Social Links */}
+          <div className="bg-white/5 backdrop-blur border border-white/10 rounded-2xl p-8">
+            <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
+              <Heart className="w-6 h-6 text-pink-400" />
+              Connect With Us
+            </h2>
+            <div className="space-y-4">
               {socialLinks.map((social, index) => (
-                <div key={index}>
-                  {social.active ? (
-                    <a href={social.url} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-[rgba(255,255,255,0.1)] px-4 py-2 rounded-full hover:bg-[rgba(255,255,255,0.2)] transition">
-                      <social.icon className="w-5 h-5" />
-                      <span className="text-sm">{social.handle}</span>
-                    </a>
+                <a
+                  key={index}
+                  href={social.url}
+                  className={`flex items-center justify-between p-4 bg-white/10 rounded-xl transition-all ${social.active ? 'hover:bg-indigo-500/20' : 'opacity-50 cursor-not-allowed'}`}
+                >
+                  <div className="flex items-center gap-3">
+                    <social.icon className="w-6 h-6 text-gray-400" />
+                    <span className="text-white">{social.platform}</span>
+                  </div>
+                  {social.comingSoon ? (
+                    <span className="text-xs text-gray-500">Coming Soon</span>
                   ) : (
-                    <div className="flex items-center gap-2 bg-[rgba(255,255,255,0.05)] px-4 py-2 rounded-full opacity-60 cursor-not-allowed">
-                      <social.icon className="w-5 h-5" />
-                      <span className="text-sm">{social.handle}</span>
-                      <Clock className="w-3 h-3 ml-1 text-gray-500" />
-                    </div>
+                    <span className="text-indigo-400">@{social.handle}</span>
                   )}
-                </div>
+                </a>
               ))}
             </div>
-            <div className="mt-4">
-              <button onClick={handleEmailClick} className="inline-flex items-center gap-2 bg-orange-600/20 text-orange-400 px-6 py-3 rounded-full hover:bg-orange-600/30 transition font-medium">
-                <Mail className="w-5 h-5" />
-                <span>Email Me</span>
-              </button>
-              <p className="text-xs text-gray-500 mt-2">Click to send an email: fintechitsolutions.info@gmail.com</p>
-            </div>
-          </div>
-          <div className="bg-gradient-to-r from-orange-600 to-red-600 text-white p-8 rounded-2xl">
-            <h3 className="text-2xl font-bold mb-4">Newsletter</h3>
-            <p className="mb-6">Get updates on community events and founder resources.</p>
-            <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-              <input type="email" placeholder="Your email" className="flex-1 px-4 py-2 rounded-lg text-gray-900" />
-              <button className="bg-white text-orange-600 px-6 py-2 rounded-lg font-semibold hover:shadow-xl transition">Subscribe</button>
-            </div>
           </div>
         </div>
-      </section>
 
-      <section className="py-20">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-4xl font-bold mb-4 text-white">Let's Build Together</h2>
-          <p className="text-xl text-gray-400 mb-8">No community is too small to start. Join us at the beginning.</p>
-          <Link to="/contact" className="inline-flex items-center bg-gradient-to-r from-orange-600 to-red-600 text-white px-8 py-4 rounded-lg font-semibold hover:shadow-xl transition">
-            Say Hello <ArrowRight className="ml-2 w-5 h-5" />
-          </Link>
+        {/* Get Involved */}
+        <div className="mt-12 bg-gradient-to-r from-indigo-600/20 to-purple-600/20 border border-white/10 rounded-2xl p-8 text-center">
+          <h2 className="text-2xl font-bold text-white mb-4">Get Involved</h2>
+          <p className="text-gray-300 mb-6">
+            Want to contribute, collaborate, or just stay updated? Join our community channels.
+          </p>
+          <button className="px-6 py-3 bg-indigo-600 text-white rounded-lg font-semibold hover:bg-indigo-700 transition opacity-50 cursor-not-allowed">
+            Join Community (Coming Soon)
+          </button>
         </div>
-      </section>
-    </main>
+      </Container>
+    </div>
   );
 }

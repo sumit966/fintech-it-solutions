@@ -1,4 +1,4 @@
-﻿import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -53,7 +53,7 @@ import EnterprisePlatforms from "./pages/services/EnterprisePlatforms";
 // Auth Pages
 import Login from "./pages/Login";
 import AdminDashboard from "./pages/AdminDashboard";
-import NotFound from "./pages/NotFound";
+import HRDashboard from "./pages/HRDashboard";\nimport HRLogin from "./pages/HRLogin";\nimport NotFound from "./pages/NotFound";
 
 // Engagement Pages
 import ProjectBasedDevelopment from "./pages/engagement/ProjectBasedDevelopment";
@@ -131,7 +131,7 @@ export default function App() {
           <Route path="/admin/dashboard" element={<AdminDashboard />} />
 
           {/* 404 PAGE */}
-          <Route path="*" element={<NotFound />} />
+          <Route path="/hr-dashboard" element={<HRDashboard />} />\n          <Route path="/hr-login" element={<HRLogin />} />\n          <Route path="*" element={<NotFound />} />
         </Routes>
 
         <Footer />
@@ -141,3 +141,4 @@ export default function App() {
     </BrowserRouter>
   );
 }
+
