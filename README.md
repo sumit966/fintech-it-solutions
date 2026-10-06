@@ -1,19 +1,82 @@
-# 🚀 Fintech IT Solutions - Enterprise Website
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- 🚀 Fintech IT Solutions — Clean Enterprise README -->
+<!-- No typing-SVG · No AI scenes · Pure premium layout -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
 
 <div align="center">
 
-![Fintech IT Solutions](https://img.shields.io/badge/Fintech-IT%20Solutions-6366f1?style=for-the-badge)
-![React](https://img.shields.io/badge/React-18.3-61DAFB?style=for-the-badge&logo=react)
-![Node.js](https://img.shields.io/badge/Node.js-20.x-339933?style=for-the-badge&logo=nodedotjs)
-![MongoDB](https://img.shields.io/badge/MongoDB-Atlas-47A248?style=for-the-badge&logo=mongodb)
-![Vercel](https://img.shields.io/badge/Vercel-Deployed-000000?style=for-the-badge&logo=vercel)
-![Render](https://img.shields.io/badge/Render-Backend-46E3B7?style=for-the-badge&logo=render)
+<br/>
 
-**Building the Future, One Project at a Time**
+# 🚀 FINTECH IT SOLUTIONS
 
-A modern, full-stack enterprise website for Fintech IT Solutions — a bootstrapped startup building custom software solutions for early-stage companies.
+### Building the Future, One Project at a Time
 
-[Live Demo](https://fintech-live-app.vercel.app) · [Report Bug](https://github.com/sumit966/fintech-it-solutions/issues) · [Request Feature](https://github.com/sumit966/fintech-it-solutions/issues)
+**Bootstrapped Startup · Custom Software Solutions · Enterprise-Grade**
+
+<br/>
+
+<p>
+  <a href="https://fintech-live-app.vercel.app">
+    <img src="https://img.shields.io/badge/🌐_LIVE_DEMO-Visit_Site-6366f1?style=for-the-badge&labelColor=0d1117" />
+  </a>
+  <a href="https://github.com/sumit966/fintech-it-solutions/issues">
+    <img src="https://img.shields.io/badge/🐛_Report_Bug-Issues-D14836?style=for-the-badge&labelColor=0d1117" />
+  </a>
+  <a href="https://github.com/sumit966/fintech-it-solutions/issues">
+    <img src="https://img.shields.io/badge/✨_Request_Feature-Ideas-10b981?style=for-the-badge&labelColor=0d1117" />
+  </a>
+</p>
+
+<br/>
+
+<img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" width="100%" />
+
+<br/>
+
+</div>
+
+---
+
+## 📊 Live Stats
+
+<div align="center">
+
+| 👥 Employees | 🚀 Projects | 💼 Openings | ⚡ Uptime | 📈 Views |
+|:---:|:---:|:---:|:---:|:---:|
+| **30** | **6** | **12** | **99.98%** | **15K+** |
+
+</div>
+
+---
+
+## 🛠 Tech Stack
+
+<div align="center">
+
+**Frontend**
+
+<img src="https://img.shields.io/badge/React-18.3-61DAFB?style=for-the-badge&logo=react&logoColor=black" />
+<img src="https://img.shields.io/badge/Vite-6.4-646CFF?style=for-the-badge&logo=vite&logoColor=white" />
+<img src="https://img.shields.io/badge/Tailwind-3.4-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white" />
+<img src="https://img.shields.io/badge/Framer_Motion-0055FF?style=for-the-badge&logo=framer&logoColor=white" />
+
+<br/><br/>
+
+**Backend**
+
+<img src="https://img.shields.io/badge/Node.js-20.x-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" />
+<img src="https://img.shields.io/badge/Express-4.19-000000?style=for-the-badge&logo=express&logoColor=white" />
+<img src="https://img.shields.io/badge/MongoDB-Atlas-47A248?style=for-the-badge&logo=mongodb&logoColor=white" />
+<img src="https://img.shields.io/badge/JWT-Auth-000000?style=for-the-badge&logo=jsonwebtokens&logoColor=white" />
+
+<br/><br/>
+
+**Deployment**
+
+<img src="https://img.shields.io/badge/Vercel-Frontend-000000?style=for-the-badge&logo=vercel&logoColor=white" />
+<img src="https://img.shields.io/badge/Render-Backend-46E3B7?style=for-the-badge&logo=render&logoColor=white" />
+<img src="https://img.shields.io/badge/Gmail-SMTP-D14836?style=for-the-badge&logo=gmail&logoColor=white" />
+<img src="https://img.shields.io/badge/License-MIT-f59e0b?style=for-the-badge&logo=opensourceinitiative&logoColor=white" />
 
 </div>
 
@@ -21,86 +84,163 @@ A modern, full-stack enterprise website for Fintech IT Solutions — a bootstrap
 
 ## 📋 Table of Contents
 
-1. [About the Project](#-about-the-project)
-2. [Features](#-features)
-3. [Tech Stack](#-tech-stack)
-4. [Requirements](#-requirements)
-5. [Installation](#-installation)
-6. [Configuration](#-configuration)
-7. [Usage](#-usage)
-8. [Results](#-results)
-9. [Architecture](#-architecture)
-10. [Project Structure](#-project-structure)
-11. [API Endpoints](#-api-endpoints)
-12. [Datasets](#-datasets)
-13. [Deployment](#-deployment)
-14. [Screenshots](#-screenshots)
-15. [Roadmap](#-roadmap)
-16. [Contributing](#-contributing)
-17. [Author](#-author)
-18. [License](#-license)
-19. [Acknowledgments](#-acknowledgments)
-20. [Contact](#-contact)
+<div align="center">
+
+| 🎯 | 🎯 | 🎯 |
+|:---:|:---:|:---:|
+| [About](#-about-the-project) | [Features](#-features) | [Tech Stack](#-tech-stack) |
+| [Requirements](#-requirements) | [Installation](#-installation) | [Configuration](#️-configuration) |
+| [Usage](#-usage) | [Results](#-results) | [Architecture](#-architecture) |
+| [Structure](#-project-structure) | [API](#-api-endpoints) | [Datasets](#-datasets) |
+| [Deployment](#-deployment) | [Roadmap](#-roadmap) | [Author](#-author) |
+| [License](#-license) | [Contact](#-contact) | [Acknowledgments](#-acknowledgments) |
+
+</div>
 
 ---
 
 ## 🎯 About the Project
 
-Fintech IT Solutions is a **fresh, bootstrapped startup** that builds custom software solutions for early-stage companies. This repository contains the complete source code for our enterprise website, including:
+**Fintech IT Solutions** is a **fresh, bootstrapped startup** that builds **custom software solutions** for early-stage companies.
 
-- **Marketing Website** — Company information, services, industries served
-- **Careers Portal** — Job listings and application system
-- **Contact System** — Inquiry form with email notifications
-- **Blog & Insights** — Company news and technical articles
-- **Admin Dashboard** — Content management (in development)
+This repository contains the complete source code for our **enterprise website**, including:
 
-### Why We Built This
+<table>
+<tr>
+<td width="25%" align="center">
+
+### 🌐 Marketing
+
+<img src="https://img.shields.io/badge/Website-6366f1?style=for-the-badge" />
+
+Company info, services, industries
+
+</td>
+<td width="25%" align="center">
+
+### 💼 Careers
+
+<img src="https://img.shields.io/badge/Portal-9333ea?style=for-the-badge" />
+
+12+ jobs, applications
+
+</td>
+<td width="25%" align="center">
+
+### 📞 Contact
+
+<img src="https://img.shields.io/badge/System-10b981?style=for-the-badge" />
+
+Inquiry + email alerts
+
+</td>
+<td width="25%" align="center">
+
+### 📰 Blog
+
+<img src="https://img.shields.io/badge/Insights-f59e0b?style=for-the-badge" />
+
+News + tech articles
+
+</td>
+</tr>
+</table>
+
+### 💡 Why We Built This
 
 We needed a platform that:
-- Showcases our services and capabilities
-- Attracts top talent through our careers portal
-- Enables seamless client communication
-- Runs entirely on free-tier infrastructure (since we're bootstrapped!)
+
+- 🎨 **Showcases our services** and capabilities
+- 👥 **Attracts top talent** through our careers portal
+- 💬 **Enables seamless client communication**
+- 🆓 **Runs entirely on free-tier infrastructure** (since we're bootstrapped!)
 
 ---
 
 ## ✨ Features
 
 ### 🌐 Public Website
-- ✅ **Modern Landing Page** with hero slider and animations
-- ✅ **Services Showcase** — 6 core services with detailed pages
+
+<table>
+<tr>
+<td width="50%" valign="top">
+
+- ✅ **Modern Landing Page** with hero slider
+- ✅ **Services Showcase** — 6 core services
 - ✅ **Industries Section** — Fintech, Healthcare, E-commerce, Cybersecurity
-- ✅ **Projects Portfolio** — Case studies and completed work
-- ✅ **CEO Page** — Founder's message and vision
-- ✅ **Leadership Team** — Meet the team behind the company
-- ✅ **Newsroom & Insights** — Blog posts and research articles
-- ✅ **Contact Form** — Direct inquiry system with email notifications
+- ✅ **Projects Portfolio** — Case studies
+- ✅ **CEO Page** — Founder's message
+
+</td>
+<td width="50%" valign="top">
+
+- ✅ **Leadership Team** — Meet the team
+- ✅ **Newsroom & Insights** — Blog posts
+- ✅ **Contact Form** — Direct inquiry system
+- ✅ **Dark Theme** — Modern glass morphism UI
+- ✅ **SEO Optimized** — Meta tags + semantic HTML
+
+</td>
+</tr>
+</table>
 
 ### 💼 Careers Portal
+
+<table>
+<tr>
+<td width="50%" valign="top">
+
 - ✅ **12+ Job Listings** across 6 departments
-- ✅ **Advanced Search** — Filter by department, location, type
-- ✅ **Detailed Job Pages** — Full descriptions, requirements, benefits
+- ✅ **Advanced Search** — Filter by dept, location, type
+- ✅ **Detailed Job Pages** — Full descriptions
+
+</td>
+<td width="50%" valign="top">
+
 - ✅ **Application System** — Resume upload with PDF validation
-- ✅ **Automated Emails** — Confirmation to applicants + HR notification
-- ✅ **Fresher Friendly** — Internship opportunities for newcomers
+- ✅ **Automated Emails** — Confirmation + HR notification
+- ✅ **Fresher Friendly** — Internship opportunities
+
+</td>
+</tr>
+</table>
 
 ### 🔧 Technical Features
-- ✅ **Fully Responsive** — Mobile-first design
-- ✅ **Dark Theme** — Modern glass morphism UI
-- ✅ **SEO Optimized** — Meta tags and semantic HTML
-- ✅ **Fast Loading** — Optimized bundle and lazy loading
-- ✅ **Smooth Animations** — Framer Motion transitions
-- ✅ **Email Integration** — Nodemailer with Gmail SMTP
-- ✅ **File Upload** — Multer for resume handling
-- ✅ **Form Validation** — Client and server-side validation
+
+<table>
+<tr>
+<td width="33%" valign="top">
+
+- ✅ **Fully Responsive** — Mobile-first
+- ✅ **Dark Theme** — Glass morphism
+- ✅ **SEO Optimized** — Semantic HTML
+
+</td>
+<td width="33%" valign="top">
+
+- ✅ **Fast Loading** — Bundle optimization
+- ✅ **Smooth Animations** — Framer Motion
+- ✅ **Email Integration** — Nodemailer + Gmail
+
+</td>
+<td width="33%" valign="top">
+
+- ✅ **File Upload** — Multer for resumes
+- ✅ **Form Validation** — Client + server
+- ✅ **JWT Auth** — Secure tokens
+
+</td>
+</tr>
+</table>
 
 ---
 
-## 🛠 Tech Stack
+## 🛠 Tech Stack (Detailed)
 
-### Frontend
+### 🎨 Frontend
+
 | Technology | Version | Purpose |
-|------------|---------|---------|
+|------------|:-------:|---------|
 | React | 18.3 | UI Library |
 | Vite | 6.4 | Build Tool |
 | React Router | 7 | Client-side Routing |
@@ -109,9 +249,10 @@ We needed a platform that:
 | Lucide React | 0.479 | Icon Library |
 | Axios | 1.8 | HTTP Client |
 
-### Backend
+### ⚙️ Backend
+
 | Technology | Version | Purpose |
-|------------|---------|---------|
+|------------|:-------:|---------|
 | Node.js | 20.x | Runtime |
 | Express.js | 4.19 | Web Framework |
 | MongoDB Atlas | 8.5 | Database |
@@ -121,7 +262,8 @@ We needed a platform that:
 | JWT | 9.0.2 | Authentication |
 | bcryptjs | 2.4.3 | Password Hashing |
 
-### DevOps
+### 🚀 DevOps
+
 | Technology | Purpose |
 |------------|---------|
 | Vercel | Frontend Hosting |
@@ -134,58 +276,48 @@ We needed a platform that:
 
 ## 📦 Requirements
 
-### System Requirements
+### 💻 System Requirements
 
 | Requirement | Minimum | Recommended |
 |-------------|---------|-------------|
-| **Node.js** | v18.0.0 | v20.x LTS |
-| **npm** | v9.0.0 | v10.x |
-| **RAM** | 4 GB | 8 GB |
-| **Storage** | 500 MB | 2 GB |
-| **OS** | Windows 10 / macOS 11 / Ubuntu 20.04 | Latest versions |
-| **Browser** | Chrome 90+ / Firefox 88+ / Safari 14+ | Latest |
+| Node.js | v18.0.0 | v20.x LTS |
+| npm | v9.0.0 | v10.x |
+| RAM | 4 GB | 8 GB |
+| Storage | 500 MB | 2 GB |
+| OS | Win 10 / macOS 11 / Ubuntu 20.04 | Latest |
+| Browser | Chrome 90+ / Firefox 88+ | Latest |
 
-### Software Prerequisites
+### 🔧 Software Prerequisites
 
-- ✅ **Node.js** (v18 or higher) — [Download](https://nodejs.org/)
+- ✅ **Node.js** (v18+) — [Download](https://nodejs.org/)
 - ✅ **npm** or **yarn** — Comes with Node.js
 - ✅ **Git** — [Download](https://git-scm.com/)
-- ✅ **MongoDB** (local) or MongoDB Atlas account — [Sign up free](https://www.mongodb.com/atlas)
-- ✅ **Gmail Account** with App Password — [Create one](https://myaccount.google.com/apppasswords)
-- ✅ **Code Editor** — VS Code recommended — [Download](https://code.visualstudio.com/)
+- ✅ **MongoDB** (local) or Atlas — [Sign up free](https://www.mongodb.com/atlas)
+- ✅ **Gmail** with App Password — [Create one](https://myaccount.google.com/apppasswords)
+- ✅ **VS Code** — [Download](https://code.visualstudio.com/)
 
-### Account Requirements
+### 📋 Account Requirements
 
 | Service | Purpose | Cost |
-|---------|---------|------|
-| GitHub | Version Control | Free |
-| Vercel | Frontend Hosting | Free |
-| Render | Backend Hosting | Free |
-| MongoDB Atlas | Database | Free (512 MB) |
-| Gmail | Email Service | Free |
-
-### Browser Support
-
-| Browser | Version |
-|---------|---------|
-| Chrome | 90+ |
-| Firefox | 88+ |
-| Safari | 14+ |
-| Edge | 90+ |
-| Opera | 76+ |
+|---------|---------|:----:|
+| GitHub | Version Control | 🆓 Free |
+| Vercel | Frontend Hosting | 🆓 Free |
+| Render | Backend Hosting | 🆓 Free |
+| MongoDB Atlas | Database | 🆓 Free (512 MB) |
+| Gmail | Email Service | 🆓 Free |
 
 ---
 
 ## 🚀 Installation
 
-### Step 1: Clone the Repository
+### 1️⃣ Clone the Repository
 
 ```bash
 git clone https://github.com/sumit966/fintech-it-solutions.git
 cd fintech-it-solutions
 ```
 
-### Step 2: Install Backend Dependencies
+### 2️⃣ Install Backend Dependencies
 
 ```bash
 cd backend
@@ -193,12 +325,13 @@ npm install
 ```
 
 **Expected output:**
+
 ```
 added 168 packages, and audited 169 packages in 2m
 found 0 vulnerabilities
 ```
 
-### Step 3: Install Frontend Dependencies
+### 3️⃣ Install Frontend Dependencies
 
 ```bash
 cd ../frontend
@@ -206,97 +339,71 @@ npm install
 ```
 
 **Expected output:**
+
 ```
 added 172 packages, and audited 173 packages in 2m
 found 0 vulnerabilities
 ```
 
-### Step 4: Verify Installation
+### 4️⃣ Verify Installation
 
 ```bash
-# Check Node version
-node --version
-# Should output: v20.x.x or higher
-
-# Check npm version
-npm --version
-# Should output: v10.x.x or higher
-
-# Check Git
+node --version    # Should output: v20.x.x or higher
+npm --version     # Should output: v10.x.x or higher
 git --version
 ```
 
-### Troubleshooting Installation
+### 🐛 Troubleshooting
 
 | Issue | Solution |
 |-------|----------|
-| `npm install` fails | Delete `node_modules` and `package-lock.json`, then run `npm install` again |
-| Permission errors | Run terminal as Administrator (Windows) or use `sudo` (Mac/Linux) |
-| Slow installation | Use `npm install --prefer-offline` or check your internet |
-| Node version mismatch | Install Node.js v20 LTS from official website |
+| `npm install` fails | Delete `node_modules` and `package-lock.json`, retry |
+| Permission errors | Run terminal as Administrator |
+| Slow installation | Use `npm install --prefer-offline` |
+| Node version mismatch | Install Node.js v20 LTS |
 
 ---
 
 ## ⚙️ Configuration
 
-### Backend Configuration
+### 🔐 Backend `.env`
 
 Create file `backend/.env`:
 
 ```env
-# ============================================
-# SERVER CONFIGURATION
-# ============================================
+# ═══════ SERVER ═══════
 PORT=5002
 NODE_ENV=development
 
-# ============================================
-# DATABASE CONFIGURATION
-# ============================================
-# Get from MongoDB Atlas: https://cloud.mongodb.com
+# ═══════ DATABASE ═══════
 MONGO_URI=mongodb+srv://username:password@cluster.mongodb.net/fintech
 
-# ============================================
-# AUTHENTICATION
-# ============================================
-# Generate a strong secret: openssl rand -base64 32
+# ═══════ AUTH ═══════
 JWT_SECRET=your-super-secret-jwt-key-change-this
 JWT_EXPIRE=7d
 
-# ============================================
-# EMAIL CONFIGURATION (Gmail SMTP)
-# ============================================
-# Create App Password: https://myaccount.google.com/apppasswords
+# ═══════ EMAIL (Gmail SMTP) ═══════
 MAIL_HOST=smtp.gmail.com
 MAIL_PORT=587
 MAIL_USER=fintechitsolutions.info@gmail.com
 MAIL_PASS=xxxx xxxx xxxx xxxx
 
-# ============================================
-# OPTIONAL: AI INTEGRATION
-# ============================================
+# ═══════ OPTIONAL: AI ═══════
 OPENAI_API_KEY=sk-proj-your-openai-key-here
 ```
 
-### Frontend Configuration
+### 🎨 Frontend `.env`
 
 Create file `frontend/.env`:
 
 ```env
-# ============================================
-# API CONFIGURATION
-# ============================================
-# Development (local)
 VITE_API_URL=http://localhost:5002/api
-
-# Production (Vercel)
-# VITE_API_URL=https://fintech-it-solutions.onrender.com/api
 ```
 
-### Environment Variables Reference
+### 📖 Environment Variables Reference
 
 | Variable | Required | Default | Description |
-|----------|----------|---------|-------------|
+|----------|:--------:|:-------:|-------------|
 | `PORT` | ✅ | 5002 | Server port |
 | `NODE_ENV` | ✅ | development | Environment mode |
 | `MONGO_URI` | ✅ | — | MongoDB connection string |
@@ -306,17 +413,17 @@ VITE_API_URL=http://localhost:5002/api
 | `OPENAI_API_KEY` | ❌ | — | For AI chat feature |
 | `VITE_API_URL` | ✅ | — | Backend API endpoint |
 
-### Getting Gmail App Password
+### 📧 Getting Gmail App Password
 
 1. Go to [Google Account Security](https://myaccount.google.com/security)
 2. Enable **2-Step Verification** (required)
 3. Go to [App Passwords](https://myaccount.google.com/apppasswords)
 4. Select **App**: Mail, **Device**: Other
-5. Name it "Fintech Backend"
+5. Name it **"Fintech Backend"**
 6. Copy the 16-character password
 7. Paste into `MAIL_PASS` (no spaces)
 
-### Getting MongoDB Connection String
+### 🍃 Getting MongoDB Connection String
 
 1. Log in to [MongoDB Atlas](https://cloud.mongodb.com)
 2. Create a free cluster
@@ -331,9 +438,9 @@ VITE_API_URL=http://localhost:5002/api
 
 ## 💻 Usage
 
-### Starting Development Servers
+### ▶️ Starting Development Servers
 
-**Terminal 1 — Backend Server:**
+**Terminal 1 — Backend:**
 
 ```bash
 cd backend
@@ -341,6 +448,7 @@ npm run dev
 ```
 
 **Expected output:**
+
 ```
 [nodemon] 3.1.11
 [nodemon] starting `node server.js`
@@ -348,7 +456,7 @@ npm run dev
 ✅ MongoDB Connected
 ```
 
-**Terminal 2 — Frontend Server:**
+**Terminal 2 — Frontend:**
 
 ```bash
 cd frontend
@@ -356,13 +464,13 @@ npm run dev
 ```
 
 **Expected output:**
+
 ```
 VITE v6.4.1  ready in 1200 ms
 ➜  Local:   http://localhost:5173/
-➜  Network: use --host to expose
 ```
 
-### Accessing the Application
+### 🌐 Accessing the Application
 
 | Service | URL |
 |---------|-----|
@@ -370,68 +478,50 @@ VITE v6.4.1  ready in 1200 ms
 | 🔌 Backend API | http://localhost:5002/api |
 | 💚 Health Check | http://localhost:5002/api/health |
 
-### Common Commands
+### 📋 Common Commands
 
 **Backend:**
+
 ```bash
-npm run dev       # Start with hot reload
-npm start         # Start production server
-node seed/jobsSeed.js   # Seed database with sample jobs
+npm run dev              # Start with hot reload
+npm start                # Production server
+node seed/jobsSeed.js    # Seed database
 ```
 
 **Frontend:**
+
 ```bash
-npm run dev       # Start dev server
-npm run build     # Build for production
-npm run preview   # Preview production build
+npm run dev       # Dev server
+npm run build     # Production build
+npm run preview   # Preview build
 npm run lint      # Run ESLint
 ```
 
-### Usage Examples
+### 🎯 Usage Examples
 
 **1. Browse Jobs:**
+
 ```
 1. Open http://localhost:5173/careers
 2. Use search and filters
-3. Click any job card to view details
+3. Click any job card for details
 ```
 
 **2. Apply for a Job:**
+
 ```
 1. Navigate to any job detail page
 2. Click "Apply Now"
-3. Fill the form with:
-   - Full Name
-   - Email
-   - Phone
-   - Experience
-   - Resume (PDF, max 5MB)
-4. Submit → Receive confirmation email
+3. Fill the form (Name, Email, Phone, Experience)
+4. Upload Resume (PDF, max 5MB)
+5. Submit → Receive confirmation email
 ```
 
-**3. Submit Contact Form:**
-```
-1. Go to http://localhost:5173/contact
-2. Fill the form:
-   - Name
-   - Email
-   - Message
-3. Click Send → Message sent to HR email
-```
-
-**4. Test API Endpoints:**
+**3. Test API:**
 
 ```bash
-# Health check
 curl http://localhost:5002/api/health
-
-# Get all jobs
 curl http://localhost:5002/api/careers/jobs
-
-# Get specific job
-curl http://localhost:5002/api/careers/jobs/1
-
-# Submit contact form
 curl -X POST http://localhost:5002/api/contact \
   -H "Content-Type: application/json" \
   -d '{"name":"John","email":"john@example.com","message":"Hello"}'
@@ -441,30 +531,30 @@ curl -X POST http://localhost:5002/api/contact \
 
 ## 📊 Results
 
-### Performance Metrics
+### ⚡ Performance Metrics
 
 | Metric | Value | Status |
-|--------|-------|--------|
-| **Lighthouse Performance** | 92/100 | 🟢 Excellent |
-| **Lighthouse Accessibility** | 95/100 | 🟢 Excellent |
-| **Lighthouse Best Practices** | 100/100 | 🟢 Perfect |
-| **Lighthouse SEO** | 95/100 | 🟢 Excellent |
-| **First Contentful Paint** | 1.2s | 🟢 Fast |
-| **Time to Interactive** | 2.1s | 🟢 Fast |
-| **Bundle Size (gzip)** | 205 KB | 🟢 Optimized |
+|--------|:-----:|:------:|
+| 🚀 Lighthouse Performance | 92/100 | 🟢 Excellent |
+| ♿ Lighthouse Accessibility | 95/100 | 🟢 Excellent |
+| ✅ Lighthouse Best Practices | 100/100 | 🟢 Perfect |
+| 🔍 Lighthouse SEO | 95/100 | 🟢 Excellent |
+| 🎨 First Contentful Paint | 1.2s | 🟢 Fast |
+| ⚡ Time to Interactive | 2.1s | 🟢 Fast |
+| 📦 Bundle Size (gzip) | 205 KB | 🟢 Optimized |
 
-### Deployment Statistics
+### 📈 Deployment Statistics
 
 | Metric | Value |
-|--------|-------|
-| **Total Employees** | 30 |
-| **Active Projects** | 6 |
-| **Job Listings** | 12 |
-| **API Response Time** | < 500ms |
-| **Uptime (30 days)** | 99.98% |
-| **Email Delivery Rate** | 100% |
+|--------|:-----:|
+| 👥 Total Employees | 30 |
+| 🚀 Active Projects | 6 |
+| 💼 Job Listings | 12 |
+| ⚡ API Response Time | < 500ms |
+| 📊 Uptime (30 days) | 99.98% |
+| 📧 Email Delivery Rate | 100% |
 
-### Business Impact
+### 📊 Business Impact
 
 - ✅ **Client Inquiries:** 45% increase after launch
 - ✅ **Job Applications:** 120+ applications received
@@ -472,74 +562,53 @@ curl -X POST http://localhost:5002/api/contact \
 - ✅ **Mobile Traffic:** 65% of visitors
 - ✅ **Average Session:** 3.5 minutes
 
-### Test Coverage
-
-| Test Type | Coverage |
-|-----------|----------|
-| Unit Tests | 75% |
-| Integration Tests | 60% |
-| E2E Tests | 40% |
-| API Tests | 85% |
-
 ---
 
 ## 🏗 Architecture
 
+```mermaid
+flowchart TD
+    A[🌐 User Browser] -->|HTTPS| B[▲ Vercel CDN]
+    B -->|API Calls| C[🎨 Render Backend]
+    C --> D[(🍃 MongoDB Atlas)]
+    C --> E[📧 Gmail SMTP]
+    C --> F[🔐 JWT Auth]
+    C --> G[📁 File Upload]
+    
+    style A fill:#6366f1,stroke:#fff,color:#fff
+    style B fill:#000000,stroke:#fff,color:#fff
+    style C fill:#46E3B7,stroke:#fff,color:#000
+    style D fill:#47A248,stroke:#fff,color:#fff
+```
+
+### 📐 ASCII Fallback
+
 ```
 ┌─────────────────────────────────────────────────────────────┐
 │                     CLIENT (Browser)                        │
-│                                                             │
 │  React + Vite + Tailwind CSS + Framer Motion              │
-│                                                             │
 └──────────────────────┬──────────────────────────────────────┘
-                       │
                        │ HTTPS
                        ▼
 ┌─────────────────────────────────────────────────────────────┐
-│                   VERCEL (Frontend Hosting)                 │
-│                                                             │
-│  • Static Site Generation                                   │
-│  • Global CDN                                               │
-│  • Automatic HTTPS                                          │
-│                                                             │
+│                VERCEL (Frontend Hosting)                    │
+│  • Static Site Generation  • Global CDN  • Auto HTTPS     │
 └──────────────────────┬──────────────────────────────────────┘
-                       │
                        │ API Calls
                        ▼
 ┌─────────────────────────────────────────────────────────────┐
-│                    RENDER (Backend API)                     │
-│                                                             │
-│  ┌─────────────────────────────────────────────────────┐   │
-│  │              Express.js Server                       │   │
-│  │                                                       │   │
-│  │  Routes:                                             │   │
-│  │  • /api/careers/jobs       - Job listings            │   │
-│  │  • /api/careers/apply      - Job applications        │   │
-│  │  • /api/contact            - Contact form            │   │
-│  │  • /api/health             - Health check            │   │
-│  └─────────────────────────────────────────────────────┘   │
-│                                                             │
+│                 RENDER (Backend API)                        │
+│  Express.js — Routes: /api/careers/jobs, /api/contact     │
 └──────┬───────────────────────┬──────────────────────────────┘
-       │                       │
        │                       │
        ▼                       ▼
 ┌─────────────────┐   ┌─────────────────────┐
 │  MongoDB Atlas  │   │   Gmail SMTP        │
-│                 │   │                     │
 │  • Jobs         │   │  • Contact emails   │
 │  • Applications │   │  • Job confirmations│
 │  • Users        │   │  • HR notifications │
 └─────────────────┘   └─────────────────────┘
 ```
-
-### Data Flow
-
-1. **User** → Visits website (Vercel CDN)
-2. **Frontend** → Fetches data from backend API
-3. **Backend** → Queries MongoDB for data
-4. **MongoDB** → Returns data to backend
-5. **Backend** → Sends email via Gmail SMTP
-6. **Frontend** → Renders data for user
 
 ---
 
@@ -548,101 +617,72 @@ curl -X POST http://localhost:5002/api/contact \
 ```
 fintech-it-solutions/
 │
-├── backend/
-│   ├── models/
-│   │   ├── Job.js                 # Job schema
-│   │   ├── JobApplication.js      # Application schema
-│   │   ├── User.js                # User schema
-│   │   └── Employee.js            # Employee schema
-│   │
-│   ├── routes/
-│   │   ├── careers.routes.js      # Job routes
-│   │   ├── auth.routes.js         # Auth routes
-│   │   ├── admin.routes.js        # Admin routes
-│   │   └── chat.js                # AI chat route
-│   │
-│   ├── controllers/
-│   │   └── ...                    # Route controllers
-│   │
-│   ├── middleware/
-│   │   └── auth.js                # JWT middleware
-│   │
-│   ├── utils/
-│   │   └── email.js               # Email utilities
-│   │
-│   ├── seed/
-│   │   └── jobsSeed.js            # Database seeding
-│   │
-│   ├── uploads/                   # Uploaded resumes
-│   ├── .env                       # Environment variables
-│   ├── package.json
-│   └── server.js                  # Entry point
+├── ⚙️ backend/
+│   ├── 📋 models/
+│   │   ├── Job.js
+│   │   ├── JobApplication.js
+│   │   ├── User.js
+│   │   └── Employee.js
+│   ├── 🛣️ routes/
+│   │   ├── careers.routes.js
+│   │   ├── auth.routes.js
+│   │   ├── admin.routes.js
+│   │   └── chat.js
+│   ├── 🎮 controllers/
+│   ├── 🔐 middleware/auth.js
+│   ├── 🛠️ utils/email.js
+│   ├── 🌱 seed/jobsSeed.js
+│   ├── 📁 uploads/
+│   ├── 🔐 .env
+│   ├── 📋 package.json
+│   └── 🚀 server.js
 │
-├── frontend/
-│   ├── public/
-│   │   └── _redirects             # Vercel routing
-│   │
-│   ├── src/
-│   │   ├── assets/                # Images, fonts
-│   │   ├── components/            # Reusable components
-│   │   │   ├── Navbar.jsx
-│   │   │   ├── Footer.jsx
-│   │   │   ├── StatsSection.jsx
-│   │   │   └── ...
-│   │   │
-│   │   ├── layout/
-│   │   │   └── Container.jsx
-│   │   │
-│   │   ├── pages/
-│   │   │   ├── Home.jsx
-│   │   │   ├── About.jsx
-│   │   │   ├── Services.jsx
-│   │   │   ├── Careers.jsx
-│   │   │   ├── JobDetail.jsx
-│   │   │   ├── Contact.jsx
-│   │   │   ├── CEO.jsx
-│   │   │   └── ...
-│   │   │
-│   │   ├── services/
-│   │   │   └── jobService.js
-│   │   │
-│   │   ├── App.jsx                # Main app
-│   │   ├── main.jsx               # Entry point
-│   │   └── index.css              # Global styles
-│   │
-│   ├── .env
-│   ├── package.json
-│   ├── tailwind.config.js
-│   └── vite.config.js
+├── 🎨 frontend/
+│   ├── 📁 public/_redirects
+│   ├── 📦 src/
+│   │   ├── 🎨 assets/
+│   │   ├── 🧩 components/
+│   │   ├── 📐 layout/Container.jsx
+│   │   ├── 📄 pages/
+│   │   ├── 🔌 services/jobService.js
+│   │   ├── 🚀 App.jsx
+│   │   ├── 🚀 main.jsx
+│   │   └── 🎨 index.css
+│   ├── 🔐 .env
+│   ├── 📋 package.json
+│   ├── 🎨 tailwind.config.js
+│   └── ⚡ vite.config.js
 │
-├── .gitignore
-├── README.md
-└── LICENSE
+├── 🚫 .gitignore
+├── 📖 README.md
+└── 📜 LICENSE
 ```
 
 ---
 
 ## 🔌 API Endpoints
 
-### Public Endpoints
+### 🌐 Public Endpoints
 
 | Method | Endpoint | Description |
-|--------|----------|-------------|
-| `GET` | `/api/health` | Health check |
-| `GET` | `/api/careers/jobs` | Get all jobs |
-| `GET` | `/api/careers/jobs/:id` | Get job by ID |
-| `GET` | `/api/careers/jobs/service/:category` | Get jobs by service |
-| `POST` | `/api/contact` | Submit contact form |
-| `POST` | `/api/careers/apply` | Submit job application |
+|:------:|----------|-------------|
+| 🟢 `GET` | `/api/health` | Health check |
+| 🟢 `GET` | `/api/careers/jobs` | Get all jobs |
+| 🟢 `GET` | `/api/careers/jobs/:id` | Get job by ID |
+| 🟢 `GET` | `/api/careers/jobs/service/:category` | Jobs by service |
+| 🔵 `POST` | `/api/contact` | Submit contact form |
+| 🔵 `POST` | `/api/careers/apply` | Submit job application |
 
-### Request Examples
+### 📥 Request Examples
 
 **Get All Jobs:**
+
 ```bash
 curl https://fintech-it-solutions.onrender.com/api/careers/jobs
 ```
 
 **Submit Contact Form:**
+
 ```bash
 curl -X POST https://fintech-it-solutions.onrender.com/api/contact \
   -H "Content-Type: application/json" \
@@ -650,6 +690,7 @@ curl -X POST https://fintech-it-solutions.onrender.com/api/contact \
 ```
 
 **Apply for Job:**
+
 ```bash
 curl -X POST https://fintech-it-solutions.onrender.com/api/careers/apply \
   -F "name=John Doe" \
@@ -660,9 +701,10 @@ curl -X POST https://fintech-it-solutions.onrender.com/api/careers/apply \
   -F "resume=@resume.pdf"
 ```
 
-### Response Formats
+### 📤 Response Formats
 
-**Success Response:**
+**Success:**
+
 ```json
 {
   "success": true,
@@ -671,7 +713,8 @@ curl -X POST https://fintech-it-solutions.onrender.com/api/careers/apply \
 }
 ```
 
-**Error Response:**
+**Error:**
+
 ```json
 {
   "error": "Invalid email format",
@@ -683,37 +726,10 @@ curl -X POST https://fintech-it-solutions.onrender.com/api/careers/apply \
 
 ## 📊 Datasets
 
-### 1. Job Listings Dataset
+### 💼 Job Listings
 
-**Location:** `backend/seed/jobsSeed.js`
+**Location:** `backend/seed/jobsSeed.js` · **Total:** 12 jobs across 6 departments
 
-**Schema:**
-```javascript
-{
-  _id: String,
-  title: String,              // "Senior Full Stack Developer"
-  department: String,          // "Custom Software Development"
-  location: String,            // "Remote (India)"
-  type: String,                // "Full-time" | "Part-time" | "Internship"
-  salary: String,              // "₹8-15 LPA"
-  experience: String,          // "3-6 years"
-  description: String,
-  longDescription: String,
-  responsibilities: [String],
-  requirements: [String],
-  whatWeOffer: [String],
-  skills: [String],
-  benefits: [String],
-  hiringProcess: {
-    step1: String,
-    step2: String,
-    ...
-  },
-  faq: [{ q: String, a: String }]
-}
-```
-
-**Sample Data:**
 ```json
 {
   "_id": "1",
@@ -727,28 +743,10 @@ curl -X POST https://fintech-it-solutions.onrender.com/api/careers/apply \
 }
 ```
 
-**Total Records:** 12 jobs across 6 departments
+### 👥 Employee Dataset
 
-### 2. Employee Dataset
+**Total:** 30 employees (20 freshers, 10 experienced)
 
-**Schema:**
-```javascript
-{
-  employeeId: String,
-  name: String,
-  email: String,
-  role: String,
-  department: String,
-  location: String,
-  salary: Number,
-  experience: String,
-  skills: [String],
-  joiningDate: Date,
-  projects: [String]
-}
-```
-
-**Sample Data:**
 ```json
 {
   "employeeId": "EMP001",
@@ -761,28 +759,10 @@ curl -X POST https://fintech-it-solutions.onrender.com/api/careers/apply \
 }
 ```
 
-**Total Records:** 30 employees (20 freshers, 10 experienced)
+### 🚀 Project Dataset
 
-### 3. Project Dataset
+**Total:** 6 ongoing projects
 
-**Schema:**
-```javascript
-{
-  projectId: String,
-  name: String,
-  sector: String,              // "Fintech" | "Healthcare" | "E-commerce"
-  client: String,
-  budget: Number,
-  progress: Number,            // 0-100
-  team: Number,
-  status: String,              // "active" | "completed" | "on_hold"
-  tech: [String],
-  startDate: Date,
-  endDate: Date
-}
-```
-
-**Sample Data:**
 ```json
 {
   "projectId": "PRJ001",
@@ -796,122 +776,56 @@ curl -X POST https://fintech-it-solutions.onrender.com/api/careers/apply \
 }
 ```
 
-**Total Records:** 6 ongoing projects
+### 📝 Applications & Inquiries
 
-### 4. Job Applications Dataset
-
-**Schema:**
-```javascript
-{
-  name: String,
-  email: String,
-  phone: String,
-  experience: String,
-  coverLetter: String,
-  jobId: String,
-  resume: String,              // File path
-  appliedAt: Date,
-  status: String               // "pending" | "reviewed" | "accepted" | "rejected"
-}
-```
-
-### 5. Contact Inquiries Dataset
-
-**Schema:**
-```javascript
-{
-  name: String,
-  email: String,
-  message: String,
-  submittedAt: Date,
-  status: String               // "new" | "read" | "replied"
-}
-```
+- 📋 **Job Applications** — Schema with resume path, status tracking
+- 💬 **Contact Inquiries** — Schema with status tracking
 
 ---
 
 ## 🚢 Deployment
 
-### Frontend Deployment (Vercel)
+### ▲ Frontend (Vercel)
 
-1. **Push to GitHub**
+1. Push to GitHub:
    ```bash
    git add .
    git commit -m "Deploy to Vercel"
    git push origin main
    ```
+2. Go to [vercel.com](https://vercel.com) → **New Project** → Import repo
+3. Configure:
+   - **Framework Preset:** Vite
+   - **Root Directory:** `frontend`
+   - **Build Command:** `npm run build`
+   - **Output Directory:** `dist`
+4. Add env var: `VITE_API_URL=https://fintech-it-solutions.onrender.com/api`
+5. **Deploy!** 🚀
 
-2. **Connect to Vercel**
-   - Go to [vercel.com](https://vercel.com)
-   - Click "New Project"
-   - Import your GitHub repository
-   - Configure:
-     - **Framework Preset**: Vite
-     - **Root Directory**: `frontend`
-     - **Build Command**: `npm run build`
-     - **Output Directory**: `dist`
+### 🎨 Backend (Render)
 
-3. **Add Environment Variables**
-   ```
-   VITE_API_URL=https://fintech-it-solutions.onrender.com/api
-   ```
+1. Go to [dashboard.render.com](https://dashboard.render.com) → **New +** → **Web Service**
+2. Connect repo → Configure:
+   - **Name:** `fintech-backend`
+   - **Root Directory:** `backend`
+   - **Build Command:** `npm install`
+   - **Start Command:** `node server.js`
+3. Add env vars (MONGO_URI, JWT_SECRET, MAIL_USER, MAIL_PASS)
+4. **Deploy!** 🚀
 
-4. **Deploy!**
+### 🍃 MongoDB Atlas
 
-### Backend Deployment (Render)
-
-1. **Push to GitHub** (same as above)
-
-2. **Connect to Render**
-   - Go to [dashboard.render.com](https://dashboard.render.com)
-   - Click "New +" → "Web Service"
-   - Connect your GitHub repository
-   - Configure:
-     - **Name**: `fintech-backend`
-     - **Root Directory**: `backend`
-     - **Environment**: Node
-     - **Build Command**: `npm install`
-     - **Start Command**: `node server.js`
-
-3. **Add Environment Variables**
-   ```
-   PORT=10000
-   MONGO_URI=mongodb+srv://...
-   JWT_SECRET=your-secret-key
-   MAIL_USER=your@gmail.com
-   MAIL_PASS=xxxx xxxx xxxx xxxx
-   ```
-
-4. **Deploy!**
-
-### MongoDB Atlas Setup
-
-1. Create a free cluster at [mongodb.com/atlas](https://www.mongodb.com/atlas)
-2. Create a database user with strong password
-3. Add IP whitelist: `0.0.0.0/0` (or Render's IP range)
-4. Get connection string and use it as `MONGO_URI`
-
----
-
-## 📸 Screenshots
-
-### Home Page
-![Home Page](https://via.placeholder.com/800x400/6366f1/ffffff?text=Fintech+IT+Solutions+Home)
-
-### Careers Portal
-![Careers](https://via.placeholder.com/800x400/9333ea/ffffff?text=Careers+Portal)
-
-### Job Details
-![Job Details](https://via.placeholder.com/800x400/10b981/ffffff?text=Job+Details)
-
-### Contact Form
-![Contact](https://via.placeholder.com/800x400/f59e0b/ffffff?text=Contact+Form)
+1. Create free cluster at [mongodb.com/atlas](https://www.mongodb.com/atlas)
+2. Create DB user with strong password
+3. Add IP whitelist: `0.0.0.0/0`
+4. Get connection string → use as `MONGO_URI`
 
 ---
 
 ## 🗺 Roadmap
 
 ### ✅ Completed (v1.0)
+
 - [x] Marketing website
 - [x] Services showcase
 - [x] Industries pages
@@ -923,6 +837,7 @@ curl -X POST https://fintech-it-solutions.onrender.com/api/careers/apply \
 - [x] Mobile responsive design
 
 ### 🚧 In Progress (v1.1)
+
 - [ ] Admin dashboard
 - [ ] User authentication
 - [ ] Job posting management
@@ -930,6 +845,7 @@ curl -X POST https://fintech-it-solutions.onrender.com/api/careers/apply \
 - [ ] Email templates customization
 
 ### 📅 Planned (v2.0)
+
 - [ ] AI-powered job matching
 - [ ] Video interviews integration
 - [ ] Advanced analytics
@@ -943,141 +859,161 @@ curl -X POST https://fintech-it-solutions.onrender.com/api/careers/apply \
 
 ## 🤝 Contributing
 
-We welcome contributions! Here's how you can help:
+We welcome contributions!
 
-1. **Fork the repository**
-2. **Create a feature branch**
+1. 🍴 **Fork the repository**
+2. 🌿 **Create a feature branch:**
    ```bash
    git checkout -b feature/AmazingFeature
    ```
-3. **Commit your changes**
+3. 💾 **Commit your changes:**
    ```bash
    git commit -m "Add some AmazingFeature"
    ```
-4. **Push to the branch**
+4. 📤 **Push to the branch:**
    ```bash
    git push origin feature/AmazingFeature
    ```
-5. **Open a Pull Request**
+5. 🎉 **Open a Pull Request**
 
-### Development Guidelines
+### 📝 Development Guidelines
 
-- Follow existing code style
-- Write meaningful commit messages
-- Add comments for complex logic
-- Test your changes before submitting
-- Update documentation as needed
-
-### Code Style
-
-- **JavaScript:** ES6+ with functional components
-- **Naming:** camelCase for variables, PascalCase for components
-- **Formatting:** 2-space indentation
-- **Quotes:** Double quotes for JSX, single quotes for JS
+- 🎨 Follow existing code style
+- 💬 Write meaningful commit messages
+- 📖 Add comments for complex logic
+- 🧪 Test your changes before submitting
+- 📚 Update documentation as needed
 
 ---
 
-## 👨‍💼 Author
+## 👤 Author
 
-**Sumit Kumar**
+<div align="center">
 
-- 🎯 **Role:** Founder & CEO
-- 🏢 **Company:** Fintech IT Solutions
-- 📍 **Location:** Pune, Maharashtra, India
-- 📧 **Email:** [sumit@fintechitsolutions.com](mailto:sumit@fintechitsolutions.com)
-- 📱 **Phone:** +91 6299863493
-- 🐙 **GitHub:** [@sumit966](https://github.com/sumit966)
-- 🌐 **Website:** [fintech-live-app.vercel.app](https://fintech-live-app.vercel.app)
+### Sumit Kumar
 
-### About the Author
+**Founder & CEO · Fintech IT Solutions**
 
-Sumit is a passionate full-stack developer with 8+ years of experience building scalable software solutions for startups. He founded Fintech IT Solutions to help early-stage companies bring their ideas to life through modern technology.
+📍 Pune, Maharashtra, India
 
-**Expertise:**
-- Full Stack Development (React, Node.js)
-- Cloud Architecture (AWS, Azure)
-- AI/ML Integration
-- Startup Mentoring
+<br/>
+
+<a href="https://fintech-live-app.vercel.app">
+  <img src="https://img.shields.io/badge/🌐_Website-Visit-6366f1?style=for-the-badge" />
+</a>
+<a href="mailto:sumit@fintechitsolutions.com">
+  <img src="https://img.shields.io/badge/📧_Email-Contact-D14836?style=for-the-badge" />
+</a>
+<a href="https://github.com/sumit966">
+  <img src="https://img.shields.io/badge/🐙_GitHub-Follow-181717?style=for-the-badge&logo=github&logoColor=white" />
+</a>
+
+</div>
 
 ---
 
 ## 📄 License
 
-Distributed under the **MIT License**. See `LICENSE` for more information.
+<div align="center">
 
-```
-MIT License
+<img src="https://img.shields.io/badge/⚖️_LICENSE-MIT-f59e0b?style=for-the-badge&labelColor=0d1117&logo=opensourceinitiative&logoColor=white" />
 
-Copyright (c) 2025 Fintech IT Solutions
+<br/><br/>
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+<samp>
+Distributed under the <b>MIT License</b>. See <a href="LICENSE">LICENSE</a> for more information.
+</samp>
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+<br/><br/>
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-```
+<sub><samp>© 2025 · FINTECH IT SOLUTIONS · ALL RIGHTS RESERVED</samp></sub>
+
+</div>
 
 ---
 
 ## 🙏 Acknowledgments
 
-- [React](https://reactjs.org/) — UI Library
-- [Vite](https://vitejs.dev/) — Build Tool
-- [Tailwind CSS](https://tailwindcss.com/) — CSS Framework
-- [Framer Motion](https://www.framer.com/motion/) — Animations
-- [Lucide Icons](https://lucide.dev/) — Beautiful icons
-- [MongoDB](https://www.mongodb.com/) — Database
-- [Vercel](https://vercel.com/) — Frontend hosting
-- [Render](https://render.com/) — Backend hosting
-- [Node.js](https://nodejs.org/) — Runtime
-- [Express.js](https://expressjs.com/) — Web Framework
+<div align="center">
+
+<a href="https://reactjs.org/">
+  <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black" />
+</a>
+<a href="https://vitejs.dev/">
+  <img src="https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white" />
+</a>
+<a href="https://tailwindcss.com/">
+  <img src="https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white" />
+</a>
+<a href="https://www.framer.com/motion/">
+  <img src="https://img.shields.io/badge/Framer_Motion-0055FF?style=for-the-badge&logo=framer&logoColor=white" />
+</a>
+<a href="https://lucide.dev/">
+  <img src="https://img.shields.io/badge/Lucide_Icons-F56565?style=for-the-badge&logo=lucide&logoColor=white" />
+</a>
+
+<br/><br/>
+
+<a href="https://www.mongodb.com/">
+  <img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white" />
+</a>
+<a href="https://vercel.com/">
+  <img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white" />
+</a>
+<a href="https://render.com/">
+  <img src="https://img.shields.io/badge/Render-46E3B7?style=for-the-badge&logo=render&logoColor=white" />
+</a>
+<a href="https://nodejs.org/">
+  <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" />
+</a>
+<a href="https://expressjs.com/">
+  <img src="https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white" />
+</a>
+
+</div>
 
 ---
 
 ## 📞 Contact
 
-**Fintech IT Solutions**
+<div align="center">
 
-- 🌐 Website: [https://fintech-live-app.vercel.app](https://fintech-live-app.vercel.app)
-- 📧 Email: [fintechitsolutions.info@gmail.com](mailto:fintechitsolutions.info@gmail.com)
-- 📱 Phone: +91 6299863493
-- 💼 LinkedIn: Coming Soon
-- 🐙 GitHub: [@sumit966](https://github.com/sumit966)
+### Fintech IT Solutions
 
-### Support
+<br/>
 
-- 📖 Documentation: This README
-- 🐛 Bug Reports: [GitHub Issues](https://github.com/sumit966/fintech-it-solutions/issues)
-- 💬 Discussions: [GitHub Discussions](https://github.com/sumit966/fintech-it-solutions/discussions)
+<a href="https://fintech-live-app.vercel.app">
+  <img src="https://img.shields.io/badge/🌐_Website-fintech--live--app.vercel.app-6366f1?style=for-the-badge" />
+</a>
+<a href="mailto:fintechitsolutions.info@gmail.com">
+  <img src="https://img.shields.io/badge/📧_Email-Contact-D14836?style=for-the-badge" />
+</a>
+<a href="tel:+916299863493">
+  <img src="https://img.shields.io/badge/📱_Phone-+91_6299863493-10b981?style=for-the-badge" />
+</a>
+<a href="https://github.com/sumit966">
+  <img src="https://img.shields.io/badge/🐙_GitHub-@sumit966-181717?style=for-the-badge&logo=github&logoColor=white" />
+</a>
 
----
+<br/><br/>
 
-## 📊 Project Stats
+### 💬 Support
 
-![GitHub Stars](https://img.shields.io/github/stars/sumit966/fintech-it-solutions?style=social)
-![GitHub Forks](https://img.shields.io/github/forks/sumit966/fintech-it-solutions?style=social)
-![GitHub Issues](https://img.shields.io/github/issues/sumit966/fintech-it-solutions)
-![GitHub Last Commit](https://img.shields.io/github/last-commit/sumit966/fintech-it-solutions)
+- 📖 **Documentation:** This README
+- 🐛 **Bug Reports:** [GitHub Issues](https://github.com/sumit966/fintech-it-solutions/issues)
+- 💬 **Discussions:** [GitHub Discussions](https://github.com/sumit966/fintech-it-solutions/discussions)
+
+</div>
 
 ---
 
 <div align="center">
 
+## 🚀 Building the Future, One Project at a Time
+
 **Built with ❤️ by Fintech IT Solutions**
 
-*Building the Future, One Project at a Time*
+<br/>
 
 ⭐ Star this repo if you find it helpful!
 
